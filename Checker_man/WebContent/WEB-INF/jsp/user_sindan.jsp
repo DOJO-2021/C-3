@@ -14,6 +14,7 @@
 		<jsp:include page="/WEB-INF/jsp/header.jsp" />
 	</header>
 
+	<!-- 見出し -->
 	<h1>診断ページ</h1>
 
 	質問項目に合わせてチェックを入れてください
