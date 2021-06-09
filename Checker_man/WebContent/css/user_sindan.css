@@ -4,6 +4,7 @@ html {
 	font-family: sans-serif;
 }
 
+/* 見出し */
 h1 {
 	font-size: 26px;
 	border-bottom: 3px dotted #000000;
@@ -15,4 +16,13 @@ h1 {
 	padding-right: 5px;
 	padding-bottom: 5px;
 	padding-left: 5px;
+}
+
+/* 診断フォーム */
+form {
+	padding: 10px 10px;
+}
+
+table td {
+	text-align: center;
 }
