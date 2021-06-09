@@ -5,4 +5,24 @@ textarea {
 	height: 7em;
 }
 
-/*  */
+/* 名前の欄 */
+#name {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* 診断結果 */
+table[class="result"] {
+	width: 30em;
+	height: 7em;
+}
+/* トップページに戻るボタン */
+nav[class="top"] {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* 画面上部に移動するボタン */
+

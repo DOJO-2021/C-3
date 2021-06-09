@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,6 @@
 	<!-- ここから診断テーブル -->
 	<table>
 		<tr>
-			<td>No</td>
 			<td>質問事項</td>
 			<td>当てはまらない</td>
 			<td>やや当てはまらない</td>
@@ -31,7 +31,6 @@
 			<td>当てはまる</td>
 		</tr>
 		<tr>
-			<td>1</td>
 			<td>問1</td>
 			<td><form action="#" method="post">
 					<input type="checkbox" name="sindan" value="1">
