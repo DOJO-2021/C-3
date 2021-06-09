@@ -27,12 +27,12 @@
 <div class="calendar">
 
  <nav class="calender-menu">
-				<ul>
-					<li><a href="/simpleBC/RegistServlet" class="button" >　登録する　</a></li>
-					<li><a href="/simpleBC/SearchServlet" class="button">　検索する　</a></li>
-					<li><a href="/simpleBC/UpdateDeleteServlet" class="button">　編集する　</a></li>
-					<li><a href="/simpleBC/LogoutServlet" class="button">ログアウト</a></li>
-				</ul>
+  <ul>
+	<li><a class="button" >　登録する　</a></li>
+	<li><a href="/simpleBC/SearchServlet" class="button">　検索する　</a></li>
+	<li><a href="/simpleBC/UpdateDeleteServlet" class="button">　編集する　</a></li>
+
+  </ul>
  </nav>
 
  <input type="text" id="previous-month" name="previous-month">
