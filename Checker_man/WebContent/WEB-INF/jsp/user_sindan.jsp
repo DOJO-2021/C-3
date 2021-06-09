@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>チェッカマン</title>
 </head>
+<link rel="stylesheet" href="/Checker_man/css/user_sindan.css">
 <body>
 
 	<!-- ヘッダー -->
@@ -29,13 +30,25 @@
 			<td>当てはまる</td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td>1</td>
+			<td>
+				<!-- ここに質問項目 -->
+			</td>
+			<td><form action="#" method="post">
+					<input type="checkbox" name="sindan" value="1">
+				</form></td>
+			<td><form action="#" method="post">
+					<input type="checkbox" name="sindan" value="2">
+				</form></td>
+			<td><form action="#" method="post">
+					<input type="checkbox" name="sindan" value="3">
+				</form></td>
+			<td><form action="#" method="post">
+					<input type="checkbox" name="sindan" value="4">
+				</form></td>
+			<td><form action="#" method="post">
+					<input type="checkbox" name="sindan" value="5">
+				</form></td>
 		</tr>
 	</table>
 	<!-- 診断テーブルここまで -->

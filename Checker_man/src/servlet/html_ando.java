@@ -18,7 +18,7 @@ public class html_ando extends HttpServlet {
 			throws ServletException, IOException {
 
 		// ログインページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_view.jsp");
 		dispatcher.forward(request, response);
 	}
 
