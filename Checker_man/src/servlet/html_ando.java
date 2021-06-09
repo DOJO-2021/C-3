@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/html_suzuki")
+@WebServlet("/html_ando")
 public class html_ando extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
