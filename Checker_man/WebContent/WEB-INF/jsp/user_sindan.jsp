@@ -15,6 +15,18 @@
 
 	<h1>診断ページ</h1>
 
+	<table>
+		<tr>
+			<td>No</td>
+			<td>質問事項</td>
+			<td>当てはまらない</td>
+			<td>やや当てはまらない</td>
+			<td>どちらともいえない</td>
+			<td>やや当てはまる</td>
+			<td>当てはまる</td>
+		</tr>
+	</table>
+
 	<a href="/Checker_man/User_ResultServlet">診断結果へ</a>
 
 	<!-- フッター -->
