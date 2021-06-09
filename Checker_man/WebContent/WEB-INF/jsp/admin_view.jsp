@@ -13,6 +13,7 @@
 		<p>閲覧ページ</p>
 	</header>
 	<h1><a id="title">名前</a></h1>
+	<div class="QA">
 	<p>質問内容</p>
 	<table class="question">
 		<tr><td>問1 よく眠れなかった</td></tr>
@@ -51,6 +52,7 @@
 		<tr><td>1</td></tr>
 		<tr><td>2</td></tr>
 	</table>
+	</div>
 	<p>診断結果</p>
 	<table class="result">
 		<tr><td>調子よさそうだね！！</td></tr>
@@ -59,9 +61,14 @@
 	<table class="u_comment">
 		<tr><td>閲覧のみ</td></tr>
 	</table>
-	<table class="a_comment">
-		<tr><td>コメントする</td></tr>
-	</table>
+	<form method="POST">
+	<div>
+		管理者コメント<br>
+		<textarea name="comment"></textarea>
+		<input type="submit" name="submit" value="書き込む">
+	</div>
+
+	</form>
 	<a href="#title">画面上部に移動する</a>
 	<nav class="nav">
 <a href="/Checker_man/Admin_TopPageServlet">トップページに戻る</a>
