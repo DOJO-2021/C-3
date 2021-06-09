@@ -57,14 +57,16 @@
 	<table class="result">
 		<tr><td>調子よさそうだね！！</td></tr>
 	</table>
-
-	<table class="u_comment">
-		<tr><td>閲覧のみ</td></tr>
-	</table>
+	<div>
+		受講者コメント
+	<form method="POST">
+    <textarea readonly name="comment">閲覧専用</textarea><br>
+    </form>
+    </div>
 	<form method="POST">
 	<div>
 		管理者コメント<br>
-		<textarea name="comment"></textarea>
+		<textarea name="comment" action=""></textarea>
 		<input type="submit" name="submit" value="書き込む">
 	</div>
 
