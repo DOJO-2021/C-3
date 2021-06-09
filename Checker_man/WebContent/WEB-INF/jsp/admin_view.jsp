@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>チェッカマン</title>
+<link rel="stylesheet" href="/Checker_man/css/admin_view.css">
 </head>
 <body>
 	<!-- ヘッダ -->
@@ -33,9 +34,10 @@
 		<tr><td>問14 作業環境が不適切（明るさ、温度など）</td></tr>
 		<tr><td>問15 研修内容についていけていないと感じる</td></tr>
 	</table>
-
+	</div>
+	<div>
+	<p>回答</p>
 	<table class="answer">
-	<tr><td>回答</td></tr>
 		<tr><td>3</td></tr>
 		<tr><td>2</td></tr>
 		<tr><td>2</td></tr>
@@ -57,12 +59,14 @@
 	<table class="result">
 		<tr><td>調子よさそうだね！！</td></tr>
 	</table>
-	<div>
-		受講者コメント
+
 	<form method="POST">
-    <textarea readonly name="comment">閲覧専用</textarea><br>
-    </form>
+	<div>
+		受講者コメント<br>
+    <textarea readonly name="comment">閲覧専用</textarea>
     </div>
+    </form>
+
 	<form method="POST">
 	<div>
 		管理者コメント<br>
