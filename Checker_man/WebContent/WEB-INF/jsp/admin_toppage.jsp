@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +25,22 @@
  <!-- メイン -->
  <main>
 
+<div class="healthcheck">
+現在の受講者健康状態<br>
+○の人：１０人<br>
+△の人：5人<br>
+☓の人：3人<br>
 
+</div>
+
+<div class="notice">
+お知らせ<br>
+コメントが〇件来ています
+</div>
+
+<div class="admin_toppage_button">
+ <input type="submit" id="admin_lastdata" name="admin_lastdata" value="過去のデータ">
+</div>
 
  </main>
 
