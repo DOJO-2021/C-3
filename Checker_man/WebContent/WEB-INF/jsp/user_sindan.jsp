@@ -8,13 +8,16 @@
 </head>
 <body>
 
-	<!-- ヘッダ -->
+	<!-- ヘッダー -->
 	<header class="header">
 		<jsp:include page="/WEB-INF/jsp/header.jsp" />
 	</header>
 
 	<h1>診断ページ</h1>
 
+	質問項目に合わせてチェックを入れてください
+
+	<!-- ここから診断テーブル -->
 	<table>
 		<tr>
 			<td>No</td>
@@ -25,8 +28,19 @@
 			<td>やや当てはまる</td>
 			<td>当てはまる</td>
 		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
 	</table>
+	<!-- 診断テーブルここまで -->
 
+	<br>
 	<a href="/Checker_man/User_ResultServlet">診断結果へ</a>
 
 	<!-- フッター -->
