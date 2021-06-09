@@ -18,7 +18,7 @@ public class html_ogawa extends HttpServlet {
 			throws ServletException, IOException {
 
 		// ログインページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
 		dispatcher.forward(request, response);
 	}
 

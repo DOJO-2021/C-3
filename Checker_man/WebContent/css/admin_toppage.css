@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+/* アイコンの大きさ調整　*/
+.icon img {
+	width: 30px;
+	height: 30px;
+}
+
+/* 受講者の健康診断のcss　*/
 .healthcheck{
 	margin:90px;
 	margin-left:5em;
@@ -9,6 +16,7 @@ padding:20px;
 border: 2px solid #5d5d5d;
 }
 
+/* お知らせのcss　*/
 .notice{
 margin-left:5em;
 width:20em;
@@ -17,6 +25,7 @@ padding:20px;
 border: 2px solid #5d5d5d;
 }
 
+/* 過去のデータのボタン　*/
 .admin_toppage_button{
 	margin:50px;
 	text-align: right;
