@@ -10,7 +10,7 @@
 
 	<!-- ロゴ -->
 	<h1 class="keyvisual">
-		<br> <img src="/Checker_man/images/image1.png">
+		<br> <img src="/Checker_man/WebContent/images/image1.png">
 	</h1>
 
 	<!-- トップページへのリンク -->
