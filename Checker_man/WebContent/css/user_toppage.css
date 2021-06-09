@@ -5,9 +5,50 @@
 	text-align: center;
 }
 
-.calender-menuli {
+.calender-menu li{
 	display: inline;
 	list-style-type: none;
 	margin: 60px;
 	font-size: 20px;
+}
+
+.previous-month{
+padding:5px;
+border: 2px solid #5d5d5d;
+}
+
+.next-month{
+padding:5px;
+border: 2px solid #5d5d5d;
+}
+
+.calender-table{
+
+border-collapse: separate;
+border-spacing: 0px 0px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+font-size:20px;
+
+}
+
+.calender-table tr,.calender-table th {
+	border: 2px solid #5d5d5d;
+	width:3em;
+	height:30px;
+}
+
+.user_toppage_button{
+	margin:50px;
+	text-align: center;
+}
+
+#user_result{
+	font-size:30px;
+}
+
+
+#user_shindan{
+	font-size:30px;
 }
