@@ -1,1 +1,98 @@
 @charset "UTF-8";
+
+/* 全てのページに適用 */
+html {
+	font-family: sans-serif;
+}
+
+html* {
+	box-sizing: border-box;
+}
+
+/* user_result.jsp */
+/* 診断結果 */
+h1 {
+	background-color: #B0D6DA;
+	margin: 0 auto;
+	width: 300px;
+	text-align: center;
+}
+
+/* 一言診断結果 */
+h2 {
+	border-bottom: dotted 2px #F0B43E;
+	text-align: center;
+}
+
+/* 診断結果一覧 */
+.user_result {
+	border-collapse: separete;
+	border-spacing: 15px 0px;
+	border: 3px solid #B0D6DA;
+	margin-left: auto;
+    margin-right: auto;
+}
+.user_result th{
+	text-align: left;
+}
+
+/* コメント欄 */
+.message {
+	display: flex;
+	justify-content: center;
+}
+.message p {
+	font-size: 12px;
+	text-decoration: underline; /* 下線を引く */
+	text-decoration-color: #F0B43E; /* 下線の色 */
+}
+
+/* コメント登録ボタンとトップへ戻るボタン */
+.botton {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+}
+
+/* コメント登録ボタン */
+input[type="submit"]{
+		margin: 0 8px;
+		position: relative;
+		display: inline-block;
+		padding: 0 0.25em;
+		text-decoration: none;
+		color:#000000;
+		background-color: #B0D6DA; /*色*/
+		border-radius: 8px; /*角の丸み*/
+		box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+		font-weight: bold;
+		border: solid 2px #B0D6DA; /*周りの線の色*/
+}
+
+/* トップへ戻るボタン */
+.return {
+	text-align: center;
+}
+.return a:link{
+	color: #000000;
+	text-decoration: none;
+	background-color: #B0D6DA;
+}
+.return a:visited{
+	color: #000000;
+	text-decoration: none;
+	background-color: #B0D6DA;
+}
+.return a:hover{
+	color: #000000;
+	text-decoration: none;
+	background-color: #B0D6DA;
+}
+.return a:active{
+	color: #000000;
+	text-decoration: none;
+	background-color: #B0D6DA;
+}
+
+
