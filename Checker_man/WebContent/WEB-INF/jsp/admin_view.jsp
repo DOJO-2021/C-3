@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>チェッカマン</title>
 <link rel="stylesheet" href="/Checker_man/css/admin_view.css">
+<link rel="stylesheet" href="/Checker_man/css/admin.css">
 </head>
 <body>
 	<!-- ヘッダ -->
