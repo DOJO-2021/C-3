@@ -13,7 +13,7 @@
 	</header>
 	<h1>名前</h1>
 	<p>質問内容</p>
-	<figure class="table1">
+	<table id="question">
 		<tr><td>問1　よく眠れなかった</td></tr>
 		<tr><td>問2　食欲があまりない</td></tr>
 		<tr><td>問3　不安に感じることがある</td></tr>
@@ -30,29 +30,33 @@
 		<tr><td>問13　水分補給をあまりしていない</td></tr>
 		<tr><td>問14　作業環境が不適切（明るさ、温度など）</td></tr>
 		<tr><td>問15　研修内容についていけていないと感じる</td></tr>
-	</figure>
+	</table>
 	<p>回答</p>
-	<figure class="table2">
-		<tr><th>3</th></tr>
-		<tr><th>2</th></tr>
-		<tr><th>2</th></tr>
-		<tr><th>2</th></tr>
-		<tr><th>3</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>1</th></tr>
-		<tr><th>2</th></tr>
-	</figure>
-	<p>診断結果</p><figure class="table3">
+	<table class="answer">
+		<tr><td>3</td></tr>
+		<tr><td>2</td></tr>
+		<tr><td>2</td></tr>
+		<tr><td>2</td></tr>
+		<tr><td>3</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>1</td></tr>
+		<tr><td>2</td></tr>
+	</table>
+	<p>診断結果</p>
+	<table class="result">
+	<tr><td>調子よさそうだね！！</td></tr>
+	</table>
 
-	</figure>
-
+	<table class="u_comment">
+	<tr><td>閲覧のみ</td></tr>
+	</table>
 
 
 	<!-- フッター -->
