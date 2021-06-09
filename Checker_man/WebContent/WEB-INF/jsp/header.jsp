@@ -4,14 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>チェッカマン</title>
 </head>
 <link rel="stylesheet" href="/Checker_man/css/header_footer.css">
 <body>
+
+	<!-- ロゴ -->
 	<h1 class="keyvisual">
 		<br> <img src="/Checker_man/images/image1.jpg">
 	</h1>
+
+	<!-- トップページへのリンク -->
 	<a href="/Checker_man/User_TopPageServlet">トップページ</a>
+
+	<!-- ログアウトのリンク -->
 	<a href="/Checker_man/LogoutServlet">ログアウト</a>
 </body>
 </html>

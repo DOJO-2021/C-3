@@ -52,6 +52,8 @@
 	<!-- 診断テーブルここまで -->
 
 	<br>
+
+	<!-- 診断結果へのリンク -->
 	<a href="/Checker_man/User_ResultServlet">診断結果へ</a>
 
 	<!-- フッター -->
