@@ -1,1 +1,27 @@
 @charset "UTF-8";
+
+.healthcheck{
+	margin:90px;
+	margin-left:5em;
+	width:20em;
+	height:10em;
+padding:20px;
+border: 2px solid #5d5d5d;
+}
+
+.notice{
+margin-left:5em;
+width:20em;
+height:5em;
+padding:20px;
+border: 2px solid #5d5d5d;
+}
+
+.admin_toppage_button{
+	margin:50px;
+	text-align: right;
+}
+
+#admin_lastdata{
+	font-size:30px;
+}
