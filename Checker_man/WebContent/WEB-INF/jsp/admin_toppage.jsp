@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>チェッカマン</title>
 <link rel="stylesheet" href="/Checker_man/css/admin_toppage.css">
-
+<link rel="stylesheet" href="/Checker_man/css/admin.css">
 </head>
 
 <body>
@@ -25,6 +25,7 @@
  <!-- メイン -->
  <main>
 
+         <!--  「受講者の健康診断」のhtml -->
 <div class="healthcheck">
 現在の受講者健康状態<br>
 <p class="icon"><img src="/Checker_man/images/maru.png">の人：１０人<br>
@@ -33,11 +34,13 @@
 
 </div>
 
+              <!--  「お知らせ」のhtml -->
 <div class="notice">
 お知らせ<br>
 コメントが〇件来ています
 </div>
 
+         <!--  「過去のデータボタン」のhtml -->
 <div class="admin_toppage_button">
  <input type="submit" id="admin_lastdata" name="admin_lastdata" value="過去のデータ">
 </div>

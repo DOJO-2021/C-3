@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>チェッカマン</title>
 <link rel="stylesheet" href="/Checker_man/css/user_toppage.css">
+<link rel="stylesheet" href="/Checker_man/css/user.css">
 
 </head>
 
@@ -27,6 +28,7 @@
 
  <div class="calendar-border">
 
+          <!-- カレンダーの上にある「前月、現在の月、翌月」のhtml -->
   <div class="calender-menu">
    <table class="calender-menu-table">
     <tr>
@@ -37,6 +39,7 @@
    </table>
   </div>
 
+             <!-- カレンダーの表のhtml -->
    <div class="calender">
     <table class="calender-table">
       <tr>
@@ -109,6 +112,7 @@
 
 </div>
 
+       <!-- 診断ボタン、診断結果ボタン」ののhtml -->
 <div class="user_toppage_button">
  <input type="submit" id="user_shindan" name="user_shindan" value="診断">
  <input type="submit" id="user_result" name="user_result" value="診断結果">
