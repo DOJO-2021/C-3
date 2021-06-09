@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -28,14 +29,14 @@
 
   <nav class="calender-menu">
   <ul>
-		<li><a>前月</a></li>
+		<li><a class="previous-month">前月</a></li>
 		<li>2021年6月</li>
-    	<li><a>翌月</a></li>
+    	<li><a class="next-month">翌月</a></li>
     </ul>
   </nav>
 
-
-    <table>
+   <div class="calender">
+    <table class="calender-table">
       <tr>
         <th>日</th>
         <th>月</th>
@@ -46,9 +47,71 @@
         <th>土</th>
       </tr>
 
+         <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+        <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
     </table>
+    </div>
 
 </div>
+
+<div class="user_toppage_button">
+ <input type="submit" id="user_shindan" name="user_shindan" value="診断">
+ <input type="submit" id="user_result" name="user_result" value="診断結果">
+</div>
+
 
 
  </main>
