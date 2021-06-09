@@ -1,22 +1,29 @@
 @charset "UTF-8";
 
 
-/* カレンダーの上にある「前の月、現在の月、次の月」のcss*/
+/* カレンダーの上にある「前月、現在の月、翌月」のcss*/
 .calender-menu-table{
 	margin-left: auto;
    margin-right: auto;
 }
 
+.calender-menu-table th{
+	padding-left:50px;
+	padding-right:50px;
+}
+
+/* カレンダーの上にある「前月ボタン」のcss*/
 #previous-month{
-padding:5px;
+padding:10px;
 }
 
+/* カレンダーの上にある「翌月ボタン」のcss*/
 #next-month{
-padding:5px;
+padding:10px;
 }
 
+/* カレンダーの表のcss*/
 .calender-table{
-
 border-collapse: separate;
 border-spacing: 0px 0px;
 margin-left: auto;
@@ -31,6 +38,7 @@ font-size:20px;
 	height:30px;
 }
 
+/* 「診断ボタン、診断結果ボタン」のcss*/
 .user_toppage_button{
 	margin:50px;
 	text-align: center;

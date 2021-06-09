@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* 受講者ログインを右上に */
+.link3 {
+  float:right;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;
+  line-height   : 1em;
+  background-color:rgb(176,214,218);
+  padding:10px;
+  color:white;
+  text-decoration: none;
+}
+
+/* ログインエリアを中央に配置 */
+.alogin-area {
+	width:300px;
+    margin:0 auto;
+	padding:20px;
+}
+
+.alogin-form {
+	padding-bottom:20px;
+}
+
+.alogin-bottan {
+	margin-left:190px;
+	margin-bottom:50px;
+}
