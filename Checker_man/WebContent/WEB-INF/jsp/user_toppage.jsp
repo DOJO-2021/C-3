@@ -26,11 +26,14 @@
 
  <div class="calendar-border">
 
-    <ul>
+  <nav class="calender-menu">
+  <ul>
 		<li><a>前月</a></li>
 		<li>2021年6月</li>
     	<li><a>翌月</a></li>
     </ul>
+  </nav>
+
 
     <table>
       <tr>

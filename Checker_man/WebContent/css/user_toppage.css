@@ -1,1 +1,13 @@
 @charset "UTF-8";
+
+.calender-menu{
+	margin-top: 50px;
+	text-align: center;
+}
+
+.calender-menuli {
+	display: inline;
+	list-style-type: none;
+	margin: 60px;
+	font-size: 20px;
+}
