@@ -31,9 +31,7 @@
 		</tr>
 		<tr>
 			<td>1</td>
-			<td>
-				<!-- ここに質問項目 -->
-			</td>
+			<td>問1</td>
 			<td><form action="#" method="post">
 					<input type="checkbox" name="sindan" value="1">
 				</form></td>
@@ -54,6 +52,8 @@
 	<!-- 診断テーブルここまで -->
 
 	<br>
+
+	<!-- 診断結果へのリンク -->
 	<a href="/Checker_man/User_ResultServlet">診断結果へ</a>
 
 	<!-- フッター -->
