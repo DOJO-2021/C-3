@@ -131,10 +131,12 @@
 		</div>
 
 	</form>
-	<a href="#title">画面上部に移動する</a>
-	<nav class="top">
+	<div class="top">
+	<a href= "#name">画面上部に移動する</a>
+	</div>
+	<div class="toppage">
 		<a href="/Checker_man/Admin_TopPageServlet">トップページに戻る</a>
-	</nav>
+	</div>
 	<!-- フッター -->
 	<footer class="footer">
 		<jsp:include page="/WEB-INF/jsp/footer.jsp" />
