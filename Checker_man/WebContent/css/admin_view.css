@@ -1,5 +1,8 @@
 @charset "UTF-8";
+/* テキストエリア */
 textarea {
 	width: 30em;
 	height: 7em;
 }
+
+/*  */

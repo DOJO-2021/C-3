@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>チェッカマン</title>
+<link rel="stylesheet" href="/Checker_man/css/admin_view.css">
 </head>
 <body>
 	<!-- ヘッダ -->
@@ -13,56 +14,39 @@
 		<p>閲覧ページ</p>
 	</header>
 	<h1><a id="title">名前</a></h1>
-	<div class="QA">
 	<p>質問内容</p>
 	<table class="question">
-		<tr><td>問1 よく眠れなかった</td></tr>
-		<tr><td>問2 食欲があまりない</td></tr>
-		<tr><td>問3 不安に感じることがある</td></tr>
-		<tr><td>問4 倦怠感がある</td></tr>
-		<tr><td>問5 周囲とのコミュニケーションが取れていないと感じる</td></tr>
-		<tr><td>問6 研修への充実感が少ないと感じる</td></tr>
-		<tr><td>問7 腹痛、頭痛などがある</td></tr>
-		<tr><td>問7 腹痛、頭痛などがある</td></tr>
-		<tr><td>問8 イライラをすることが増えたと感じる</td></tr>
-		<tr><td>問9 リラックス、息抜きなどが取れていない</td></tr>
-		<tr><td>問10 適度な運動をしていない</td></tr>
-		<tr><td>問11 辛いと感じることがある</td></tr>
-		<tr><td>問12 目が疲れている</td></tr>
-		<tr><td>問13 水分補給をあまりしていない</td></tr>
-		<tr><td>問14 作業環境が不適切（明るさ、温度など）</td></tr>
-		<tr><td>問15 研修内容についていけていないと感じる</td></tr>
+		<tr><th>問1</th><th>よく眠れなかった</th><td>(回答を表示)</td></tr>
+		<tr><th>問2</th><th>食欲があまりない</th><td>(回答を表示)</td></tr>
+		<tr><th>問3</th><th>不安に感じることがある</th><td>(回答を表示)</td></tr>
+		<tr><th>問4</th><th>倦怠感がある</th><td>(回答を表示)</td></tr>
+		<tr><th>問5</th><th>周囲とのコミュニケーションが取れていないと感じる</th><td>(回答を表示)</td></tr>
+		<tr><th>問6</th><th>研修への充実感が少ないと感じる</th><td>(回答を表示)</td></tr>
+		<tr><th>問7</th><th>腹痛、頭痛などがある</th><td>(回答を表示)</td></tr>
+		<tr><th>問7</th><th>腹痛、頭痛などがある</th><td>(回答を表示)</td></tr>
+		<tr><th>問8</th><th>イライラをすることが増えたと感じる</th><td>(回答を表示)</td></tr>
+		<tr><th>問9</th><th>リラックス、息抜きなどが取れていない</th><td>(回答を表示)</td></tr>
+		<tr><th>問10</th><th>適度な運動をしていない</th><td>(回答を表示)</td></tr>
+		<tr><th>問11</th><th>辛いと感じることがある</th><td>(回答を表示)</td></tr>
+		<tr><th>問12</th><th>目が疲れている</th><td>(回答を表示)</td></tr>
+		<tr><th>問13</th><th>水分補給をあまりしていない</th><td>(回答を表示)</td></tr>
+		<tr><th>問14</th><th>作業環境が不適切()明るさ、温度など)</th><td>(回答を表示)</td></tr>
+		<tr><th>問15</th><th>研修内容についていけていないと感じる</th><td>(回答を表示)</td></tr>
 	</table>
 
-	<table class="answer">
-	<tr><td>回答</td></tr>
-		<tr><td>3</td></tr>
-		<tr><td>2</td></tr>
-		<tr><td>2</td></tr>
-		<tr><td>2</td></tr>
-		<tr><td>3</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>1</td></tr>
-		<tr><td>2</td></tr>
-	</table>
-	</div>
+
 	<p>診断結果</p>
 	<table class="result">
 		<tr><td>調子よさそうだね！！</td></tr>
 	</table>
-	<div>
-		受講者コメント
+
 	<form method="POST">
-    <textarea readonly name="comment">閲覧専用</textarea><br>
-    </form>
+	<div>
+		受講者コメント<br>
+    <textarea readonly name="comment">閲覧専用</textarea>
     </div>
+    </form>
+
 	<form method="POST">
 	<div>
 		管理者コメント<br>
