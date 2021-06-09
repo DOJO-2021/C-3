@@ -29,7 +29,7 @@
 現在の受講者健康状態<br>
 <p class="icon"><img src="/Checker_man/images/maru.png">の人：１０人<br>
 <img src="/Checker_man/images/sankaku.png">の人：5人<br>
-<img src="/Checker_man/images/batu.jpg">の人：3人</p>
+<img src="/Checker_man/images/batsu.png">の人：3人</p>
 
 </div>
 

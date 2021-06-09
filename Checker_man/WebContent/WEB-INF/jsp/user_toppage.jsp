@@ -27,13 +27,15 @@
 
  <div class="calendar-border">
 
-  <nav class="calender-menu">
-  <ul>
-		<li><a class="previous-month">前月</a></li>
-		<li>2021年6月</li>
-    	<li><a class="next-month">翌月</a></li>
-    </ul>
-  </nav>
+  <div class="calender-menu">
+   <table class="calender-menu-table">
+    <tr>
+		<th><input type="submit" id="previous-month" name="previous-month" value="前月"></th>
+		<th>2021年6月</th>
+    	<th><input type="submit" id="next-month" name="next-month" value="翌月"></th>
+    </tr>
+   </table>
+  </div>
 
    <div class="calender">
     <table class="calender-table">
