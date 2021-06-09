@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+/* 表を回り込み */
+.table4 {
+	float:left;
+}
+
+.table5 {
+	float:left;
+}
+
+.clear {
+	clear:both;
+}
+
+/* 表の配置 */
+.result-table {
+	width:300px;
+    margin:0 auto;
+}
