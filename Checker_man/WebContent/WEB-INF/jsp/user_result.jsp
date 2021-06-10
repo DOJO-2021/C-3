@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/Checker_man/css/user.css">
 </head>
 <body>
+	<div class = "wrapper">
 
 	<!-- ヘッダー -->
 	<header class="header">
@@ -117,5 +118,6 @@
 		<jsp:include page="/WEB-INF/jsp/footer.jsp"/>
 	</footer>
 
+	</div>
 </body>
 </html>
