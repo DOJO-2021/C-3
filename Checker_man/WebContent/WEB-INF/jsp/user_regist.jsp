@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<div class="wrapper">
+
 <header>
 <!-- 共通のヘッダー -->
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
@@ -33,6 +35,6 @@
  <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
  </footer>
 
-
+</div>
 </body>
 </html>

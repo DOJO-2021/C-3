@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 </head>
 <link rel="stylesheet" href="/Checker_man/css/header_footer.css">
-<body>&copy;Copyright 2021 健康管理アプリチェッカマン. All rights reserved.
+<body>
+	<div class="wrapper">
+		&copy;Copyright 2021 健康管理アプリチェッカマン.Allrights reserved.
+	</div>
 </body>
 </html>
