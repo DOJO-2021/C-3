@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="/Checker_man/css/admin.css">
 </head>
 <body>
+<div class="wrapper">
+
 	<!-- ヘッダ -->
 	<header class="header">
 		<jsp:include page="/WEB-INF/jsp/header.jsp" />
@@ -115,6 +117,7 @@
 			<td>調子よさそうだね！！</td>
 		</tr>
 	</table>
+
 	<!-- 受講者コメント(閲覧用) -->
 	<form method="POST">
 		<div>
@@ -122,6 +125,7 @@
 			<textarea readonly name="comment">閲覧専用</textarea>
 		</div>
 	</form>
+
 	<!-- 管理者コメント(書き込み可能) -->
 	<form method="POST">
 		<div>
@@ -137,9 +141,12 @@
 	<div class="toppage">
 		<a href="/Checker_man/Admin_TopPageServlet">トップページに戻る</a>
 	</div>
+
 	<!-- フッター -->
 	<footer class="footer">
 		<jsp:include page="/WEB-INF/jsp/footer.jsp" />
 	</footer>
+
+	</div>
 </body>
 </html>
