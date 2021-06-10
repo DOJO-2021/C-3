@@ -8,15 +8,20 @@
 <link rel="stylesheet" href="/Checker_man/css/header_footer.css">
 <body>
 
-	<!-- ロゴ -->
-	<h1 class="keyvisual">
-		<img src="/Checker_man/WebContent/images/image1.png">
-	</h1>
+	<div class="wrapper">
 
-	<!-- トップページへのリンク -->
-	<a href="/Checker_man/User_TopPageServlet">トップページ</a>
+		<!-- ロゴ -->
+		<h1 class="keyvisual">
+			<img src="/Checker_man/WebContent/images/image1.png">
+		</h1>
 
-	<!-- ログアウトのリンク -->
-	<a href="/Checker_man/LogoutServlet">ログアウト</a>
+		<!-- トップページへのリンク -->
+		<a href="/Checker_man/User_TopPageServlet">トップページ</a>
+
+		<!-- ログアウトのリンク -->
+		<a href="/Checker_man/LogoutServlet">ログアウト</a>
+
+	</div>
+
 </body>
 </html>
