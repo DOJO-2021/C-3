@@ -20,26 +20,26 @@ h1 {
 
 /* 一言診断結果 */
 h2 {
-	border-bottom: dotted 2px #F0B43E;
-	text-align: center;
+	border-bottom: dotted 2px #F0B43E; /* 下線 */
+	text-align: center; /* 中央寄せ */
 }
 
 /* 診断結果一覧 */
 .user_result {
 	border-collapse: separete;
-	border-spacing: 15px 0px;
-	border: 3px solid #B0D6DA;
-	margin-left: auto;
-    margin-right: auto;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	border: 3px solid #B0D6DA; /* 枠線 */
+	margin-left: auto; /* 中央寄せ*/
+    margin-right: auto; /* 中央寄せ*/
 }
 .user_result th{
-	text-align: left;
+	text-align: left; /* th左寄せ*/
 }
 
 /* コメント欄 */
 .message {
-	display: flex;
-	justify-content: center;
+	display: flex; /* 横並び */
+	justify-content: center; /* 中央寄せ */
 }
 .message p {
 	font-size: 12px;
@@ -47,10 +47,20 @@ h2 {
 	text-decoration-color: #F0B43E; /* 下線の色 */
 }
 
+/* コメント欄縦スクロールの追加 */
+.message user_message {
+	overflow-y: scroll;
+}
+
+.message admin_message {
+	overflow-y: scroll;
+}
+
+
 /* コメント登録ボタンとトップへ戻るボタン */
 .botton {
-	display: flex;
-	justify-content: center;
+	display: flex; /* 横並び */
+	justify-content: center; /* 中央寄せ */
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 }
@@ -61,9 +71,9 @@ input[type="submit"]{
 		position: relative;
 		display: inline-block;
 		padding: 0 0.25em;
-		text-decoration: none;
-		color:#000000;
-		background-color: #B0D6DA; /*色*/
+		text-decoration: none; /* 下線なし */
+		color:#000000; /* 文字の色 */
+		background-color: #B0D6DA; /*背景色*/
 		border-radius: 8px; /*角の丸み*/
 		box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
 		font-weight: bold;
