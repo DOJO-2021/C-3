@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>診断結果ページ</title>
 <link rel="stylesheet" href="/Checker_man/css/user_result.css">
+<link rel="stylesheet" href="/Checker_man/css/user.css">
 </head>
 <body>
 
@@ -19,7 +21,7 @@
 	 	<h1>診断結果</h1>
 	 	<h2>（一言診断結果を表示）</h2>
 
-		<!-- 質問内容 -->
+		<!-- 質問内容と回答 -->
 	 	<table class = "user_result">
 	 		<tr>
 	 		<th>（問1　よく眠れなかった）</th>
@@ -83,7 +85,7 @@
 	 		</tr>
 	 	</table>
 
-	 	<!-- 備考欄 -->
+	 	<!-- コメント欄 -->
 	 	<div class = "message">
 		 	<div class = "user_message">
 			 	<p>受講者のコメント</p>
@@ -97,6 +99,7 @@
 			</div>
 		</div>
 
+		<!-- コメント登録ボタン、トップへ戻るボタン -->
 		<div class = "botton">
 			<div class = "regist">
 				<input type="submit" name="regist" value="コメント登録"><br>
