@@ -8,8 +8,6 @@ textarea {
 /* 名前の欄 */
 #name {
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 /* 診断結果 */
