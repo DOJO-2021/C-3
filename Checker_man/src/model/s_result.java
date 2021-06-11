@@ -2,12 +2,12 @@ package model;
 import java.io.Serializable;
 
 public class s_result implements Serializable {
-	private int result_id;
-	private String date;
-	private String icon;
-	private String user_comment;
-	private String admin_comment;
-	private int user_id;
+	private int result_id; //診断結果ID
+	private String date;   //日付
+	private String icon;   //アイコン
+	private String user_comment; //受講者コメント
+	private String admin_comment; //管理者コメント
+	private int user_id; //ユーザーID
 
 	//引数があるコントラスタ
 	public s_result(int result_id, String date, String icon,
