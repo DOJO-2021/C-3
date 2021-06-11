@@ -10,7 +10,7 @@ import java.util.List;
 
 import model.s_result;
 
-public class s_resultDao {
+public class user_registDao {
 
 	// Select文のデータベース処理
 		public List<s_result> select(s_result param) {

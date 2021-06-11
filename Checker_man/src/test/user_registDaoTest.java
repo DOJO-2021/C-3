@@ -4,7 +4,7 @@ import java.util.List;
 import dao.s_resultDao;
 import model.s_result;
 
-public class s_resultDaoTest {
+public class user_registDaoTest {
 	public static void main(String[] args) {
 		s_resultDao dao = new s_resultDao();
 

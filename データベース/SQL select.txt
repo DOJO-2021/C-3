@@ -9,3 +9,6 @@ select * from s_question;
 select * from s_answer;
 
 select * from s_result;
+
+--○の人の数を表示する
+select count(icon) from s_result where icon = 'maru'
