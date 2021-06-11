@@ -1,8 +1,87 @@
 package model;
 import java.io.Serializable;
 
-public class user_login implements Serializable {
-	private String id;	// ID
-	private String pw;	// PW
+public class s_result implements Serializable {
+	private int result_id;
+	private String date;
+	private String icon;
+	private String user_comment;
+	private String admin_comment;
+	private int user_id;
+
+	//引数があるコントラスタ
+	public s_result(int result_id, String date, String icon,
+			String user_comment, String admin_comment, int user_id) {
+		super();
+		this.result_id = result_id;
+		this.date = date;
+		this.icon = icon;
+		this.user_comment = user_comment;
+		this.admin_comment = admin_comment;
+		this.user_id = user_id;
+	}
+
+	//引数がないコントラスタ（デフォルトコントラスタ）
+	public s_result() {
+		super();
+		this.result_id = 0;
+		this.date = "";
+		this.icon = "";
+		this.user_comment = "";
+		this.admin_comment = "";
+		this.user_id = 0;
+	}
+
+	//ゲッターセッターのプログラム
+	public int getResult_id() {
+		return result_id;
+	}
+
+	public void setResult_id(int result_id) {
+		this.result_id = result_id;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public String getUser_comment() {
+		return user_comment;
+	}
+
+	public void setUser_comment(String user_comment) {
+		this.user_comment = user_comment;
+	}
+
+	public String getAdmin_comment() {
+		return admin_comment;
+	}
+
+	public void setAdmin_comment(String admin_comment) {
+		this.admin_comment = admin_comment;
+	}
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
+
 
 }
+
