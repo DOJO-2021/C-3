@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class admin_loginDao {
 
 	// ログインできるならtrueを返す
-	public boolean isLoginOK(String id, String pw) {
+	public boolean isLoginOK(int id, String name, String pw) {
 
 		Connection conn = null;
 		boolean loginResult = false;
@@ -22,12 +22,13 @@ public class admin_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/C-3", "sa", "");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from IDPW where ID = ? and PW = ?";
+			String sql = "select count(*) from admin_login where ID = ? and NAME = ? and PW = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, id);
-			pStmt.setString(2, pw);
+			pStmt.setInt(1, id);
+			pStmt.setString(2, name);
+			pStmt.setString(3, pw);
 
-			// SELECT文を実行し、結果表を取得する
+			// SELECT文を実行し、結果表を取得する(Query:DBに対する処理要求)
 			ResultSet rs = pStmt.executeQuery();
 
 			// 管理者IDとパスワードが一致する管理者がいたかどうかをチェックする

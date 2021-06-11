@@ -9,8 +9,8 @@ public class admin_loginDaoTest {
 
 	// ユーザーが見つかる場合のテスト
 	public static void testIsLoginOK1() {
-		IdpwDAO dao = new IdpwDAO();
-		if (dao.isLoginOK("DOJO", "password")) {
+		admin_loginDaoTest dao = new admin_loginDaoTest();
+		if (dao.isLoginOK("", "")) {
 			System.out.println("testIsLoginOK1：テストが成功しました");
 		}
 		else {
@@ -20,8 +20,8 @@ public class admin_loginDaoTest {
 
 	// ユーザーが見つからない場合のテスト
 	public static void testIsLoginOK2() {
-		IdpwDAO dao = new IdpwDAO();
-		if (!dao.isLoginOK("DOJO", "pass")) {
+		admin_loginDaoTest dao = new admin_loginDaoTest();
+		if (dao.isLoginOK("", "")) {
 			System.out.println("testIsLoginOK2：テストが成功しました");
 		}
 		else {
