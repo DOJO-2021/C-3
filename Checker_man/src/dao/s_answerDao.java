@@ -112,24 +112,10 @@ public class s_answerDao {
 
 			//SQL文を完成させる
 
-			if (answer.getQuestion_id() != 0) {
-				pStmt.setString(1, "answer.getQuestion_id()");
-			}
-			else {
-				pStmt.setString(1, "null");
-			}
-			if (answer.getAnswer() != 0) {
-				pStmt.setString(2, "answer.getAnswer()");
-			}
-			else {
-				pStmt.setString(2, "null");
-			}
-			if (answer.getUser_id() != 0) {
-				pStmt.setString(3, "answer.getUser_id()");
-			}
-			else {
-				pStmt.setString(3, "null");
-			}
+			pStmt.setInt(1, answer.getQuestion_id());
+			pStmt.setInt(2, answer.getAnswer());
+			pStmt.setInt(3, answer.getUser_id());
+
 			if (answer.getDate() != null) {
 				pStmt.setString(4, answer.getDate());
 			}
