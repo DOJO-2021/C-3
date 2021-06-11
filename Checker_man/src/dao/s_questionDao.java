@@ -13,12 +13,12 @@ public class s_questionDao {
 		Class.forName("org.h2.Driver");
 
 		// データベースに接続する
-		Connection conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "");
+		Connection conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 		for (String question_item : question) {
 
 			// SELECT文を準備する
-			String sql = "select * from s_question;";
+			String sql = "select * from s_question";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, question);
 
