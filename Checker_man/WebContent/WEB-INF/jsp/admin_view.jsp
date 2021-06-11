@@ -4,7 +4,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<a href=html>
 <head>
 <meta charset="UTF-8">
 
@@ -145,7 +145,7 @@
 
 		<!-- 画面上部に戻るボタン -->
 		<div class="top">
-			<a href="#name">画面上部に移動する</a>
+			<a href="#html">画面上部に移動する</a>
 		</div>
 
 		<!-- トップページに戻るボタン -->
