@@ -5,16 +5,41 @@ import java.io.Serializable;
 // クラスの定義
 public class s_question implements Serializable {
 
+	// 質問IDを保持するフィールド
+	private int question_id;
+
 	// 質問項目を保持するフィールド
-	private String Question;
+	private String question;
 
-	// 質問項目を表示するメソッド
-	public void showQuestion() {
-		System.out.println(this.Question);
+	// 引数があるコンストラクタ
+	public s_question(int question_id, String question) {
+		super();
+		this.question_id = question_id;
+		this.question = question;
 	}
 
-	// コンストラクタ
-	public s_question(String Question) {
-		this.Question = Question;
+	// 引数がないコンストラクタ
+	public s_question() {
+		super();
+		this.question_id = 0;
+		this.question = "";
 	}
+
+	// ゲッターセッターのプログラム
+	public int getQuestion_id() {
+		return question_id;
+	}
+
+	public void setQuestion_id(int question_id) {
+		this.question_id = question_id;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
 }
