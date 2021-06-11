@@ -19,10 +19,10 @@ public class admin_loginDao {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/database/C-3", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from admin_login where ID = ? and NAME = ? and PW = ?";
+			String sql = "select count(*) from admin_login where admin_ID = ? and admin_NAME = ? and admin_PW = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setInt(1, id);
 			pStmt.setString(2, name);
