@@ -1,31 +1,54 @@
 package test;
+import java.util.List;
 
-public class user_loginDaoTest {
+import dao.s_resultDao;
+import model.s_result;
 
+public class s_resultDaoTest {
 	public static void main(String[] args) {
-		testIsLoginOK1();	// ユーザーが見つかる場合のテスト
-		testIsLoginOK2();	// ユーザーが見つからない場合のテスト
-	}
+		s_resultDao dao = new s_resultDao();
 
-	// ユーザーが見つかる場合のテスト
-	public static void testIsLoginOK1() {
-		IdpwDAO dao = new IdpwDAO();
-		if (dao.isLoginOK("DOJO", "password")) {
-			System.out.println("testIsLoginOK1：テストが成功しました");
-		}
-		else {
-			System.out.println("testIsLoginOK1：テストが失敗しました");
-		}
-	}
+/*
+		// insert()のテスト
+		System.out.println("---------- insert()のテスト ----------");
 
-	// ユーザーが見つからない場合のテスト
-	public static void testIsLoginOK2() {
-		IdpwDAO dao = new IdpwDAO();
-		if (!dao.isLoginOK("DOJO", "pass")) {
-			System.out.println("testIsLoginOK2：テストが成功しました");
+		s_result insRec = new s_result(0, null, "maru", "受講者コメント", "管理者コメント", 1);
+
+		if (dao.insert(insRec)) {
+			System.out.println("登録成功！");
+
+			List<s_result> resultList = dao.select(insRec);
+
+			for (s_result resultData : resultList) {
+				System.out.println("result_id：" + resultData.getResult_id());
+				System.out.println("date：" + resultData.getDate());
+				System.out.println("icon：" + resultData.getIcon());
+				System.out.println("user_comment：" + resultData.getUser_comment());
+				System.out.println("admin_comment：" + resultData.getAdmin_comment());
+				System.out.println("user_id：" + resultData.getUser_id());
+				System.out.println();
+			}
 		}
+
 		else {
-			System.out.println("testIsLoginOK2：テストが失敗しました");
+			System.out.println("登録失敗！");
 		}
+		*/
+
+		// select_calenderのテスト
+				System.out.println("---------- select_calenderのテスト ----------");
+
+				List<s_result> resultList2 = dao.select_calender(new s_result(0,"2021","","", "", 0));
+
+				for (s_result resultData : resultList2) {
+					System.out.println("result_id：" + resultData.getResult_id());
+					System.out.println("date：" + resultData.getDate());
+					System.out.println("icon：" + resultData.getIcon());
+					System.out.println("user_comment：" + resultData.getUser_comment());
+					System.out.println("admin_comment：" + resultData.getAdmin_comment());
+					System.out.println("user_id：" + resultData.getUser_id());
+					System.out.println();
+				}
+
 	}
 }
