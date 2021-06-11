@@ -6,19 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class user_loginDao {
+public class admin_loginDao {
 
 	// ログインできるならtrueを返す
-	public boolean isLoginOK(int user_id, String user_name, String user_pw) {
-
-	//引数のないコンストラクタの場合
-	//model.user_login usr1 = new model.user_login();
-	//usr1.setUserId(id);
-	//usr1.setUserName(name);
-	//usr1.setPw(pw);
-
-	//引数のあるコンストラクタの場合
-	model.user_login usr1 = new model.user_login(user_id,user_name,user_pw);
+	public boolean isLoginOK(int id, String name, String pw) {
 
 		Connection conn = null;
 		boolean loginResult = false;
@@ -31,16 +22,16 @@ public class user_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from USER_LOGIN  where USER_ID = ? and USER_NAME = ? and USER_PW = ?";
+			String sql = "select count(*) from admin_login where admin_ID = ? and admin_NAME = ? and admin_PW = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setInt(1, user_id);
-			pStmt.setString(2, user_name);
-			pStmt.setString(3, user_pw);
+			pStmt.setInt(1, id);
+			pStmt.setString(2, name);
+			pStmt.setString(3, pw);
 
-			// SELECT文を実行し、結果表を取得する
+			// SELECT文を実行し、結果表を取得する(Query:DBに対する処理要求)
 			ResultSet rs = pStmt.executeQuery();
 
-			// ユーザーIDとパスワードが一致するユーザーがいたかどうかをチェックする
+			// 管理者IDとパスワードが一致する管理者がいたかどうかをチェックする
 			rs.next();
 			if (rs.getInt("count(*)") == 1) {
 				loginResult = true;
