@@ -1,0 +1,11 @@
+--全選択、貼り付けで実行できます
+
+select * from user_login;
+
+select * from admin_login;
+
+select * from s_question;
+
+select * from s_answer;
+
+select * from s_result;

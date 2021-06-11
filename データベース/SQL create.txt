@@ -1,0 +1,39 @@
+--全選択、貼り付けで実行できます
+
+--受講者ログインテーブル作成
+create table user_login (
+user_id int (10) PRIMARY KEY AUTO_INCREMENT,
+user_name varchar (20),
+user_pw varchar (20)
+);
+
+--管理者ログインテーブル
+create table admin_login (
+admin_id int (10) PRIMARY KEY AUTO_INCREMENT,
+admin_name varchar (20),
+admin_pw varchar (20)
+);
+
+--質問テーブル
+create table s_question (
+question_id int (10)　PRIMARY KEY AUTO_INCREMENT,
+question varchar (100)
+);
+
+--回答テーブル
+create table s_answer (
+question_id int,
+answer int (5) NOT NULL,
+user_id int,
+date char(10) NOT NULL
+);
+
+--診断結果テーブル
+create table s_result (
+result_id int (10) PRIMARY KEY AUTO_INCREMENT,
+date char(10) NOT NULL,
+icon varchar(7) NOT NULL,
+user_comment varchar (300),
+admin_comment varchar (300),
+user_id int
+);

@@ -7,11 +7,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<!-- タイトル -->
 <title>チェッカマン</title>
+
+<!-- CSSのURL -->
 <link rel="stylesheet" href="/Checker_man/css/admin_view.css">
 <link rel="stylesheet" href="/Checker_man/css/admin.css">
+
 </head>
+
 <body>
+<!-- 全体 -->
 	<div class="wrapper">
 
 		<!-- ヘッダ -->
@@ -20,7 +27,7 @@
 		</header>
 		<p>閲覧ページ</p>
 
-		<!-- 個人名 -->
+		<!-- 個人名表示 -->
 		<h1>
 			<a id="name">名前</a>
 		</h1>
@@ -135,9 +142,13 @@
 			</div>
 
 		</form>
+
+		<!-- 画面上部に戻るボタン -->
 		<div class="top">
 			<a href="#name">画面上部に移動する</a>
 		</div>
+
+		<!-- トップページに戻るボタン -->
 		<div class="toppage">
 			<a href="/Checker_man/Admin_TopPageServlet">トップページに戻る</a>
 		</div>

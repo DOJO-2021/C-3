@@ -1,0 +1,110 @@
+--全選択、貼り付けで実行できます
+
+--※管理者新規登録
+insert into admin_login (admin_id, admin_name, admin_pw) 
+values (null, 'admin', 'admin');
+
+
+--※一人の受講者が健康管理アプリを利用した場合のシミュレーション
+
+--新規登録をする
+insert into user_login (user_id, user_name, user_pw) 
+values (null, 'Yamada_Taro', '1234');
+
+--質問の表示
+insert into s_question (question_id, question) 
+values (null, '問1　よく眠れなかった');
+
+insert into s_question (question_id, question) 
+values (null, '問2　食欲があまりない');
+
+insert into s_question (question_id, question) 
+values (null, '問3　不安に感じることがある');
+
+insert into s_question (question_id, question) 
+values (null, '問4　倦怠感がある');
+
+insert into s_question (question_id, question) 
+values (null, '問5　周囲とのコミュニケーションが取れていないと感じる');
+
+insert into s_question (question_id, question) 
+values (null, '問6　研修への充実感が少ないと感じる');
+
+insert into s_question (question_id, question) 
+values (null, '問7　腹痛、頭痛などがある');
+
+insert into s_question (question_id, question) 
+values (null, '問8　イライラをすることが増えたと感じる');
+
+insert into s_question (question_id, question) 
+values (null, '問9　リラックス、息抜きなどが取れていない');
+
+insert into s_question (question_id, question) 
+values (null, '問10　適度な運動をしていない');
+
+insert into s_question (question_id, question) 
+values (null, '問11　辛いと感じることがある');
+
+insert into s_question (question_id, question) 
+values (null, '問12　目が疲れている');
+
+insert into s_question (question_id, question) 
+values (null, '問13　水分補給をあまりしていない');
+
+insert into s_question (question_id, question) 
+values (null, '問14　作業環境が不適切（明るさ、温度など）');
+
+insert into s_question (question_id, question) 
+values (null, '問15　研修内容についていけていないと感じる');
+
+--回答の入力
+insert into s_answer (question_id, answer, user_id,date) 
+values (1, 5,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (2, 3,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (3, 5,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (4, 1,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (5, 5,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (6, 1,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (7, 1,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (8, 1,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (9, 5,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (10, 2,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (11, 1,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (12, 1,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (13, 5,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (14, 3,1,current_date);
+
+insert into s_answer (question_id, answer,user_id,date) 
+values (15, 5,1,current_date);
+
+--診断結果が表示される
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, current_date,'maru','受講者コメント','管理者コメント',1);
