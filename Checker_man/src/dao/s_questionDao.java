@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class s_questionDao {
-	private static final String Question = null;
 
 	{
 
