@@ -1,0 +1,11 @@
+--全選択、貼り付けで実行できます
+
+drop table s_question;
+
+drop table s_answer;
+
+drop table s_result;
+
+drop table user_login;
+
+drop table admin_login;
