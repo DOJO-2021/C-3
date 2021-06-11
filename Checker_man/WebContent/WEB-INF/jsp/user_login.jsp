@@ -26,10 +26,12 @@
 			ユーザーID<input type="text" name="ID"><br>
 
 		</div>
-		<div class="ulogin-form">
-			パスワード<input type="password" name="PW"><br>
-		</div>
-		<input type ="submit" name="LOGIN" value="ログイン" class="login-bottan"><br>
+		<form method="POST" action="/Checker_man/User_LoginServlet">
+			<div class="ulogin-form">
+				パスワード<input type="password" name="PW"><br>
+			</div>
+			<input type ="submit" name="LOGIN" value="ログイン" class="login-bottan"><br>
+		</form>
 		<a href="" class="link2">新規登録はこちらから</a>
 	</div>
 
