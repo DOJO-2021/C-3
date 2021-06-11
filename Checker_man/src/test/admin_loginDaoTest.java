@@ -1,5 +1,6 @@
 package test;
 
+import dao.admin_loginDao;
 public class admin_loginDaoTest {
 
 	public static void main(String[] args) {
@@ -9,8 +10,8 @@ public class admin_loginDaoTest {
 
 	// ユーザーが見つかる場合のテスト
 	public static void testIsLoginOK1() {
-		IdpwDAO dao = new IdpwDAO();
-		if (dao.isLoginOK("DOJO", "password")) {
+		admin_loginDao dao = new admin_loginDao();
+		if (dao.isLoginOK(1,"admin", "admin")) {
 			System.out.println("testIsLoginOK1：テストが成功しました");
 		}
 		else {
@@ -20,8 +21,8 @@ public class admin_loginDaoTest {
 
 	// ユーザーが見つからない場合のテスト
 	public static void testIsLoginOK2() {
-		IdpwDAO dao = new IdpwDAO();
-		if (!dao.isLoginOK("DOJO", "pass")) {
+		admin_loginDao dao = new admin_loginDao();
+		if (dao.isLoginOK(0,"", "")) {
 			System.out.println("testIsLoginOK2：テストが成功しました");
 		}
 		else {

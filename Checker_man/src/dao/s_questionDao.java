@@ -7,37 +7,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class s_questionDao {
-	try
-	{
-			// JDBCドライバを読み込む
-			Class.forName("org.h2.Driver");
 
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "");
+	{
+
+		// JDBCドライバを読み込む
+		Class.forName("org.h2.Driver");
+
+		// データベースに接続する
+		Connection conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
+
+		for (String question_item : Question) {
 
 			// SELECT文を準備する
-			String sql = "select * from s_question;";
+			String sql = "select * from s_question";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, toi1);
-			pStmt.setString(2, toi2);
+			pStmt.setString(1, Question);
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
-		}
 
-	finally
-	{ //例外があってもなくても、最後にやる共通の処理
-
-		// データベースを切断
-		if (conn != null) {
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
-
-	// 結果を返す
-	// return loginResult;
-}}
+}
