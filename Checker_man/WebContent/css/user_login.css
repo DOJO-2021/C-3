@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 管理者ログインリンクを右上に,かつボタンに */
 .link1 {
-  float:right;
+
   border-radius : 5%;          /* 角丸       */
   font-size     : 18pt;        /* 文字サイズ */
   text-align    : center;
@@ -10,13 +10,14 @@
   padding:10px;
   color:white;
   text-decoration: none;
+  margin-bottom:200px;
 
 }
 
 /* ログインエリアを中央に配置 */
 .ulogin-area {
 	width:300px;
-    margin:200px auto;
+    margin:100px auto;
 	padding:20px;
 	border:solid 4px rgb(176,214,218);
 }
@@ -34,3 +35,4 @@
 	display:inline-block;
 	text-decoration: none;
 }
+
