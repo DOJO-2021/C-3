@@ -1,23 +1,26 @@
 package model;
 import java.io.Serializable;
 
-public class admin_toppage implements Serializable {
+public class user_toppage implements Serializable {
 
 	private String icon;   //アイコン
-	private int icon_number; //アイコンの人数
+	private String date;
+	private int user_id; //アイコンの人数
 
 	//引数があるコントラスタ
-	public admin_toppage(String icon, int icon_number) {
+	public user_toppage(String icon, String date, int user_id) {
 		super();
 		this.icon = icon;
-		this.icon_number = icon_number;
+		this.date = date;
+		this.user_id = user_id;
 	}
 
 	//引数がないコントラスタ（デフォルトコントラスタ）
-	public admin_toppage() {
+	public user_toppage() {
 		super();
 		this.icon = null;
-		this.icon_number = 0;
+		this.date = null;
+		this.user_id = 0;
 	}
 
 	//ゲッターセッターのプログラム
@@ -29,12 +32,20 @@ public class admin_toppage implements Serializable {
 		this.icon = icon;
 	}
 
-	public int getIcon_number() {
-		return icon_number;
+	public String getDate() {
+		return date;
 	}
 
-	public void setIcon_number(int icon_number) {
-		this.icon_number = icon_number;
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
 }
