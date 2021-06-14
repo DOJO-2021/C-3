@@ -22,10 +22,10 @@
 <div class="alogin-area">
 	<h1>管理者ログイン</h1>
 	<div class="alogin-form">
-		ユーザーID<input type="text" name="ID"><br>
+		ユーザーID<input type="text" name="ID"  placeholder="ユーザーID"><br>
 	</div>
 	<div class="alogin-form">
-		パスワード<input type="password" name="PW"><br>
+		パスワード<input type="password" name="PW" placeholder="パスワード"><br>
 	</div>
 	<input type ="submit" name="LOGIN" value="ログイン" class="alogin-bottan" >
 

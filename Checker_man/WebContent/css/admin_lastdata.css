@@ -4,12 +4,20 @@
 /* 表を回り込み */
 .table4 {
 	float:left;
+	margin-right:10px;
 }
 
 .table5 {
 	float:left;
+	margin-right:10px;
 }
 
+.table6 {
+	float:left;
+
+}
+
+/* 回り込みの解除 */
 .clear {
 	clear:both;
 }
