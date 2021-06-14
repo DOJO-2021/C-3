@@ -19,8 +19,8 @@ public class user_loginDaoTest {
 		user_login insRec = new user_login(2, "Tanaka_Kana", "4567");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
-			List<user_login> signList4 = dao.select(insRec);
-			for (user_login sign : signList4) {
+			List<user_login> signList3 = dao.select(insRec);
+			for (user_login sign : signList3) {
 				System.out.println("user_id" + sign.getUser_id());
 				System.out.println("user_name" + sign.getUser_name());
 				System.out.println("user_pw" + sign.getUser_pw());
