@@ -17,8 +17,11 @@
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
 		</header>
 
-		<!-- 見出し -->
-		<h1>診断ページ</h1>
+
+		<!-- 診断エリア -->
+		<div class="shindan-area">
+			<!-- 見出し -->
+			<h1>診断ページ</h1>
 
 		質問項目に合わせてチェックを入れてください
 
@@ -57,6 +60,9 @@
 
 		<!-- 診断結果へのリンク -->
 		<a href="/Checker_man/User_ResultServlet">診断結果へ</a>
+
+		<!-- 診断エリアここまで -->
+		</div>
 
 		<!-- フッター -->
 		<footer class="footer">

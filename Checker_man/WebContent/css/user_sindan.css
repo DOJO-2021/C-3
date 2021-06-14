@@ -7,7 +7,7 @@ html {
 /* 見出し */
 h1 {
 	font-size: 26px;
-	border-bottom: 3px dotted #000000;
+	/* border-bottom: 3px dotted #000000; */
 	margin-top: 20px;
 	margin-right: 0px;
 	margin-bottom: 20px;
@@ -18,11 +18,31 @@ h1 {
 	padding-left: 5px;
 }
 
+/* 診断エリアを中央に配置 */
+.shindan-area {
+	margin:0 auto;
+	width:1000px;
+}
+
+/* テーブルの設定 */
+.table {
+  border-color: transparent;
+  border-collapse: collapse;
+}
+
+/* テーブルの見出しを調整 */
+td {
+	padding-right:25px;
+	text-align: center;
+	border:1px solid #bec2c7;
+}
+/* テーブルに罫線 */
+th {
+	border:1px solid #bec2c7;
+}
+
 /* 診断フォーム */
 form {
 	padding: 10px 10px;
 }
 
-table td {
-	text-align: center;
-}

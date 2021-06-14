@@ -4,12 +4,12 @@
 /* 表を回り込み */
 .table4 {
 	float:left;
-	margin-right:10px;
+	margin-right:100px;
 }
 
 .table5 {
 	float:left;
-	margin-right:10px;
+	margin-right:100px;
 }
 
 .table6 {
@@ -24,6 +24,6 @@
 
 /* 表の配置 */
 .result-table {
-	width:300px;
+	width:800px;
     margin:0 auto;
 }

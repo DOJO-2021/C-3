@@ -9,8 +9,8 @@
 <title>チェッカマン</title>
 </head>
 <body>
-
-
+<div class="wrapper">
+</div>
 
 <header>
 <!-- 共通のヘッダー -->
@@ -118,6 +118,7 @@
 	</div>
 
 </div>
+<div class="clear"></div>
 
 </main>
 
@@ -125,7 +126,7 @@
 <footer>
  <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
  </footer>
-<div class="wrapper">
-</div>
+
+
 </body>
 </html>
