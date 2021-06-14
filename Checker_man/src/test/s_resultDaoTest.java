@@ -1,14 +1,11 @@
 package test;
-import java.util.List;
-
 import dao.s_resultDao;
-import model.s_result;
 
 public class s_resultDaoTest {
 	public static void main(String[] args) {
 		s_resultDao dao = new s_resultDao();
 
-
+/*
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
 
@@ -35,7 +32,7 @@ public class s_resultDaoTest {
 		}
 
 
-		// select_calenderのテスト
+		// selectのテスト
 				System.out.println("---------- select_calenderのテスト ----------");
 
 				List<s_result> resultList2 = dao.select(new s_result(0, "2021", "", "", "", 0));
@@ -49,7 +46,7 @@ public class s_resultDaoTest {
 					System.out.println("user_id：" + resultData.getUser_id());
 					System.out.println();
 				}
-
+*/
 
 
 	}
