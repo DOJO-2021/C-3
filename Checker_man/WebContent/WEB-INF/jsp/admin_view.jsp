@@ -4,7 +4,7 @@
 
 
 <!DOCTYPE html>
-<a id=html></a>
+<html>
 <head>
 
 <meta charset="UTF-8">
@@ -121,25 +121,29 @@
 		<div class="a_comment">
 			管理者コメント<br>
 			<textarea name="comment" action=""></textarea>
-			<br> <input type="submit" name="submit" value="書き込む">
+			<br> <input type="submit" name="submit" value="書き込む" class="button">
 		</div>
 
 	</form>
 
 	<!-- 画面上部に戻るボタン -->
-	<div class="top">
-		<a href="#html">画面上部に移動する</a>
-	</div>
 
+		<div id="topScroll" class="topIcon" onclick="goTop()">画面上部に移動する</div>
 	<!-- トップページに戻るボタン -->
 	<div class="toppage">
-		<a href="/Checker_man/Admin_TopPageServlet">トップページに戻る</a>
+		<a href="/Checker_man/Admin_TopPageServlet" class="btn">トップページに戻る</a>
 	</div>
 
+	</div>
 	<!-- フッター -->
 	<footer class="footer">
 		<jsp:include page="/WEB-INF/jsp/footer.jsp" />
 	</footer>
+
+	<script>
+
+
+	</script>
 
 </body>
 </html>
