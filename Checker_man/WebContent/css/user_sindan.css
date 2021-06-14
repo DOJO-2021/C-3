@@ -35,11 +35,10 @@ td {
 	padding-right:25px;
 	text-align: center;
 	border:1px solid #bec2c7;
+
 }
 /* テーブルに罫線 */
-th {
-	border:1px solid #bec2c7;
-}
+
 
 /* 診断フォーム */
 form {
