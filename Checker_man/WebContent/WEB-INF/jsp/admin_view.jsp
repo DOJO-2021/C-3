@@ -20,114 +20,114 @@
 
 <body>
 	<!-- 全体 -->
-	<div class="wrapper">
 
 		<!-- ヘッダ -->
 		<header class="header">
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
-			<p>閲覧ページ</p>
 		</header>
 
+		<p class = "box1">閲覧ページ
+		</p>
 
 		<!-- 個人名表示 -->
-		<h1>名前</h1>
+		<pre class= "name">
+		名前
+		</pre>
 
 		<!-- 質問内容と回答 -->
 		<div class="qa">質問内容</div>
 		<table class="question">
 			<tr>
 				<th>問1</th>
-				<th>よく眠れなかった</th>
+				<td>よく眠れなかった</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問2</th>
-				<th>食欲があまりない</th>
+				<td>食欲があまりない</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問3</th>
-				<th>不安に感じることがある</th>
+				<td>不安に感じることがある</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問4</th>
-				<th>倦怠感がある</th>
+				<td>倦怠感がある</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問5</th>
-				<th>周囲とのコミュニケーションが取れていないと感じる</th>
+				<td>周囲とのコミュニケーションが取れていないと感じる</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問6</th>
-				<th>研修への充実感が少ないと感じる</th>
+				<td>研修への充実感が少ないと感じる</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問7</th>
-				<th>腹痛、頭痛などがある</th>
+				<td>腹痛、頭痛などがある</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問7</th>
-				<th>腹痛、頭痛などがある</th>
+				<td>腹痛、頭痛などがある</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問8</th>
-				<th>イライラをすることが増えたと感じる</th>
+				<td>イライラをすることが増えたと感じる</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問9</th>
-				<th>リラックス、息抜きなどが取れていない</th>
+				<td>リラックス、息抜きなどが取れていない</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問10</th>
-				<th>適度な運動をしていない</th>
+				<td>適度な運動をしていない</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問11</th>
-				<th>辛いと感じることがある</th>
+				<td>辛いと感じることがある</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問12</th>
-				<th>目が疲れている</th>
+				<td>目が疲れている</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問13</th>
-				<th>水分補給をあまりしていない</th>
+				<td>水分補給をあまりしていない</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問14</th>
-				<th>作業環境が不適切(明るさ、温度など)</th>
+				<td>作業環境が不適切(明るさ、温度など)</td>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
 				<th>問15</th>
-				<th>研修内容についていけていないと感じる</th>
+				<td>研修内容についていけていないと感じる</td>
 				<td>(回答を表示)</td>
 			</tr>
 		</table>
 
 		<!-- 診断結果 -->
 		<h2>診断結果</h2>
-		<table class="result">
-			<tr>
-				<th>
-				<td>調子よさそうだね！！</td>
-				</th>
-
-			</tr>
-		</table>
-
+		<form method="POST">
+		<div class ="result">
+		<textarea readonly name ="result">
+		調子よさそうだね！!
+		</textarea>
+		</div>
+		</form>
 		<!-- 受講者コメント(閲覧用) -->
 		<form method="POST">
 			<div class="u_comment">
@@ -161,6 +161,5 @@
 			<jsp:include page="/WEB-INF/jsp/footer.jsp" />
 		</footer>
 
-	</div>
 </body>
 </html>

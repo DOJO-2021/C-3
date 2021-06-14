@@ -1,17 +1,32 @@
 @charset "UTF-8";
+/* 閲覧ページ */
+p {
+	padding: 0.5em 1em;
+	margin-right: auto;
+    margin: 2em 0;
+    width: 200px;
+    background: #f5f5f5;
+    border: dashed 5px #ffa500;/*点線*/
+}
 
 /* 名前の欄 */
-h1 {
-	text-align: center;
+pre {
+    padding: 3em 4em;
+    width: 200px;
+    background: #f5f5f5;
+    border-top: solid 5px #ffa500;
+    box-shadow: 0.3px 5px #ffa500;
+}
+.name {
+	margin-right: auto;
 	margin-left: auto;
-    margin-right: auto;
 }
 
 /* 質問内容書 */
 .qa {
-	text-align: center;
 	margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 /* 質問事項 */
@@ -19,6 +34,7 @@ table.question {
 	text-align: center;
 	margin-left: auto;
     margin-right: auto;
+    padding: 0.5em 1em;
 }
 
 /* 診断結果書 */
@@ -43,9 +59,7 @@ h2 {
     margin-right: auto;
 }
 /* 診断結果テーブル */
-table[class='result'] {
-	width: center;
-	height: 7em;
+.result {
 	text-align: center;
 	margin-left: auto;
     margin-right: auto;
@@ -53,8 +67,9 @@ table[class='result'] {
 
 /* テキストエリア */
 textarea {
-	width: 30em;
+	width: 50em;
 	height: 7em;
+	background: #ff9d30;
 }
 
 /* トップページに戻るボタン */
