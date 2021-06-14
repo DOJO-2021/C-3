@@ -14,3 +14,6 @@ select * from s_result;
 select count(icon) from s_result where icon = 'maru' and date = CURDATE();
 
 select icon, count(icon) from s_result group by icon;
+
+4月～6月の表のデータ
+select icon, count(icon),date from s_result where date = CURDATE() group by icon;
