@@ -1,6 +1,10 @@
 package test;
+
+import java.util.List;
+
 import dao.s_resultDao;
 import model.admin_toppage;
+import model.s_result;
 
 public class s_resultDaoTest {
 	public static void main(String[] args) {
@@ -30,7 +34,7 @@ public class s_resultDaoTest {
 
 		else {
 			System.out.println("登録失敗！");
-		}
+		}*/
 
 		// selectのテスト
 				System.out.println("---------- selectのテスト ----------");
@@ -45,7 +49,7 @@ public class s_resultDaoTest {
 					System.out.println("admin_comment：" + resultData.getAdmin_comment());
 					System.out.println("user_id：" + resultData.getUser_id());
 					System.out.println();
-				}*/
+				}
 
 				// select_iconのテスト
 				System.out.println("---------- select_iconのテスト ----------");
