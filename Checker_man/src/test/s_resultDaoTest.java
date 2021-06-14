@@ -1,9 +1,7 @@
 package test;
 
-import java.util.List;
-
 import dao.s_resultDao;
-import model.admin_lastdata;
+import model.admin_toppage;
 
 public class s_resultDaoTest {
 
@@ -49,7 +47,7 @@ public class s_resultDaoTest {
 							System.out.println("admin_comment：" + resultData.getAdmin_comment());
 							System.out.println("user_id：" + resultData.getUser_id());
 							System.out.println();
-						}
+						}*/
 
 						// select_iconのテスト
 						System.out.println("---------- select_iconのテスト ----------");
@@ -58,9 +56,9 @@ public class s_resultDaoTest {
 
 							System.out.println("icon：" + resultData.getIcon());
 							System.out.println("icon_number：" + resultData.getIcon_number());
-							System.out.println();*/
+							System.out.println();
 
-
+/*
 				// select_lastdataのテスト
 							List<admin_lastdata> resultList3 = dao.select_lastdata(new admin_lastdata("", 0,""));
 
@@ -69,7 +67,7 @@ public class s_resultDaoTest {
 								System.out.println("icon_number：" + resultData.getIcon_number());
 								System.out.println("date：" + resultData.getDate());
 								System.out.println();
-							}
+							}*/
 
 	}
 }
