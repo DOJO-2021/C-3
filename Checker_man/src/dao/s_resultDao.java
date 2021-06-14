@@ -193,7 +193,6 @@ public class s_resultDao {
 				public admin_toppage select_icon(admin_toppage param) {
 
 					Connection conn = null;
-
 					admin_toppage result = null;
 
 					try {
@@ -204,7 +203,7 @@ public class s_resultDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 						// SQL文を準備する
-						String sql = "select count(icon) from s_result where icon = 'maru'";
+						String sql = "select icon, count(icon) from s_result group by icon";
 
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -215,7 +214,7 @@ public class s_resultDao {
 						rs.next();
 						result = new admin_toppage(
 							rs.getString("icon"),
-							rs.getInt("icon_number")
+							rs.getInt("count(icon)")
 						);
 
 					}

@@ -1,16 +1,14 @@
 package test;
-import java.util.List;
 
-import dao.s_answerDao;
+import dao.s_resultDao;
 import model.admin_toppage;
-import model.s_answer;
-import model.s_result;
 
 public class s_resultDaoTest {
 
 	public static void main(String[] args) {
-		s_result dao = new s_resultDao();
+		s_resultDao dao = new s_resultDao();
 
+		/*
 		// insert()のテスト
 				System.out.println("---------- insert()のテスト ----------");
 
@@ -34,7 +32,7 @@ public class s_resultDaoTest {
 
 				else {
 					System.out.println("登録失敗！");
-				}*/
+				}
 
 				// selectのテスト
 						System.out.println("---------- selectのテスト ----------");
@@ -49,12 +47,12 @@ public class s_resultDaoTest {
 							System.out.println("admin_comment：" + resultData.getAdmin_comment());
 							System.out.println("user_id：" + resultData.getUser_id());
 							System.out.println();
-						}
+						}*/
 
 						// select_iconのテスト
 						System.out.println("---------- select_iconのテスト ----------");
 
-						admin_toppage resultData = dao.select_icon(new admin_toppage("sankaku", 1));;
+						admin_toppage resultData = dao.select_icon(new admin_toppage("", 0));;
 
 							System.out.println("icon：" + resultData.getIcon());
 							System.out.println("icon_number：" +resultData.getIcon_number());
