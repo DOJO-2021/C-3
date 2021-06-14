@@ -36,7 +36,7 @@
 				<td>当てはまる</td>
 			</tr>
 			<tr>
-				<td>問1</td>
+				<td>問1 よく眠れなかった</td>
 				<td><form action="#" method="post">
 						<input type="checkbox" name="sindan" value="1">
 					</form></td>
@@ -51,6 +51,25 @@
 					</form></td>
 				<td><form action="#" method="post">
 						<input type="checkbox" name="sindan" value="5">
+					</form></td>
+			</tr>
+
+			<tr>
+				<td>問2 食欲があまりない</td>
+				<td><form class="radio radio-inline">
+						<input type="radio" name="sindan" value="1">
+					</form></td>
+				<td><form action="#" method="post">
+						<input type="radio" name="sindan" value="2">
+					</form></td>
+				<td><form action="#" method="post">
+						<input type="radio" name="sindan" value="3">
+					</form></td>
+				<td><form action="#" method="post">
+						<input type="radio" name="sindan" value="4">
+					</form></td>
+				<td><form action="#" method="post">
+						<input type="radio" name="sindan" value="5">
 					</form></td>
 			</tr>
 		</table>
