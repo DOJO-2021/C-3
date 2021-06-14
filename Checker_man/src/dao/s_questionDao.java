@@ -12,7 +12,7 @@ import model.s_question;
 
 public class s_questionDao {
 
-	//引数questionで質問項目を指定する
+	// 引数questionで質問項目を取ってくる
 	public List<s_question> select(s_question question) {
 		Connection conn = null;
 		List<s_question> questionList = new ArrayList<s_question>();
@@ -24,7 +24,7 @@ public class s_questionDao {
 		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa",
 				"sa");
 
-		for (String question_item : question) {
+		for (String question_item : s_question) {
 
 			// SELECT文を準備する
 			String sql = "select * from s_question";
