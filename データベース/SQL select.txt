@@ -12,3 +12,5 @@ select * from s_result;
 
 --○の人の数を表示する
 select count(icon) from s_result where icon = 'maru' and date = CURDATE();
+
+select icon, count(icon) from s_result group by icon;
