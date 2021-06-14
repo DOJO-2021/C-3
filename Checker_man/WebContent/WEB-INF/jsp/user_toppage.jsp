@@ -112,7 +112,7 @@
 
 </div>
 
-       <!-- 診断ボタン、診断結果ボタン」ののhtml -->
+       <!-- 診断ボタン、診断結果ボタン」のhtml -->
 <div class="user_toppage_button">
  <input type="submit" id="user_shindan" name="user_shindan" value="診断">
  <input type="submit" id="user_result" name="user_result" value="診断結果">

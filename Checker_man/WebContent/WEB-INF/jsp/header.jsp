@@ -16,10 +16,12 @@
 		</h1>
 
 		<!-- トップページへのリンク -->
-		<a href="/Checker_man/User_TopPageServlet">トップページ</a>
+		<div class="header">
+		<a href="/Checker_man/User_TopPageServlet" class="btn">トップページ</a>
 
 		<!-- ログアウトのリンク -->
-		<a href="/Checker_man/LogoutServlet">ログアウト</a>
+		<a href="/Checker_man/LogoutServlet" class="btn">ログアウト</a>
+		</div>
 
 	</div>
 

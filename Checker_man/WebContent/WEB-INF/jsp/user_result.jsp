@@ -90,20 +90,23 @@
 	 	<div class = "message">
 		 	<div class = "user_message">
 			 	<p>受講者のコメント</p>
-			 	<textarea rows="8" cols="45" name="user_message">コメントする</textarea>
+			 	<textarea rows="10" cols="100" name="user_message">コメントする</textarea>
 			</div>
-
-			<div class = "admin_message">
-		 		<p>講師からのコメント</p>
-				<!-- rows="3" cols="54" name="admin_message">${e.admin_message}は仮 -->
-				<textarea rows="8" cols="45" name="admin_message">${e.admin_message}</textarea>
-			</div>
-		</div>
 
 		<!-- コメント登録ボタン、トップへ戻るボタン -->
+		<form method="POST">
 		<div class = "botton">
 			<div class = "regist">
 				<input type="submit" name="regist" value="コメント登録"><br>
+			</div>
+			</div>
+		</form>
+		<div class = "botton">
+			<div class = "admin_message">
+		 		<p>講師からのコメント</p>
+				<!-- rows="3" cols="54" name="admin_message">${e.admin_message}は仮 -->
+				<textarea rows="10" cols="100" readonly name="admin_message">${e.admin_message}</textarea>
+			</div>
 			</div>
 
 			<div class = "return">
