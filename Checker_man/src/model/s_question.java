@@ -12,10 +12,10 @@ public class s_question implements Serializable {
 	private String question;
 
 	// 引数があるコンストラクタ
-	public s_question(int question_id, String question) {
+	public s_question(int question_id, String questionList) {
 		super();
 		this.question_id = question_id;
-		this.question = question;
+		this.question = questionList;
 	}
 
 	// 引数がないコンストラクタ

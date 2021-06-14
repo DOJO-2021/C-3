@@ -3,39 +3,53 @@ import java.io.Serializable;
 
 public class admin_toppage implements Serializable {
 
-	private String icon;   //アイコン
-	private int icon_number; //アイコンの人数
+	private int maru_number; //　○の人の数
+	private int batsu_number; //　☓の人の数
+	private int sankaku_number; //　△の人の数
 
 	//引数があるコントラスタ
-	public admin_toppage(String icon, int icon_number) {
+	public admin_toppage(int maru_number, int batsu_number, int sankaku_number) {
 		super();
-		this.icon = icon;
-		this.icon_number = icon_number;
+		this.maru_number = maru_number;
+		this.batsu_number = batsu_number;
+		this.sankaku_number = sankaku_number;
 	}
 
 	//引数がないコントラスタ（デフォルトコントラスタ）
 	public admin_toppage() {
 		super();
-		this.icon = null;
-		this.icon_number = 0;
+		this.maru_number = 0;
+		this.batsu_number = 0;
+		this.sankaku_number = 0;
 	}
 
 	//ゲッターセッターのプログラム
-	public String getIcon() {
-		return icon;
+	public int getMaru_number() {
+		return maru_number;
 	}
 
-	public void setIcon(String icon) {
-		this.icon = icon;
+	public void setMaru_number(int maru_number) {
+		this.maru_number = maru_number;
 	}
 
-	public int getIcon_number() {
-		return icon_number;
+	public int getBatsu_number() {
+		return batsu_number;
 	}
 
-	public void setIcon_number(int icon_number) {
-		this.icon_number = icon_number;
+	public void setBatsu_number(int batsu_number) {
+		this.batsu_number = batsu_number;
 	}
+
+	public int getSankaku_number() {
+		return sankaku_number;
+	}
+
+	public void setSankaku_number(int sankaku_number) {
+		this.sankaku_number = sankaku_number;
+	}
+
+
+
 
 }
 

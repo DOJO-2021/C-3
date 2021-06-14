@@ -271,7 +271,10 @@ public class s_resultDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 						// SQL文を準備する
-						String sql = "select icon, count(icon) from s_result　where　date = CURDATE() group by icon";
+						String sql = "select ( select count(*) from s_result where icon = 'maru' and date = CURDATE() group by icon ) AS maru, "
+								+ "( select count(*) from s_result where icon = 'batsu' and date = CURDATE() group by icon ) AS batsu, "
+								+ "( select count(*) from s_result where icon = 'sankaku' and date = CURDATE() group by icon ) AS sankaku "
+								+ "from s_result group by CURDATE()";
 
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -281,8 +284,9 @@ public class s_resultDao {
 						// 結果表をコレクションにコピーする
 						while (rs.next()) {
 							result = new admin_toppage(
-									rs.getString("icon"),
-									rs.getInt("count(icon)")
+									rs.getInt("maru"),
+									rs.getInt("batsu"),
+									rs.getInt("sankaku")
 								);
 						}
 					}
