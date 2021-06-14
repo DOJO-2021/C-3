@@ -55,7 +55,9 @@ public class s_resultDaoTest {
 						admin_toppage resultData = dao.select_icon(new admin_toppage("", 0));;
 
 							System.out.println("icon：" + resultData.getIcon());
-							System.out.println("icon_number：" +resultData.getIcon_number());
+							System.out.println("icon_number：" + resultData.getIcon_number());
 							System.out.println();
+
+
 	}
 }

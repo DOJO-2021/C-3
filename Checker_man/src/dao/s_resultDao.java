@@ -211,12 +211,12 @@ public class s_resultDao {
 						ResultSet rs = pStmt.executeQuery();
 
 						// 結果表をコレクションにコピーする
-						rs.next();
-						result = new admin_toppage(
-							rs.getString("icon"),
-							rs.getInt("count(icon)")
-						);
-
+						while (rs.next()) {
+							result = new admin_toppage(
+									rs.getString("icon"),
+									rs.getInt("count(icon)")
+								);
+						}
 					}
 
 					catch (SQLException e) {
@@ -240,7 +240,6 @@ public class s_resultDao {
 							}
 						}
 					}
-
 					// 結果を返す
 					return result;
 				}
