@@ -94,7 +94,7 @@ public class s_answerDao {
 	}
 
 
-	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
+	// 引数answerで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(s_answer answer) {
 		Connection conn = null;		//デフォルトで「回答がありません」→回答があったらtrueに書き変わる
 		boolean result = false;

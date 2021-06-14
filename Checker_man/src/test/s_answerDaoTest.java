@@ -10,16 +10,16 @@ public class s_answerDaoTest {
 		s_answerDao dao = new s_answerDao();
 
 		// select()のテスト
-				//user_idに1を含んだデータを検索する
-				System.out.println("---------- select()のテスト ----------");
-				List<s_answer> answerList2 = dao.select(new s_answer(0, 0, 1, ""));
-				for (s_answer answer : answerList2) {
-					System.out.println("question_id：" + answer.getQuestion_id());
-					System.out.println("answer：" + answer.getAnswer());
-					System.out.println("user_id：" + answer.getUser_id());
-					System.out.println("date：" + answer.getDate());
-					System.out.println();
-				}
+		//user_idに1を含んだデータを検索する
+		System.out.println("---------- select()のテスト ----------");
+		List<s_answer> answerList2 = dao.select(new s_answer(0, 0, 1, ""));
+		for (s_answer answer : answerList2) {
+			System.out.println("question_id：" + answer.getQuestion_id());
+			System.out.println("answer：" + answer.getAnswer());
+			System.out.println("user_id：" + answer.getUser_id());
+			System.out.println("date：" + answer.getDate());
+			System.out.println();
+		}
 
 		//insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
