@@ -1,14 +1,12 @@
 package test;
-import java.util.List;
-
 import dao.s_resultDao;
-import model.s_result;
+import model.admin_toppage;
 
 public class s_resultDaoTest {
 	public static void main(String[] args) {
 		s_resultDao dao = new s_resultDao();
 
-
+/*
 		// insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
 
@@ -34,9 +32,8 @@ public class s_resultDaoTest {
 			System.out.println("登録失敗！");
 		}
 
-
-		// select_calenderのテスト
-				System.out.println("---------- select_calenderのテスト ----------");
+		// selectのテスト
+				System.out.println("---------- selectのテスト ----------");
 
 				List<s_result> resultList2 = dao.select(new s_result(0, "2021", "", "", "", 0));
 
@@ -48,9 +45,19 @@ public class s_resultDaoTest {
 					System.out.println("admin_comment：" + resultData.getAdmin_comment());
 					System.out.println("user_id：" + resultData.getUser_id());
 					System.out.println();
-				}
+				}*/
+
+				// select_iconのテスト
+				System.out.println("---------- select_iconのテスト ----------");
+
+				admin_toppage resultData = dao.select_icon(new admin_toppage("sankaku", 1));;
+
+					System.out.println("icon：" + resultData.getIcon());
+					System.out.println("icon_number：" +resultData.getIcon_number());
+					System.out.println();
 
 
 
+	  }
 	}
-}
+
