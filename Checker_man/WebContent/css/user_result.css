@@ -49,10 +49,12 @@ h2 {
 
 /* コメント欄縦スクロールの追加 */
 .message user_message {
+	overflow: hidden;
 	overflow-y: scroll;
 }
 
 .message admin_message {
+	overflow: hidden;
 	overflow-y: scroll;
 }
 
