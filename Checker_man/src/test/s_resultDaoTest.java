@@ -72,7 +72,7 @@ public class s_resultDaoTest {
 								System.out.println();
 							}*/
 
-		// select_lastdataのテスト
+		// select_calenderのテスト
 		List<user_toppage> resultList4 = dao.select_calender(new user_toppage("", "",0));
 
 		for (user_toppage resultData : resultList4) {

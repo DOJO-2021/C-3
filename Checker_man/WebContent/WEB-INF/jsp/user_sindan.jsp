@@ -17,8 +17,11 @@
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
 		</header>
 
-		<!-- 見出し -->
-		<h1>診断ページ</h1>
+
+		<!-- 診断エリア -->
+		<div class="shindan-area">
+			<!-- 見出し -->
+			<h1>診断ページ</h1>
 
 		質問項目に合わせてチェックを入れてください
 
@@ -33,7 +36,7 @@
 				<td>当てはまる</td>
 			</tr>
 			<tr>
-				<td>問1</td>
+				<td>問1 よく眠れなかった</td>
 				<td><form action="#" method="post">
 						<input type="checkbox" name="sindan" value="1">
 					</form></td>
@@ -50,6 +53,25 @@
 						<input type="checkbox" name="sindan" value="5">
 					</form></td>
 			</tr>
+
+			<tr>
+				<td>問2 食欲があまりない</td>
+				<td><form class="radio radio-inline">
+						<input type="radio" name="sindan" value="1">
+					</form></td>
+				<td><form action="#" method="post">
+						<input type="radio" name="sindan" value="2">
+					</form></td>
+				<td><form action="#" method="post">
+						<input type="radio" name="sindan" value="3">
+					</form></td>
+				<td><form action="#" method="post">
+						<input type="radio" name="sindan" value="4">
+					</form></td>
+				<td><form action="#" method="post">
+						<input type="radio" name="sindan" value="5">
+					</form></td>
+			</tr>
 		</table>
 		<!-- 診断テーブルここまで -->
 
@@ -57,6 +79,9 @@
 
 		<!-- 診断結果へのリンク -->
 		<a href="/Checker_man/User_ResultServlet">診断結果へ</a>
+
+		<!-- 診断エリアここまで -->
+		</div>
 
 		<!-- フッター -->
 		<footer class="footer">

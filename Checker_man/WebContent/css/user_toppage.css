@@ -13,15 +13,18 @@
 }
 
 /* カレンダーの上にある「前月ボタン」のcss*/
-#previous-month{
+input#previous-month{
 padding:10px;
+background-color: #B0D6DA;
+border: solid 2px #F0B43E; /*周りの線の色*/
 }
 
 /* カレンダーの上にある「翌月ボタン」のcss*/
-#next-month{
+input#next-month{
 padding:10px;
+background-color: #B0D6DA;
+border: solid 2px #F0B43E; /*周りの線の色*/
 }
-
 
 /* カレンダーの表のcss*/
 .calender-table{
@@ -30,7 +33,7 @@ border-spacing: 0px 0px;
 margin-left: auto;
 margin-right: auto;
 font-size:20px;
-
+border: 3px solid #B0D6DA; /* 枠線 */
 }
 
 .calender-table tr,.calender-table th {
@@ -45,11 +48,15 @@ font-size:20px;
 	text-align: center;
 }
 
-#user_result{
+input#user_result{
 	font-size:30px;
+	background-color: #B0D6DA;
+	border: solid 2px #F0B43E; /*周りの線の色*/
 }
 
 
-#user_shindan{
+input#user_shindan{
 	font-size:30px;
+	background-color: #B0D6DA;
+	border: solid 2px #F0B43E; /*周りの線の色*/
 }
