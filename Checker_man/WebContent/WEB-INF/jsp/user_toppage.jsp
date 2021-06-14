@@ -24,7 +24,7 @@
  </header>
 
  <!-- メイン -->
- <main>
+ <div class ="main">
 
  <div class="calendar-border">
 
@@ -33,7 +33,7 @@
    <table class="calender-menu-table">
     <tr>
 		<th><input type="submit" id="previous-month" name="previous-month" value="前月"></th>
-		<th>2021年6月</th>
+		 <th>2021年6月</th>
     	<th><input type="submit" id="next-month" name="next-month" value="翌月"></th>
     </tr>
    </table>
@@ -120,7 +120,7 @@
 
 
 
- </main>
+ </div>
 
  <!-- フッター -->
  <footer class="footer">

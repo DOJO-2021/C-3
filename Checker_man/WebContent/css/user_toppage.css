@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+/* 全てのページに適用 */
+html {
+	font-family: sans-serif;
+}
+
+html* {
+	box-sizing: border-box;
+}
+
+/* user_toppage.jsp */
+
+.main {
+	border : dotted 2px #5d5d5d;
+}
 
 /* カレンダーの上にある「前月、現在の月、翌月」のcss*/
 .calender-menu-table{
@@ -13,49 +27,49 @@
 }
 
 /* カレンダーの上にある「前月ボタン」のcss*/
-input#previous-month{
-padding:10px;
-background-color: #B0D6DA;
-border: solid 2px #F0B43E; /*周りの線の色*/
+input#previous-month {
+	padding:10px;
+	background-color: #B0D6DA;
+	border: solid 2px #F0B43E; /*周りの線の色*/
 }
 
 /* カレンダーの上にある「翌月ボタン」のcss*/
-input#next-month{
-padding:10px;
-background-color: #B0D6DA;
-border: solid 2px #F0B43E; /*周りの線の色*/
+input#next-month {
+	padding:10px;
+	background-color: #B0D6DA;
+	border: solid 2px #F0B43E; /*周りの線の色*/
 }
 
 /* カレンダーの表のcss*/
-.calender-table{
-border-collapse: separate;
-border-spacing: 0px 0px;
-margin-left: auto;
-margin-right: auto;
-font-size:20px;
-border: 3px solid #B0D6DA; /* 枠線 */
+.calender-table {
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size:20px;
+	border: 3px solid #B0D6DA; /* 枠線 */
 }
 
 .calender-table tr,.calender-table th {
-	border: 2px solid #5d5d5d;
+	border: 1px solid #5d5d5d;
 	width:3em;
 	height:30px;
 }
 
 /* 「診断ボタン、診断結果ボタン」のcss*/
-.user_toppage_button{
+.user_toppage_button {
 	margin:50px;
 	text-align: center;
 }
 
-input#user_result{
+input#user_result {
 	font-size:30px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
 }
 
 
-input#user_shindan{
+input#user_shindan {
 	font-size:30px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
