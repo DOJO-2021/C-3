@@ -1,19 +1,22 @@
 package test;
 
+import java.util.List;
+
 import dao.s_questionDao;
+import model.s_question;
 
 public class s_questionTest {
 
 	public static void main(String[] args) {
-		testIsQuestionOK();
-	}
-
-	// 質問項目を表示するテスト
-	public static void testIsQuestionOK() {
 		s_questionDao dao = new s_questionDao();
-		if (dao.IsQuestionOK(1, s_question)) {
-		} else {
-			System.out.println("失敗しました");
+
+		// select()のテスト
+		System.out.println("---------- select()のテスト ----------");
+		List<s_question> questionList = dao.select(new s_question(1, questionList));
+		for (s_question question_item : questionList) {
+			System.out.println("question_id：" + question_item.getQuestion_id());
+			System.out.println("question：" + question_item.getQuestion());
+			System.out.println();
 		}
 	}
 }

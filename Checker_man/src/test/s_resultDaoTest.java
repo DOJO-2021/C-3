@@ -1,9 +1,7 @@
 package test;
 
-import java.util.List;
-
 import dao.s_resultDao;
-import model.user_toppage;
+import model.admin_toppage;
 
 public class s_resultDaoTest {
 
@@ -51,15 +49,16 @@ public class s_resultDaoTest {
 							System.out.println();
 						}*/
 
-		/*
-						// select_iconのテスト
+
+				// select_iconのテスト
 						System.out.println("---------- select_iconのテスト ----------");
 
-						admin_toppage resultData = dao.select_icon(new admin_toppage("", 0));;
+						admin_toppage resultData = dao.select_icon(new admin_toppage(0, 0, 0));;
 
-							System.out.println("icon：" + resultData.getIcon());
-							System.out.println("icon_number：" + resultData.getIcon_number());
-							System.out.println();*/
+							System.out.println("maru：" + resultData.getMaru_number());
+							System.out.println("batsu：" + resultData.getBatsu_number());
+							System.out.println("sankaku：" + resultData.getSankaku_number());
+							System.out.println();
 
 /*
 				// select_lastdataのテスト
@@ -72,6 +71,7 @@ public class s_resultDaoTest {
 								System.out.println();
 							}*/
 
+		/*
 		// select_calenderのテスト
 		List<user_toppage> resultList4 = dao.select_calender(new user_toppage("", "",0));
 
@@ -80,7 +80,7 @@ public class s_resultDaoTest {
 			System.out.println("date：" + resultData.getDate());
 			System.out.println("user_id：" + resultData.getUser_id());
 			System.out.println();
-		}
+		}*/
 
 	}
 }
