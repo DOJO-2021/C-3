@@ -129,9 +129,17 @@ public class s_resultDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "select  icon, date, user_id from s_result order by date asc";
+				String sql = "select  icon, date, user_id from s_result WHERE user_id LIKE ? order by date asc";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を完成させる
+				if (param.getUser_id() != 0) {
+					pStmt.setString(1, "%" + param.getUser_id() + "%");
+				}
+				else {
+					pStmt.setString(1, "%");
+				}
 
 				// SQL文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
