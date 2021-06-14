@@ -12,7 +12,7 @@ import model.s_question;
 
 public class s_questionDao {
 
-	//引数questionで質問項目を指定する
+	// 引数questionで質問項目を取ってくる
 	public List<s_question> select(s_question question) {
 		Connection conn = null;
 		List<s_question> questionList = new ArrayList<s_question>();
@@ -29,7 +29,7 @@ public class s_questionDao {
 			// SELECT文を準備する
 			String sql = "select * from s_question";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(0, question_item);
+			pStmt.setString(1, question_item);
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
