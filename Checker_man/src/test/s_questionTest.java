@@ -11,7 +11,7 @@ public class s_questionTest {
 	// 質問項目を表示するテスト
 	public static void testIsQuestionOK() {
 		s_questionDao dao = new s_questionDao();
-		if (dao.IsQuestionOK(1, question)) {
+		if (dao.IsQuestionOK(1, s_question)) {
 		} else {
 			System.out.println("失敗しました");
 		}
