@@ -24,12 +24,12 @@ public class s_questionDao {
 		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa",
 				"sa");
 
-		for (String question_item : s_question) {
+		for (String question_item : question) {
 
 			// SELECT文を準備する
 			String sql = "select * from s_question";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(0, question_item);
+			pStmt.setString(1, question_item);
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
