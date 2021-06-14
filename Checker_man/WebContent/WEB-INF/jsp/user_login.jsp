@@ -23,12 +23,12 @@
 	<div class="ulogin-area">
 		<h1>受講者ログイン</h1>
 		<div class="ulogin-form">
-			ユーザーID<input type="text" name="ID"><br>
+			ユーザーID<input type="text" name="ID" placeholder="ユーザーID"><br>
 
 		</div>
 		<form method="POST" action="/Checker_man/User_LoginServlet">
 			<div class="ulogin-form">
-				パスワード<input type="password" name="PW"><br>
+				パスワード<input type="password" name="PW" placeholder="パスワード"><br>
 			</div>
 			<input type ="submit" name="LOGIN" value="ログイン" class="login-bottan"><br>
 		</form>
