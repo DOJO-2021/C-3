@@ -120,8 +120,8 @@ public class user_loginDao {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				user_login sign = new user_login(
-				rs.getInt("question_id"),
-				rs.getString("usert_name"),
+				rs.getInt("user_id"),
+				rs.getString("user_name"),
 				rs.getString("user_pw")
 				);
 				signList.add(sign);
@@ -164,24 +164,22 @@ public class user_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into user_login values (?, ?, ?)";
+			String sql = "insert into user_login values (null, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//SQL文を完成させる
 
-			pStmt.setInt(1, sign.getUser_id());
-
 			if (sign.getUser_name() != null) {
-				pStmt.setString(2, sign.getUser_name());
+				pStmt.setString(1, sign.getUser_name());
+			}
+			else {
+				pStmt.setString(1, "null");
+			}
+			if (sign.getUser_pw() != null) {
+				pStmt.setString(2, sign.getUser_pw());
 			}
 			else {
 				pStmt.setString(2, "null");
-			}
-			if (sign.getUser_pw() != null) {
-				pStmt.setString(3, sign.getUser_pw());
-			}
-			else {
-				pStmt.setString(3, "null");
 			}
 
 			// SQL文を実行する
