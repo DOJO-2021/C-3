@@ -188,7 +188,103 @@ public class s_resultDao {
 					return result;
 				}
 
-				// 管理者トップページの現在の受講者健康状態で使うデータベース処理
+		// 管理者トップページの現在の受講者健康状態で使うデータベース処理
+				public List<s_result> select_icon(s_result param) {
+
+					Connection conn = null;
+					List<s_result> resultList = new ArrayList<s_result>();
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
+
+						// SQL文を準備する
+						String sql = "select count(icon) from s_result where icon = 'maru'";
+
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+						// SQL文を完成させる
+						if (param.getDate() != null) {
+							pStmt.setString(1, "%" + param.getDate() + "%");
+						}
+						else {
+							pStmt.setString(1, "%");
+						}
+
+						if (param.getIcon() != null) {
+							pStmt.setString(2, "%" + param.getIcon() + "%");
+						}
+						else {
+							pStmt.setString(2, "%");
+						}
+
+						if (param.getUser_comment() != null) {
+							pStmt.setString(3, "%" + param.getUser_comment() + "%");
+						}
+						else {
+							pStmt.setString(3, "%");
+						}
+
+						if (param.getAdmin_comment() != null) {
+							pStmt.setString(4, "%" + param.getAdmin_comment() + "%");
+						}
+						else {
+							pStmt.setString(4, "%");
+						}
+
+						if (param.getUser_id() != 0) {
+							pStmt.setString(5, "%" + param.getUser_id() + "%");
+						}
+						else {
+							pStmt.setString(5, "%");
+						}
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							s_result resultData = new s_result(
+							rs.getInt("result_id"),
+							rs.getString("date"),
+							rs.getString("icon"),
+							rs.getString("user_comment"),
+							rs.getString("admin_comment"),
+							rs.getInt("user_id")
+							);
+
+							resultList.add(resultData);
+						}
+					}
+
+					catch (SQLException e) {
+						e.printStackTrace();
+						resultList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						resultList = null;
+					}
+
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								resultList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return resultList;
+				}
 
 
 

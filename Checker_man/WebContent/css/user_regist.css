@@ -1,6 +1,17 @@
 @charset "UTF-8";
 .regist-area {
 	width:300px;
-    margin:0 auto;
+    margin:140px auto;
 	padding:20px;
+	border:solid 4px rgb(176,214,218);
 }
+
+.regist-form {
+	padding-bottom:20px;
+}
+
+.regist-bottan {
+	margin-left:260px;
+	margin-bottom:50px;
+}
+

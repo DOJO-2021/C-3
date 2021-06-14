@@ -4,8 +4,9 @@
 
 
 <!DOCTYPE html>
-<html>
+<a id=html></a>
 <head>
+
 <meta charset="UTF-8">
 
 <!-- タイトル -->
@@ -18,22 +19,21 @@
 </head>
 
 <body>
-<!-- 全体 -->
+	<!-- 全体 -->
 	<div class="wrapper">
 
 		<!-- ヘッダ -->
 		<header class="header">
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
+			<p>閲覧ページ</p>
 		</header>
-		<p>閲覧ページ</p>
+
 
 		<!-- 個人名表示 -->
-		<h1>
-			<a id="name">名前</a>
-		</h1>
+		<h1>名前</h1>
 
 		<!-- 質問内容と回答 -->
-		<p>質問内容</p>
+		<div class="qa">質問内容</div>
 		<table class="question">
 			<tr>
 				<th>問1</th>
@@ -107,7 +107,7 @@
 			</tr>
 			<tr>
 				<th>問14</th>
-				<th>作業環境が不適切()明るさ、温度など)</th>
+				<th>作業環境が不適切(明るさ、温度など)</th>
 				<td>(回答を表示)</td>
 			</tr>
 			<tr>
@@ -118,16 +118,19 @@
 		</table>
 
 		<!-- 診断結果 -->
-		<p>診断結果</p>
+		<h2>診断結果</h2>
 		<table class="result">
 			<tr>
+				<th>
 				<td>調子よさそうだね！！</td>
+				</th>
+
 			</tr>
 		</table>
 
 		<!-- 受講者コメント(閲覧用) -->
 		<form method="POST">
-			<div>
+			<div class="u_comment">
 				受講者コメント<br>
 				<textarea readonly name="comment">閲覧専用</textarea>
 			</div>
@@ -135,17 +138,17 @@
 
 		<!-- 管理者コメント(書き込み可能) -->
 		<form method="POST">
-			<div>
+			<div class="a_comment">
 				管理者コメント<br>
 				<textarea name="comment" action=""></textarea>
-				<input type="submit" name="submit" value="書き込む">
+				<br> <input type="submit" name="submit" value="書き込む">
 			</div>
 
 		</form>
 
 		<!-- 画面上部に戻るボタン -->
 		<div class="top">
-			<a href="#name">画面上部に移動する</a>
+			<a href="#html">画面上部に移動する</a>
 		</div>
 
 		<!-- トップページに戻るボタン -->

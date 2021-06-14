@@ -5,12 +5,11 @@
   border-radius : 5%;          /* 角丸       */
   font-size     : 18pt;        /* 文字サイズ */
   text-align    : center;
-  line-height   : 1em;
   background-color:rgb(240,180,62);
   padding:10px;
   color:white;
   text-decoration: none;
-  margin-bottom:200px;
+  margin-left:1600px;
 
 }
 
