@@ -11,6 +11,11 @@ select * from s_answer;
 select * from s_result;
 
 --○の人の数を表示する
+select count(*) as maru from s_result where icon = 'maru' and date = CURDATE()
+select count(*) as batsu from s_result where icon = 'batsu' and date = CURDATE()
+select count(*) as sankaku from s_result where icon = 'sankaku' and date = CURDATE()
+select count(*) as comment from s_result where user_comment <> '' and date = CURDATE()
+
 select count(icon) from s_result where icon = 'maru' and date = CURDATE();
 
 select icon, count(icon) from s_result group by icon;
