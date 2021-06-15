@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.List;
 
 // クラスの定義
 public class s_question implements Serializable {
@@ -24,9 +23,6 @@ public class s_question implements Serializable {
 		super();
 		this.question_id = 0;
 		this.question = "";
-	}
-
-	public s_question(int question_id2, List<s_question> questionList2) {
 	}
 
 	// ゲッターセッターのプログラム

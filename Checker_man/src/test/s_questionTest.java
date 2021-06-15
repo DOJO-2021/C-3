@@ -1,5 +1,6 @@
 package test;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import dao.s_questionDao;
@@ -7,7 +8,7 @@ import model.s_question;
 
 public class s_questionTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		s_questionDao dao = new s_questionDao();
 
 		// select()のテスト
