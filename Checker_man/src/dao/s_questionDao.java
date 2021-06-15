@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +12,9 @@ import model.s_question;
 
 public class s_questionDao {
 
-	// 引数questionで質問項目を取ってくる
-	public void select(s_question param) {
+	// 引数paramで質問項目を取ってくる
+	@SuppressWarnings("null")
+	public List<s_question> select(s_question param) {
 		Connection conn = null;
 		List<s_question> questionList = new ArrayList<s_question>();
 
@@ -20,7 +22,7 @@ public class s_questionDao {
 		try {
 			Class.forName("org.h2.Driver");
 		} catch (ClassNotFoundException e1) {
-			// TODO 自動生成された catch ブロック
+
 			e1.printStackTrace();
 		}
 
@@ -29,7 +31,7 @@ public class s_questionDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa",
 					"sa");
 		} catch (SQLException e1) {
-			// TODO 自動生成された catch ブロック
+
 			e1.printStackTrace();
 		}
 
@@ -42,7 +44,7 @@ public class s_questionDao {
 			try {
 				pStmt = conn.prepareStatement(sql);
 			} catch (SQLException e) {
-				// TODO 自動生成された catch ブロック
+
 				e.printStackTrace();
 			}
 
@@ -51,14 +53,13 @@ public class s_questionDao {
 				try {
 					pStmt.setString(1, "%" + param.getQuestion_id() + "%");
 				} catch (SQLException e) {
-					// TODO 自動生成された catch ブロック
+
 					e.printStackTrace();
 				}
 			} else {
 				try {
 					pStmt.setString(1, "%");
 				} catch (SQLException e) {
-					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				}
 			}
@@ -66,14 +67,12 @@ public class s_questionDao {
 				try {
 					pStmt.setString(2, "%" + param.getQuestion() + "%");
 				} catch (SQLException e) {
-					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				}
 			} else {
 				try {
 					pStmt.setString(2, "%");
 				} catch (SQLException e) {
-					// TODO 自動生成された catch ブロック
 					e.printStackTrace();
 				}
 			}
@@ -82,7 +81,20 @@ public class s_questionDao {
 			try {
 				pStmt.executeQuery();
 			} catch (SQLException e) {
-				// TODO 自動生成された catch ブロック
+
+				e.printStackTrace();
+			}
+			ResultSet rs = null;
+
+			// 結果表をコレクションにコピーする
+			try {
+				while (rs.next()) {
+					s_question question = new s_question(
+							rs.getInt("question_id"),
+							rs.getString("question"));
+					questionList.add(question);
+				}
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
@@ -95,5 +107,6 @@ public class s_questionDao {
 				e.printStackTrace();
 			}
 		}
+		return questionList;
 	}
 }
