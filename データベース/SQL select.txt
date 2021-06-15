@@ -22,6 +22,15 @@ select
 ,(select count(*) from s_result where user_comment <> '' and date = CURDATE() ) AS comment 
 from s_result group by CURDATE(); 
 
+○☓△の人の表示
+
+select 
+( select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'maru' and date = CURDATE()) AS maru_user
+, ( select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'batsu' and date = CURDATE()) AS batsu_user
+, (select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'sankaku' and date = CURDATE()) AS sankaku_user
+,(select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id where user_comment <> '' and date = CURDATE()) AS comment_user
+from s_result
+
 4月～6月の表のデータ
 select icon, count(icon),date from s_result group by icon,date order by date asc;
 

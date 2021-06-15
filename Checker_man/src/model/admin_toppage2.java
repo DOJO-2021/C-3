@@ -1,63 +1,66 @@
 package model;
 import java.io.Serializable;
 
-public class admin_toppage implements Serializable {
+public class admin_toppage2 implements Serializable {
 
-	private int maru_number; //　○の人の数
-	private int batsu_number; //　☓の人の数
-	private int sankaku_number; //　△の人の数
-	private int comment_number; // コメントの数
+	private String maru_user; //　○の人の表示
+	private String batsu_user; //　☓の人の表示
+	private String sankaku_user; //　△の人の表示
+	private String comment_user; // コメントした人の表示
 
 	//引数があるコントラスタ
-	public admin_toppage(int maru_number, int batsu_number, int sankaku_number, int comment_number) {
+	public admin_toppage2(String maru_user, String batsu_user, String sankaku_user, String comment_user) {
 		super();
-		this.maru_number = maru_number;
-		this.batsu_number = batsu_number;
-		this.sankaku_number = sankaku_number;
-		this.comment_number = comment_number;
+		this.maru_user = maru_user;
+		this.batsu_user = batsu_user;
+		this.sankaku_user = sankaku_user;
+		this.comment_user = comment_user;
 	}
 
 	//引数がないコントラスタ（デフォルトコントラスタ）
-	public admin_toppage() {
+	public admin_toppage2() {
 		super();
-		this.maru_number = 0;
-		this.batsu_number = 0;
-		this.sankaku_number = 0;
-		this.comment_number = 0;
+		this.maru_user = null;
+		this.batsu_user = null;
+		this.sankaku_user = null;
+		this.comment_user = null;
 	}
 
 	//ゲッターセッターのプログラム
-	public int getMaru_number() {
-		return maru_number;
+	public String getMaru_user() {
+		return maru_user;
 	}
 
-	public void setMaru_number(int maru_number) {
-		this.maru_number = maru_number;
+	public void setMaru_user(String maru_user) {
+		this.maru_user = maru_user;
 	}
 
-	public int getBatsu_number() {
-		return batsu_number;
+	public String getBatsu_user() {
+		return batsu_user;
 	}
 
-	public void setBatsu_number(int batsu_number) {
-		this.batsu_number = batsu_number;
+	public void setBatsu_user(String batsu_user) {
+		this.batsu_user = batsu_user;
 	}
 
-	public int getSankaku_number() {
-		return sankaku_number;
+	public String getSankaku_user() {
+		return sankaku_user;
 	}
 
-	public void setSankaku_number(int sankaku_number) {
-		this.sankaku_number = sankaku_number;
+	public void setSankaku_user(String sankaku_user) {
+		this.sankaku_user = sankaku_user;
 	}
 
-	public int getComment_number() {
-		return comment_number;
+	public String getComment_user() {
+		return comment_user;
 	}
 
-	public void setComment_number(int comment_number) {
-		this.comment_number = comment_number;
+	public void setComment_user(String comment_user) {
+		this.comment_user = comment_user;
 	}
+
+
+
 
 
 }
