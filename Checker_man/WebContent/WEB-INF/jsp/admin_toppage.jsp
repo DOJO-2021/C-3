@@ -28,13 +28,32 @@
          <!--  「受講者の健康診断」のhtml -->
 <div class="healthcheck">
 現在の受講者健康状態<br>
-<p class="icon"><img src="/Checker_man/images/maru.png">の人：
-<div class="sample2oya" onclick="showSample()">10人
-  <span class="sample2" id="idsample2">吹き出しが表示される</span>
-</div>
-<img src="/Checker_man/images/sankaku.png">の人：5人<br>
-<img src="/Checker_man/images/batsu.png">の人：3人
 
+	<div class="icon">
+		<table>
+			<tr>
+				<th><img src="/Checker_man/images/maru.png">の人：</th>
+				<td><div class="maru-number" onclick="show('1')">10人
+			  		<span class="sample1" id="idsample1">555</span>
+				</div></td>
+			</tr>
+
+			<tr>
+				<th><img src="/Checker_man/images/sankaku.png">の人：</th>
+				<td><div class="sankaku-number" onclick="show('2')">5人
+					<span class="sample2" id="idsample2">333</span>
+				</div></td>
+
+			</tr>
+
+			<tr>
+				<th><img src="/Checker_man/images/batsu.png">の人:</th>
+				<td><div class="batu-number" onclick="show('3')">3人
+					<span class="sample3" id="idsample3">444</span>
+				</div></td>
+			</tr>
+		</table>
+	</div>
 </div>
 
               <!--  「お知らせ」のhtml -->
@@ -59,14 +78,26 @@
 
 <!-- javascriptで吹き出し -->
 <script type="text/javascript">
-function showSample(){
-var wObjballoon	= document.getElementById("idsample2");
-if (wObjballoon.className == "sample2"){
-wObjballoon.className = "sample20";
-}else{
-wObjballoon.className = "sample2";
+function show(key){
+	var wObjballoon1 = document.getElementById("idsample1");
+	var wObjballoon2 = document.getElementById("idsample2");
+	var wObjballoon3 = document.getElementById("idsample3");
+	wObjballoon1.className = "sample1";
+	wObjballoon2.className = "sample2";
+	wObjballoon3.className = "sample3";
+
+	if(key === '1'){
+		wObjballoon1.className = "sample10";
+	}
+	else if(key === '2'){
+		wObjballoon2.className = "sample20";
+	}
+	else if(key === '3'){
+		wObjballoon3.className = "sample30";
+	}
 }
-}
+
+
 </script>
 
 </body>
