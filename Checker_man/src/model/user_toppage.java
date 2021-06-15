@@ -5,7 +5,7 @@ public class user_toppage implements Serializable {
 
 	private String icon;   //アイコン
 	private String date;  //日付
-	private int user_id; //アイコンの人数
+	private int user_id; //ユーザーID
 
 	//引数があるコントラスタ
 	public user_toppage(String icon, String date, int user_id) {
