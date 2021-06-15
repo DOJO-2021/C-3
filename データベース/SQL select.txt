@@ -19,6 +19,7 @@ select
 ( select count(*) from s_result where icon = 'maru' and date = CURDATE() group by icon ) AS maru 
 , ( select count(*) from s_result where icon = 'batsu' and date = CURDATE() group by icon ) AS batsu
 , ( select count(*) from s_result where icon = 'sankaku' and date = CURDATE() group by icon ) AS sankaku
+,(select count(*) from s_result where user_comment <> '' and date = CURDATE() ) AS comment 
 from s_result group by CURDATE(); 
 
 4月～6月の表のデータ
