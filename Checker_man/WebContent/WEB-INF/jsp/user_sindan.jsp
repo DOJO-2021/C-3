@@ -23,378 +23,226 @@
 			<!-- 見出し -->
 			<h1>診断ページ</h1>
 
-		<p>質問項目に合わせてチェックを入れてください</p>
+			<p>質問項目に合わせてチェックを入れてください</p>
 
-		<!-- ここから診断テーブル -->
-		<table style="background-color:#f5f5f5;
-		">
-			<tr bgcolor="#B0D6DA">
-				<td>質問事項</td>
-				<td>当てはまらない</td>
-				<td>やや当てはまらない</td>
-				<td>どちらともいえない</td>
-				<td>やや当てはまる</td>
-				<td>当てはまる</td>
-			</tr>
-			<tr>
-				<td>問1 よく眠れなかった</td>
+			<!-- ここから診断テーブル -->
+			<table style="background-color: #f5f5f5;">
+				<tr bgcolor="#B0D6DA">
+					<td>質問事項</td>
+					<td>当てはまらない</td>
+					<td>やや当てはまらない</td>
+					<td>どちらともいえない</td>
+					<td>やや当てはまる</td>
+					<td>当てはまる</td>
+				</tr>
+				<tr>
+					<td>問1 よく眠れなかった</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+
+
+				<tr>
+					<td>問2 食欲があまりない</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+				<tr>
+					<td>問3 よく眠れなかった</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+
+
+				<tr>
+					<td>問4 食欲があまりない</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+
+				<td>問5 よく眠れなかった</td>
 				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-
+					<td><input type="radio" name="sindan" value="1"></td>
+					<td><input type="radio" name="sindan" value="2"></td>
+					<td><input type="radio" name="sindan" value="3" checked>
 					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
+					<td><input type="radio" name="sindan" value="4"></td>
+					<td><input type="radio" name="sindan" value="5"></td>
 				</form>
-			</tr>
+				</tr>
 
 
 
-			<tr>
-				<td>問2 食欲があまりない</td>
+				<tr>
+					<td>問6 食欲があまりない</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+				<tr>
+					<td>問7 よく眠れなかった</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+
+
+				<tr>
+					<td>問8 食欲があまりない</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+				<tr>
+					<td>問9 よく眠れなかった</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+
+
+				<tr>
+					<td>問10 食欲があまりない</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+				<tr>
+					<td>問11 よく眠れなかった</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+
+
+				<tr>
+					<td>問12 食欲があまりない</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
+
+
+				<td>問13 よく眠れなかった</td>
 				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
+					<td><input type="radio" name="sindan" value="1"></td>
+					<td><input type="radio" name="sindan" value="2"></td>
+					<td><input type="radio" name="sindan" value="3" checked>
 					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
+					<td><input type="radio" name="sindan" value="4"></td>
+					<td><input type="radio" name="sindan" value="5"></td>
 				</form>
-			</tr>
-
-			<tr>
-				<td>問3 よく眠れなかった</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
+				</tr>
 
 
 
-			<tr>
-				<td>問4 食欲があまりない</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
+				<tr>
+					<td>問14 食欲があまりない</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
 
+				<tr>
+					<td>問15 よく眠れなかった</td>
+					<form action="#" method="post">
+						<td><input type="radio" name="sindan" value="1"></td>
+						<td><input type="radio" name="sindan" value="2"></td>
+						<td><input type="radio" name="sindan" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan" value="4"></td>
+						<td><input type="radio" name="sindan" value="5"></td>
+					</form>
+				</tr>
 
-			<td>問5 よく眠れなかった</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1">
+			</table>
+			<!-- 診断テーブルここまで -->
 
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
+			<br>
 
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-
-
-			<tr>
-				<td>問6 食欲があまりない</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-			<tr>
-				<td>問7 よく眠れなかった</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-
-
-			<tr>
-				<td>問8 食欲があまりない</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-			<tr>
-				<td>問9 よく眠れなかった</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-
-
-			<tr>
-				<td>問10 食欲があまりない</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-			<tr>
-				<td>問11 よく眠れなかった</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-
-
-			<tr>
-				<td>問12 食欲があまりない</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-
-			<td>問13 よく眠れなかった</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1" >
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-
-
-			<tr>
-				<td>問14 食欲があまりない</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-			<tr>
-				<td>問15 よく眠れなかった</td>
-				<form action="#" method="post">
-					<td>
-					 	<input type="radio" name="sindan" value="1">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="2">
-
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="3" checked>
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="4">
-					</td>
-					<td>
-						<input type="radio" name="sindan" value="5">
-					</td>
-				</form>
-			</tr>
-
-		</table>
-		<!-- 診断テーブルここまで -->
-
-		<br>
-
-		<!-- 診断結果へのリンク -->
-		<form method="POST">
-		<div class = "botton">
-			<div class = "result">
-				<input type="submit" name="regist" value="診断結果へ"><br>
-			</div>
-		</div>
-		</form>
-		<!-- 診断エリアここまで -->
+			<!-- 診断結果へのリンク -->
+			<form method="POST">
+				<div class="botton">
+					<div class="result">
+						<input type="submit" name="regist" value="診断結果へ"><br>
+					</div>
+				</div>
+			</form>
+			<!-- 診断エリアここまで -->
 		</div>
 
 		<!-- フッター -->
