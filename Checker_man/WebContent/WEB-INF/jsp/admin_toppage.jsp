@@ -28,9 +28,12 @@
          <!--  「受講者の健康診断」のhtml -->
 <div class="healthcheck">
 現在の受講者健康状態<br>
-<p class="icon"><img src="/Checker_man/images/maru.png">の人：１０人<br>
+<p class="icon"><img src="/Checker_man/images/maru.png">の人：
+<div class="sample2oya" onclick="showSample()">10人
+  <span class="sample2" id="idsample2">吹き出しが表示される</span>
+</div>
 <img src="/Checker_man/images/sankaku.png">の人：5人<br>
-<img src="/Checker_man/images/batsu.png">の人：3人</p>
+<img src="/Checker_man/images/batsu.png">の人：3人
 
 </div>
 
@@ -53,6 +56,18 @@
  </footer>
 
 </div>
+
+<!-- javascriptで吹き出し -->
+<script type="text/javascript">
+function showSample(){
+var wObjballoon	= document.getElementById("idsample2");
+if (wObjballoon.className == "sample2"){
+wObjballoon.className = "sample20";
+}else{
+wObjballoon.className = "sample2";
+}
+}
+</script>
 
 </body>
 </html>
