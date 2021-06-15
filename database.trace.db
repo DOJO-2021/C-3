@@ -130,3 +130,25 @@ Column "question_id" not found [42122-199]
 	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
 	at dao.user_loginDao.select(user_loginDao.java:123)
 	at test.user_loginDaoTest.main(user_loginDaoTest.java:22)
+2021-06-15 14:22:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: パラメータ "parameterIndex" に対する値 "1" が不正です
+Invalid value "1" for parameter "parameterIndex" [90008-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1573)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:427)
+	at dao.s_questionDao.select(s_questionDao.java:50)
+	at test.s_questionTest.main(s_questionTest.java:16)
+2021-06-15 14:22:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: パラメータ "parameterIndex" に対する値 "2" が不正です
+Invalid value "2" for parameter "parameterIndex" [90008-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1573)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:427)
+	at dao.s_questionDao.select(s_questionDao.java:63)
+	at test.s_questionTest.main(s_questionTest.java:16)

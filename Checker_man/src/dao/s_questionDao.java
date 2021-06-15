@@ -44,34 +44,6 @@ public class s_questionDao {
 			e.printStackTrace();
 		}
 
-		// SQL文を完成させる
-		if (param.getQuestion_id() != 0) {
-			try {
-				pStmt.setString(1, "%" + param.getQuestion_id() + "%");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		} else {
-			try {
-				pStmt.setString(1, "%");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		if (param.getQuestion() != null) {
-			try {
-				pStmt.setString(2, "%" + param.getQuestion() + "%");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		} else {
-			try {
-				pStmt.setString(2, "%");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-
 		// SQL文を実行し、結果表を取得する
 		ResultSet rs = pStmt.executeQuery();
 
