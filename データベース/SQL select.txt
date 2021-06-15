@@ -41,7 +41,7 @@ select
 from s_result
 
 4月～6月の表のデータ
-select icon, count(icon),date from s_result group by icon,date order by date asc;
+select icon, count(icon),date from s_result group by icon,date order by date asc
 
 カレンダーのデータ
-select  icon, date, user_id from s_result order by date asc
+select  icon, date, user_id from s_result WHERE user_id = ? order by date asc
