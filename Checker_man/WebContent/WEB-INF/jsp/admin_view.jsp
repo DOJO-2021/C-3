@@ -119,7 +119,7 @@
 		<form method="POST">
 			<div class="a_comment">
 				管理者コメント<br>
-				<textarea name="comment" action=""></textarea>
+				<textarea name="comment" action="admin_view.servlet"></textarea>
 				<br> <input type="submit" name="submit" value="書き込む"
 					class="button">
 			</div>

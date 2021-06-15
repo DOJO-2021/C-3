@@ -6,6 +6,7 @@ p {
 	width: 200px;
 	background: #f5f5f5;
 	border: dashed 5px #ffa500; /*点線*/
+	text-align: center;
 }
 
 h2 {
@@ -14,18 +15,18 @@ h2 {
 
 /* 名前の欄 */
 pre {
-	padding: 0.3em 1em;
-	width: 400px;
+	padding: 0.1em 0.2em;
+	width: 300px;
 	text-align: center;
 	background: #f5f5f5;
-	border-top: solid 5px #ffa500;
-	box-shadow: 0.3px 5px #ffa500;
+	border-top: solid 5px #B0D6DA;
+	box-shadow: 0.3px 5px #B0D6DA;
 }
 /* 名前文字 */
 .name {
 	margin-right: auto;
 	margin-left: auto;
-	font-size: 120%;
+	font-size: 20px;
 }
 
 /* 質問内容書 */
@@ -46,7 +47,7 @@ pre {
 .question th {
 	text-align: left; /* 左寄せ*/
 	padding: 1em 2em;
-	font-size: 140%;
+	font-size: 14px;
 }
 /* 質問テーブル全体 */
 table.question {
@@ -82,10 +83,10 @@ h2 {
 
 /* テキストエリア */
 textarea {
-	width: 100em;
+	width: 50em;
 	height: 10em; /*  */
 	background: #ffffff; /* 背景色 */
-	font-size: 100%;
+	font-size: 14px;
 }
 
 /* 書き込みボタン */
