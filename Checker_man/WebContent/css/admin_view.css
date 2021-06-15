@@ -46,7 +46,7 @@ pre {
 .question th {
 	text-align: left; /* 左寄せ*/
 	padding: 1em 2em;
-	font-size: 150%;
+	font-size: 140%;
 }
 /* 質問テーブル全体 */
 table.question {
@@ -82,15 +82,16 @@ h2 {
 
 /* テキストエリア */
 textarea {
-	width: 50em;
-	height: 7em; /*  */
+	width: 100em;
+	height: 10em; /*  */
 	background: #ffffff; /* 背景色 */
+	font-size: 100%;
 }
 
 /* 書き込みボタン */
 .button {
   display       : inline-block;
-  border-radius : 5%;          /* 角丸       */
+  border-radius : 10%;          /* 角丸       */
   font-size     : 12pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
@@ -115,34 +116,7 @@ textarea {
 
 /* 画面上部に移動するボタン */
 
-.topScroll{
-	text-align: right;
-    display:  inline-block;
-    color: #ffffff;
-    text-decoration:  none;
-    background-color: #2196F3;
-    border-radius: 5px;
-    position:  relative;
-    height: 50px;
-    width: 50px;
-    cursor:pointer;
-}
 
-.topScroll::before {
-    content:  '';
-    width: 20px;
-    height: 20px;
-    display:  block;
-    border-top: solid 2px;
-    border-right: solid 2px;
-    transform: rotate(-45deg);
-    position:  absolute;
-    top: 10px;
-    bottom:  0;
-    left:  0;
-    right:  0;
-    margin:  auto;
-}
 /* トップページに戻るボタン(装飾) */
 .btn {
 	position: relative;
