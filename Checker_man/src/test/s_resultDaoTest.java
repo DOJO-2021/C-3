@@ -53,11 +53,12 @@ public class s_resultDaoTest {
 				// select_iconのテスト
 						System.out.println("---------- select_iconのテスト ----------");
 
-						admin_toppage resultData = dao.select_icon(new admin_toppage(0, 0, 0));;
+						admin_toppage resultData = dao.select_icon(new admin_toppage(0, 0, 0, 0));;
 
 							System.out.println("maru：" + resultData.getMaru_number());
 							System.out.println("batsu：" + resultData.getBatsu_number());
 							System.out.println("sankaku：" + resultData.getSankaku_number());
+							System.out.println("comment：" + resultData.getComment_number());
 							System.out.println();
 
 /*

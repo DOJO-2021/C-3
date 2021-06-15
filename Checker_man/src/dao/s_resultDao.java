@@ -273,7 +273,8 @@ public class s_resultDao {
 						// SQL文を準備する
 						String sql = "select ( select count(*) from s_result where icon = 'maru' and date = CURDATE() group by icon ) AS maru, "
 								+ "( select count(*) from s_result where icon = 'batsu' and date = CURDATE() group by icon ) AS batsu, "
-								+ "( select count(*) from s_result where icon = 'sankaku' and date = CURDATE() group by icon ) AS sankaku "
+								+ "( select count(*) from s_result where icon = 'sankaku' and date = CURDATE() group by icon ) AS sankaku ,"
+								+ "(select count(*) from s_result where user_comment <> '' and date = CURDATE() ) AS comment "
 								+ "from s_result group by CURDATE()";
 
 						PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -286,7 +287,8 @@ public class s_resultDao {
 							result = new admin_toppage(
 									rs.getInt("maru"),
 									rs.getInt("batsu"),
-									rs.getInt("sankaku")
+									rs.getInt("sankaku"),
+									rs.getInt("comment")
 								);
 						}
 					}
