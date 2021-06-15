@@ -28,7 +28,7 @@ select
 from s_result group by CURDATE(); 
 
 ○☓△の人の表示
-select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'maru' and date = CURDATE()
+select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'maru' and date = CURDATE() order by u.user_id
 select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'batsu' and date = CURDATE()
 select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'sankaku' and date = CURDATE()
 select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id where user_comment <> '' and date = CURDATE()
