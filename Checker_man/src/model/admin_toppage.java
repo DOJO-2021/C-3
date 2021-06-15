@@ -1,6 +1,5 @@
 package model;
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class admin_toppage implements Serializable {
 
@@ -16,7 +15,7 @@ public class admin_toppage implements Serializable {
 
 	//引数があるコントラスタ
 	public admin_toppage(int maru_number, int batsu_number, int sankaku_number, int comment_number
-			, ArrayList<String> maru_list) {
+			) {
 		super();
 		this.maru_number = maru_number;
 		this.batsu_number = batsu_number;
