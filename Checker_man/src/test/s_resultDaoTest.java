@@ -1,18 +1,24 @@
 package test;
 
+
+import java.util.List;
+
 import dao.s_resultDao;
+import model.admin_lastdata;
 import model.admin_toppage;
+import model.s_result;
+import model.user_toppage;
 
 public class s_resultDaoTest {
 
 	public static void main(String[] args) {
 		s_resultDao dao = new s_resultDao();
 
-		/*
+
 		// insert()のテスト
 				System.out.println("---------- insert()のテスト ----------");
 
-				s_result insRec = new s_result(0, null, "maru", "受講者コメント", "管理者コメント", 6);
+				s_result insRec = new s_result(0, null, "maru", "受講者コメント", "管理者コメント", 10);
 
 				if (dao.insert(insRec)) {
 					System.out.println("登録成功！");
@@ -47,41 +53,47 @@ public class s_resultDaoTest {
 							System.out.println("admin_comment：" + resultData.getAdmin_comment());
 							System.out.println("user_id：" + resultData.getUser_id());
 							System.out.println();
-						}*/
+						}
 
 
-				// select_iconのテスト
-						System.out.println("---------- select_iconのテスト ----------");
+				// select_toppageのテスト
+						System.out.println("---------- select_toppageのテスト ----------");
 
-						admin_toppage resultData = dao.select_icon(new admin_toppage(0, 0, 0, 0));;
+						admin_toppage resultData = dao.select_toppage(new admin_toppage(0, 0, 0, 0,null,null,null,null));
 
-							System.out.println("maru：" + resultData.getMaru_number());
-							System.out.println("batsu：" + resultData.getBatsu_number());
-							System.out.println("sankaku：" + resultData.getSankaku_number());
-							System.out.println("comment：" + resultData.getComment_number());
+							System.out.println("○の人数：" + resultData.getMaru_number());
+							System.out.println("☓の人数：" + resultData.getBatsu_number());
+							System.out.println("△の人数：" + resultData.getSankaku_number());
+							System.out.println("commentの人数：" + resultData.getComment_number());
+							System.out.println("○の人：" + resultData.getMaru_list());
+							System.out.println("☓の人：" + resultData.getBatsu_list());
+							System.out.println("△の人：" + resultData.getSankaku_list());
+							System.out.println("コメントした人：" + resultData.getComment_list());
 							System.out.println();
 
-/*
+
 				// select_lastdataのテスト
+		System.out.println("---------- select_lastdataのテスト ----------");
 							List<admin_lastdata> resultList3 = dao.select_lastdata(new admin_lastdata("", 0,""));
 
-							for (admin_lastdata resultData : resultList3) {
-								System.out.println("icon：" + resultData.getIcon());
-								System.out.println("icon_number：" + resultData.getIcon_number());
-								System.out.println("date：" + resultData.getDate());
+							for (admin_lastdata resultData1 : resultList3) {
+								System.out.println("icon：" + resultData1.getIcon());
+								System.out.println("icon_number：" + resultData1.getIcon_number());
+								System.out.println("date：" + resultData1.getDate());
 								System.out.println();
-							}*/
+							}
 
-		/*
+
 		// select_calenderのテスト
-		List<user_toppage> resultList4 = dao.select_calender(new user_toppage("", "",0));
+		System.out.println("---------- select_calenderのテスト ----------");
+		List<user_toppage> resultList4 = dao.select_calender(new user_toppage("", "",1));
 
-		for (user_toppage resultData : resultList4) {
-			System.out.println("icon：" + resultData.getIcon());
-			System.out.println("date：" + resultData.getDate());
-			System.out.println("user_id：" + resultData.getUser_id());
+		for (user_toppage resultData1 : resultList4) {
+			System.out.println("icon：" + resultData1.getIcon());
+			System.out.println("date：" + resultData1.getDate());
+			System.out.println("user_id：" + resultData1.getUser_id());
 			System.out.println();
-		}*/
+		}
 
 	}
 }

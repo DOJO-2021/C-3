@@ -129,7 +129,7 @@ public class s_resultDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "select  icon, date, user_id from s_result WHERE user_id LIKE ? order by date asc";
+				String sql = "select  icon, date, user_id from s_result WHERE user_id = ? order by date asc";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -257,8 +257,8 @@ public class s_resultDao {
 					return result;
 				}
 
-			// 管理者トップページの現在の受講者健康状態で使うデータベース処理
-				public admin_toppage select_icon(admin_toppage param) {
+		// 管理者トップページの現在の受講者健康状態で使うデータベース処理
+				public admin_toppage select_toppage(admin_toppage param) {
 
 					Connection conn = null;
 					admin_toppage result = null;
@@ -270,26 +270,71 @@ public class s_resultDao {
 						// データベースに接続する
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
+				//○の人数表示
 						// SQL文を準備する
-						String sql = "select ( select count(*) from s_result where icon = 'maru' and date = CURDATE() group by icon ) AS maru, "
-								+ "( select count(*) from s_result where icon = 'batsu' and date = CURDATE() group by icon ) AS batsu, "
-								+ "( select count(*) from s_result where icon = 'sankaku' and date = CURDATE() group by icon ) AS sankaku ,"
-								+ "(select count(*) from s_result where user_comment <> '' and date = CURDATE() ) AS comment "
-								+ "from s_result group by CURDATE()";
+						String sql1 = "select count(*) as maru from s_result where icon = 'maru' and date = CURDATE()";
 
-						PreparedStatement pStmt = conn.prepareStatement(sql);
+						PreparedStatement pStmt1 = conn.prepareStatement(sql1);
 
 						// SQL文を実行し、結果表を取得する
-						ResultSet rs = pStmt.executeQuery();
+						ResultSet rs1 = pStmt1.executeQuery();
 
 						// 結果表をコレクションにコピーする
-						while (rs.next()) {
-							result = new admin_toppage(
-									rs.getInt("maru"),
-									rs.getInt("batsu"),
-									rs.getInt("sankaku"),
-									rs.getInt("comment")
-								);
+						rs1.next();
+						result = new admin_toppage();
+						result.setMaru_number(rs1.getInt("maru"));
+
+				   //☓の人数表示
+						String sql2 = "select count(*) as batsu from s_result where icon = 'batsu' and date = CURDATE()";
+						PreparedStatement pStmt2 = conn.prepareStatement(sql2);
+						ResultSet rs2 = pStmt2.executeQuery();
+						rs2.next();
+						result.setBatsu_number(rs2.getInt("batsu"));
+//
+					//△の人数表示
+						String sql3 = "select count(*) as sankaku from s_result where icon = 'sankaku' and date = CURDATE()";
+						PreparedStatement pStmt3 = conn.prepareStatement(sql3);
+						ResultSet rs3 = pStmt3.executeQuery();
+						rs3.next();
+						result.setSankaku_number(rs3.getInt("sankaku"));
+//
+//					//コメントした人数表示
+						String sql4 = "select count(*) as comment from s_result where user_comment <> '' and date = CURDATE()";
+						PreparedStatement pStmt4 = conn.prepareStatement(sql4);
+						ResultSet rs4 = pStmt4.executeQuery();
+						rs4.next();
+						result.setComment_number(rs4.getInt("comment"));
+
+				//○の人表示
+						String sql5 = "select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'maru' and date = CURDATE()";
+						PreparedStatement pStmt5 = conn.prepareStatement(sql5);
+						ResultSet rs5 = pStmt5.executeQuery();
+						while (rs5.next()) {
+							result.setMaru_list(rs5.getString("user_login.user_name"));
+						}
+
+				//☓の人表示
+						String sql6 = "select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'batsu' and date = CURDATE()";
+						PreparedStatement pStmt6 = conn.prepareStatement(sql6);
+						ResultSet rs6 = pStmt6.executeQuery();
+						while (rs6.next()) {
+							result.setBatsu_list(rs6.getString("user_login.user_name"));
+						}
+
+					//△の人表示
+						String sql7 = "select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'sankaku' and date = CURDATE()";
+						PreparedStatement pStmt7 = conn.prepareStatement(sql7);
+						ResultSet rs7 = pStmt7.executeQuery();
+						while (rs7.next()) {
+							result.setSankaku_list(rs7.getString("user_login.user_name"));
+						}
+
+					//コメントした人表示
+						String sql8 = "select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id where user_comment <> '' and date = CURDATE()";
+						PreparedStatement pStmt8 = conn.prepareStatement(sql8);
+						ResultSet rs8 = pStmt8.executeQuery();
+						while (rs8.next()) {
+							result.setComment_list(rs8.getString("user_login.user_name"));
 						}
 					}
 

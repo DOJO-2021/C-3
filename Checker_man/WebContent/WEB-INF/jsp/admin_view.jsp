@@ -127,22 +127,30 @@
 		</form>
 
 		<!-- 画面上部に戻るボタン -->
-		<div class="topScroll" onclick="scrollTop()">画面上部に移動する</div>
+		<button id="topScroll" class="topScroll"></button>
+
+
 		<!-- トップページに戻るボタン -->
 		<div class="toppage">
 			<a href="/Checker_man/Admin_TopPageServlet" class="btn">トップページに戻る</a>
 		</div>
 
 	</div>
+
+
 	<!-- フッター -->
 	<footer class="footer">
 		<jsp:include page="/WEB-INF/jsp/footer.jsp" />
 	</footer>
 
 	<script>
-		function scrollToTop() {
-			scrollTo(0, 0);
-		}
+	const topScrollBtn = document.querySelector('#topScroll');
+	topScrollBtn.addEventListener('click', () => {
+	  window.scrollTo({
+	    top: 0,
+	    behavior: "smooth"
+	  });
+	});
 	</script>
 
 </body>

@@ -12,15 +12,15 @@
 
 		<!-- ロゴ -->
 		<h1 class="keyvisual">
-			<img src="/Checker_man/images/image1.png">
+			<img src="/Checker_man/images/header.png">
 		</h1>
 
 		<!-- トップページへのリンク -->
 		<div class="header">
-		<a href="/Checker_man/User_TopPageServlet" class="btn">トップページ</a>
+			<a href="/Checker_man/User_TopPageServlet" class="btn">トップページ</a>
 
-		<!-- ログアウトのリンク -->
-		<a href="/Checker_man/LogoutServlet" class="btn">ログアウト</a>
+			<!-- ログアウトのリンク -->
+			<a href="/Checker_man/LogoutServlet" class="btn">ログアウト</a>
 		</div>
 
 	</div>
