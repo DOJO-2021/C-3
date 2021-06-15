@@ -25,6 +25,7 @@
 
  <!-- メイン -->
  <div class ="main">
+ <p></p>
 
  <div class="calendar-border">
 
@@ -33,7 +34,7 @@
    <table class="calender-menu-table">
     <tr>
 		<th><input type="submit" id="previous-month" name="previous-month" value="前月"></th>
-		 <th>2021年6月</th>
+		 <th class = "th-month">2021年6月</th>
     	<th><input type="submit" id="next-month" name="next-month" value="翌月"></th>
     </tr>
    </table>
@@ -42,14 +43,14 @@
              <!-- カレンダーの表のhtml -->
    <div class="calender">
     <table class="calender-table">
-      <tr>
-        <th>日</th>
+      <tr class = "week">
+        <th class = "sunday">日</th>
         <th>月</th>
         <th>火</th>
         <th>水</th>
         <th>木</th>
         <th>金</th>
-        <th>土</th>
+        <th class = "saturday">土</th>
       </tr>
 
          <tr>
@@ -119,7 +120,7 @@
 </div>
 
 
-
+ <p></p>
  </div>
 
  <!-- フッター -->

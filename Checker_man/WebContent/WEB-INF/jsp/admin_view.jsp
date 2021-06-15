@@ -103,9 +103,8 @@
 		<h2>診断結果</h2>
 		<form method="POST">
 			<div class="result">
-				<textarea readonly name="result">
-		調子よさそうだね！!
-		</textarea>
+				<textarea readonly name="result">調子よさそうだね！!
+				</textarea>
 			</div>
 		</form>
 		<!-- 受講者コメント(閲覧用) -->

@@ -22,7 +22,7 @@
 	<h1>新規登録</h1>
 	<div class="regist-form">
 		ユーザーID<input type="text" name="ID"><br>
-		パスワード<input type="password" name="PW">
+		パスワード<input type="password" name="PW"><br>
 		パスワード確認<input type="password" name="CH-PW">
 	</div>
 	<input type ="submit" name="REGIST" value="登録" >
