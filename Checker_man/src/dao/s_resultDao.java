@@ -344,7 +344,6 @@ public class s_resultDao {
 							admin_lastdata resultData = new admin_lastdata(
 							rs.getString("icon"),
 							rs.getInt("count(icon)"),
-
 							rs.getString("date")
 							);
 							resultList.add(resultData);
