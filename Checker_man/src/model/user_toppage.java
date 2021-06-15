@@ -4,7 +4,7 @@ import java.io.Serializable;
 public class user_toppage implements Serializable {
 
 	private String icon;   //アイコン
-	private String date;
+	private String date;  //日付
 	private int user_id; //アイコンの人数
 
 	//引数があるコントラスタ
