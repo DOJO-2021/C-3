@@ -19,7 +19,7 @@ public class User_SindanServlet extends HttpServlet {
 
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		if (session.getAttribute("user_id") == null) {
 			response.sendRedirect("/Checker_man/User_SindanServlet");
 			return;
 		}
