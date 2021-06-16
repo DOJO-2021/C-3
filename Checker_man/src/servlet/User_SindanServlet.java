@@ -45,7 +45,7 @@ public class User_SindanServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String question_id = request.getParameter("QUESTION_ID");
-		String anwer = request.getParameter("ANSWER");
+		String answer = request.getParameter("ANSWER");
 		String user_id = request.getParameter("USER_ID");
 		String question = request.getParameter("QUESTION");
 
