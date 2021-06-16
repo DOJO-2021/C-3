@@ -32,6 +32,18 @@ public class user_toppage implements Serializable {
 		this.icon = icon;
 	}
 
+	public String getIcon_path() {
+		if(this.icon.equals("maru")) {
+			return "/Checker_man/images/maru.png";
+		}
+		else if(this.icon.equals("batsu")){
+			return "/Checker_man/images/batsu.png";
+		}
+		else {
+			return "/Checker_man/images/sankaku.png";
+		}
+	}
+
 	public String getDate() {
 		return date;
 	}

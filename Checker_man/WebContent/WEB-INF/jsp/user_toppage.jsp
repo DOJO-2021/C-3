@@ -119,6 +119,13 @@
  <input type="submit" id="user_result" name="user_result" value="診断結果">
 </div>
 
+<p>テスト（削除しても良い）</p>
+<c:forEach var="e" items="${calenderlist}">
+<div class="icon">
+<img src="${e.icon_path}" >
+</div>
+<input type="text" value="${e.icon}" readonly>
+</c:forEach>
 
  <p></p>
  </div>
