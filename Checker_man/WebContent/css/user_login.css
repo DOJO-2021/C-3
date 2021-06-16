@@ -1,16 +1,30 @@
 @charset "UTF-8";
+
+.main p {
+	border : dotted 3px #B0D6DA;
+}
+
 /* 管理者ログインリンクを右上に,かつボタンに */
 .link1 {
+	display: inline-block;
+	border-radius : 5%;          /* 角丸       */
+	font-size     : 18pt;        /* 文字サイズ */
+	text-align    : center;
+	background-color:rgb(240,180,62);
+	/*
+	padding:10px;
+	*/
+	line-height: 2em;
+	color:white;
+	text-decoration: none;
+	/*
+	margin-left:1600px;
+	*/
+	width: 200px;
+}
 
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
-  text-align    : center;
-  background-color:rgb(240,180,62);
-  padding:10px;
-  color:white;
-  text-decoration: none;
-  margin-left:1600px;
-
+.link1-button {
+	text-align: right;
 }
 
 /* ログインエリアを中央に配置 */
@@ -32,6 +46,6 @@
 
 .link2 {
 	display:inline-block;
-	/* text-decoration: none; */
+	text-decoration: none;
 }
 
