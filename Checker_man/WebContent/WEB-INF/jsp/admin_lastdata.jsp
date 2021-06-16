@@ -26,10 +26,31 @@
 
 <!-- ここにresultListをグルグル表示させる -->
 <c:forEach var="e" items="${resultList}">
+</c:forEach>
+<table>
+	<tr>
+		<td></td>
+		<td>${e.icon }</td>
+		<td>${e.icon }</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>${e.date }</td>
+		<td>${e.icon_number }</td>
+	</tr>
+</table>
+</c:forEach>
+<!--
 ${e.icon }<br>
 ${e.icon_number }<br>
 ${e.date }<br>
-</c:forEach>
+${e.icon }<br>
+${e.icon_number }<br>
+${e.date }<br>
+  -->
+
+
+
 
 	<div class="table4">
 		<h2>4月</h2>
