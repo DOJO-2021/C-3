@@ -8,9 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.user_loginDao;
+import model.LoginUser;
 import model.Result;
+import model.user_login;
 
 /**
  * Servlet implementation class User_LoginServlet
@@ -45,11 +48,12 @@ public class User_LoginServlet extends HttpServlet {
 
 		if (lDao.isLoginOK(user_name, user_pw)) {	// ログイン成功
 
-
+			user_login id = lDao.select_session(user_name, user_pw);
 
 			// セッションスコープにIDを格納する
-			//HttpSession session = request.getSession();
-			//session.setAttribute("user_id", new LoginUser(user_id));
+			HttpSession session = request.getSession();
+			session.setAttribute("user_id", new LoginUser(id));
+
 			// メニューサーブレットにリダイレクトする
 			response.sendRedirect("/Checker_man/User_TopPageServlet");
 		}
