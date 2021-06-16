@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +23,14 @@
 
 <!-- 月ごとの表 -->
 <div class="result-table">
+
+<!-- ここにresultListをグルグル表示させる -->
+<c:forEach var="e" items="${resultList}">
+${e.icon }<br>
+${e.icon_number }<br>
+${e.date }<br>
+</c:forEach>
+
 	<div class="table4">
 		<h2>4月</h2>
 		<table class="a4month" border="1" style="border-collapse: collapse" >
