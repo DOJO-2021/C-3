@@ -26,74 +26,64 @@
 	 	<h2>（一言診断結果を表示）</h2>
 
 		<!-- 質問内容と回答 -->
-	<c:forEach var="e" items="${questionList}" >
-	<c:forEach var="e" items="${answerList}" >
-		<form method="POST" action="/Checker_man/User_ResultServlet">
+	<!--
 		 	<table class = "user_result">
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
+		 		<tr>
+		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
+		 		<tr>
+		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
+		 		<tr>
+		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 		<tr>
 		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 		 		</tr>
 		 	</table>
+		 -->
+	<c:forEach var="e" items="${questionList}" >
+		<form method="POST" action="/Checker_man/User_ResultServlet">
+			<input type="text" name="QUESTION" value="${e.question}">
 	 	</form>
 	</c:forEach>
+
+	<c:forEach var="e" items="${answerList}" >
+		<form method="POST" action="/Checker_man/User_ResultServlet">
+		 	<input type="text" name="ANSWER" value="${e.answer}">
+	 	</form>
 	</c:forEach>
+
 	 	<!-- コメント欄 -->
 	 	<div class = "message">
 		 	<div class = "user_message">
@@ -109,26 +99,29 @@
 			<div class = "regist">
 				<input type="submit" name="regist" value="コメント登録"><br>
 			</div>
-			</div>
-		<div class = "botton">
+		</div>
+
+		<c:out value ="${resultList}"/>
+		<form method="POST" action="/Checker_man/User_ResultServlet">
 			<div class = "admin_message">
 		 		<p>講師からのコメント</p>
-				<!-- rows="3" cols="54" name="admin_message">${e.admin_message}は仮 -->
-				<textarea rows="10" cols="100" readonly name="admin_message">${e.admin_message}</textarea>
+				<textarea rows="10" cols="100" readonly name="admin_message">${resultList.admin_comment}</textarea>
 			</div>
-			</div>
+		</form>
 
 			<div class = "return">
 				<a href="/Checker_man/User_TopPageServlet">トップへ戻る</a>
 			</div>
-		</div>
-		</form>
-	 </main>
+
+	</main>
+	</div>
+
 
 	<!-- フッター -->
 	<footer class="footer">
 		<jsp:include page="/WEB-INF/jsp/footer.jsp"/>
 	</footer>
+
 
 	</div>
 </body>
