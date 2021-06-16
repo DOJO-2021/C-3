@@ -26,28 +26,28 @@ public class Admin_LastDataServlet extends HttpServlet {
 	//doGet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/Checker_man/Admin_LoginServlet");
-			return;
-		}
+//		HttpSession session = request.getSession();
+//		if (session.getAttribute("id") == null) {
+//			response.sendRedirect("/Checker_man/Admin_LoginServlet");
+//			return;
+//		}
+
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+
+		// 検索処理を行う(一つの表)
+		s_resultDao sDao = new s_resultDao();
+		List<admin_lastdata> resultList = sDao.select_lastdata(new admin_lastdata("", 0,""));
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("resultList",resultList );
+
+
 
 		// 過去のデータページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_lastdata.jsp");
 		dispatcher.forward(request, response);
-		}
-
-		// リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
-		String icon = request.getParameter("icon");
-		String date = request.getParameter("date");
-
-		// 検索処理を行う
-		s_resultDao sDao = new s_resultDao();
-		List<admin_lastdata> resultList = sDao.select_lastdata(new admin_lastdata(icon, count(icon),date));
-
-		// 検索結果をリクエストスコープに格納する
-		//request.setAttribute("resultList",resultList );
+	}
 
 
 
