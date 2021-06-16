@@ -48,9 +48,10 @@ public class User_LoginServlet extends HttpServlet {
 
 		if (lDao.isLoginOK(user_name, user_pw)) {	// ログイン成功
 
-			user_login resultid = lDao.select_session(user_name, user_pw);
 
 			// セッションスコープにIDを格納する
+			user_login resultid = lDao.select_session(user_name, user_pw); //ユーザーIDをselectするためのDaoメソッド
+
 			HttpSession session = request.getSession();
 			session.setAttribute("user_id", new LoginUser(resultid.getUser_id()));
 
