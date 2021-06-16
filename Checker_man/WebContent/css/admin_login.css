@@ -1,15 +1,33 @@
 @charset "UTF-8";
+
+.main p {
+	border : dotted 3px #F0B43E;
+}
+
 /* 受講者ログインを右上に */
 .link3 {
-  border-radius : 5%;          /* 角丸       */
-  font-size     : 18pt;        /* 文字サイズ */
-  text-align    : center;
-  background-color:rgb(176,214,218);
-  padding:10px;
-  color:white;
-  text-decoration: none;
-  margin-left:1600px;
+	display: inline-block;
+	border-radius : 5%;          /* 角丸       */
+	font-size     : 18pt;        /* 文字サイズ */
+	text-align    : center;
+	background-color:rgb(176,214,218);;
+	/*
+	padding:10px;
+	*/
+	line-height: 2em;
+	color:white;
+	text-decoration: none;
+	/*
+	margin-left:1600px;
+	*/
+	width: 200px;
 }
+
+.link3-button {
+	text-align: right;
+}
+
+
 
 /* ログインエリアを中央に配置 */
 .alogin-area {
