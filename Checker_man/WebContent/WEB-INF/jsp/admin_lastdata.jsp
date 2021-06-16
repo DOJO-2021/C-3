@@ -26,12 +26,18 @@
 
 <!-- ここにresultListをグルグル表示させる -->
 <c:forEach var="e" items="${resultList}">
+<!-- 日付と人数だけループさせる？ -->
+${e.date }<br>
+${e.icon_number}<br>
 </c:forEach>
+${e.icon }
+
+<!--
 <table>
 	<tr>
 		<td></td>
 		<td>${e.icon }</td>
-		<td>${e.icon }</td>
+		<td></td>
 		<td></td>
 	</tr>
 	<tr>
@@ -39,7 +45,8 @@
 		<td>${e.icon_number }</td>
 	</tr>
 </table>
-</c:forEach>
+-->
+
 <!--
 ${e.icon }<br>
 ${e.icon_number }<br>
