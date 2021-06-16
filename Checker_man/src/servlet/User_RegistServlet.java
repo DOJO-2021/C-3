@@ -31,28 +31,44 @@ public class User_RegistServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		int user_id = Integer.parseInt(request.getParameter("USER_ID"));
-		String user_name = request.getParameter("USER_NAME");
-		String user_pw = request.getParameter("USER_PW");
 
-		// ログイン処理を行う
-		user_loginDao lDao = new user_loginDao();
-		if (lDao.isLoginOK(user_id, user_name, user_pw)) {	// ログイン成功
-			// セッションスコープにIDを格納する
-			HttpSession session = request.getSession();
-			session.setAttribute("user_id", new loginUser(user_id));
+		//入力値を取ってくる
+		String id = request.getParameter("ID");
+		String name = request.getParameter("NAME");
+		String pw = request.getParameter("PW");
+		//パスワードが一致するかチェックする
 
-			// メニューサーブレットにリダイレクトする
-			response.sendRedirect("/Checker_man/User_TopPageServlet");
-		}
-		else {									// ログイン失敗
-			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
-			request.setAttribute("result",
-			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/Checker_man/User_LoginServlet"));
+		//パスワードが不一致の場合、エラーを表示して同じ画面を表示する
 
-			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_login.jsp");
-			dispatcher.forward(request, response);
-		}
+		//登録する
+
+		//登録後のページに移動する、再度画面を表示する
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+		dispatcher.forward(request, response);
+
+//		int user_id = Integer.parseInt(request.getParameter("USER_ID"));
+//		String user_name = request.getParameter("USER_NAME");
+//		String user_pw = request.getParameter("USER_PW");
+//
+//		// ログイン処理を行う
+//		user_loginDao lDao = new user_loginDao();
+//		if (lDao.isLoginOK(user_id, user_name, user_pw)) {	// ログイン成功
+//			// セッションスコープにIDを格納する
+//			HttpSession session = request.getSession();
+//			session.setAttribute("user_id", new loginUser(user_id));
+//
+//			// メニューサーブレットにリダイレクトする
+//			response.sendRedirect("/Checker_man/User_TopPageServlet");
+//		}
+//		else {									// ログイン失敗
+//			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
+//			request.setAttribute("result",
+//			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/Checker_man/User_LoginServlet"));
+//
+//			// 結果ページにフォワードする
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_login.jsp");
+//			dispatcher.forward(request, response);
+//		}
 	}
-
+}

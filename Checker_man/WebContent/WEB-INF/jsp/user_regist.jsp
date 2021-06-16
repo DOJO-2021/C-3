@@ -21,12 +21,14 @@
 		<main>
 			<div class="regist-area">
 				<h1>新規登録</h1>
-				<div class="regist-form">
-					ユーザーID<input type="text" name="ID"><br> パスワード<input
-						type="password" name="PW"><br> パスワード確認<input
-						type="password" name="CH-PW">
-				</div>
-				<a href="User_TopPageServlet">登録</a> <a href="User_LoginServlet">戻る</a>
+				<form method="POST" action="/Checker_man/User_RegistServlet">
+					<div class="regist-form">
+						ユーザーID<input type="text" name="ID"><br> パスワード<input
+							type="password" name="PW"><br> パスワード確認<input
+							type="password" name="CH-PW">
+					</div>
+					<input type="submit" value="登録"> <a href="User_LoginServlet">戻る</a>
+				</form>
 			</div>
 		</main>
 
