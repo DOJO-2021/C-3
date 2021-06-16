@@ -36,8 +36,11 @@ public class User_RegistServlet extends HttpServlet {
 		String id = request.getParameter("ID");
 		String name = request.getParameter("NAME");
 		String pw = request.getParameter("PW");
-		//パスワードが一致するかチェックする
 
+		//パスワードが一致するかチェックする
+		if(pw == null) {
+
+		}
 		//パスワードが不一致の場合、エラーを表示して同じ画面を表示する
 
 		//登録する
