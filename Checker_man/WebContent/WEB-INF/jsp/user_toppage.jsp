@@ -121,7 +121,10 @@
 
 <p>テスト（削除しても良い）</p>
 <c:forEach var="e" items="${calenderlist}">
-<input type="text" value="${e.date}" readonly>
+<div class="icon">
+<img src="${e.icon_path}" >
+</div>
+<input type="text" value="${e.icon}" readonly>
 </c:forEach>
 
  <p></p>

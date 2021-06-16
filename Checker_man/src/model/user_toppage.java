@@ -6,6 +6,7 @@ public class user_toppage implements Serializable {
 	private String icon;   //アイコン
 	private String date;  //日付
 	private int user_id; //ユーザーID
+	private String icon_path;
 
 	//引数があるコントラスタ
 	public user_toppage(String icon, String date, int user_id) {
@@ -30,6 +31,18 @@ public class user_toppage implements Serializable {
 
 	public void setIcon(String icon) {
 		this.icon = icon;
+	}
+
+	public String getIcon_path() {
+		if(this.icon.equals("maru")) {
+			return icon_path = "/Checker_man/images/maru.png";
+		}
+		else if(this.icon.equals("batsu")){
+			return icon_path = "/Checker_man/images/batsu.png";
+		}
+		else {
+			return icon_path = "/Checker_man/images/sankaku.png";
+		}
 	}
 
 	public String getDate() {

@@ -28,10 +28,18 @@ public class User_TopPageServlet extends HttpServlet {
 //					return;
 //				}
 
-		// カレンダーの検索処理を行う
+
+
+		// カレンダーの検索処理を行う（ユーザID = 1の場合）
 				s_resultDao calenderDao = new s_resultDao();
 				//session.getAttribute("user_id") = user_id;
 				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",1));
+
+		// カレンダーの検索処理を行う
+//				HttpSession session = request.getSession();
+//				s_resultDao calenderDao = new s_resultDao();
+//				int id = (int)session.getAttribute("user_id");
+//				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",id));
 
 		// カレンダーの処理をリクエストスコープに格納する
 		request.setAttribute("calenderlist", calenderlist);
