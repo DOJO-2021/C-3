@@ -40,12 +40,15 @@ public class s_questionDao {
 						rs.getString("question"));
 				questionList.add(question);
 			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			questionList = null;
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			questionList = null;
+
 		} finally {
 			// データベースを切断
 			if (conn != null) {
@@ -56,6 +59,7 @@ public class s_questionDao {
 				}
 			}
 		}
+
 		// 結果を返す
 		return questionList;
 	}
