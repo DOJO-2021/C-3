@@ -22,6 +22,8 @@ public class User_TopPageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		int id = 0;
+
 	//	 もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
 				if (session.getAttribute("user_id") == null) {
@@ -37,7 +39,7 @@ public class User_TopPageServlet extends HttpServlet {
 
 		// カレンダーの検索処理を行う
 				//HttpSession session = request.getSession();
-			int id = Integer.parseInt((int)session.getAttribute("user_id"));
+		id = (int)session.getAttribute("user_id");
 			//int id = (String)session.getAttribute("user_id");
 
 				s_resultDao calenderDao = new s_resultDao();
