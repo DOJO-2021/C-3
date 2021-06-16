@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +23,42 @@
 
 <!-- 月ごとの表 -->
 <div class="result-table">
+
+<!-- ここにresultListをグルグル表示させる -->
+<c:forEach var="e" items="${resultList}">
+<!-- 日付と人数だけループさせる？ -->
+${e.date }<br>
+${e.icon_number}<br>
+</c:forEach>
+${e.icon }
+
+<!--
+<table>
+	<tr>
+		<td></td>
+		<td>${e.icon }</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>${e.date }</td>
+		<td>${e.icon_number }</td>
+	</tr>
+</table>
+-->
+
+<!--
+${e.icon }<br>
+${e.icon_number }<br>
+${e.date }<br>
+${e.icon }<br>
+${e.icon_number }<br>
+${e.date }<br>
+  -->
+
+
+
+
 	<div class="table4">
 		<h2>4月</h2>
 		<table class="a4month" border="1" style="border-collapse: collapse" >
