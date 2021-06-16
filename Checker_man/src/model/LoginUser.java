@@ -4,24 +4,24 @@ import java.io.Serializable;
 
 public class LoginUser implements Serializable {
 
-	private String user_id;	// ログイン時のID
+	private int user_id;	// ログイン時のID
 
 	//引数がないコントラスタ（デフォルトコントラスタ）
 	public LoginUser() {
-		this(null);
+		this.user_id = 0;
 	}
 
 	//引数があるコントラスタ
-	public LoginUser(String user_id) {
+	public LoginUser(int user_id) {
 		this.user_id = user_id;
 	}
 
 	//ゲッターセッターのプログラム
-	public String getuser_id() {
+	public int getuser_id() {
 		return user_id;
 	}
 
-	public void setuser_id(String user_id) {
+	public void setuser_id(int user_id) {
 		this.user_id = user_id;
 	}
 
