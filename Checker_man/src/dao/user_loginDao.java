@@ -13,7 +13,7 @@ import model.user_login;
 public class user_loginDao {
 
 	// ログインできるならtrueを返す
-	public boolean isLoginOK(int user_id, String user_name, String user_pw) {
+	public boolean isLoginOK( String user_name, String user_pw) {
 
 	//引数のないコンストラクタの場合
 	//model.user_login usr1 = new model.user_login();
@@ -35,11 +35,10 @@ public class user_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from USER_LOGIN  where USER_ID = ? and USER_NAME = ? and USER_PW = ?";
+			String sql = "select count(*) from USER_LOGIN  where  USER_NAME = ? and USER_PW = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setInt(1, user_id);
-			pStmt.setString(2, user_name);
-			pStmt.setString(3, user_pw);
+			pStmt.setString(1, user_name);
+			pStmt.setString(2, user_pw);
 
 			// SELECT文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
