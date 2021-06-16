@@ -41,7 +41,7 @@
 					<input type ="submit" name="LOGIN" value="ログイン" class="login-bottan"><br>
 		</form>
 
-		<a href="" class="link2">新規登録はこちらから</a>
+		<a href="Use_rRegistServlet" class="link2">新規登録はこちらから</a>
 	</div>
 
 	<!-- エラーメッセージ -->

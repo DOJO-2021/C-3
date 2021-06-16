@@ -26,7 +26,7 @@
 						type="password" name="PW"><br> パスワード確認<input
 						type="password" name="CH-PW">
 				</div>
-				<input type="submit" name="REGIST" value="登録"> <a href="">戻る</a>
+				<a href="User_TopPageServlet">登録</a> <a href="User_LoginServlet">戻る</a>
 			</div>
 		</main>
 
