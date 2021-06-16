@@ -36,20 +36,20 @@ public class User_RegistServlet extends HttpServlet {
 		String user_pw = request.getParameter("USER_PW");
 
 		// ログイン処理を行う
-//		user_loginDao lDao = new user_loginDao();
-//		if (lDao.isLoginOK(user_id, user_name, user_pw)) {	// ログイン成功
-//			// セッションスコープにIDを格納する
-//			HttpSession session = request.getSession();
-//			session.setAttribute("user_id", new loginUser(user_id));
-//
-//			// メニューサーブレットにリダイレクトする
-//			response.sendRedirect("/Checker_man/User_TopPageServlet");
-//		}
-//		else {									// ログイン失敗
-//			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
-//			request.setAttribute("result",
-//			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/Checker_man/User_LoginServlet"));
-//
+		user_loginDao lDao = new user_loginDao();
+		if (lDao.isLoginOK(user_id, user_name, user_pw)) {	// ログイン成功
+			// セッションスコープにIDを格納する
+			HttpSession session = request.getSession();
+			session.setAttribute("user_id", new loginUser(user_id));
+
+			// メニューサーブレットにリダイレクトする
+			response.sendRedirect("/Checker_man/User_TopPageServlet");
+		}
+		else {									// ログイン失敗
+			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
+			request.setAttribute("result",
+			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/Checker_man/User_LoginServlet"));
+
 			// 結果ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_login.jsp");
 			dispatcher.forward(request, response);
