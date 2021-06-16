@@ -45,7 +45,7 @@ public class User_LoginServlet extends HttpServlet {
 		if (lDao.isLoginOK(user_id, user_name, user_pw)) {	// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			session.setAttribute("user_id", new LoginUser());
+			session.setAttribute("user_id", new LoginUser(user_id));
 
 			// メニューサーブレットにリダイレクトする
 			response.sendRedirect("/Checker_man/User_TopPageServlet");
