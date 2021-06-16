@@ -306,38 +306,40 @@ public class s_resultDao {
 						result.setComment_number(rs4.getInt("comment"));
 
 				//○の人表示
-						String sql5 = "select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'maru' and date = CURDATE() order by u.user_id";
+						String sql5 = "select u.user_name, u.user_id from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'maru' and date = CURDATE() order by u.user_id";
 						PreparedStatement pStmt5 = conn.prepareStatement(sql5);
 						ResultSet rs5 = pStmt5.executeQuery();
 						while (rs5.next()) {
 							result.setMaru_list(rs5.getString("user_login.user_name"));
-							result.setMaru_id(rs5.getInt("user_login.user_name"));
+							result.setMaru_id(rs5.getInt("user_login.user_id"));
 						}
 
 				//☓の人表示
-						String sql6 = "select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'batsu' and date = CURDATE() order by u.user_id";
+						String sql6 = "select u.user_name,u.user_id from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'batsu' and date = CURDATE() order by u.user_id";
 						PreparedStatement pStmt6 = conn.prepareStatement(sql6);
 						ResultSet rs6 = pStmt6.executeQuery();
 						while (rs6.next()) {
 							result.setBatsu_list(rs6.getString("user_login.user_name"));
+							result.setBatsu_id(rs6.getInt("user_login.user_id"));
 						}
 
 					//△の人表示
-						String sql7 = "select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'sankaku' and date = CURDATE() order by u.user_id";
+						String sql7 = "select u.user_name,u.user_id from  s_result as s inner join user_login as u on s.user_id = u.user_id  where icon = 'sankaku' and date = CURDATE() order by u.user_id";
 						PreparedStatement pStmt7 = conn.prepareStatement(sql7);
 						ResultSet rs7 = pStmt7.executeQuery();
 						while (rs7.next()) {
 							result.setSankaku_list(rs7.getString("user_login.user_name"));
+							result.setSankaku_id(rs7.getInt("user_login.user_id"));
 						}
 
 					//コメントした人表示
-						String sql8 = "select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id where user_comment <> '' and date = CURDATE() order by u.user_id";
+						String sql8 = "select u.user_name,u.user_id from  s_result as s inner join user_login as u on s.user_id = u.user_id where user_comment <> '' and date = CURDATE() order by u.user_id";
 						PreparedStatement pStmt8 = conn.prepareStatement(sql8);
 						ResultSet rs8 = pStmt8.executeQuery();
 						while (rs8.next()) {
 							result.setComment_list(rs8.getString("user_login.user_name"));
+							result.setComment_id(rs8.getInt("user_login.user_id"));
 						}
-
 
 					}
 

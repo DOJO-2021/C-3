@@ -108,3 +108,23 @@ insert into s_result
 (result_id, date,icon,user_comment,admin_comment,user_id) 
 values 
 (null, current_date,'maru','受講者コメント','管理者コメント',1);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, current_date,'batsu','受講者コメント','管理者コメント',2);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, current_date,'maru','受講者コメント','管理者コメント',3);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, current_date,'sankaku','','管理者コメント',4);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, current_date,'maru','','管理者コメント',5);

@@ -126,31 +126,31 @@ public class admin_toppage implements Serializable {
 	}
 
 	public void setMaru_id(int maru_id) {
-		this.maru_id = maru_id;
+		this.maru_id.add(maru_id);
 	}
 
 	public ArrayList<Integer> getBatsu_id() {
 		return batsu_id;
 	}
 
-	public void setBatsu_id(ArrayList<Integer> batsu_id) {
-		this.batsu_id = batsu_id;
+	public void setBatsu_id(int batsu_id) {
+		this.batsu_id.add(batsu_id) ;
 	}
 
 	public ArrayList<Integer> getSankaku_id() {
 		return sankaku_id;
 	}
 
-	public void setSankaku_id(ArrayList<Integer> sankaku_id) {
-		this.sankaku_id = sankaku_id;
+	public void setSankaku_id(int sankaku_id) {
+		this.sankaku_id.add(sankaku_id) ;
 	}
 
 	public ArrayList<Integer> getComment_id() {
 		return comment_id;
 	}
 
-	public void setComment_id(ArrayList<Integer> comment_id) {
-		this.comment_id = comment_id;
+	public void setComment_id(int comment_id) {
+		this.comment_id.add(comment_id);
 	}
 
 

@@ -61,10 +61,14 @@ public class s_resultDaoTest {
 							System.out.println("△の人数：" + resultData.getSankaku_number());
 							System.out.println("commentの人数：" + resultData.getComment_number());
 							System.out.println("○の人：" + resultData.getMaru_list());
+							System.out.println("○の人id：" + resultData.getMaru_id());
 							System.out.println("☓の人：" + resultData.getBatsu_list());
+							System.out.println("☓の人id：" + resultData.getBatsu_id());
 							System.out.println("△の人：" + resultData.getSankaku_list());
+							System.out.println("△の人id：" + resultData.getSankaku_id());
 							System.out.println("コメントした人：" + resultData.getComment_list());
-							System.out.println("○の人：" + resultData.getMaru_id());
+							System.out.println("コメントした人id：" + resultData.getComment_id());
+
 							System.out.println();
 //
 //
