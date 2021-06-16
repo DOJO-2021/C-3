@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.s_resultDao;
+import model.LoginUser;
 import model.user_toppage;
 
 
@@ -39,11 +40,11 @@ public class User_TopPageServlet extends HttpServlet {
 
 		// カレンダーの検索処理を行う
 				//HttpSession session = request.getSession();
-		id = (int)session.getAttribute("user_id");
+				LoginUser user_id = (LoginUser)session.getAttribute("user_id");
 			//int id = (String)session.getAttribute("user_id");
 
 				s_resultDao calenderDao = new s_resultDao();
-				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",id));
+				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",user_id.getuser_id()));
 
 		// カレンダーの処理をリクエストスコープに格納する
 		request.setAttribute("calenderlist", calenderlist);
