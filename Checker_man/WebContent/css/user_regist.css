@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.keyvisual {
+	text-align: center; /* 中央寄せ */
+}
+
 .regist-area {
 	width:300px;
     margin:140px auto;

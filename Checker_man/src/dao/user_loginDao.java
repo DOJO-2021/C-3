@@ -22,7 +22,7 @@ public class user_loginDao {
 	//usr1.setPw(pw);
 
 	//引数のあるコンストラクタの場合
-	model.user_login usr1 = new model.user_login(user_id,user_name,user_pw);
+	//model.user_login usr1 = new model.user_login(user_id,user_name,user_pw);
 
 		Connection conn = null;
 		boolean loginResult = false;
