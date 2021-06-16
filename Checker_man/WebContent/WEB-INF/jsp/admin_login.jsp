@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,23 +16,30 @@
 <header>
 <!-- 共通のヘッダー -->
 <jsp:include page="/WEB-INF/jsp/header.jsp"/>
-<a href="" class="link3">受講者ログイン</a>
 </header>
 
-<main>
-<div class="alogin-area">
-	<h1>管理者ログイン</h1>
-	<div class="alogin-form">
-		ユーザーID<input type="text" name="ID"  placeholder="ユーザーID"><br>
+<div class ="main">
+	<p></p>
+	<div class = "link3-button">
+		<a href="" class="link3">受講者ログイン</a>
 	</div>
-	<div class="alogin-form">
-		パスワード<input type="password" name="PW" placeholder="パスワード"><br>
-	</div>
-	<input type ="submit" name="LOGIN" value="ログイン" class="alogin-bottan" >
+		<div class="alogin-area">
+		<h1>管理者ログイン</h1>
+		<div class="alogin-form">
+			ユーザーID<input type="text" name="ID"  placeholder="ユーザーID"><br>
+		</div>
+		<div class="alogin-form">
+			パスワード<input type="password" id="password" name="PW" placeholder="パスワード"><br>
+		</div>
+		<input type="checkbox" id="password-check">
+		パスワードを表示する
+		<input type ="submit" name="LOGIN" value="ログイン" class="alogin-bottan" >
 
+	</div>
+	<!-- エラーメッセージ -->
+	<div class = "errormsg">
+		<p><c:out value="${result.message}" /></p>	</div>
 </div>
-
-</main>
 
 <!-- 共通のフッター -->
 <footer>
@@ -39,5 +47,18 @@
  </footer>
 
 </div>
+
+<script>
+ const pwd = document.getElementById('password');
+ const pwdCheck = document.getElementById('password-check');
+ pwdCheck.addEventListener('change', function() {
+     if(pwdCheck.checked) {
+         pwd.setAttribute('type', 'text');
+     } else {
+         pwd.setAttribute('type', 'password');
+     }
+ }, false);
+ </script>
+
 </body>
 </html>
