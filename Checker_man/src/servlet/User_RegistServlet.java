@@ -8,10 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import dao.user_loginDao;
-import model.Result;
 
 /**
  * Servlet implementation class User_LoginServlet
@@ -59,4 +55,4 @@ public class User_RegistServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 	}
-}
+

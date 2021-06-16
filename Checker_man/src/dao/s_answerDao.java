@@ -24,6 +24,7 @@ public class s_answerDao {
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
+
 			// SQL文を準備する
 			String sql = "select * from s_answer WHERE question_id LIKE ? AND answer LIKE ? and user_id like ? and date like ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
