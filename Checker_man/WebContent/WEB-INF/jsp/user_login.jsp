@@ -22,22 +22,25 @@
 <div class = "main">
 	<p></p>
 	<div class = "link1-button">
-		<a href="#" class = "link1">管理者ログイン</a>
+		<a href="/Checker_man/Admin_LoginServlet" class = "link1">管理者ログイン</a>
 	</div>
 	<div class="ulogin-area">
 		<h1>受講者ログイン</h1>
-		<div class="ulogin-form">
-			ユーザーID<input type="text" name="ID" placeholder="ユーザーID"><br>
-
-		</div>
 		<form method="POST" action="/Checker_man/User_LoginServlet">
 			<div class="ulogin-form">
-				パスワード<input type="password" id="password" name="PW" placeholder="パスワード"><br>
+					ユーザーID<input type="text" name="ID" placeholder="ユーザーID"><br>
 			</div>
-			<input type="checkbox" id="password-check">
-			パスワードを表示する
-			<input type ="submit" name="LOGIN" value="ログイン" class="login-bottan"><br>
+			<!--
+			<form method="POST" action="/Checker_man/User_LoginServlet">
+			-->
+					<div class="ulogin-form">
+						パスワード<input type="password" id="password" name="PW" placeholder="パスワード"><br>
+					</div>
+					<input type="checkbox" id="password-check">
+					パスワードを表示する
+					<input type ="submit" name="LOGIN" value="ログイン" class="login-bottan"><br>
 		</form>
+
 		<a href="" class="link2">新規登録はこちらから</a>
 	</div>
 

@@ -21,20 +21,21 @@
 <div class ="main">
 	<p></p>
 	<div class = "link3-button">
-		<a href="" class="link3">受講者ログイン</a>
+		<a href="/Checker_man/User_LoginServlet" class="link3">受講者ログイン</a>
 	</div>
 		<div class="alogin-area">
 		<h1>管理者ログイン</h1>
-		<div class="alogin-form">
-			ユーザーID<input type="text" name="ID"  placeholder="ユーザーID"><br>
-		</div>
-		<div class="alogin-form">
-			パスワード<input type="password" id="password" name="PW" placeholder="パスワード"><br>
-		</div>
-		<input type="checkbox" id="password-check">
-		パスワードを表示する
-		<input type ="submit" name="LOGIN" value="ログイン" class="alogin-bottan" >
-
+		<form method="POST" action="/Checker_man/Admin_LoginServlet">
+			<div class="alogin-form">
+					ユーザーID<input type="text" name="ID"  placeholder="ユーザーID"><br>
+			</div>
+			<div class="alogin-form">
+				パスワード<input type="password" id="password" name="PW" placeholder="パスワード"><br>
+			</div>
+			<input type="checkbox" id="password-check">
+			パスワードを表示する
+			<input type ="submit" name="LOGIN" value="ログイン" class="alogin-bottan" >
+		</form>
 	</div>
 	<!-- エラーメッセージ -->
 	<div class = "errormsg">
