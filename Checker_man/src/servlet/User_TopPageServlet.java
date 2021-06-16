@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.s_resultDao;
 import model.user_toppage;
@@ -22,23 +23,25 @@ public class User_TopPageServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 	//	 もしもログインしていなかったらログインサーブレットにリダイレクトする
-//				HttpSession session = request.getSession();
-//				if (session.getAttribute("user_id") == null) {
-//					response.sendRedirect("/Checker_man/User_LoginServlet");
-//					return;
-//				}
+				HttpSession session = request.getSession();
+				if (session.getAttribute("user_id") == null) {
+					response.sendRedirect("/Checker_man/User_LoginServlet");
+					return;
+				}
 
 
 
 		// カレンダーの検索処理を行う（ユーザID = 1の場合）
-				s_resultDao calenderDao = new s_resultDao();
-				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",1));
+//				s_resultDao calenderDao = new s_resultDao();
+//				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",1));
 
 		// カレンダーの検索処理を行う
-//				HttpSession session = request.getSession();
-//				s_resultDao calenderDao = new s_resultDao();
-//				int id = (int)session.getAttribute("user_id");
-//				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",id));
+				//HttpSession session = request.getSession();
+			int id = Integer.parseInt((int)session.getAttribute("user_id"));
+			//int id = (String)session.getAttribute("user_id");
+
+				s_resultDao calenderDao = new s_resultDao();
+				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",id));
 
 		// カレンダーの処理をリクエストスコープに格納する
 		request.setAttribute("calenderlist", calenderlist);
