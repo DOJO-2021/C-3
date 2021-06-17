@@ -20,25 +20,23 @@ h1 {
 
 /* 診断エリアを中央に配置 */
 .shindan-area {
-	margin:0 auto;
-	width:1000px;
+	margin: 0 auto;
+	width: 1000px;
 }
 
 /* テーブルの設定 */
 .table {
-  border-color: transparent;
-  border-collapse: collapse;
+	border-color: transparent;
+	border-collapse: collapse;
 }
 
 /* テーブルの見出しを調整 */
 td {
-	padding-right:30px;
+	padding-right: 30px;
 	text-align: center;
-	border:1px solid #bec2c7;
-
+	border: 1px solid #bec2c7;
 }
 /* テーブルに罫線 */
-
 
 /* 診断フォーム */
 form {
@@ -46,7 +44,6 @@ form {
 }
 
 /* ラジオボタンの設定 */
-
 
 /* ボタンの設定 */
 .botton {
@@ -57,16 +54,17 @@ form {
 }
 
 /*診断結果ボタン */
-input[type="submit"]{
-		margin: 0 8px;
-		position: relative;
-		display: inline-block;
-		padding: 0 0.25em;
-		text-decoration: none; /* 下線なし */
-		color:#000000; /* 文字の色 */
-		background-color: #B0D6DA; /*背景色*/
-		border-radius: 8px; /*角の丸み*/
-		box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-		font-weight: bold;
-		border: solid 2px #B0D6DA; /*周りの線の色*/
+input[type="submit"] {
+	margin: 0 8px;
+	position: relative;
+	display: inline-block;
+	padding: 0 0.25em;
+	text-decoration: none; /* 下線なし */
+	color: #000000; /* 文字の色 */
+	background-color: #B0D6DA; /*背景色*/
+	border-radius: 8px; /*角の丸み*/
+	box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0
+		rgba(0, 0, 0, 0.05);
+	font-weight: bold;
+	border: solid 2px #B0D6DA; /*周りの線の色*/
 }
