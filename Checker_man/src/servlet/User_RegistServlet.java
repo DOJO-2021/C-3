@@ -58,7 +58,6 @@ public class User_RegistServlet extends HttpServlet {
 
 		//登録する
 		User_loginDao lDao = new User_loginDao();
-		User_login kDao = new User_login(name,pw);
 		if (lDao.insert(new User_login(name, pw))) {	// 登録成功
 			request.setAttribute("result",
 			new Result("登録成功！", "登録が完了しました。", "/Checker_man/User_TopPageServlet"));
