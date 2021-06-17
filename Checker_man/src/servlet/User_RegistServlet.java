@@ -57,8 +57,8 @@ public class User_RegistServlet extends HttpServlet {
 		} else {
 			user_loginDao lDao = new user_loginDao();
 			lDao.insert(new user_login(0, pw1, pw2));
-			request.setAttribute("pw",
-					new pw("登録が完了しました。","Checker_man/User_TopPage"));
+			request.setAttribute("user_regist",
+					new User_Regist("登録が完了しました。", "/Checker_man/User_TopPage"));
 
 		}
 
@@ -66,28 +66,5 @@ public class User_RegistServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
 		dispatcher.forward(request, response);
 
-//		int user_id = Integer.parseInt(request.getParameter("USER_ID"));
-//		String user_name = request.getParameter("USER_NAME");
-//		String user_pw = request.getParameter("USER_PW");
-//
-//		// ログイン処理を行う
-//		user_loginDao lDao = new user_loginDao();
-//		if (lDao.isLoginOK(user_id, user_name, user_pw)) {	// ログイン成功
-//			// セッションスコープにIDを格納する
-//			HttpSession session = request.getSession();
-//			session.setAttribute("user_id", new loginUser(user_id));
-//
-//			// メニューサーブレットにリダイレクトする
-//			response.sendRedirect("/Checker_man/User_TopPageServlet");
-//		}
-//		else {									// ログイン失敗
-//			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
-//			request.setAttribute("result",
-//			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/Checker_man/User_LoginServlet"));
-//
-//			// 結果ページにフォワードする
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_login.jsp");
-//			dispatcher.forward(request, response);
-//		}
 	}
 }
