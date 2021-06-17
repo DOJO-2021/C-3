@@ -15,7 +15,7 @@ public class a_lastdataDao {
 
 
 	// 管理者の過去のデータにアイコンを入れる処理
-	public boolean insert(s_result resultdata) {
+	public boolean insert_lastdata(s_result resultdata) {
 
 		Connection conn = null;
 		boolean result = false;
@@ -101,7 +101,9 @@ public class a_lastdataDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 						// SQL文を準備する
-						String sql = "select icon, count(icon),date from s_result group by icon,date order by date asc";
+						String sql = "select count(maru_icon) as maru, count(batsu_icon) as batsu"
+								+ ", count(sankaku_icon) as sankaku, date from a_lastdata"
+								+ " group by date order by date asc;";
 
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
