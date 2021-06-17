@@ -26,64 +26,27 @@
 	 	<h2>（一言診断結果を表示）</h2>
 
 		<!-- 質問内容と回答 -->
-	<!--
-		 	<table class = "user_result">
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 		<tr>
-		 		<th><input type="text" name="QUESTION" value="${e.question}"></th>
-		 		</tr>
-		 	</table>
-		 -->
-	<c:forEach var="e" items="${questionList}" >
-		<form method="POST" action="/Checker_man/User_ResultServlet">
-			<input type="text" name="QUESTION" value="${e.question}">
-	 	</form>
-	</c:forEach>
+ 		<div class = user_result>
+			<c:forEach var="e" items="${questionList}" >
+				<form method="POST" action="/Checker_man/User_ResultServlet">
+				<table class = "user_result2">
+					<tr>
+					<td><input type="text" name="QUESTION" value="${e.question}"></td>
+					</tr>
+				</table>
+			 	</form>
+			</c:forEach>
 
-	<c:forEach var="e" items="${answerList}" >
-		<form method="POST" action="/Checker_man/User_ResultServlet">
-		 	<input type="text" name="ANSWER" value="${e.answer}">
-	 	</form>
-	</c:forEach>
-
+			<c:forEach var="e" items="${answerList}" >
+				<form method="POST" action="/Checker_man/User_ResultServlet">
+				<table class = "user_result2">
+				 	<tr>
+				 	<td><input type="text" name="ANSWER" value="${e.answer}"></td>
+				 	</tr>
+				 </table>
+			 	</form>
+			</c:forEach>
+		</div>
 	 	<!-- コメント欄 -->
 	 	<div class = "message">
 		 	<div class = "user_message">
@@ -101,13 +64,15 @@
 			</div>
 		</div>
 
-		<c:out value ="${resultList}"/>
-		<form method="POST" action="/Checker_man/User_ResultServlet">
 			<div class = "admin_message">
 		 		<p>講師からのコメント</p>
+		 	</div>
+
+		<form method="POST" action="/Checker_man/User_ResultServlet">
 				<textarea rows="10" cols="100" readonly name="admin_message">${resultList.admin_comment}</textarea>
-			</div>
 		</form>
+
+
 
 			<div class = "return">
 				<a href="/Checker_man/User_TopPageServlet">トップへ戻る</a>

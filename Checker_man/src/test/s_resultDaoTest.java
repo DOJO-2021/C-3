@@ -4,6 +4,7 @@ package test;
 import java.util.List;
 
 import dao.s_resultDao;
+import model.s_result;
 import model.user_toppage;
 
 public class s_resultDaoTest {
@@ -97,5 +98,15 @@ public class s_resultDaoTest {
 			System.out.println();
 		}
 
+
+
+		//select1のテスト
+	System.out.println("---------- select_calenderのテスト ----------");
+	s_result resultList = dao.select1(new s_result(0,"","","", "",1));
+
+
+		System.out.println("result_id：" + resultList.getAdmin_comment());
+		System.out.println();
 	}
+
 }
