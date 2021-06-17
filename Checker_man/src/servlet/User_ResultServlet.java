@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,8 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.s_answerDao;
 import dao.s_questionDao;
+import dao.s_resultDao;
 import model.s_answer;
 import model.s_question;
+import model.s_result;
 
 /**
  * Servlet implementation class User_ResultServlet
@@ -33,10 +36,6 @@ public class User_ResultServlet extends HttpServlet {
 //			return;
 //		}
 
-		// 診断結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
-		dispatcher.forward(request, response);
-
 //		//検索処理を行う
 //		s_resultDao rDao = new s_resultDao();
 //		List<s_result> resultList = rDao.select(new s_result(0, "", "", "", "", 0));
@@ -46,15 +45,20 @@ public class User_ResultServlet extends HttpServlet {
 
 //______________________________________________________________________________________________________
 
-		//検索処理を行う
+		//検索処理を行う（質問内容）
 		s_questionDao qDao = new s_questionDao();
-		List<s_question> questionList = qDao.select(0, "");
+		List<s_question> questionList = null;
+		try {
+			questionList = qDao.select(null);
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("questionList", questionList);
 
-
-		//検索処理を行う
+		//検索処理を行う（回答）
 		s_answerDao aDao = new s_answerDao();
 		List<s_answer> answerList = null;
 		answerList = aDao.select(new s_answer(0, 0, 0, ""));
@@ -62,12 +66,16 @@ public class User_ResultServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("answerList", answerList);
 
-//______________________________________________________________________________________________________
+		//検索処理を行う（管理者コメント）
+		s_resultDao rDao = new s_resultDao();
+		List<s_result> resultList = rDao.select(new s_result(0, "", "", "", "", 0));
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("resultList", resultList);
 
 		// 診断結果ページにフォワードする
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
-//		dispatcher.forward(request, response);
-
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
+		dispatcher.forward(request, response);
 
 
 	}
