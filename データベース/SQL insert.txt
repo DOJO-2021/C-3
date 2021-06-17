@@ -128,3 +128,36 @@ insert into s_result
 (result_id, date,icon,user_comment,admin_comment,user_id) 
 values 
 (null, current_date,'maru','','管理者コメント',5);
+
+--過去のデータのsql（ユーザ-IDが1の場合）
+insert into a_lastdata 
+(maru_icon, batsu_icon, sankaku_icon,date) 
+values 
+(select icon from s_result where icon = 'maru' and date = CURDATE() and user_id = '1'
+,select icon from s_result where icon = 'batsu' and date = CURDATE() and user_id = '1'
+,select icon from s_result where icon = 'sankaku' and date = CURDATE() and user_id = '1'
+,current_date);
+
+insert into a_lastdata 
+(maru_icon, batsu_icon, sankaku_icon,date) 
+values 
+(select icon from s_result where icon = 'maru' and date = CURDATE() and user_id = '2'
+,select icon from s_result where icon = 'batsu' and date = CURDATE() and user_id = '2'
+,select icon from s_result where icon = 'sankaku' and date = CURDATE() and user_id = '2'
+,current_date);
+
+insert into a_lastdata 
+(maru_icon, batsu_icon, sankaku_icon,date) 
+values 
+(select icon from s_result where icon = 'maru' and date = '2021-06-16' and user_id = '1'
+,select icon from s_result where icon = 'batsu' and date = '2021-06-16' and user_id = '1'
+,select icon from s_result where icon = 'sankaku' and date = '2021-06-16' and user_id = '1'
+,'2021-06-16');
+
+insert into a_lastdata 
+(maru_icon, batsu_icon, sankaku_icon,date) 
+values 
+(select icon from s_result where icon = 'maru' and date = '2021-06-16' and user_id = '2'
+,select icon from s_result where icon = 'batsu' and date = '2021-06-16' and user_id = '2'
+,select icon from s_result where icon = 'sankaku' and date = '2021-06-16' and user_id = '2'
+,'2021-06-16');
