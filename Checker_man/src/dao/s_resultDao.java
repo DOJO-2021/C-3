@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.admin_lastdata;
 import model.admin_toppage;
 import model.s_result;
 import model.user_toppage;
@@ -369,61 +368,169 @@ public class s_resultDao {
 				}
 
 	// 管理者の過去のデータの表で使うデータベース処理
-				public List<admin_lastdata> select_lastdata(admin_lastdata param) {
+//				public List<admin_lastdata> select_lastdata(admin_lastdata param) {
+//
+//					Connection conn = null;
+//					List<admin_lastdata> resultList = new ArrayList<admin_lastdata>();
+//
+//					try {
+//						// JDBCドライバを読み込む
+//						Class.forName("org.h2.Driver");
+//
+//						// データベースに接続する
+//						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
+//
+//						// SQL文を準備する
+//						String sql = "select icon, count(icon),date from s_result group by icon,date order by date asc";
+//
+//						PreparedStatement pStmt = conn.prepareStatement(sql);
+//
+//						// SQL文を実行し、結果表を取得する
+//						ResultSet rs = pStmt.executeQuery();
+//
+//						// 結果表をコレクションにコピーする
+//						while (rs.next()) {
+//							admin_lastdata resultData = new admin_lastdata(
+//							rs.getString("icon"),
+//							rs.getInt("count(icon)"),
+//							rs.getString("date")
+//							);
+//							resultList.add(resultData);
+//						}
+//					}
+//
+//					catch (SQLException e) {
+//						e.printStackTrace();
+//						resultList = null;
+//					}
+//					catch (ClassNotFoundException e) {
+//						e.printStackTrace();
+//						resultList = null;
+//					}
+//
+//					finally {
+//						// データベースを切断
+//						if (conn != null) {
+//							try {
+//								conn.close();
+//							}
+//							catch (SQLException e) {
+//								e.printStackTrace();
+//								resultList = null;
+//							}
+//						}
+//					}
+//					// 結果を返す
+//					return resultList;
+//				}
 
-					Connection conn = null;
-					List<admin_lastdata> resultList = new ArrayList<admin_lastdata>();
+			// Select文のデータベース処理（診断ID（管理者コメントの取得））
+			public s_result select1(s_result param) {
 
-					try {
-						// JDBCドライバを読み込む
-						Class.forName("org.h2.Driver");
+				Connection conn = null;
+				s_result resultList = null;
 
-						// データベースに接続する
-						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
 
-						// SQL文を準備する
-						String sql = "select icon, count(icon),date from s_result group by icon,date order by date asc";
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
-						PreparedStatement pStmt = conn.prepareStatement(sql);
+					// SQL文を準備する
+					String sql = "select admin_comment "
+							+ "from s_result WHERE date = CURDATE() AND user_id LIKE ? "
+							+ " ORDER BY result_id ASC , date ASC ";
 
-						// SQL文を実行し、結果表を取得する
-						ResultSet rs = pStmt.executeQuery();
+					PreparedStatement pStmt = conn.prepareStatement(sql);
 
-						// 結果表をコレクションにコピーする
-						while (rs.next()) {
-							admin_lastdata resultData = new admin_lastdata(
-							rs.getString("icon"),
-							rs.getInt("count(icon)"),
-							rs.getString("date")
-							);
-							resultList.add(resultData);
-						}
+					// SQL文を完成させる
+					if (param.getAdmin_comment() != "") {
+						pStmt.setString(1, "%" + param.getAdmin_comment() + "%");
+					}
+					else {
+						pStmt.setString(1, "%");
 					}
 
-					catch (SQLException e) {
-						e.printStackTrace();
-						resultList = null;
-					}
-					catch (ClassNotFoundException e) {
-						e.printStackTrace();
-						resultList = null;
-					}
 
-					finally {
-						// データベースを切断
-						if (conn != null) {
-							try {
-								conn.close();
-							}
-							catch (SQLException e) {
-								e.printStackTrace();
-								resultList = null;
-							}
-						}
-					}
-					// 結果を返す
-					return resultList;
+					// SQL文を実行し、結果表を取得する
+					ResultSet rs = pStmt.executeQuery();
+
+					// 結果表をコレクションにコピーする
+					    rs.next();
+						resultList = new s_result();
+
+						resultList.setAdmin_comment(rs.getString("admin_comment"));
+						rs.getString("admin_comment");
+
+
+
 				}
 
+				catch (SQLException e) {
+					e.printStackTrace();
+					resultList = null;
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+					resultList = null;
+				}
 
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+							resultList = null;
+						}
+					}
+				}
+
+				// 結果を返す
+				return resultList;
+			}
+
+			//診断結果ページ受講者コメントのデータベース処理
+			public boolean insert1 (s_result comment) {
+				Connection conn = null;
+				boolean result = false;
+
+				try {
+					// JDBCドライバを読み込む
+					Class.forName("org.h2.Driver");
+
+					// データベースに接続する
+					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
+					// SQL文を準備する
+					String sql = "insert into s_result values (null, ?, ?, ?, ?, ?)";
+					PreparedStatement pStmt = conn.prepareStatement(sql);
+
+					// SQL文を完成させる
+					pStmt.setInt(1, comment.getResult_id());
+
+					if (comment.getDate() != null) {
+						pStmt.setString(2, comment.getDate());
+					}
+					else {
+						pStmt.setString(2, "null");
+					}
+					if (comment.getUser_comment() != null) {
+						pStmt.setString(3, comment.getUser_comment());
+					}
+					else {
+						pStmt.setString(3, "null");
+					}
+					if (comment.getAdmin_comment() != null) {
+						pStmt.setString(4, comment.getAdmin_comment());
+					}
+					else {
+						pStmt.setString(4, "null");
+					}
+					pStmt.setInt(5, comment.getUser_id());
+
+
+			}
 }
