@@ -15,6 +15,12 @@ html* {
 	border : dotted 3px #B0D6DA;
 }
 
+/*カレンダーエリア全体 */
+.calendar-border {
+	margin:0 100px;
+}
+
+
 /* カレンダーの上にある「前月、現在の月、翌月」のcss*/
 .calender-menu-table{
 	margin-left: auto;
@@ -49,37 +55,6 @@ input#next-month {
 }
 
 /* カレンダーの表のcss*/
-.calender-table {
-	/*
-	border-collapse: separate;
-	*/
-	border-collapse: collapse;
-	border-spacing: 0px 0px;
-	margin-left: auto;
-	margin-right: auto;
-	font-size:20px;
-	border: 3px double #B0D6DA; /* 枠線 */
-}
-
-.calender-table tr,.calender-table th {
-	border: 1px solid #5d5d5d;
-	width:4em;
-	height:45px;
-	padding: 0.5em;
-}
-
-.saturday {
-	color: #3366FF; /* 土曜の文字色 */
-}
-
-.sunday {
-	color: #FF3366; /* 日曜の文字色 */
-}
-
-.week {
-	background-color: #FFE4C4; /* 曜日部分の背景色 */
-}
-
 
 /* 「診断ボタン、診断結果ボタン」のcss*/
 .user_toppage_button {

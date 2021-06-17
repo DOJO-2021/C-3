@@ -39,4 +39,11 @@ public class user_login implements Serializable {
 	public void setUser_pw(String user_pw) {
 		this.user_pw = user_pw;
 	}
+
+	public boolean insert(user_login user_login) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+
 }

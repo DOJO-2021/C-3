@@ -28,6 +28,7 @@
  <div class ="main">
  <p></p>
 
+<!-- カレンダーのエリア -->
  <div class="calendar-border">
 
           <!-- カレンダーの上にある「前月、現在の月、翌月」のhtml -->
@@ -89,18 +90,23 @@
 <!-- カレンダーのjavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script>
+        //追加
+            let iconDatas = new Map();
+            <c:forEach var="e" items="${calenderlist}">
+            iconDatas.set('${e.date}','${e.icon_path}');
+            </c:forEach>
+            
             var today = new Date();
-
             var year  = today.getFullYear();
             var month = today.getMonth() + 3;
-
+        //追加
+            var thisMonthStr = year + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-";
+        
             $('.date-head').html(year + "-" + month);
-
             var last = new Date(today.getFullYear(), today.getMonth() + 3, 0);
             var last_year  = last.getFullYear();
             var last_month = last.getMonth();
             var last_day   = last.getDate();
-
             for (var i=1; i<=last_day; i++) {
                 var week = new Date(last_year, last_month, i).getDay();
                 if (!week || i == 1) {
@@ -114,7 +120,15 @@
                                                         '<td></td>' +
                                                     '</tr>');
                 }
-                $('table').find('tbody').find('tr').last().find('td').eq(week).html(i);
+                
+           //追加
+                var iconLink = "";
+                if(iconDatas.has( thisMonthStr + ("0" + i).slice(-2) )){
+	                iconLink = "<img src="+iconDatas.get(thisMonthStr + ("0" + i).slice(-2))+" width=\"36px\">";
+                }
+                //var icon = i % 3 == 0 ? "〇" : i % 3 == 1 ? "▲" : "×";
+                
+                $('table').find('tbody').find('tr').last().find('td').eq(week).html(i + "<br />" + iconLink);
             }
         </script>
 </body>
