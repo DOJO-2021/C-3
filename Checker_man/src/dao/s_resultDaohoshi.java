@@ -13,7 +13,7 @@ import model.admin_toppage;
 import model.s_result;
 import model.user_toppage;
 
-public class s_resultDao {
+public class s_resultDaohoshi {
 
 	// Select文のデータベース処理
 		public List<s_result> select(s_result param) {
@@ -392,8 +392,9 @@ public class s_resultDao {
 						// 結果表をコレクションにコピーする
 						while (rs.next()) {
 							admin_lastdata resultData = new admin_lastdata(
-							rs.getString("icon"),
-							rs.getInt("count(icon)"),
+							rs.getInt("maru"),
+							rs.getInt("batsu"),
+							rs.getInt("sankaku"),
 							rs.getString("date")
 							);
 							resultList.add(resultData);
