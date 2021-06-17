@@ -40,7 +40,7 @@ public class User_ResultServlethoshi extends HttpServlet {
 		s_resultDao calenderDao = new s_resultDao();
 
 		// カレンダーの処理をリクエストスコープに格納する
-		request.setAttribute("calenderlist", calenderlist);
+		request.setAttribute("todayicon", todayicon);
 
 		// ユーザートップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
