@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.user_loginDao;
-import model.user_login;
+import model.Result;
 
 /**
  * Servlet implementation class User_LoginServlet
@@ -52,14 +51,23 @@ public class User_RegistServlet extends HttpServlet {
 		if(!(pw1.equals(pw2) == true)) {
 			System.out.println("パスワードが一致していません");
 		response.sendRedirect("/Checker_man/User_RegistServlet");
-
+		}
 		//登録する
-		} else {
-			user_loginDao lDao = new user_loginDao();
-			lDao.insert(new user_login(0, pw1, pw2));
-			request.setAttribute("user_regist",
-					new User_Regist("登録が完了しました。", "/Checker_man/User_TopPage"));
-
+//		else {
+//			user_loginDao lDao = new user_loginDao();
+//			lDao.insert(new user_login(0, pw1, pw2));
+//			request.setAttribute("user_regist",
+//					new User_Regist("登録が完了しました。", "/Checker_man/User_TopPage"));
+//
+//		}
+		User_LoginDAO lDao = new User_LoginDAO();
+		if (lDao.insert(new User_Login(0,  name, pw))) {	// 登録成功
+			request.setAttribute("result",
+			new Result("登録成功！", "登録が完了しました。", "/Checker_man/User_TopPageServlet"));
+		}
+		else {												// 登録失敗
+			request.setAttribute("result",
+			new Result("登録失敗！", "登録できませんでした。", "/Checker_man/User_RegistServlet"));
 		}
 
 
