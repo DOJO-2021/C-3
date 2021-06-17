@@ -37,3 +37,14 @@ user_comment varchar (300),
 admin_comment varchar (300),
 user_id int
 );
+
+--過去のデータ用テーブル
+create table a_lastdata (
+maru_icon varchar(7) default ' ',
+batsu_icon varchar(7) default ' ',
+sankaku_icon varchar(7) default ' ',
+date char(10) NOT NULL
+)
+
+--テーブルの列定義を変更する
+--ALTER TABLE テーブル名 ALTER COLUMN 変更する列名 データ型

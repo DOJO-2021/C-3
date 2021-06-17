@@ -40,17 +40,23 @@ select
 ,(select u.user_name from  s_result as s inner join user_login as u on s.user_id = u.user_id where user_comment <> '' and date = CURDATE()) AS comment_user
 from s_result
 
-4月～6月の表のデータ
-select icon, count(icon),date from s_result group by icon,date order by date asc
-
-WITH
-
-tmp AS
-(SELECT CAST (FORMAT(dt, 'yyyy-MM-01') AS date) AS month ,icon, count(icon) group by icon FROM s_result
-) SELECT month ,count(icon) FROM tmp GROUP BY month order by date asc
-
 カレンダーのデータ
 select  icon, date, user_id from s_result WHERE user_id = ? order by date asc
+
+4月～6月の表のデータ
+--new
+select count(maru_icon) as maru, count(batsu_icon) as batsu, count(sankaku_icon) as sankaku, date from a_lastdata
+group by date order by date asc;
+--new
+
+select icon, count(icon),date from s_result group by icon,date order by date asc
+
+select 
+( select count(*) from s_result where icon = 'maru' group by icon ) AS maru 
+, ( select count(*) from s_result where icon = 'batsu' group by icon ) AS batsu
+, ( select count(*) from s_result where icon = 'sankaku'  group by icon ) AS sankaku
+from s_result group by date; 
+
 
 ユーザ診断結果のanswerのデータ取得
 select * from s_answer WHERE  user_id = 1 order by  question_id asc
