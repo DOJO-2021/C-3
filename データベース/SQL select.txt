@@ -43,5 +43,11 @@ from s_result
 4月～6月の表のデータ
 select icon, count(icon),date from s_result group by icon,date order by date asc
 
+WITH
+
+tmp AS
+(SELECT CAST (FORMAT(dt, 'yyyy-MM-01') AS date) AS month ,icon, count(icon) group by icon FROM s_result
+) SELECT month ,count(icon) FROM tmp GROUP BY month order by date asc
+
 カレンダーのデータ
 select  icon, date, user_id from s_result WHERE user_id = ? order by date asc
