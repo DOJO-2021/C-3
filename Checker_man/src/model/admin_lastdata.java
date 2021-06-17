@@ -3,15 +3,17 @@ import java.io.Serializable;
 
 public class admin_lastdata implements Serializable {
 
-	private String icon;   //アイコン
-	private int icon_number; //アイコンの人数
+	private int maru_number; //　○の人の数
+	private int batsu_number; //　☓の人の数
+	private int sankaku_number; //　△の人の数
 	private String date;   //日付
 
 	//引数があるコントラスタ
-	public admin_lastdata(String icon, int icon_number,String date) {
+	public admin_lastdata(int maru_number, int batsu_number, int sankaku_number,String date) {
 		super();
-		this.icon = icon;
-		this.icon_number = icon_number;
+		this.maru_number = maru_number;
+		this.batsu_number = batsu_number;
+		this.sankaku_number = sankaku_number;
 		this.date = date;
 	}
 
