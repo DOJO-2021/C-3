@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.User_loginDao;
 import model.Result;
-import model.user_login;
+import model.User_login;
 
 /**
  * Servlet implementation class User_LoginServlet
@@ -37,7 +38,6 @@ public class User_RegistServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		//入力値を取ってくる
-		String id = request.getParameter("ID");
 		String name = request.getParameter("NAME");
 		String pw = request.getParameter("PW");
 
@@ -57,8 +57,9 @@ public class User_RegistServlet extends HttpServlet {
 
 
 		//登録する
-		user_login lDao = new user_login();
-		if (lDao.insert(new user_login(0,  name, pw))) {	// 登録成功
+		User_loginDao lDao = new User_loginDao();
+		User_login kDao = new User_login(name,pw);
+		if (lDao.insert(new User_login(name, pw))) {	// 登録成功
 			request.setAttribute("result",
 			new Result("登録成功！", "登録が完了しました。", "/Checker_man/User_TopPageServlet"));
 		}
