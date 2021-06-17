@@ -51,3 +51,6 @@ tmp AS
 
 カレンダーのデータ
 select  icon, date, user_id from s_result WHERE user_id = ? order by date asc
+
+ユーザ診断結果のanswerのデータ取得
+select * from s_answer WHERE  user_id = 1 order by  question_id asc
