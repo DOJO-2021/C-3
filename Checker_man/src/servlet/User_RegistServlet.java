@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Result;
+import model.user_login;
 
 /**
  * Servlet implementation class User_LoginServlet
@@ -60,8 +61,8 @@ public class User_RegistServlet extends HttpServlet {
 //					new User_Regist("登録が完了しました。", "/Checker_man/User_TopPage"));
 //
 //		}
-		User_LoginDAO lDao = new User_LoginDAO();
-		if (lDao.insert(new User_Login(0,  name, pw))) {	// 登録成功
+		user_login lDao = new user_login();
+		if (lDao.insert(new user_login(0,  name, pw))) {	// 登録成功
 			request.setAttribute("result",
 			new Result("登録成功！", "登録が完了しました。", "/Checker_man/User_TopPageServlet"));
 		}
