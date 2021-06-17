@@ -49,18 +49,14 @@ public class User_RegistServlet extends HttpServlet {
 		System.out.println(pw1.equals(pw2));
 
 		//パスワードが不一致の場合、エラーを表示して同じ画面を表示する
-		if(!(pw1.equals(pw2) == true)) {
+		if(!(pw1.equals(pw2))) {
 			System.out.println("パスワードが一致していません");
-		response.sendRedirect("/Checker_man/User_RegistServlet");
+			response.sendRedirect("/Checker_man/User_RegistServlet");
+			return;
 		}
+
+
 		//登録する
-//		else {
-//			user_loginDao lDao = new user_loginDao();
-//			lDao.insert(new user_login(0, pw1, pw2));
-//			request.setAttribute("user_regist",
-//					new User_Regist("登録が完了しました。", "/Checker_man/User_TopPage"));
-//
-//		}
 		user_login lDao = new user_login();
 		if (lDao.insert(new user_login(0,  name, pw))) {	// 登録成功
 			request.setAttribute("result",
