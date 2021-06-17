@@ -29,10 +29,11 @@
 <!-- 日付と人数だけループさせる？ -->
 ${e.date }<br>
 ${e.icon_number}<br>
-</c:forEach>
 ${e.icon }
+</c:forEach>
 
-<!--
+
+
 <table>
 	<tr>
 		<td></td>
@@ -45,7 +46,7 @@ ${e.icon }
 		<td>${e.icon_number }</td>
 	</tr>
 </table>
--->
+
 
 <!--
 ${e.icon }<br>
