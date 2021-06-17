@@ -9,11 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BcDAO;
-import dao.user_loginDao;
-import model.Bc;
-import model.Result;
-
 /**
  * Servlet implementation class User_LoginServlet
  */
@@ -44,23 +39,20 @@ public class User_RegistServlet extends HttpServlet {
 		String pw = request.getParameter("PW");
 
 		//パスワードが一致するかチェックする
-		request.setCharacterEncoding("UTF-8");
-		String PW = request.getParameter(pw);
-		String CH-PW = request.getParameter(pw);
+		String pw1 = request.getParameter("PW");
+		String pw2 = request.getParameter("CH-PW");
 
 
+		System.out.println(pw1.equals(pw2));
 		//パスワードが不一致の場合、エラーを表示して同じ画面を表示する
+		if(!(pw1.equals(pw2) == true)) {
+			System.out.println("パスワードが正しくありません");
+		}
+
 
 		//登録する
-		user_loginDao bDao = new user_loginDao();
-		if (bDao.insert(new user_loginDao(null,null,null)) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "登録が完了しました。", "/Checker_man/TopPageServlet"))
-		//登録後のページに移動する、再度画面を表示する
-			else {												// 登録失敗
-				request.setAttribute("result",
-				new Result("登録失敗！", "登録できませんでした。", "/Checker_man/TopPageServlet"));
-			}
+
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
 		dispatcher.forward(request, response);
 
