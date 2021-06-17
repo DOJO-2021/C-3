@@ -11,6 +11,7 @@
 <title>チェッカマン</title>
 <link rel="stylesheet" href="/Checker_man/css/user_toppage.css">
 <link rel="stylesheet" href="/Checker_man/css/user.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
@@ -40,83 +41,30 @@
    </table>
   </div>
 
-             <!-- カレンダーの表のhtml -->
-   <div class="calender">
-    <table class="calender-table">
-      <tr class = "week">
-        <th class = "sunday">日</th>
-        <th>月</th>
-        <th>火</th>
-        <th>水</th>
-        <th>木</th>
-        <th>金</th>
-        <th class = "saturday">土</th>
-      </tr>
-
-         <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-        <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-        <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-        <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-        <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-        <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-    </table>
-    </div>
-
-</div>
+       <!-- カレンダーの表のhtml -->
+   <h1></h1>
+        <div class="date-head"></div>
+        <table class="table table-border table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
 
        <!-- 診断ボタン、診断結果ボタン」のhtml -->
 <div class="user_toppage_button">
- <input type="submit" id="user_shindan" name="user_shindan" value="診断">
- <input type="submit" id="user_result" name="user_result" value="診断結果">
+	<input type="submit" id="user_shindan" name="user_shindan" value="診断">
+	 <input type="submit" id="user_result" name="user_result" value="診断結果">
 </div>
 
 <p>テスト（削除しても良い）</p>
@@ -124,6 +72,7 @@
 <div class="icon">
 <img src="${e.icon_path}" >
 </div>
+<p>${e.date }</p>
 <input type="text" value="${e.icon}" readonly>
 </c:forEach>
 
@@ -137,5 +86,36 @@
 
 </div>
 
+<!-- カレンダーのjavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script>
+            var today = new Date();
+
+            var year  = today.getFullYear();
+            var month = today.getMonth() + 3;
+
+            $('.date-head').html(year + "-" + month);
+
+            var last = new Date(today.getFullYear(), today.getMonth() + 3, 0);
+            var last_year  = last.getFullYear();
+            var last_month = last.getMonth();
+            var last_day   = last.getDate();
+
+            for (var i=1; i<=last_day; i++) {
+                var week = new Date(last_year, last_month, i).getDay();
+                if (!week || i == 1) {
+                    $('table').find('tbody').append('<tr>'+
+                                                        '<td></td>' +
+                                                        '<td></td>' +
+                                                        '<td></td>' +
+                                                        '<td></td>' +
+                                                        '<td></td>' +
+                                                        '<td></td>' +
+                                                        '<td></td>' +
+                                                    '</tr>');
+                }
+                $('table').find('tbody').find('tr').last().find('td').eq(week).html(i);
+            }
+        </script>
 </body>
 </html>
