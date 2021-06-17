@@ -29,9 +29,9 @@ public class a_lastdataDao {
 
 			// SQL文を準備する
 			String sql = "insert into a_lastdata (maru_icon, batsu_icon, sankaku_icon,date) "
-					+ "values (select icon from s_result where icon = 'maru' and date = CURDATE() and user_id = '?'"
-					+ ",select icon from s_result where icon = 'batsu' and date = CURDATE() and user_id = '?'"
-					+ ",select icon from s_result where icon = 'sankaku' and date = CURDATE() and user_id = '?'"
+					+ "values (select icon from s_result where icon = 'maru' and date = CURDATE() and user_id = ? "
+					+ ",select icon from s_result where icon = 'batsu' and date = CURDATE() and user_id = ? "
+					+ ",select icon from s_result where icon = 'sankaku' and date = CURDATE() and user_id = ? "
 					+ ",current_date)";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
