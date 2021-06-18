@@ -66,7 +66,7 @@ public class User_ResultServlet extends HttpServlet {
 
 
 
-		//検索処理を行う（管理者コメント）
+		//検索処理を行う（アイコン、受講者コメント、管理者コメント）
 //		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao rDao = new s_resultDao();
@@ -104,7 +104,7 @@ public class User_ResultServlet extends HttpServlet {
 
 		// 登録処理を行う
 		s_resultDao rDao = new s_resultDao();
-		if (rDao.insert(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
+		if (rDao.insert1(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
 			request.setAttribute("result",
 			new Result("登録成功！", "レコードを登録しました。", "/simpleBC/User_ResultServlet"));
 		}
