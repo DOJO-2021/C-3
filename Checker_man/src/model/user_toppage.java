@@ -32,6 +32,8 @@ public class user_toppage implements Serializable {
 		this.icon = icon;
 	}
 
+
+	//〇だったら、〇の画像、△だったら△の画像～
 	public String getIcon_path() {
 		if(this.icon.equals("maru")) {
 			return "/Checker_man/images/maru.png";
