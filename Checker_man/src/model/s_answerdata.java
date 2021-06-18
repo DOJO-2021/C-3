@@ -6,46 +6,51 @@ public class s_answerdata implements Serializable {
 	private int sum;//合計点数
 	private int countfive;//５を選んだ数
 	private int countfour;//４を選んだ数
+	private int user_id; //ユーザーID
 
 	//引数があるコンストラクタの生成
-	public s_answerdata(int sum, int countfive, int countfour) {
+	public s_answerdata(int sum, int countfive, int countfour,int user_id) {
 		super();
 		this.sum = sum;
 		this.countfive = countfive;
 		this.countfour = countfour;
+		this.user_id = user_id;
 	}
 	//引数がないコンストラクタ
 	public s_answerdata() {
 		super();
-		this.question_id = 0;
-		this.answer = 0;
+		this.sum = 0;
+		this.countfive = 0;
+		this.countfour = 0;
 		this.user_id = 0;
-		this.date = "";
 	}
 
+
 	//getter,setterの生成
-	public int getQuestion_id() {
-		return question_id;
+	public int getSum() {
+		return sum;
 	}
-	public void setQuestion_id(int question_id) {
-		this.question_id = question_id;
+	public void setSum(int sum) {
+		this.sum = sum;
 	}
-	public int getAnswer() {
-		return answer;
+	public int getCountfive() {
+		return countfive;
 	}
-	public void setAnswer(int answer) {
-		this.answer = answer;
+	public void setCountfive(int countfive) {
+		this.countfive = countfive;
 	}
+	public int getCountfour() {
+		return countfour;
+	}
+	public void setCountfour(int countfour) {
+		this.countfour = countfour;
+	}
+
 	public int getUser_id() {
 		return user_id;
 	}
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
+
 }

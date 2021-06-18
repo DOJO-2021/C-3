@@ -1,10 +1,11 @@
 package test;
-import dao.s_answerDao;
+import dao.s_answerDaohoshi;
+import model.s_answerdata;
 
 public class s_answerDaoTesthoshi {
 
 	public static void main(String[] args) {
-		s_answerDao dao = new s_answerDao();
+		s_answerDaohoshi dao = new s_answerDaohoshi();
 
 		// select()のテスト
 		//user_idに1を含んだデータを検索する
@@ -37,6 +38,16 @@ public class s_answerDaoTesthoshi {
 //		}
 
 
+		// select_answerdataのテスト
+		System.out.println("---------- select_toppageのテスト ----------");
+
+		s_answerdata resultData = dao.select_answerdata(new s_answerdata(0, 0, 0,1));
+
+			System.out.println("合計：" + resultData.getSum());
+			System.out.println("5の数：" + resultData.getCountfive());
+			System.out.println("4の数：" + resultData.getCountfour());
+
+			System.out.println();
 
 
 
