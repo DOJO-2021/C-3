@@ -90,9 +90,9 @@ public class User_RegistServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 			System.out.println("登録が完了しました。");
 		}   // 登録失敗
-			//			request.setAttribute("result",new Result());
-			//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-			//			dispatcher.forward(request, response);
-
+//		else {		request.setAttribute("result",new Result());
+//					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+//					dispatcher.forward(request, response);
+//			  }
 		   }
 	  }
