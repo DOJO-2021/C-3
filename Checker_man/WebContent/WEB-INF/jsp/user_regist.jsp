@@ -18,7 +18,8 @@
 			</h1>
 		</header>
 
-		<main>
+		<div class ="main">
+		<p></p>
 			<div class="regist-area">
 				<h1>新規登録</h1>
 				<form method="POST" action="/Checker_man/User_RegistServlet">
@@ -32,7 +33,7 @@
 					<a href="User_LoginServlet">戻る</a>
 				</form>
 			</div>
-		</main>
+		</div>
 
 		<!-- 共通のフッター -->
 		<footer>

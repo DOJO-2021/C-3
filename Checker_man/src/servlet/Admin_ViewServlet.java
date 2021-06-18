@@ -23,8 +23,8 @@ import model.s_result;
 /**
  * Servlet implementation class User_ResultServlet
  */
-@WebServlet("/User_ResultServlet")
-public class User_ResultServlet extends HttpServlet {
+@WebServlet("/Admin_ViewServlet")
+public class Admin_ViewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -75,8 +75,8 @@ public class User_ResultServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList", resultList);
 
-		// 診断結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
+		// 閲覧ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_view.jsp");
 		dispatcher.forward(request, response);
 
 
@@ -106,16 +106,16 @@ public class User_ResultServlet extends HttpServlet {
 		s_resultDao rDao = new s_resultDao();
 		if (rDao.insert1(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
 			request.setAttribute("result",
-			new Result("登録成功！", "レコードを登録しました。", "/simpleBC/User_ResultServlet"));
+			new Result("登録成功！", "レコードを登録しました。", "/Checker_man/Admin_ViewServlet"));
 		}
 		else {												// 登録失敗
 			request.setAttribute("result",
-			new Result("登録失敗！", "レコードを登録できませんでした。", "/simpleBC/User_ResultServlet"));
+			new Result("登録失敗！", "レコードを登録できませんでした。", "/Checker_man/Admin_ViewSetrvle"));
 		}
 
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_view.jsp");
 		dispatcher.forward(request, response);
 	}
 }

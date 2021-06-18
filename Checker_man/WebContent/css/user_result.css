@@ -25,14 +25,13 @@ h2 {
 }
 
 /* 診断結果一覧 */
-/*.user_result {
+.user_result {
 	border-collapse: separete;
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
-/*	border: 3px solid #B0D6DA; /* 枠線 */
-/*	margin-left: auto; /* 中央寄せ*/
-/*  margin-right: auto; /* 中央寄せ*/
-/*}
-.user_result th{
+	margin-left: auto; /* 中央寄せ*/
+	margin-right: auto; /* 中央寄せ*/
+}
+/*.user_result th{
 	text-align: left; /* 左寄せ*/
 /*}*/
 
@@ -64,18 +63,6 @@ h2 {
 	text-decoration: underline; /* 下線を引く */
 	text-decoration-color: #F0B43E; /* 下線の色 */
 }
-
-/* コメント欄縦スクロールの追加 */
-.message user_message {
-	overflow: hidden;
-	overflow-y: scroll;
-}
-
-.message admin_message {
-	overflow: hidden;
-	overflow-y: scroll;
-}
-
 
 /* コメント登録ボタンとトップへ戻るボタン */
 .botton {

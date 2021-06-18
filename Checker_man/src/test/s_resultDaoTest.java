@@ -100,12 +100,14 @@ public class s_resultDaoTest {
 
 
 
-		//select1のテスト（管理者コメント）
+		//select1のテスト（アイコン、受講者コメント、管理者コメント）
 		System.out.println("---------- select1のテスト ----------");
 		s_result resultList = dao.select1(new s_result(0,"","","", "",1));
 
 
-			System.out.println("result_id：" + resultList.getAdmin_comment());
+			System.out.println("icon：" + resultList.getIcon());
+			System.out.println("user_comment：" + resultList.getUser_comment());
+			System.out.println("admin_comment：" + resultList.getAdmin_comment());
 			System.out.println();
 
 
@@ -128,6 +130,7 @@ public class s_resultDaoTest {
 		}else {
 			System.out.println("登録失敗！");
 		}
+
 
 	}
 
