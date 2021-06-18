@@ -6,7 +6,7 @@ import dao.User_loginDao;
 import model.User_login;
 
 
-public class user_loginDaoTest {
+public class User_loginDaoTest {
 
 	public static void main(String[] args) {
 		testIsLoginOK1();	// ユーザーが見つかる場合のテスト
