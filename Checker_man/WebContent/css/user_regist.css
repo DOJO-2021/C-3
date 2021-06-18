@@ -2,6 +2,9 @@
 .keyvisual {
 	text-align: center; /* 中央寄せ */
 }
+.main p {
+	border : dotted 3px #B0D6DA;
+}
 
 .regist-area {
 	width:300px;

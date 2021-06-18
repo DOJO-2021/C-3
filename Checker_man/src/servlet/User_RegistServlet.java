@@ -24,7 +24,8 @@ public class User_RegistServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// 新規登録ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
 		dispatcher.forward(request, response);
@@ -33,7 +34,8 @@ public class User_RegistServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 
@@ -45,33 +47,52 @@ public class User_RegistServlet extends HttpServlet {
 		String pw1 = request.getParameter("PW");
 		String pw2 = request.getParameter("CH-PW");
 
-
 		System.out.println(pw1.equals(pw2));
 
+		//ユーザーIDが空の場合、エラーを表示して同じ画面を表示する
+		if (name == "") {
+			System.out.println("ユーザーIDが入力されていません");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
+//
+//		//パスワードが空の場合
+//		if (pw1 == "") {
+//			System.out.println("パスワードが入力されていません");
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+//			dispatcher.forward(request, response);
+//			return;
+//		}
+//
+//		//確認用パスワードが空の場合
+//		if (pw2 == "") {
+//			System.out.println("確認用パスワードが入力されていません");
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+//			dispatcher.forward(request, response);
+//			return;
+//		}
+
 		//パスワードが不一致の場合、エラーを表示して同じ画面を表示する
-		if(!(pw1.equals(pw2))) {
+		if (!(pw1.equals(pw2))) {
 			System.out.println("パスワードが一致していません");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}
 
-
 		//登録する
 		User_loginDao lDao = new User_loginDao();
-		if (lDao.insert(new User_login(name, pw))) {	// 登録成功
+		if (lDao.insert(new User_login(name, pw))) { // 登録成功
 
-			request.setAttribute("result",new Result());
+			request.setAttribute("result", new Result());
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
 			dispatcher.forward(request, response);
 			System.out.println("登録が完了しました。");
-		}
-		else {												// 登録失敗
+		}  // 登録失敗
+			//			request.setAttribute("result",new Result());
+			//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+			//			dispatcher.forward(request, response);
 
-//			request.setAttribute("result",new Result());
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-//			dispatcher.forward(request, response);
-			}
-
-	}
-}
+		   }
+	  }
