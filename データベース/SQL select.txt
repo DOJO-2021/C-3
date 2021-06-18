@@ -49,14 +49,9 @@ select count(maru_icon) as maru, count(batsu_icon) as batsu, count(sankaku_icon)
 group by date order by date asc;
 --new
 
-select icon, count(icon),date from s_result group by icon,date order by date asc
-
-select 
-( select count(*) from s_result where icon = 'maru' group by icon ) AS maru 
-, ( select count(*) from s_result where icon = 'batsu' group by icon ) AS batsu
-, ( select count(*) from s_result where icon = 'sankaku'  group by icon ) AS sankaku
-from s_result group by date; 
-
+select count(maru_icon) as maru, count(batsu_icon) as batsu, count(sankaku_icon) as sankaku, date from 
+(select date from a_lastdata group by date)
+ order by date asc;
 
 ユーザ診断結果のanswerのデータ取得
 select * from s_answer WHERE  user_id = 1 order by  question_id asc
