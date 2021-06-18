@@ -33,14 +33,17 @@
 		<table>
 			<tr>
 				<th><img src="/Checker_man/images/maru.png">の人：</th>
-				<td><div class="maru-number" onclick="show('1')">10人
-			  		<span class="sample1" id="idsample1">555</span>
+				<td><div class="maru-number" onclick="show('1')">${iconNumber.maru_number}人
+			  		<span class="sample1" id="idsample1">
+
+
+			  		</span>
 				</div></td>
 			</tr>
 
 			<tr>
 				<th><img src="/Checker_man/images/sankaku.png">の人：</th>
-				<td><div class="sankaku-number" onclick="show('2')">5人
+				<td><div class="sankaku-number" onclick="show('2')">${iconNumber.sankaku_number}人
 					<span class="sample2" id="idsample2">333</span>
 				</div></td>
 
@@ -48,8 +51,13 @@
 
 			<tr>
 				<th><img src="/Checker_man/images/batsu.png">の人:</th>
-				<td><div class="batu-number" onclick="show('3')">3人
-					<span class="sample3" id="idsample3">444</span>
+				<td><div class="batu-number" onclick="show('3')">${iconNumber.batsu_number}人
+					<span class="sample3" id="idsample3">
+
+					${iconNumber.batsu_list}
+					<!--<a href="/Checker_man/User_ResultServlet">${iconNumber.batsu_list}</a>-->
+
+					</span>
 				</div></td>
 			</tr>
 		</table>
@@ -59,7 +67,7 @@
               <!--  「お知らせ」のhtml -->
 <div class="notice">
 お知らせ<br>
-コメントが〇件来ています
+コメントが${iconNumber.comment_number}件来ています
 </div>
 
          <!--  「過去のデータボタン」のhtml -->

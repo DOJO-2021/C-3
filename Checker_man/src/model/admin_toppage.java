@@ -1,6 +1,7 @@
 package model;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class admin_toppage implements Serializable {
 
@@ -97,12 +98,15 @@ public class admin_toppage implements Serializable {
 		 this.maru_list.add(maru_list);
 	}
 
-	public ArrayList<String> getBatsu_list() {
-		return batsu_list;
+	public String getBatsu_list() {
+		//　[、]、,などの記号を消す処理
+		String batsulist = Arrays.toString(batsu_list.toArray()).replace("[", "").replace("]", "").replace(",", " ");
+		return batsulist;
 	}
 
 	public void setBatsu_list(String batsu_list) {
 		this.batsu_list.add(batsu_list);
+
 	}
 
 	public ArrayList<String> getSankaku_list() {
