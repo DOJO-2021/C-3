@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.a_lastdataDao;
+import dao.s_resultDao;
 import model.admin_lastdata;
 
 
@@ -36,8 +36,8 @@ public class Admin_LastDataServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		// 検索処理を行う(一つの表)
-		a_lastdataDao aDao = new a_lastdataDao();
-		List<admin_lastdata> resultList = aDao.select_lastdata(new admin_lastdata(0,0,0,null));
+		s_resultDao sDao = new s_resultDao();
+		List<admin_lastdata> resultList = sDao.select_lastdata(new admin_lastdata(0,0,0,null));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList",resultList );
