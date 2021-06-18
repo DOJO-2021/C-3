@@ -23,7 +23,7 @@ import model.s_result;
 /**
  * Servlet implementation class User_ResultServlet
  */
-@WebServlet("/User_ResultServlet")
+@WebServlet("/Admin_ViewServlet")
 public class Admin_ViewServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

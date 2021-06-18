@@ -36,84 +36,36 @@
 		</pre>
 
 		<!-- 質問内容と回答 -->
-		<h2>質問内容</h2>
-		<table class="question">
-			<tr>
-				<th>（問1 よく眠れなかった）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問2 食欲があまりない）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問3 不安に感じることがある）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問4 倦怠感がある）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問5 周囲とのコミュニケーションが取れていないと感じる）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問6 研修への充実感が少ないと感じる）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問7 腹痛、頭痛などがある）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問8 イライラをすることが増えたと感じる）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問9 リラックス、息抜きなどが取れていない）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問10 適度な運動をしていない）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問11 辛いと感じることがある）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問12 目が疲れている）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問13 水分補給をあまりしていない）</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問14 作業環境が不適切（明るさ、温度など））</th>
-				<td>（回答を表示）</td>
-			</tr>
-			<tr>
-				<th>（問15 研修内容についていけていないと感じる）</th>
-				<td>（回答を表示）</td>
-			</tr>
-		</table>
+		<div class = user_result>
+			<c:forEach var="e" items="${questionList}" >
+				<form method="POST" action="/Checker_man/User_ResultServlet">
+				<table class = "user_result2">
+					<tr>
+						<td><input type="text" name="QUESTION" value="${e.question}"></td>
+					</tr>
+				</table>
+			 	</form>
+			</c:forEach>
+
 		<!-- 診断結果 -->
-		<h2>診断結果</h2>
-		<form method="POST">
-			<div class="result">
-				<textarea readonly name="result">調子よさそうだね！!
-				</textarea>
+		<c:forEach var="e" items="${answerList}" >
+				<form method="POST" action="/Checker_man/User_ResultServlet">
+				<table class = "user_result2">
+				 	<tr>
+						<td><input type="text" name="ANSWER" value="${e.answer}"></td>
+				 	</tr>
+				 </table>
+			 	</form>
+			</c:forEach>
 			</div>
-		</form>
+
 		<!-- 受講者コメント(閲覧用) -->
-		<form method="POST">
 			<div class="u_comment">
-				受講者コメント<br>
-				<textarea readonly name="comment">閲覧専用</textarea>
-			</div>
-		</form>
+				<p>受講者コメント</p>
+				<form method="POST" action="/Checker_man/User_ResultServlet">
+				<textarea rows="10" cols="100" readonly name="user_message">${resultList.user_comment}</textarea>
+			</form>
+		</div>
 
 		<!-- 管理者コメント(書き込み可能) -->
 		<form method="POST">
