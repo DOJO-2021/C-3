@@ -117,8 +117,14 @@ public class a_lastdataDao {
 							rs.getInt("batsu"),
 							rs.getInt("sankaku"),
 							rs.getString("date")
+
 							);
+
 							resultList.add(resultData);
+
+							//"2021-06-18" → "18"
+							//String date2 = date.substring(date.length()-2);
+
 						}
 					}
 

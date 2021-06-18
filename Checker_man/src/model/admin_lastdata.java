@@ -8,6 +8,10 @@ public class admin_lastdata implements Serializable {
 	private int sankaku_number; //　△の人の数
 	private String date;   //日付
 
+
+
+
+
 	//引数があるコントラスタ
 	public admin_lastdata(int maru_number, int batsu_number, int sankaku_number,String date) {
 		super();
@@ -15,6 +19,7 @@ public class admin_lastdata implements Serializable {
 		this.batsu_number = batsu_number;
 		this.sankaku_number = sankaku_number;
 		this.date = date;
+
 	}
 
 	//引数がないコントラスタ（デフォルトコントラスタ）
@@ -24,6 +29,7 @@ public class admin_lastdata implements Serializable {
 		this.batsu_number = 0;
 		this.sankaku_number = 0;
 		this.date = null;
+
 	}
 
 	//ゲッターセッターのプログラム
@@ -60,5 +66,10 @@ public class admin_lastdata implements Serializable {
 		this.date = date;
 	}
 
-}
 
+	//日付（date_dis）を取得したら、後ろの2文字だけreturnされる
+	public String getDate_dis() {
+		return this.date.substring(this.date.length()-2);
+	}
+
+}
