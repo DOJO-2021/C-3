@@ -79,7 +79,7 @@ public class User_SindanServlet extends HttpServlet {
 		}
 
 		// 診断結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/User_Result.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
 		dispatcher.forward(request, response);
 	}
 }
