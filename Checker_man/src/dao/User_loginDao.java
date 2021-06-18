@@ -35,7 +35,7 @@ public class User_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SELECT文を準備する
-			String sql = "select count(*) from USER_LOGIN  where  USER_NAME = ? and USER_PW = ?";
+			String sql = "select count(*) from USER_LOGIN  where USER_NAME = ? and USER_PW = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, user_name);
 			pStmt.setString(2, user_pw);

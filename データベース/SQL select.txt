@@ -53,5 +53,11 @@ select count(maru_icon) as maru, count(batsu_icon) as batsu, count(sankaku_icon)
 (select date from a_lastdata group by date)
  order by date asc;
 
-ユーザ診断結果のanswerのデータ取得
-select * from s_answer WHERE  user_id = 1 order by  question_id asc
+ユーザ診断結果のanswerのデータ取得（ユーザーIDが1で、今日のデータ）
+select * from s_answer WHERE  user_id = 1 and date = CURDATE() order by  question_id asc
+
+その合計点、5の数、4の数
+select (select sum(answer) from s_answer WHERE  user_id = '1' and date = CURDATE()) as sum
+,(select count(*) from s_answer WHERE  user_id = '1' and answer = '5' and date = CURDATE()) as countfive
+,(select count(*) from s_answer WHERE  user_id = '1' and answer = '4' and date = CURDATE()) as countfour
+from s_answer group by CURDATE()
