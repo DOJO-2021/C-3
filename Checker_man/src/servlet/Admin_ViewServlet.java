@@ -110,7 +110,7 @@ public class Admin_ViewServlet extends HttpServlet {
 		}
 		else {												// 登録失敗
 			request.setAttribute("result",
-			new Result("登録失敗！", "レコードを登録できませんでした。", "/Checker_man/Admin_ViewServlet"));
+			new Result("登録失敗！", "レコードを登録できませんでした。", "/Checker_man/Admin_ViewSetrvle"));
 		}
 
 
