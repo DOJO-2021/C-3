@@ -66,11 +66,11 @@ public class User_SindanServlet extends HttpServlet {
 		request.getParameter("QUESTION_ID");
 		request.getParameter("ANSWER");
 		request.getParameter("USER_ID");
-		String question = request.getParameter("QUESTION");
+		String date = request.getParameter("DATE");
 
 		// 診断結果の登録処理を行う
 		s_answerDao bDao = new s_answerDao();
-		if (bDao.insert(new s_answer(0, 0, 0, question))) { // 登録成功
+		if (bDao.insert(new s_answer(0, 0, 0, date))) { // 登録成功
 			request.setAttribute("result",
 					new Result("登録成功", "レコードを登録しました。", "/Checker_man/User_ResultServlet"));
 		} else { // 登録失敗

@@ -56,22 +56,22 @@ public class User_RegistServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 			return;
 		}
-//
-//		//パスワードが空の場合
-//		if (pw1 == "") {
-//			System.out.println("パスワードが入力されていません");
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-//			dispatcher.forward(request, response);
-//			return;
-//		}
-//
-//		//確認用パスワードが空の場合
-//		if (pw2 == "") {
-//			System.out.println("確認用パスワードが入力されていません");
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-//			dispatcher.forward(request, response);
-//			return;
-//		}
+
+		//パスワードが空の場合
+		if (pw1 == "") {
+			System.out.println("パスワードが入力されていません");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
+
+		//確認用パスワードが空の場合
+		if (pw2 == "") {
+			System.out.println("確認用パスワードが入力されていません");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
 
 		//パスワードが不一致の場合、エラーを表示して同じ画面を表示する
 		if (!(pw1.equals(pw2))) {
@@ -89,10 +89,10 @@ public class User_RegistServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
 			dispatcher.forward(request, response);
 			System.out.println("登録が完了しました。");
-		}  // 登録失敗
-			//			request.setAttribute("result",new Result());
-			//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-			//			dispatcher.forward(request, response);
-
+		}   // 登録失敗
+//		else {		request.setAttribute("result",new Result());
+//					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+//					dispatcher.forward(request, response);
+//			  }
 		   }
 	  }

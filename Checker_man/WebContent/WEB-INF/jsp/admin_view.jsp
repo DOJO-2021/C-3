@@ -68,15 +68,16 @@
 		</div>
 
 		<!-- 管理者コメント(書き込み可能) -->
-		<form method="POST">
 			<div class="a_comment">
-				管理者コメント<br>
-				<textarea name="comment" action="admin_view.servlet"></textarea>
-				<br> <input type="submit" name="submit" value="書き込む"
-					class="button">
-			</div>
-
-		</form>
+				<p>管理者コメント</p>
+				 <form method="POST" action="/Checker_man/User_ResultServlet">
+				<textarea rows="10" cols="100" name="admin_message">${resultList.admin_comment}</textarea>
+				<div class = "botton">
+					<div class = "regist">
+						<input type="submit" name="regist" value="コメント登録"><br>
+					</div>
+				</div>
+			</form>
 
 		<!-- 画面上部に戻るボタン -->
 		<button id="topScroll" class="topScroll"></button>
