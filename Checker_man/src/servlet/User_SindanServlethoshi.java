@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/User_SindanServlet")
+@WebServlet("/User_SindanServlethoshi")
 public class User_SindanServlethoshi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
