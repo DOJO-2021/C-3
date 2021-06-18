@@ -14,7 +14,7 @@ import model.Result;
 import model.s_answer;
 
 @WebServlet("/User_SindanServlet")
-public class User_SindanServlet extends HttpServlet {
+public class User_SindanServlethoshi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

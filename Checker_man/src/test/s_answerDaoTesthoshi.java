@@ -4,7 +4,7 @@ import java.util.List;
 import dao.s_answerDao;
 import model.s_answer;
 
-public class s_answerDaoTest {
+public class s_answerDaoTesthoshi {
 
 	public static void main(String[] args) {
 		s_answerDao dao = new s_answerDao();
