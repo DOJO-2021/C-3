@@ -59,12 +59,16 @@ public class User_RegistServlet extends HttpServlet {
 		//登録する
 		User_loginDao lDao = new User_loginDao();
 		if (lDao.insert(new User_login(name, pw))) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "登録が完了しました。", "/Checker_man/User_TopPageServlet"));
+
+			Result r = new Result("登録成功！", "登録が完了しました。", "/Checker_man/User_TopPageServlet");
+
+			request.setAttribute("result",r );
+			response.sendRedirect("/Checker_man/User_TopPageServlet");
 		}
 		else {												// 登録失敗
 			request.setAttribute("result",
 			new Result("登録失敗！", "登録できませんでした。", "/Checker_man/User_RegistServlet"));
+			response.sendRedirect("/Checker_man/User_RegisServlet");
 		}
 
 
