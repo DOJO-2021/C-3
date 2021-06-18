@@ -24,47 +24,30 @@
 <!-- 月ごとの表 -->
 <div class="result-table">
 
-<!-- ここにresultListをグルグル表示させる -->
-<c:forEach var="e" items="${resultList}">
-<!-- 日付と人数だけループさせる？ -->
-<!--
-${e.date }<br>
-${e.maru_number}（〇の人数）<br>
-${e.sankaku_number}（△の人数）<br>
-${e.batsu_number}（×の人数）<br>
--->
-</c:forEach>
-
-
-
-<table>
-	<tr>
-		<td></td>
-		<td>〇</td>
-		<td>△</td>
-		<td>×</td>
-	</tr>
+	<!-- ここにresultListをグルグル表示させる -->
 	<c:forEach var="e" items="${resultList}">
-	<tr>
-		<td>${e.date }</td>
-		<td>${e.maru_number}</td>
-		<td>${e.sankaku_number}</td>
-		<td>${e.batsu_number}</td>
-	</tr>
 	</c:forEach>
-</table>
 
 
-<!--
-${e.icon }<br>
-${e.icon_number }<br>
-${e.date }<br>
-${e.icon }<br>
-${e.icon_number }<br>
-${e.date }<br>
-  -->
 
+	<table class="table-test" border="1" style="border-collapse: collapse">
+		<tr>
+			<td></td>
+			<td>〇</td>
+			<td>△</td>
+			<td>×</td>
+		</tr>
 
+		<!-- 日付と結果だけ繰り返しの処理 -->
+		<c:forEach var="e" items="${resultList}">
+		<tr>
+			<td>${e.date }</td>
+			<td>${e.maru_number}</td>
+			<td>${e.sankaku_number}</td>
+			<td>${e.batsu_number}</td>
+		</tr>
+		</c:forEach>
+	</table>
 
 
 	<div class="table4">
@@ -75,7 +58,7 @@ ${e.date }<br>
 				<td>〇</td>
 				<td>△</td>
 				<td>×</td>
-		  	</tr>
+			 </tr>
 
 			<tr>
 				<td>1日</td>
@@ -96,8 +79,8 @@ ${e.date }<br>
 				<td>1</td>
 			</tr>
 
-		</table>
-	</div>
+			</table>
+		</div>
 
 	<div class="table5">
 		<h2>5月</h2>
