@@ -51,7 +51,8 @@ public class User_RegistServlet extends HttpServlet {
 		//パスワードが不一致の場合、エラーを表示して同じ画面を表示する
 		if(!(pw1.equals(pw2))) {
 			System.out.println("パスワードが一致していません");
-			response.sendRedirect("/Checker_man/User_RegistServlet");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+			dispatcher.forward(request, response);
 			return;
 		}
 
@@ -60,20 +61,17 @@ public class User_RegistServlet extends HttpServlet {
 		User_loginDao lDao = new User_loginDao();
 		if (lDao.insert(new User_login(name, pw))) {	// 登録成功
 
-			Result r = new Result("登録成功！", "登録が完了しました。", "/Checker_man/User_TopPageServlet");
-
-			request.setAttribute("result",r );
-			response.sendRedirect("/Checker_man/User_TopPageServlet");
+			request.setAttribute("result",new Result());
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
+			dispatcher.forward(request, response);
+			System.out.println("登録が完了しました。");
 		}
 		else {												// 登録失敗
-			request.setAttribute("result",
-			new Result("登録失敗！", "登録できませんでした。", "/Checker_man/User_RegistServlet"));
-			response.sendRedirect("/Checker_man/User_RegisServlet");
-		}
 
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-		dispatcher.forward(request, response);
+//			request.setAttribute("result",new Result());
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+//			dispatcher.forward(request, response);
+			}
 
 	}
 }
