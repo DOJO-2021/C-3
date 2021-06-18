@@ -22,8 +22,10 @@
 	 	<h1>診断結果</h1>
 
 
+	 <form method="POST" action="/Checker_man/User_ResultServlet">
+	 	<h2> ${resultList.icon_path}</h2>
+	 </form>
 
-	 	<h2>（一言診断結果を表示）</h2>
 
 		<!-- 質問内容と回答 -->
  		<div class = user_result>
@@ -31,47 +33,42 @@
 				<form method="POST" action="/Checker_man/User_ResultServlet">
 				<table class = "user_result2">
 					<tr>
-					<td><input type="text" name="QUESTION" value="${e.question}"></td>
+						<td><input type="text" name="QUESTION" value="${e.question}"></td>
 					</tr>
 				</table>
 			 	</form>
 			</c:forEach>
 
-			<c:forEach var="e" items="${answerList}" >
+		<c:forEach var="e" items="${answerList}" >
 				<form method="POST" action="/Checker_man/User_ResultServlet">
 				<table class = "user_result2">
 				 	<tr>
-				 	<td><input type="text" name="ANSWER" value="${e.answer}"></td>
+						<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 				 	</tr>
 				 </table>
 			 	</form>
 			</c:forEach>
+
 		</div>
 	 	<!-- コメント欄 -->
 	 	<div class = "message">
-		 	<div class = "user_message">
 			 	<p>受講者のコメント</p>
 
-				 <form method="POST" action="/Checker_man/User_ResultServlet">
-			 		<textarea rows="10" cols="100" name="user_message">${resultList.user_comment}</textarea>
-				 </form>
-			</div>
-		<!-- コメント登録ボタン、トップへ戻るボタン -->
-		<!--
-		<form method="POST">
-		-->
-		<div class = "botton">
-			<div class = "regist">
-				<input type="submit" name="regist" value="コメント登録"><br>
-			</div>
-		</div>
+			 <form method="POST" action="/Checker_man/User_ResultServlet">
+				<textarea rows="10" cols="100" name="user_message">${resultList.user_comment}</textarea>
+				<div class = "botton">
+					<div class = "regist">
+						<input type="submit" name="regist" value="コメント登録"><br>
+					</div>
+				</div>
+			</form>
 
-		<div class = "admin_message">
+
+
 	 		<p>講師からのコメント</p>
 			<form method="POST" action="/Checker_man/User_ResultServlet">
 				<textarea rows="10" cols="100" readonly name="admin_message">${resultList.admin_comment}</textarea>
 			</form>
-		</div>
 		</div>
 
 

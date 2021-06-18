@@ -57,6 +57,18 @@ public class s_result implements Serializable {
 		this.icon = icon;
 	}
 
+	//setIcon_path()ではなく、getIcon_path()
+	public String getIcon_path() {
+		if(this.icon.equals("maru")) {
+			return "健康です";
+		}else if(this.icon.equals("sankaku")) {
+			return "普通です";
+		}else {
+			return "不健康です";
+		}
+	}
+
+
 	public String getUser_comment() {
 		return user_comment;
 	}
