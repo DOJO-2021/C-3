@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.s_resultDao;
+import model.admin_toppage;
+
 
 @WebServlet("/Admin_TopPageServlet")
 public class Admin_TopPageServlet extends HttpServlet {
@@ -25,19 +28,15 @@ public class Admin_TopPageServlet extends HttpServlet {
 //				}
 
 
+		//LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
-//		// カレンダーの検索処理を行う（ユーザID = 1の場合）
-//				s_resultDao calenderDao = new s_resultDao();
-//				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",1));
-//
-//		// カレンダーの検索処理を行う
-////				HttpSession session = request.getSession();
-////				s_resultDao calenderDao = new s_resultDao();
-////				int id = (int)session.getAttribute("user_id");
-////				List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",id));
-//
-//		// カレンダーの処理をリクエストスコープに格納する
-//		request.setAttribute("calenderlist", calenderlist);
+		// アイコンの数の検索処理を行う
+		s_resultDao iconDao = new s_resultDao();
+		admin_toppage iconNumber = iconDao.select_toppage(new admin_toppage(0, 0, 0, 0,null,null,null,null, null, null, null, null));
+
+
+		// リクエストスコープに格納する
+		request.setAttribute("iconNumber", iconNumber);
 
 		// 管理者トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_toppage.jsp");
