@@ -51,9 +51,11 @@
 	 	<div class = "message">
 		 	<div class = "user_message">
 			 	<p>受講者のコメント</p>
-			 	<textarea rows="10" cols="100" name="user_message">コメントする</textarea>
+
+				 <form method="POST" action="/Checker_man/User_ResultServlet">
+			 		<textarea rows="10" cols="100" name="user_message">${resultList.user_comment}</textarea>
+				 </form>
 			</div>
-		</div>
 		<!-- コメント登録ボタン、トップへ戻るボタン -->
 		<!--
 		<form method="POST">
@@ -64,19 +66,19 @@
 			</div>
 		</div>
 
-			<div class = "admin_message">
-		 		<p>講師からのコメント</p>
-		 	</div>
-
-		<form method="POST" action="/Checker_man/User_ResultServlet">
+		<div class = "admin_message">
+	 		<p>講師からのコメント</p>
+			<form method="POST" action="/Checker_man/User_ResultServlet">
 				<textarea rows="10" cols="100" readonly name="admin_message">${resultList.admin_comment}</textarea>
-		</form>
+			</form>
+		</div>
+		</div>
 
 
 
-			<div class = "return">
-				<a href="/Checker_man/User_TopPageServlet">トップへ戻る</a>
-			</div>
+		<div class = "return">
+			<a href="/Checker_man/User_TopPageServlet">トップへ戻る</a>
+		</div>
 
 	</main>
 	</div>

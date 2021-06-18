@@ -36,12 +36,12 @@ h2 {
 	text-align: left; /* 左寄せ*/
 /*}*/
 
-/*
-.user_result {
-	display: flex;
+/* 診断結果一覧表 */
+.user_result2 {
+	text-align: center; /* 中央寄せ */
 
 }
-*/
+
 
 .user_result2 {
 	border : 2px solid #B0D6DA;

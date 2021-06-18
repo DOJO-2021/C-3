@@ -100,13 +100,35 @@ public class s_resultDaoTest {
 
 
 
-		//select1のテスト
-	System.out.println("---------- select_calenderのテスト ----------");
-	s_result resultList = dao.select1(new s_result(0,"","","", "",1));
+		//select1のテスト（管理者コメント）
+		System.out.println("---------- select1のテスト ----------");
+		s_result resultList = dao.select1(new s_result(0,"","","", "",1));
 
 
-		System.out.println("result_id：" + resultList.getAdmin_comment());
-		System.out.println();
+			System.out.println("result_id：" + resultList.getAdmin_comment());
+			System.out.println();
+
+
+		//insert1のテスト（受講者コメント）
+		System.out.println("---------- insert()のテスト ----------");
+		s_result insRec = new s_result(0, "2021-06-17", "sankaku", "受講者コメント", "", 10);
+		if (dao.insert(insRec)) {
+			System.out.println("登録成功！");
+			List<s_result> commentList = dao.select(insRec);
+			for (s_result comment : commentList) {
+				System.out.println("result_id" + comment.getResult_id());
+				System.out.println("date" + comment.getDate());
+				System.out.println("icon" + comment.getIcon());
+				System.out.println("user_comment" + comment.getUser_comment());
+				System.out.println("admin_comment" + comment.getAdmin_comment());
+				System.out.println("user_id" + comment.getUser_id());
+
+				System.out.println();
+			}
+		}else {
+			System.out.println("登録失敗！");
+		}
+
 	}
 
 }

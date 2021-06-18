@@ -517,20 +517,51 @@ public class s_resultDao {
 					else {
 						pStmt.setString(2, "null");
 					}
-					if (comment.getUser_comment() != null) {
-						pStmt.setString(3, comment.getUser_comment());
+					if (comment.getIcon() != null) {
+						pStmt.setString(3, comment.getIcon());
 					}
 					else {
 						pStmt.setString(3, "null");
 					}
-					if (comment.getAdmin_comment() != null) {
-						pStmt.setString(4, comment.getAdmin_comment());
+					if (comment.getUser_comment() != null) {
+						pStmt.setString(4, comment.getUser_comment());
 					}
 					else {
 						pStmt.setString(4, "null");
 					}
-					pStmt.setInt(5, comment.getUser_id());
+					if (comment.getAdmin_comment() != null) {
+						pStmt.setString(5, comment.getAdmin_comment());
+					}
+					else {
+						pStmt.setString(5, "null");
+					}
+					pStmt.setInt(6, comment.getUser_id());
 
+					// SQL文を実行する
+					if (pStmt.executeUpdate() == 1) {
+						result = true;
+					}
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				finally {
+					// データベースを切断
+					if (conn != null) {
+						try {
+							conn.close();
+						}
+						catch (SQLException e) {
+							e.printStackTrace();
+						}
+					}
+				}
 
+				// 結果を返す
+				return result;
 			}
+
 }
