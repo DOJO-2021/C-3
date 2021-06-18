@@ -36,7 +36,7 @@
 					<td>当てはまる</td>
 				</tr>
 				<tr>
-					<td>問1 よく眠れなかった</td>
+					<td>${e.question }</td>
 					<form action="#" method="post">
 						<td><input type="radio" name="sindan" value="1"></td>
 						<td><input type="radio" name="sindan" value="2"></td>
