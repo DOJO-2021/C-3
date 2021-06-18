@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.user_login;
+import model.User_login;
 
-public class user_loginDao {
+public class User_loginDao {
 
 	// ログインできるならtrueを返す
 	public boolean isLoginOK( String user_name, String user_pw) {
@@ -78,9 +78,9 @@ public class user_loginDao {
 	}
 
 	//引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<user_login> select(user_login param) {
+	public List<User_login> select(User_login param) {
 		Connection conn = null;
-		List<user_login> signList = new ArrayList<user_login>();
+		List<User_login> signList = new ArrayList<User_login>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -111,8 +111,7 @@ public class user_loginDao {
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				user_login sign = new user_login(
-				rs.getInt("user_id"),
+				User_login sign = new User_login(
 				rs.getString("user_name"),
 				rs.getString("user_pw")
 				);
@@ -145,7 +144,7 @@ public class user_loginDao {
 	}
 
 	// 引数new_userで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(user_login sign) {
+	public boolean insert(User_login sign) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -156,7 +155,8 @@ public class user_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into user_login values (null, ?, ?)";
+			String sql = "insert into User_login(USER_NAME,USER_PW) values (?, ?)";
+			System.out.println(sql);
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//SQL文を完成させる
@@ -202,10 +202,10 @@ public class user_loginDao {
 	}
 
 	// セッションスコープのための処理
-	public user_login select_session(String user_name, String user_pw) {
+	public User_login select_session(String user_name, String user_pw) {
 
 		Connection conn = null;
-		user_login result = null;
+		User_login result = null;
 
 		try {
 			// JDBCドライバを読み込む
@@ -226,7 +226,7 @@ public class user_loginDao {
 
 			// 結果表をコレクションにコピーする
 			rs.next();
-			result = new user_login();
+			result = new User_login();
 			result.setUser_id(rs.getInt("user_id"));
 		}
 

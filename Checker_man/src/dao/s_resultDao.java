@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.admin_lastdata;
 import model.admin_toppage;
 import model.s_result;
 import model.user_toppage;
@@ -367,62 +368,63 @@ public class s_resultDao {
 					return result;
 				}
 
-	// 管理者の過去のデータの表で使うデータベース処理
-//				public List<admin_lastdata> select_lastdata(admin_lastdata param) {
-//
-//					Connection conn = null;
-//					List<admin_lastdata> resultList = new ArrayList<admin_lastdata>();
-//
-//					try {
-//						// JDBCドライバを読み込む
-//						Class.forName("org.h2.Driver");
-//
-//						// データベースに接続する
-//						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
-//
-//						// SQL文を準備する
-//						String sql = "select icon, count(icon),date from s_result group by icon,date order by date asc";
-//
-//						PreparedStatement pStmt = conn.prepareStatement(sql);
-//
-//						// SQL文を実行し、結果表を取得する
-//						ResultSet rs = pStmt.executeQuery();
-//
-//						// 結果表をコレクションにコピーする
-//						while (rs.next()) {
-//							admin_lastdata resultData = new admin_lastdata(
-//							rs.getString("icon"),
-//							rs.getInt("count(icon)"),
-//							rs.getString("date")
-//							);
-//							resultList.add(resultData);
-//						}
-//					}
-//
-//					catch (SQLException e) {
-//						e.printStackTrace();
-//						resultList = null;
-//					}
-//					catch (ClassNotFoundException e) {
-//						e.printStackTrace();
-//						resultList = null;
-//					}
-//
-//					finally {
-//						// データベースを切断
-//						if (conn != null) {
-//							try {
-//								conn.close();
-//							}
-//							catch (SQLException e) {
-//								e.printStackTrace();
-//								resultList = null;
-//							}
-//						}
-//					}
-//					// 結果を返す
-//					return resultList;
-//				}
+				// 管理者の過去のデータの表で使うデータベース処理
+				public List<admin_lastdata> select_lastdata(admin_lastdata param) {
+
+					Connection conn = null;
+					List<admin_lastdata> resultList = new ArrayList<admin_lastdata>();
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
+
+						// SQL文を準備する
+						String sql = "select icon, count(icon),date from s_result group by icon,date order by date asc";
+
+						PreparedStatement pStmt = conn.prepareStatement(sql);
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							admin_lastdata resultData = new admin_lastdata(
+							rs.getInt("maru"),
+							rs.getInt("batsu"),
+							rs.getInt("sankaku"),
+							rs.getString("date")
+							);
+							resultList.add(resultData);
+						}
+					}
+
+					catch (SQLException e) {
+						e.printStackTrace();
+						resultList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						resultList = null;
+					}
+
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								resultList = null;
+							}
+						}
+					}
+					// 結果を返す
+					return resultList;
+				}
 
 			// Select文のデータベース処理（診断ID（管理者コメントの取得））
 			public s_result select1(s_result param) {

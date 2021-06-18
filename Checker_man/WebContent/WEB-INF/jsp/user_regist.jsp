@@ -23,7 +23,7 @@
 				<h1>新規登録</h1>
 				<form method="POST" action="/Checker_man/User_RegistServlet">
 					<div class="regist-form">
-						ユーザーID<input type="text" name="ID"><br>
+						ユーザーID<input type="text" name="NAME"><br>
 						パスワード<input type="password" name="PW"><br>
 						パスワード確認<input type="password" name="CH-PW">
 					</div>
