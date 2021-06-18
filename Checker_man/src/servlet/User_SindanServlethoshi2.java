@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.a_lastdataDao;
+import dao.s_answerDaohoshi;
+import dao.s_resultDao;
+import model.s_answerdata;
+import model.s_result;
+
 @WebServlet("/User_SindanServlethoshi2")
 public class User_SindanServlethoshi2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -42,6 +48,40 @@ public class User_SindanServlethoshi2 extends HttpServlet {
 		//			e.printStackTrace();
 		//		}
 
+		// ユーザーの回答(1～5)の検索処理を行う
+		//LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
+
+	s_answerDaohoshi answerdataDao = new s_answerDaohoshi();
+	s_answerdata resultData = answerdataDao.select_answerdata(new s_answerdata(0, 0, 0,1));
+
+	//回答から、アイコンを判断する処理
+	String icon =null;
+
+	//☓のパターン
+	if(resultData.getSum() >= 60  ||  resultData.getCountfive() <= 6  ||  resultData.getCountfour() <= 9) {
+	icon = "batsu";
+	}
+
+	//○のパターン
+	else if(resultData.getSum() <= 40) {
+		icon = "maru";
+	}
+
+	//△のパターン
+	else {
+		icon = "sankaku";
+	}
+
+	//データをまとめて、診断結果のデータベースにインサートする処理
+	s_resultDao resultDao = new s_resultDao();
+	s_result insRec = new s_result(0, null, icon, "", "", 1);
+	resultDao.insert(insRec);
+
+	//データをまとめて、過去のデータのデータベースにインサートする処理
+	a_lastdataDao lastdataDao = new a_lastdataDao();
+	lastdataDao.insert_lastdata(insRec);
+
+
 		// 診断ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_sindan.jsp");
 		dispatcher.forward(request, response);
@@ -73,6 +113,7 @@ public class User_SindanServlethoshi2 extends HttpServlet {
 //			request.setAttribute("result",
 //					new Result("登録失敗", "レコードを登録できませんでした。", "/Checker_man/User_SindanServlet"));
 //		}
+
 
 
 
