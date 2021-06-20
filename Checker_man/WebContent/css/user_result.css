@@ -30,8 +30,11 @@ h2 {
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
 	margin-left: auto; /* 中央寄せ*/
 	margin-right: auto; /* 中央寄せ*/
-
+	/* 表２つを横並びにしたい */
 }
+
+
+
 /*.user_result th{
 	text-align: left; /* 左寄せ*/
 /*}*/
@@ -44,12 +47,6 @@ h2 {
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
 }
 
-.user_result3 {
-	border : 2px solid #B0D6DA;
-	margin-left: auto; /* 中央寄せ*/
-	margin-right: auto;
-	border-spacing: 15px 0px; /* テーブル内の枠線なし */
-}
 
 /* コメント欄 */
 .message {

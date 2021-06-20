@@ -38,18 +38,20 @@
 				</table>
 			 	</form>
 			</c:forEach>
+		</div>
 
-		<c:forEach var="e" items="${answerList}" >
+		<div class = user_result>
+			<c:forEach var="e" items="${answerList}" >
 				<form method="POST" action="/Checker_man/User_ResultServlet">
-				<table class = "user_result3">
+				<table class = "user_result2">
 				 	<tr>
 						<td><input type="text" name="ANSWER" value="${e.answer}"></td>
 				 	</tr>
 				 </table>
 			 	</form>
 			</c:forEach>
-
 		</div>
+
 	 	<!-- コメント欄 -->
 	 	<div class = "message">
 			 	<p>受講者のコメント</p>
