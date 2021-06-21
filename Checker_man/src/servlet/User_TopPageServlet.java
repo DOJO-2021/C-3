@@ -33,7 +33,7 @@ public class User_TopPageServlet extends HttpServlet {
 		LoginUser user_id = (LoginUser) session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao calenderDao = new s_resultDao();
-		List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "", user_id.getuser_id()));
+		List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("","date.getDate1()", "date.getDate2()", user_id.getuser_id()));
 
 		// カレンダーの処理をリクエストスコープに格納する
 		request.setAttribute("calenderlist", calenderlist);
