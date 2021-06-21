@@ -64,9 +64,12 @@
 
        <!-- 診断ボタン、診断結果ボタン」のhtml -->
 <div class="user_toppage_button">
-	<input type="submit" id="user_shindan" name="user_shindan" value="診断">
-	 <input type="submit" id="user_result" name="user_result" value="診断結果">
+	<form action="/Checker_man/User_SindanServlet" method="post">
+		<input type="submit" id="user_shindan" name="user_shindan" value="診断" ></form>
+	<form action="/Checker_man/User_ResultServlet"  method="post">
+	 <input type="submit" id="user_result" name="user_result" value="診断結果"> </form>
 </div>
+<div class="clear"></div>
 
 <p>テスト（削除しても良い）</p>
 <c:forEach var="e" items="${calenderlist}">
@@ -101,15 +104,15 @@
             var year  = today.getFullYear();
             var month = today.getMonth() + 3;
 
-        //追加 thisMonthStrは、年 "－" 0 + 月 +1の後ろ2文字を切り抜き
-        //	   つまり,2021-06-18 +1  = 2021-06-19  の "19"
+        //追加
+        //年と月を取得
         //                     2021 + "-" +  "0" +  (             5  + 1) →06       + "-"
         //                                   "0" +  (             9  + 1) →010
-        //        ↓ 2021-06-
-            var thisMonthStr = year + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-";
+           var thisMonthStr = year + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-";
 
-        //var lastMonthStr =
-        //var nextMonthStr =
+        //   var lastMonthStr = yeat + "-" + ("0" + (today.getMonth() )).slice(-2) + "-";
+        //   var nextMonthStr = year + "-" + ("0" + (today.getMonth() + 3)).slice(-2) + "-";
+
             $('.date-head').html(year + "-" + month);
             var last = new Date(today.getFullYear(), today.getMonth() + 3, 0);
             var last_year  = last.getFullYear();
@@ -132,12 +135,12 @@
            //追加 iconLinkを定義
                 var iconLink = "";
 
-           		//もし、18日の結果が〇なら、iconLinkにその画像パス（iconDartas)を代入
+           		//日付を取得
            		//                  2021-06-     01～31
                 if(iconDatas.has( thisMonthStr + ("0" + i).slice(-2) )){
 	                iconLink = "<img src="+iconDatas.get(thisMonthStr + ("0" + i).slice(-2))+" width=\"36px\">";
                 }
-                //var icon = i % 3 == 0 ? "〇" : i % 3 == 1 ? "▲" : "×";
+
 
                 $('table').find('tbody').find('tr').last().find('td').eq(week).html(i + "<br />" + iconLink);
             }

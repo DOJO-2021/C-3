@@ -128,7 +128,9 @@ public class s_resultDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "select  icon, date, user_id from s_result WHERE user_id = ? order by date asc";
+				//月を指定してセレクト
+				String sql = "select  icon, date, user_id from s_result WHERE user_id = ? and"
+						+ "date between '2021-04-01' and '2021-04-31'order by date asc";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
