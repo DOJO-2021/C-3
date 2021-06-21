@@ -24,7 +24,6 @@ public class s_answerDao {
 			// データベースに接続する
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
-
 			// SQL文を準備する
 			String sql = "select * from s_answer WHERE question_id LIKE ? AND answer LIKE ? and user_id like ? and date like ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -32,26 +31,22 @@ public class s_answerDao {
 			// SQL文を完成させる
 			if (param.getQuestion_id() != 0) {
 				pStmt.setString(1, "%" + param.getQuestion_id() + "%");
-			}
-			else {
+			} else {
 				pStmt.setString(1, "%");
 			}
 			if (param.getAnswer() != 0) {
 				pStmt.setString(2, "%" + param.getAnswer() + "%");
-			}
-			else {
+			} else {
 				pStmt.setString(2, "%");
 			}
 			if (param.getUser_id() != 0) {
 				pStmt.setString(3, "%" + param.getUser_id() + "%");
-			}
-			else {
+			} else {
 				pStmt.setString(3, "%");
 			}
 			if (param.getDate() != "") {
 				pStmt.setString(4, "%" + param.getDate() + "%");
-			}
-			else {
+			} else {
 				pStmt.setString(4, "%");
 			}
 
@@ -61,29 +56,24 @@ public class s_answerDao {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				s_answer answer = new s_answer(
-				rs.getInt("question_id"),
-				rs.getInt("answer"),
-				rs.getInt("user_id"),
-				rs.getString("date")
-				);
+						rs.getInt("question_id"),
+						rs.getInt("answer"),
+						rs.getInt("user_id"),
+						rs.getString("date"));
 				answerList.add(answer);
 			}
-		}
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 			answerList = null;
-		}
-		catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			answerList = null;
-		}
-		finally {
+		} finally {
 			// データベースを切断
 			if (conn != null) {
 				try {
 					conn.close();
-				}
-				catch (SQLException e) {
+				} catch (SQLException e) {
 					e.printStackTrace();
 					answerList = null;
 				}
@@ -94,10 +84,9 @@ public class s_answerDao {
 		return answerList;
 	}
 
-
 	// 引数answerで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(s_answer answer) {
-		Connection conn = null;		//デフォルトで「回答がありません」→回答があったらtrueに書き変わる
+		Connection conn = null; //デフォルトで「回答がありません」→回答があったらtrueに書き変わる
 		boolean result = false;
 
 		try {
@@ -108,7 +97,7 @@ public class s_answerDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into s_answer values (?, ?, ?, ?)";
+			String sql = "insert into s_answer values (?, ?, null, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//SQL文を完成させる
@@ -119,8 +108,7 @@ public class s_answerDao {
 
 			if (answer.getDate() != null) {
 				pStmt.setString(4, answer.getDate());
-			}
-			else {
+			} else {
 				pStmt.setString(4, "null");
 			}
 
@@ -128,20 +116,16 @@ public class s_answerDao {
 			if (pStmt.executeUpdate() == 1) {
 				result = true;
 			}
-		}
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			// データベースを切断
 			if (conn != null) {
 				try {
 					conn.close();
-				}
-				catch (SQLException e) {
+				} catch (SQLException e) {
 					e.printStackTrace();
 				}
 			}
