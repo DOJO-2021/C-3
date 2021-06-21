@@ -70,7 +70,7 @@
 		<!-- 管理者コメント(書き込み可能) -->
 			<div class="a_comment">
 				<p>管理者コメント</p>
-				 <form method="POST" action="/Checker_man/User_ResultServlet">
+				 <form method="POST" action="/Checker_man/Admin_ViewServlet">
 				<textarea rows="10" cols="100" name="admin_message">${resultList.admin_comment}</textarea>
 				<div class = "botton">
 					<div class = "regist">
