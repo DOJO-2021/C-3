@@ -102,7 +102,7 @@
 
             var today = new Date();
             var year  = today.getFullYear();
-            var month = today.getMonth() + 3;
+            var month = today.getMonth()+1 ;//+3→+1に変更　　6/21
 
         //追加
         //年と月を取得
