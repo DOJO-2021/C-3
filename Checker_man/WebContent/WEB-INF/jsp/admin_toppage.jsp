@@ -36,7 +36,11 @@
 				<td><div class="maru-number" onclick="show('1')">${iconNumber.maru_number}人
 			  		<span class="sample1" id="idsample1">
 
-					${iconNumber.maru_list}
+					<c:forEach var="marulist" items="${maruList}">
+
+					<p>${marulist}</p>
+
+					</c:forEach>
 
 			  		</span>
 				</div></td>
@@ -46,6 +50,12 @@
 				<th><img src="/Checker_man/images/sankaku.png">の人：</th>
 				<td><div class="sankaku-number" onclick="show('2')">${iconNumber.sankaku_number}人
 					<span class="sample2" id="idsample2">
+
+					<c:forEach var="snkakulist" items="${sankakuList}">
+
+					<p>${sankakulist}</p>
+
+					</c:forEach>
 
 					</span>
 				</div></td>
@@ -57,8 +67,13 @@
 				<td><div class="batu-number" onclick="show('3')">${iconNumber.batsu_number}人
 					<span class="sample3" id="idsample3">
 
-					${iconNumber.batsu_list}
-					<!--<a href="/Checker_man/User_ResultServlet">${iconNumber.batsu_list}</a>-->
+					<c:forEach var="a" items="${iconNumber}">
+					<p>${a.batsu_list}</p>
+					<p>${a.batsu_id}</p>
+					</c:forEach>
+
+
+					<!--<a href="/Checker_man/AdminViewServlet?user_id=">${iconNumber.batsu_list}</a>-->
 
 					</span>
 				</div></td>
@@ -68,10 +83,32 @@
 </div>
 
               <!--  「お知らせ」のhtml -->
+
 <div class="notice">
+
 お知らせ<br>
-コメントが${iconNumber.comment_number}件来ています
+
+<table>
+			<tr>
+				<th>コメントが</th>
+				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}件
+			  		<span class="sample4" id="idsample4">
+
+				<c:forEach var="commentlist" items="${commentList}">
+
+					<p>${commentlist}</p>
+
+					</c:forEach>
+
+
+			  		</span>
+
+				</div>
+				</td>
+			</tr>
+</table>
 </div>
+
 
          <!--  「過去のデータボタン」のhtml -->
 <div class="admin_toppage_button">
@@ -93,9 +130,11 @@ function show(key){
 	var wObjballoon1 = document.getElementById("idsample1");
 	var wObjballoon2 = document.getElementById("idsample2");
 	var wObjballoon3 = document.getElementById("idsample3");
+	var wObjballoon4 = document.getElementById("idsample4");
 	wObjballoon1.className = "sample1";
 	wObjballoon2.className = "sample2";
 	wObjballoon3.className = "sample3";
+	wObjballoon4.className = "sample4";
 
 	if(key === '1'){
 		wObjballoon1.className = "sample10";
@@ -105,6 +144,9 @@ function show(key){
 	}
 	else if(key === '3'){
 		wObjballoon3.className = "sample30";
+	}
+	else if(key === '4'){
+		wObjballoon4.className = "sample40";
 	}
 }
 

@@ -27,57 +27,69 @@
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
 		</header>
 
-		<p class="box1">閲覧ページ</p>
+		<div class="box1">閲覧ページ</div>
 
 		<!-- 個人名表示 -->
 		<pre class="name">
-		<h1>名前</h1>
+		<h1>
+				<c:out value="${user_names}"></c:out>
+			</h1>
 
 		</pre>
+		<h2>診断結果</h2>
+		<form method="POST" action="/Checker_man/User_ResultServlet">
+			<h2>${resultList.icon_path}</h2>
+		</form>
 
-		<!-- 質問内容と回答 -->
-		<div class = user_result>
-			<c:forEach var="e" items="${questionList}" >
-				<form method="POST" action="/Checker_man/User_ResultServlet">
-				<table class = "user_result2">
-					<tr>
-						<td><input type="text" name="QUESTION" value="${e.question}"></td>
-					</tr>
-				</table>
-			 	</form>
-			</c:forEach>
 
-		<!-- 診断結果 -->
-		<c:forEach var="e" items="${answerList}" >
-				<form method="POST" action="/Checker_man/User_ResultServlet">
-				<table class = "user_result2">
-				 	<tr>
-						<td><input type="text" name="ANSWER" value="${e.answer}"></td>
-				 	</tr>
-				 </table>
-			 	</form>
-			</c:forEach>
+		<!-- 質問内容 -->
+		<div class="result">
+			<div class=user_result>
+				<c:forEach var="e" items="${questionList}">
+					<form method="POST" action="/Checker_man/User_ResultServlet">
+						<table class="user_result2">
+							<tr>
+								<td><input type="text" readonly name="QUESTION"
+									value="${e.question}"></td>
+							</tr>
+						</table>
+					</form>
+				</c:forEach>
+
+				<!-- 回答 -->
+				<c:forEach var="e" items="${answerList}">
+					<form method="POST" action="/Checker_man/User_ResultServlet">
+						<table class="user_result2">
+							<tr>
+								<td><input type="text" readonly name="ANSWER"
+									value="${e.answer}"></td>
+							</tr>
+						</table>
+					</form>
+				</c:forEach>
 			</div>
+		</div>
 
 		<!-- 受講者コメント(閲覧用) -->
-			<div class="u_comment">
-				<p>受講者コメント</p>
-				<form method="POST" action="/Checker_man/User_ResultServlet">
+		<div class="u_comment">
+			<p>受講者コメント</p>
+			<form method="POST" action="/Checker_man/User_ResultServlet">
 				<textarea rows="10" cols="100" readonly name="user_message">${resultList.user_comment}</textarea>
 			</form>
 		</div>
 
 		<!-- 管理者コメント(書き込み可能) -->
-			<div class="a_comment">
-				<p>管理者コメント</p>
-				 <form method="POST" action="/Checker_man/User_ResultServlet">
+		<div class="a_comment">
+			<p>管理者コメント</p>
+			<form method="POST" action="/Checker_man/Admin_ViewServlet">
 				<textarea rows="10" cols="100" name="admin_message">${resultList.admin_comment}</textarea>
-				<div class = "botton">
-					<div class = "regist">
+				<div class="botton">
+					<div class="regist">
 						<input type="submit" name="regist" value="コメント登録"><br>
 					</div>
 				</div>
 			</form>
+		</div>
 
 		<!-- 画面上部に戻るボタン -->
 		<button id="topScroll" class="topScroll"></button>
@@ -88,7 +100,6 @@
 			<a href="/Checker_man/Admin_TopPageServlet" class="btn">トップページに戻る</a>
 		</div>
 
-	</div>
 	</div>
 
 
