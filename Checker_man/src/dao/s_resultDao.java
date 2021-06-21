@@ -129,8 +129,7 @@ public class s_resultDao {
 
 				// SQL文を準備する
 				//月を指定してセレクト
-				String sql = "select  icon, date, user_id from s_result WHERE user_id = ? and"
-						+ "date between ? and ? order by date asc";
+				String sql = "select  icon, date, user_id from s_result WHERE user_id = ? and date between ? and ? order by date asc";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -162,8 +161,8 @@ public class s_resultDao {
 				while (rs.next()) {
 					user_toppage resultData = new user_toppage(
 					rs.getString("icon"),
-					rs.getString("date1"),
-					rs.getString("date2"),
+					rs.getString("date"),
+					rs.getString("date"),
 					rs.getInt("user_id")
 					);
 
