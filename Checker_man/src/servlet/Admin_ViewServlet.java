@@ -70,7 +70,7 @@ public class Admin_ViewServlet extends HttpServlet {
 //		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao rDao = new s_resultDao();
-		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", 1));
+		s_result resultList = rDao.select1(new s_result(25, "2021-06-21", "batsu", "受講者コメント", "管理者コメント", 2));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList", resultList);
@@ -104,7 +104,7 @@ public class Admin_ViewServlet extends HttpServlet {
 
 		// 登録処理を行う
 		s_resultDao rDao = new s_resultDao();
-		if (rDao.insert1(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
+		if (rDao.insert1(new s_result(result_id, date, icon, user_comment, admin_comment, result_id))) {	// 登録成功
 			request.setAttribute("result",
 			new Result("登録成功！", "レコードを登録しました。", "/Checker_man/Admin_ViewServlet"));
 		}
