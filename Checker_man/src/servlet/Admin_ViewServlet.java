@@ -70,7 +70,7 @@ public class Admin_ViewServlet extends HttpServlet {
 //		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao rDao = new s_resultDao();
-		s_result resultList = rDao.select1(new s_result(25, "2021-06-21", "batsu", "受講者コメント", "管理者コメント", 2));
+		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", 1));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList", resultList);
