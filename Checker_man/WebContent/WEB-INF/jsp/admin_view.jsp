@@ -91,17 +91,17 @@
 					</div>
 				</div>
 			</form>
-
-			<!-- 画面上部に戻るボタン -->
-			<button id="topScroll" class="topScroll"></button>
-
-
-			<!-- トップページに戻るボタン -->
-			<div class="toppage">
-				<a href="/Checker_man/Admin_TopPageServlet" class="btn">トップページに戻る</a>
-			</div>
-
 		</div>
+
+		<!-- 画面上部に戻るボタン -->
+		<button id="topScroll" class="topScroll"></button>
+
+
+		<!-- トップページに戻るボタン -->
+		<div class="toppage">
+			<a href="/Checker_man/Admin_TopPageServlet" class="btn">トップページに戻る</a>
+		</div>
+
 	</div>
 
 
