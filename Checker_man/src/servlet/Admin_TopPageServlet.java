@@ -34,6 +34,7 @@ public class Admin_TopPageServlet extends HttpServlet {
 		admin_toppage iconNumber = iconDao.select_toppage(new admin_toppage(0, 0, 0, 0,null,null,null,null, null, null, null, null));
 
 
+
 		// リクエストスコープに格納する
 		request.setAttribute("iconNumber", iconNumber);
 

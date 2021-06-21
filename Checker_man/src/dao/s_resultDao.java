@@ -128,7 +128,9 @@ public class s_resultDao {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "select  icon, date, user_id from s_result WHERE user_id = ? order by date asc";
+				//月を指定してセレクト
+				String sql = "select  icon, date, user_id from s_result WHERE user_id = ? and"
+						+ "date between ? and ? order by date asc";
 
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
@@ -139,6 +141,19 @@ public class s_resultDao {
 				else {
 					pStmt.setInt(1, 0);
 				}
+				if (param.getDate1() != null) {
+					pStmt.setString(2, param.getDate1());
+				}
+				else {
+					pStmt.setString(2,null);
+				}
+				if (param.getDate2() != null) {
+					pStmt.setString(3, param.getDate2());
+				}
+				else {
+					pStmt.setString(3,null);
+				}
+
 
 				// SQL文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
@@ -147,7 +162,8 @@ public class s_resultDao {
 				while (rs.next()) {
 					user_toppage resultData = new user_toppage(
 					rs.getString("icon"),
-					rs.getString("date"),
+					rs.getString("date1"),
+					rs.getString("date2"),
 					rs.getInt("user_id")
 					);
 

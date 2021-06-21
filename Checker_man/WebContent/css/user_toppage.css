@@ -60,12 +60,19 @@ input#next-month {
 .user_toppage_button {
 	margin:50px;
 	text-align: center;
+	/*display:flex; */
 }
+
+.clear {
+	clear:both;
+}
+
 
 input#user_result {
 	font-size:30px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
+	margin-right:30px;
 }
 
 
@@ -73,6 +80,7 @@ input#user_shindan {
 	font-size:30px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
+
 }
 
 /* アイコン画像の大きさのcss*/

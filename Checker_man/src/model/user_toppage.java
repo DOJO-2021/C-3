@@ -4,14 +4,16 @@ import java.io.Serializable;
 public class user_toppage implements Serializable {
 
 	private String icon;   //アイコン
-	private String date;  //日付
+	private String date1;  //日付1
+	private String date2;
 	private int user_id; //ユーザーID
 
 	//引数があるコントラスタ
-	public user_toppage(String icon, String date, int user_id) {
+	public user_toppage(String icon, String date1,String date2, int user_id) {
 		super();
 		this.icon = icon;
-		this.date = date;
+		this.date1 = date1;
+		this.date2 = date2;
 		this.user_id = user_id;
 	}
 
@@ -19,7 +21,8 @@ public class user_toppage implements Serializable {
 	public user_toppage() {
 		super();
 		this.icon = null;
-		this.date = null;
+		this.date1 = null;
+		this.date2 = null;
 		this.user_id = 0;
 	}
 
@@ -46,12 +49,20 @@ public class user_toppage implements Serializable {
 		}
 	}
 
-	public String getDate() {
-		return date;
+	public String getDate1() {
+		return date1;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setDate(String date1) {
+		this.date1 = date1;
+	}
+
+	public String getDate2() {
+		return date2;
+	}
+
+	public void setDate2(String date2) {
+		this.date2 = date2;
 	}
 
 	public int getUser_id() {

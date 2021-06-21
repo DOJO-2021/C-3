@@ -103,7 +103,7 @@ values (14, 3,1,current_date);
 insert into s_answer (question_id, answer,user_id,date) 
 values (15, 5,1,current_date);
 
---診断結果が表示される
+--診断結果が表示される(現在の月）
 insert into s_result 
 (result_id, date,icon,user_comment,admin_comment,user_id) 
 values 
@@ -128,6 +128,79 @@ insert into s_result
 (result_id, date,icon,user_comment,admin_comment,user_id) 
 values 
 (null, current_date,'maru','','管理者コメント',5);
+
+
+
+
+
+--診断結果が表示される(4月）
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-01','maru','受講者コメント','管理者コメント',1);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-31','maru','受講者コメント','管理者コメント',1);
+
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-01','maru','受講者コメント','管理者コメント',2);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-01','sankaku','受講者コメント','管理者コメント',3);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-01','batsu','受講者コメント','管理者コメント',4);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-01','batu','受講者コメント','管理者コメント',5);
+
+
+
+
+
+
+--診断結果が表示される(5月）
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-01','maru','受講者コメント','管理者コメント',1);
+
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-01','maru','受講者コメント','管理者コメント',2);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-01','sankaku','受講者コメント','管理者コメント',3);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-01','batsu','受講者コメント','管理者コメント',4);
+
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-01','batu','受講者コメント','管理者コメント',5);
+
+
+
+
+
 
 --過去のデータのsql（ユーザ-IDが1の場合）
 insert into a_lastdata 
