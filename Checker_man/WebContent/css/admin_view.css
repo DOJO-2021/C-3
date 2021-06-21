@@ -1,4 +1,8 @@
 @charset "UTF-8";
+
+html {
+	font-family: sans-serif;
+}
 /* 閲覧ページ */
 p {
 	padding: 0.5em 1em;
@@ -49,10 +53,10 @@ pre {
 	font-size: 14px;
 }
 /* 質問テーブル全体 */
-table.question {
+.result {
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 0;
+	margin-right: 0;
 	padding: 1em 2em;
 }
 
@@ -69,12 +73,6 @@ h2 {
 
 /* 管理者コメント */
 .a_comment {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-}
-/* 診断結果テーブル */
-.result {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
