@@ -21,7 +21,7 @@ import model.s_question;
 import model.s_result;
 
 /**
- * Servlet implementation class User_ResultServlet
+ * Servlet implementation class Admin_ViewServlet
  */
 @WebServlet("/Admin_ViewServlet")
 public class Admin_ViewServlet extends HttpServlet {
@@ -90,7 +90,7 @@ public class Admin_ViewServlet extends HttpServlet {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/Checker_man/User_LoginServlet");
+			response.sendRedirect("/Checker_man/Admin_LoginServlet");
 			return;
 		}
 
@@ -110,7 +110,7 @@ public class Admin_ViewServlet extends HttpServlet {
 		}
 		else {												// 登録失敗
 			request.setAttribute("result",
-			new Result("登録失敗！", "レコードを登録できませんでした。", "/Checker_man/Admin_ViewSetrvle"));
+			new Result("登録失敗！", "レコードを登録できませんでした。", "/Checker_man/Admin_ViewSetrvlet"));
 		}
 
 
