@@ -36,11 +36,7 @@
 				<td><div class="maru-number" onclick="show('1')">${iconNumber.maru_number}人
 			  		<span class="sample1" id="idsample1">
 
-					<c:forEach var="marulist" items="${maruList}">
 
-					<p>${marulist}</p>
-
-					</c:forEach>
 
 			  		</span>
 				</div></td>
@@ -51,11 +47,7 @@
 				<td><div class="sankaku-number" onclick="show('2')">${iconNumber.sankaku_number}人
 					<span class="sample2" id="idsample2">
 
-					<c:forEach var="snkakulist" items="${sankakuList}">
 
-					<p>${sankakulist}</p>
-
-					</c:forEach>
 
 					</span>
 				</div></td>
@@ -67,11 +59,10 @@
 				<td><div class="batu-number" onclick="show('3')">${iconNumber.batsu_number}人
 					<span class="sample3" id="idsample3">
 
-					<c:forEach var="a" items="${iconNumber}">
-					<p>${a.batsu_list}</p>
-					<p>${a.batsu_id}</p>
+					<c:forEach var="e" items="${iconNumber.batsu_list">
+					<p>${e}</p>
+					<p>${e}</p>
 					</c:forEach>
-
 
 					<!--<a href="/Checker_man/AdminViewServlet?user_id=">${iconNumber.batsu_list}</a>-->
 
@@ -94,11 +85,7 @@
 				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}件
 			  		<span class="sample4" id="idsample4">
 
-				<c:forEach var="commentlist" items="${commentList}">
 
-					<p>${commentlist}</p>
-
-					</c:forEach>
 
 
 			  		</span>
