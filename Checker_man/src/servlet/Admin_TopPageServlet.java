@@ -28,7 +28,6 @@ public class Admin_TopPageServlet extends HttpServlet {
 //				}
 
 
-		//LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		// アイコンの数の検索処理を行う
 		s_resultDao iconDao = new s_resultDao();

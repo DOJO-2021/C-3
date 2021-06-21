@@ -36,6 +36,7 @@
 				<td><div class="maru-number" onclick="show('1')">${iconNumber.maru_number}人
 			  		<span class="sample1" id="idsample1">
 
+					${iconNumber.maru_list}
 
 			  		</span>
 				</div></td>
@@ -44,7 +45,9 @@
 			<tr>
 				<th><img src="/Checker_man/images/sankaku.png">の人：</th>
 				<td><div class="sankaku-number" onclick="show('2')">${iconNumber.sankaku_number}人
-					<span class="sample2" id="idsample2">333</span>
+					<span class="sample2" id="idsample2">
+
+					</span>
 				</div></td>
 
 			</tr>
