@@ -32,7 +32,7 @@
 		<!-- 個人名表示 -->
 		<pre class="name">
 		<h1>
-				<c:out value="${user_names}"></c:out>
+				<c:out value="${user_name}"></c:out>
 			</h1>
 
 		</pre>
@@ -44,7 +44,7 @@
 
 		<!-- 質問内容 -->
 		<div class="result">
-			<div class=user_result>
+			<table class="user_result">
 				<c:forEach var="e" items="${questionList}">
 					<form method="POST" action="/Checker_man/User_ResultServlet">
 						<table class="user_result2">
@@ -55,6 +55,7 @@
 						</table>
 					</form>
 				</c:forEach>
+				</table>
 
 				<!-- 回答 -->
 				<c:forEach var="e" items="${answerList}">
