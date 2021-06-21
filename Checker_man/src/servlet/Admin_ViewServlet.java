@@ -21,7 +21,7 @@ import model.s_question;
 import model.s_result;
 
 /**
- * Servlet implementation class User_ResultServlet
+ * Servlet implementation class Admin_ViewServlet
  */
 @WebServlet("/Admin_ViewServlet")
 public class Admin_ViewServlet extends HttpServlet {

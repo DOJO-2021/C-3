@@ -31,7 +31,7 @@
 
 		<!-- 個人名表示 -->
 		<pre class="name">
-		<h1>名前</h1>
+		<h1><c:out value="${user_names}"></c:out></h1>
 
 		</pre>
 
@@ -41,7 +41,7 @@
 				<form method="POST" action="/Checker_man/User_ResultServlet">
 				<table class = "user_result2">
 					<tr>
-						<td><input type="text" name="QUESTION" value="${e.question}"></td>
+						<td><input type="text" readonly name="QUESTION" value="${e.question}"></td>
 					</tr>
 				</table>
 			 	</form>
@@ -52,7 +52,7 @@
 				<form method="POST" action="/Checker_man/User_ResultServlet">
 				<table class = "user_result2">
 				 	<tr>
-						<td><input type="text" name="ANSWER" value="${e.answer}"></td>
+						<td><input type="text" readonly name="ANSWER" value="${e.answer}"></td>
 				 	</tr>
 				 </table>
 			 	</form>
