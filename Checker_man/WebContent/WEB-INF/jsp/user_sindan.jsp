@@ -38,12 +38,12 @@
 
 					<td>問1 よく眠れなかった</td>
 					<form action="#" method="post">
-					<td><input type="radio" name="sindan1" value="1"></td>
-					<td><input type="radio" name="sindan1" value="2"></td>
-					<td><input type="radio" name="sindan1" value="3" checked>
-					</td>
-					<td><input type="radio" name="sindan1" value="4"></td>
-					<td><input type="radio" name="sindan1" value="5"></td>
+						<td><input type="radio" name="sindan1" value="1"></td>
+						<td><input type="radio" name="sindan1" value="2"></td>
+						<td><input type="radio" name="sindan1" value="3" checked>
+						</td>
+						<td><input type="radio" name="sindan1" value="4"></td>
+						<td><input type="radio" name="sindan1" value="5"></td>
 				</tr>
 
 				<tr>
