@@ -27,7 +27,7 @@
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
 		</header>
 
-		<p class="box1">閲覧ページ</p>
+		<div class="box1">閲覧ページ</div>
 
 		<!-- 個人名表示 -->
 		<pre class="name">

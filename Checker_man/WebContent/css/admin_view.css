@@ -4,7 +4,7 @@ html {
 	font-family: sans-serif;
 }
 /* 閲覧ページ */
-p {
+.box1 {
 	padding: 0.5em 1em;
 	margin: 2em 0;
 	width: 200px;
@@ -12,9 +12,12 @@ p {
 	border: dashed 5px #ffa500; /*点線*/
 	text-align: center;
 }
-
+/* 診断結果書 */
 h2 {
 	border-bottom: dotted 2px #F0B43E;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* 名前の欄 */
@@ -60,18 +63,25 @@ pre {
 	padding: 1em 2em;
 }
 
-/* 診断結果書 */
-h2 {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-}
 /* 受講者コメント */
+.u_comment p {
+	text-align: center;
+	font-size: 18px;
+	text-decoration: underline; /* 下線を引く */
+	text-decoration-color: #F0B43E; /* 下線の色 */
+}
+
 .u_comment {
 	text-align: center;
 }
 
 /* 管理者コメント */
+.a_comment p {
+	text-align: center;
+	font-size: 18px;
+	text-decoration: underline; /* 下線を引く */
+	text-decoration-color: #F0B43E;
+} /* 下線のS色 */
 .a_comment {
 	text-align: center;
 	margin-left: auto;
@@ -88,64 +98,64 @@ textarea {
 
 /* 書き込みボタン */
 .button {
-  display: inline-block;
-  border-radius : 10%;          /* 角丸       */
-  font-size: 12pt;        /* 文字サイズ */
-  text-align: center;      /* 文字位置   */
-  cursor: pointer;     /* カーソル   */
-  padding: 12px 12px;   /* 余白       */
-  background: rgba(255, 166, 77, 0.81);     /* 背景色     */
-  color         : #000000;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  opacity       : 0.9;         /* 透明度     */
-  transition    : .3s;         /* なめらか変化 */
-  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
-  margin-bottom: 10px;
+	display: inline-block;
+	border-radius: 10%; /* 角丸       */
+	font-size: 12pt; /* 文字サイズ */
+	text-align: center; /* 文字位置   */
+	cursor: pointer; /* カーソル   */
+	padding: 12px 12px; /* 余白       */
+	background: rgba(255, 166, 77, 0.81); /* 背景色     */
+	color: #000000; /* 文字色     */
+	line-height: 1em; /* 1行の高さ  */
+	opacity: 0.9; /* 透明度     */
+	transition: .3s; /* なめらか変化 */
+	box-shadow: 6px 6px 3px #666666; /* 影の設定 */
+	margin-bottom: 10px;
 }
+
 .button:hover {
-  box-shadow    : none;        /* カーソル時の影消去 */
-  opacity       : 1;           /* カーソル時透明度 */
+	box-shadow: none; /* カーソル時の影消去 */
+	opacity: 1; /* カーソル時透明度 */
 }
 
 /* 画面上部に移動するボタン */
 .topScroll {
-  /* buttonタグのリセットCSS */
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  appearance: none;
- /* ボタンの装飾 */
-  position: fixed;
-  right: 30px;
-  bottom: 30px;
-  z-index: 100;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #115582;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+	/* buttonタグのリセットCSS */
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+	/* ボタンの装飾 */
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	z-index: 100;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #115582;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
 }
 
 /* 矢印のスタイル */
 .topScroll::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  margin-bottom: -6px;
-  border-top: solid 3px #fff;
-  border-right: solid 3px #fff;
-  transform: rotate(-45deg);
+	content: "";
+	width: 12px;
+	height: 12px;
+	margin-bottom: -6px;
+	border-top: solid 3px #fff;
+	border-right: solid 3px #fff;
+	transform: rotate(-45deg);
 }
 
 /* ホバー時のスタイル */
 .topScroll:hover {
-  transform: scale(1.1);
+	transform: scale(1.1);
 }
-
 
 /* トップページに戻るボタン */
 .toppage {
