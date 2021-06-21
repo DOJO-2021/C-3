@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.s_resultDao;
 import model.admin_toppage;
+import model.admin_toppagelist;
 
 
 @WebServlet("/Admin_TopPageServlet")
@@ -27,13 +28,14 @@ public class Admin_TopPageServlet extends HttpServlet {
 //					return;
 //				}
 
-
+		//URLでUser_TopPageServlet?user_id=1を実行させるための処理
+		//int user_id =  Integer.parseInt(request.getParameter("user_id"));
+		//List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",user_id));
 
 		// アイコンの数の検索処理を行う
 		s_resultDao iconDao = new s_resultDao();
 		admin_toppage iconNumber = iconDao.select_toppage(new admin_toppage(0, 0, 0, 0,null,null,null,null, null, null, null, null));
-
-
+		admin_toppagelist iconList = iconDao.select_toppage(new admin_toppagelist(null,null,null,null, null, null, null, null));
 
 		// リクエストスコープに格納する
 		request.setAttribute("iconNumber", iconNumber);
