@@ -37,8 +37,6 @@
 
 		</pre>
 		<h2>診断結果</h2>
-
-
 		<form method="POST" action="/Checker_man/User_ResultServlet">
 			<h2>${resultList.icon_path}</h2>
 		</form>
