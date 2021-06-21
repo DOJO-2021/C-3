@@ -104,7 +104,7 @@ public class Admin_ViewServlet extends HttpServlet {
 
 		// 登録処理を行う
 		s_resultDao rDao = new s_resultDao();
-		if (rDao.insert1(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
+		if (rDao.insert1(new s_result(result_id, date, icon, user_comment, admin_comment, result_id))) {	// 登録成功
 			request.setAttribute("result",
 			new Result("登録成功！", "レコードを登録しました。", "/Checker_man/Admin_ViewServlet"));
 		}
