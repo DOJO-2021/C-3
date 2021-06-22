@@ -24,21 +24,20 @@
 
 		<!-- ヘッダ -->
 		<header class="header">
-			<jsp:include page="/WEB-INF/jsp/header.jsp" />
+			<jsp:include page="/WEB-INF/jsp/admin_header.jsp" />
 		</header>
 
 		<div class="box1">閲覧ページ</div>
 		<main>
 			<!-- 個人名表示 -->
-			<pre class="name">
-		<h1>
-				<c:out value="${result.user_name}"></c:out>
-		</h1>
-		</pre>
 
-			<h2>診断結果</h2>
+		<h2>
+				<c:out value="${result.user_name}"></c:out>
+		</h2>
+
+			<h3>＜診断結果＞</h3>
 			<form method="POST" action="/Checker_man/User_ResultServlet">
-				<h2>${resultList.icon_path}</h2>
+				<h3>${resultList.icon_path}</h3>
 			</form>
 
 

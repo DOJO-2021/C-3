@@ -39,7 +39,9 @@
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
+					<div class = "maru">
 					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.maru_id}">${e.maru_list}</a></p>
+					</div>
 					</c:forEach>
 
 			  		</span>
