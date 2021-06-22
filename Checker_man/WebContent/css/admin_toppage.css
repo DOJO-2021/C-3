@@ -49,7 +49,7 @@ border: 2px solid #5d5d5d;
   padding: 2px;                         /* テキストの前後の余白 */
   background-color:#B0D6DA;             /* 背景色（透明度） */
   width:300px;
-  height:200px;                          /* 吹き出し全体の幅 */
+  height:200px;                         /* 吹き出し全体の幅 */
   margin-left:250px;                       /* 表示位置 */
                  /* 表示位置 */
   font-size: 80%;                       /* 文字サイズ */
@@ -103,19 +103,18 @@ border: 2px solid #5d5d5d;
    0%{ color : white; background:white   }
 }
 
-.maru {
-	overflow: scroll;
+/* 吹き出しのスクロール */
+#idsample1 {
+	overflow-y: scroll;
 }
 
-.sankaku-number p{
-	overflow: scroll;
-
+#idsample2 {
+	overflow-y: scroll;
+}
+#idsample3 {
+	overflow-y: scroll;
 }
 
-.batu-number p {
-	overflow: scroll;
-}
-
-.comment-number p {
-	overflow: scroll;
+#idsample4 {
+	overflow-y: scroll;
 }
