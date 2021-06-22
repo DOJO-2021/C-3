@@ -3,7 +3,6 @@ package test;
 import java.util.List;
 
 import dao.User_loginDao;
-import dao.s_resultDao;
 import model.User_login;
 
 
@@ -55,8 +54,7 @@ public class User_loginDaoTest {
 		}
 
 		//ユーザー名を表示させるテスト
-		s_resultDao rDao2 = new s_resultDao();
-		User_login result = rDao2.select_username(new User_login(1, "", "" ));
+		User_login result = dao.select_username(new User_login(1, "", "" ));
 		System.out.println("名前は、" + result.getUser_name());
 
 

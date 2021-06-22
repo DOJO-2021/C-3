@@ -83,7 +83,7 @@ public class User_RegistServlet extends HttpServlet {
 
 		//登録する
 		User_loginDao lDao = new User_loginDao();
-		if (lDao.insert(new User_login(name, pw))) { // 登録成功
+		if (lDao.insert(new User_login(0,name, pw))) { // 登録成功
 
 			request.setAttribute("result", new Result());
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
