@@ -3,6 +3,7 @@ import java.util.List;
 
 import dao.s_answerDao;
 import model.s_answer;
+import model.s_answerdata;
 
 public class s_answerDaoTest {
 
@@ -38,5 +39,17 @@ public class s_answerDaoTest {
 		}else {
 			System.out.println("登録失敗！");
 		}
+
+		// select_answerdataのテスト
+				System.out.println("---------- select_toppageのテスト ----------");
+
+				s_answerdata resultData = dao.select_answerdata(new s_answerdata(0, 0, 0,1));
+
+					System.out.println("合計：" + resultData.getSum());
+					System.out.println("5の数：" + resultData.getCountfive());
+					System.out.println("4の数：" + resultData.getCountfour());
+
+					System.out.println();
+
 	}
 }
