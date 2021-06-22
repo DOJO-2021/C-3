@@ -61,3 +61,6 @@ select (select sum(answer) from s_answer WHERE  user_id = '1' and date = CURDATE
 ,(select count(*) from s_answer WHERE  user_id = '1' and answer = '5' and date = CURDATE()) as countfive
 ,(select count(*) from s_answer WHERE  user_id = '1' and answer = '4' and date = CURDATE()) as countfour
 from s_answer group by CURDATE()
+
+ユーザー名を探す
+select user_name from user_login where user_id=1;
