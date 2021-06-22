@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.s_resultDaoHoshi;
+import dao.s_resultDao;
 import model.admin_toppage;
 import model.admin_toppagelist;
 
@@ -34,7 +34,7 @@ public class Admin_TopPageServlet extends HttpServlet {
 		//List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",user_id));
 
 		// アイコンの数の検索処理を行う
-		s_resultDaoHoshi iconDao = new s_resultDaoHoshi();
+		s_resultDao iconDao = new s_resultDao();
 		admin_toppage iconNumber = iconDao.select_toppage_number(new admin_toppage(0, 0, 0, 0 ));
 		List<admin_toppagelist> iconList = iconDao.select_toppagelist(new admin_toppagelist(null,null,null,null, 0, 0, 0, 0));
 
