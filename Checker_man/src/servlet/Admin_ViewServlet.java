@@ -34,10 +34,10 @@ public class Admin_ViewServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-//		if (session.getAttribute("admin_id") == null) {
-//			response.sendRedirect("/Checker_man/Admin_LoginServlet");
-//			return;
-//		}
+		if (session.getAttribute("admin_id") == null) {
+			response.sendRedirect("/Checker_man/Admin_LoginServlet");
+			return;
+		}
 
 		//URL（Admin_ViewServlet?user_id = ○）から、○の数値を取得
 		int user_id =  Integer.parseInt(request.getParameter("user_id"));
@@ -87,10 +87,10 @@ public class Admin_ViewServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-//		if (session.getAttribute("admin_id") == null) {
-//			response.sendRedirect("/Checker_man/Admin_LoginServlet");
-//			return;
-//		}
+		if (session.getAttribute("admin_id") == null) {
+			response.sendRedirect("/Checker_man/Admin_LoginServlet");
+			return;
+		}
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
