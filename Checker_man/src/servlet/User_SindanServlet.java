@@ -8,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.s_answerDao;
+import model.LoginUser;
 import model.Result;
 import model.s_answer;
 
@@ -55,7 +57,7 @@ public class User_SindanServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		//		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		//		HttpSession session = request.getSession();
+		HttpSession session = request.getSession();
 		//		if (session.getAttribute("user_id") == null) {
 		//			response.sendRedirect("/Checker_man/User_LoginServlet");
 		//			return;
@@ -63,10 +65,13 @@ public class User_SindanServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		//		int question_id = Integer.parseInt(request.getParameter("QUESTION_ID"));
-		//		int answer = Integer.parseInt(request.getParameter("ANSWER"));
-		//		int user_id = Integer.parseInt(request.getParameter("USER_ID"));
+		int sindan1 = Integer.parseInt(request.getParameter("sindan1"));
+		LoginUser user = (LoginUser) session.getAttribute("user_id");
+
 		String date = request.getParameter("DATE");
+
+		System.out.println("sindan1;" + sindan1);
+		System.out.println("user_id;" + user);
 
 		// 診断結果の登録処理を行う
 		s_answerDao bDao = new s_answerDao();
