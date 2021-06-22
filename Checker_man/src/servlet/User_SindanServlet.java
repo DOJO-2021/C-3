@@ -63,14 +63,14 @@ public class User_SindanServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		int question_id = Integer.parseInt(request.getParameter("QUESTION_ID"));
-		int answer = Integer.parseInt(request.getParameter("ANSWER"));
-		int user_id = Integer.parseInt(request.getParameter("USER_ID"));
+		//		int question_id = Integer.parseInt(request.getParameter("QUESTION_ID"));
+		//		int answer = Integer.parseInt(request.getParameter("ANSWER"));
+		//		int user_id = Integer.parseInt(request.getParameter("USER_ID"));
 		String date = request.getParameter("DATE");
 
 		// 診断結果の登録処理を行う
 		s_answerDao bDao = new s_answerDao();
-		if (bDao.insert(new s_answer(question_id, answer, user_id, date))) { // 登録成功
+		if (bDao.insert(new s_answer(0, 0, 0, date))) { // 登録成功
 			request.setAttribute("result",
 					new Result("登録成功", "レコードを登録しました。", "/Checker_man/User_ResultServlet"));
 		} else { // 登録失敗
