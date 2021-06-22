@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.admin_loginDao;
-import model.LoginUser;
+import dao.Admin_loginDao;
+import model.Admin_login;
+import model.LoginAdmin;
 import model.Result;
 
 /**
@@ -36,27 +37,32 @@ public class Admin_LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		int user_id = Integer.parseInt(request.getParameter("USER_ID"));
-		String user_name = request.getParameter("USER_NAME");
-		String user_pw = request.getParameter("USER_PW");
+		//int user_id = Integer.parseInt(request.getParameter("USER_ID"));
+
+		String admin_name = request.getParameter("ID"); //jspのidを指定する
+		String admin_pw = request.getParameter("PW");
 
 		// ログイン処理を行う
-		admin_loginDao adDao = new admin_loginDao();
-		if (adDao.isLoginOK(user_id, user_name, user_pw)) {	// ログイン成功
+		Admin_loginDao adDao = new Admin_loginDao();
+		if (adDao.isLoginOK(admin_name, admin_pw)) {	// ログイン成功
+
 			// セッションスコープにIDを格納する
+			Admin_login resultid = adDao.select_session(admin_name, admin_pw); //ユーザーIDをselectするためのDaoメソッド
+
+
 			HttpSession session = request.getSession();
-			session.setAttribute("user_id", new LoginUser(user_id));
+			session.setAttribute("admin_id", new LoginAdmin(resultid.getAdmin_id()));
 
 			// メニューサーブレットにリダイレクトする
-			response.sendRedirect("/Checker_man/User_TopPageServlet");
+			response.sendRedirect("/Checker_man/Admin_TopPageServlet");
 		}
 		else {									// ログイン失敗
 			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
 			request.setAttribute("result",
-			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/simpleBC/LoginServlet"));
+			new Result("ログイン失敗！", "IDまたはPWに間違いがあります。", "/Checker_man/Admin_LoginServlet"));
 
 			// 結果ページにフォワードする
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp//user_login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_login.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

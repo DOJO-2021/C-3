@@ -3,6 +3,10 @@
 html {
 	font-family: sans-serif;
 }
+
+html* {
+	box-sizing: border-box;
+}
 /* 閲覧ページ */
 .box1 {
 	padding: 0.5em 1em;
@@ -12,17 +16,12 @@ html {
 	border: dashed 5px #ffa500; /*点線*/
 	text-align: center;
 }
-/* 診断結果書 */
-h2 {
-	border-bottom: dotted 2px #F0B43E;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 /* 名前の欄 */
 pre {
 	width: 300px;
+	padding: 0.5em 1em;
+	margin: 2em 0;
 	text-align: center;
 	background: #f5f5f5;
 	border-top: solid 5px #B0D6DA;
@@ -32,7 +31,14 @@ pre {
 .name {
 	margin-right: auto;
 	margin-left: auto;
-	font-size: 20px;
+}
+
+/* 診断結果書き */
+h2 {
+	border-bottom: dotted 2px #F0B43E;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* 質問内容書 */
@@ -42,47 +48,38 @@ pre {
     text-align: center;
     width: 500px;
 } */
-.question {
+.result {
 	border-collapse: separete;
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
-	border: 3px solid #f39a58; /* 枠線 */
+	display: flex;
+	margin-right: auto;
 	margin-left: auto; /* 中央寄せ*/
-	margin-right: auto; /* 中央寄せ*/
+	/* 表２つを横並びにしたい */
 }
 
-.question th {
-	text-align: left; /* 左寄せ*/
-	padding: 1em 2em;
-	font-size: 14px;
-}
-/* 質問テーブル全体 */
-.result {
-	text-align: center;
-	margin-left: 0;
-	margin-right: 0;
-	padding: 1em 2em;
+.user_result2 {
+	border: 2px solid #B0D6DA;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	margin-right: auto;
+	margin-left: auto; /* 中央寄せ*/
 }
 
-/* 受講者コメント */
-.u_comment p {
+.user_result3 {
+	border: 2px solid #B0D6DA;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	margin-right: auto;
+	margin-left: auto; /* 中央寄せ*/
+}
+
+/* コメント */
+.comment p {
 	text-align: center;
 	font-size: 18px;
 	text-decoration: underline; /* 下線を引く */
 	text-decoration-color: #F0B43E; /* 下線の色 */
 }
 
-.u_comment {
-	text-align: center;
-}
-
-/* 管理者コメント */
-.a_comment p {
-	text-align: center;
-	font-size: 18px;
-	text-decoration: underline; /* 下線を引く */
-	text-decoration-color: #F0B43E;
-} /* 下線のS色 */
-.a_comment {
+.comment {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
