@@ -9,8 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import dao.s_resultDaoHoshi;
+import dao.s_resultDao;
 import model.admin_toppage;
 import model.admin_toppagelist;
 
@@ -23,18 +24,14 @@ public class Admin_TopPageServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 	//	 もしもログインしていなかったらログインサーブレットにリダイレクトする
-//				HttpSession session = request.getSession();
-//				if (session.getAttribute("admin_id") == null) {
-//					response.sendRedirect("/Checker_man/Admin_LoginServlet");
-//					return;
-//				}
-
-		//URLでUser_TopPageServlet?user_id=1を実行させるための処理
-		//int user_id =  Integer.parseInt(request.getParameter("user_id"));
-		//List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("", "",user_id));
+				HttpSession session = request.getSession();
+				if (session.getAttribute("admin_id") == null) {
+					response.sendRedirect("/Checker_man/Admin_LoginServlet");
+					return;
+				}
 
 		// アイコンの数の検索処理を行う
-		s_resultDaoHoshi iconDao = new s_resultDaoHoshi();
+		s_resultDao iconDao = new s_resultDao();
 		admin_toppage iconNumber = iconDao.select_toppage_number(new admin_toppage(0, 0, 0, 0 ));
 		List<admin_toppagelist> iconList = iconDao.select_toppagelist(new admin_toppagelist(null,null,null,null, 0, 0, 0, 0));
 
@@ -50,11 +47,11 @@ public class Admin_TopPageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//	 もしもログインしていなかったらログインサーブレットにリダイレクトする
-//		HttpSession session = request.getSession();
-//		if (session.getAttribute("admin_id") == null) {
-//			response.sendRedirect("/Checker_man/Admin_LoginServlet");
-//			return;
-//		}
+		HttpSession session = request.getSession();
+		if (session.getAttribute("admin_id") == null) {
+			response.sendRedirect("/Checker_man/Admin_LoginServlet");
+			return;
+		}
 
 
 

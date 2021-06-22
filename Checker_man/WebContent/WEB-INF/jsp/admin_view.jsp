@@ -32,7 +32,7 @@
 			<!-- 個人名表示 -->
 			<pre class="name">
 		<h1>
-				<c:out value="${user_name}"></c:out>
+				<c:out value="${result.user_name}"></c:out>
 		</h1>
 		</pre>
 

@@ -31,6 +31,7 @@ pre {
 .name {
 	margin-right: auto;
 	margin-left: auto;
+	text-align: center;
 }
 
 /* 診断結果書き */

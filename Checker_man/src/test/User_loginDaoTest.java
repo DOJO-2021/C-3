@@ -16,7 +16,7 @@ public class User_loginDaoTest {
 		User_loginDao dao = new User_loginDao();
 
 		System.out.println("---------- insert()のテスト ----------");
-		User_login insRec = new User_login("Tanaka_Kana", "4567");
+		User_login insRec = new User_login(0,"Tanaka_Kana", "4567");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<User_login> signList3 = dao.select(insRec);
@@ -52,5 +52,11 @@ public class User_loginDaoTest {
 		else {
 			System.out.println("testIsLoginOK2：テストが失敗しました");
 		}
+
+		//ユーザー名を表示させるテスト
+		User_login result = dao.select_username(new User_login(1, "", "" ));
+		System.out.println("名前は、" + result.getUser_name());
+
+
 	}
 }

@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.User_loginDao;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
-import dao.s_resultDaoHoshi;
 import model.Result;
 import model.User_login;
 import model.s_answer;
@@ -34,12 +34,14 @@ public class Admin_ViewServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-//		HttpSession session = request.getSession();
-//		if (session.getAttribute("admin_id") == null) {
-//			response.sendRedirect("/Checker_man/User_LoginServlet");
-//			return;
-//		}
+		HttpSession session = request.getSession();
+		if (session.getAttribute("admin_id") == null) {
+			response.sendRedirect("/Checker_man/User_LoginServlet");
+			return;
+		}
 
+		//URL（Admin_ViewServlet?user_id = ○）から、○の数値を取得
+		int user_id =  Integer.parseInt(request.getParameter("user_id"));
 
 		//検索処理を行う（質問内容）
 		s_questionDao qDao = new s_questionDao();
@@ -54,27 +56,18 @@ public class Admin_ViewServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("questionList", questionList);
 
-
-
 		//検索処理を行う（回答）
-//		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
-
 		s_answerDao aDao = new s_answerDao();
 		List<s_answer> answerList = null;
-		answerList = aDao.select(new s_answer(0, 0, 1, ""));
+		answerList = aDao.select_answer(new s_answer(0, 0, user_id, ""));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("answerList", answerList);
 
-
-
 		//検索処理を行う（アイコン、受講者コメント、管理者コメント）
-		int user_id =  Integer.parseInt(request.getParameter("user_id"));
-
 		s_resultDao rDao = new s_resultDao();
 		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", user_id));
-
-		s_resultDaoHoshi rDao2 = new s_resultDaoHoshi();
+		User_loginDao rDao2 = new User_loginDao();
 		User_login result = rDao2.select_username(new User_login(user_id, "", "" ));
 
 		// 検索結果をリクエストスコープに格納する
