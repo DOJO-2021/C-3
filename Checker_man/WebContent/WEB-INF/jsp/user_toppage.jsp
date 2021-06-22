@@ -33,13 +33,16 @@
 
           <!-- カレンダーの上にある「前月、現在の月、翌月」のhtml -->
   <div class="calender-menu">
-   <table class="calender-menu-table">
-    <tr>
-		<th><input type="submit" id="previous-month" name="previous-month" value="前月"></th>
-		 <th class = "th-month">2021年6月</th>
-    	<th><input type="submit" id="next-month" name="next-month" value="翌月"></th>
-    </tr>
-   </table>
+  <!-- <div class="calender-menu-table">  -->
+  	<form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
+		<input type="submit" id="previous-month" value="前月">
+		<input type="hidden" name="diffCount" value="0">
+	</form>
+	<!--  <th class = "th-month"> -->2021年6月
+	<form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
+    	<input type="submit" id="next-month" name="diffCount" value="2">
+	</form>
+   </div>
   </div>
 
        <!-- カレンダーの表のhtml -->
@@ -71,24 +74,13 @@
 </div>
 <div class="clear"></div>
 
-<p>テスト（削除しても良い）</p>
-<c:forEach var="e" items="${calenderlist}">
-<div class="icon">
-<img src="${e.icon_path}" >
-</div>
-<p>${e.date }</p>
-<input type="text" value="${e.icon}" readonly>
-</c:forEach>
-
- <p></p>
- </div>
 
  <!-- フッター -->
  <footer class="footer">
  <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
  </footer>
 
-</div>
+<!-- </div>  -->
 
 <!-- カレンダーのjavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -102,7 +94,7 @@
 
             var today = new Date();
             var year  = today.getFullYear();
-            var month = today.getMonth()+${view_monthlist} ;//+3→+1に変更　　6/21
+            var month = today.getMonth()+${view_monthlist} ;
 
         //追加
         //年と月を取得
@@ -113,7 +105,7 @@
 
 
             $('.date-head').html(year + "-" + month);
-            var last = new Date(today.getFullYear(), today.getMonth() + 3, 0);
+            var last = new Date(today.getFullYear(), today.getMonth() + ${view_monthlist}, 0);
             var last_year  = last.getFullYear();
             var last_month = last.getMonth();
             var last_day   = last.getDate();
