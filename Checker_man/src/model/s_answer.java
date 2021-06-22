@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class s_answer implements Serializable {
 	private int question_id; //診断質問ID
 	private int answer; //診断回答
-	private LoginUser user_id; //ユーザーID
+	private int user_id; //ユーザーID
 	private String date; //日付
 
 	//引数があるコンストラクタの生成
-	public s_answer(int question_id, int answer, LoginUser user, String date) {
+	public s_answer(int question_id, int answer, int user, String date) {
 		super();
 		this.question_id = question_id;
 		this.answer = answer;
@@ -22,7 +22,7 @@ public class s_answer implements Serializable {
 		super();
 		this.question_id = 0;
 		this.answer = 0;
-		this.user_id = null;
+		this.user_id = 0;
 		this.date = "";
 	}
 	/* ↑?
@@ -48,11 +48,11 @@ public class s_answer implements Serializable {
 		this.answer = answer;
 	}
 
-	public LoginUser getUser_id() {
+	public int getUser_id() {
 		return user_id;
 	}
 
-	public void setUser_id(LoginUser user_id) {
+	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
 

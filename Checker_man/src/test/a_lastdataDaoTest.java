@@ -30,16 +30,41 @@ public class a_lastdataDaoTest {
 //				// selectのテスト
 						System.out.println("---------- selectのテスト ----------");
 
-						List<admin_lastdata> resultList2 = dao.select_lastdata(new admin_lastdata(0,0,0,null));
+						List<admin_lastdata> resultList4 = dao.select_lastdata4(new admin_lastdata(0,0,0,null));
 
-						for (admin_lastdata resultData : resultList2) {
-							System.out.println("maru：" + resultData.getMaru_number());
-							System.out.println("batsu：" + resultData.getBatsu_number());
-							System.out.println("sankaku：" + resultData.getSankaku_number());
-							System.out.println("date：" + resultData.getDate());
+						for (admin_lastdata resultData4 : resultList4) {
+							System.out.println("maru：" + resultData4.getMaru_number());
+							System.out.println("batsu：" + resultData4.getBatsu_number());
+							System.out.println("sankaku：" + resultData4.getSankaku_number());
+							System.out.println("date：" + resultData4.getDate());
 							System.out.println();
 						}
-//
+
+						// selectのテスト
+						System.out.println("---------- select_lastdata5のテスト ----------");
+
+						List<admin_lastdata> resultList5 = dao.select_lastdata5(new admin_lastdata(0,0,0,null));
+
+						for (admin_lastdata resultData5 : resultList5) {
+							System.out.println("maru：" + resultData5.getMaru_number());
+							System.out.println("batsu：" + resultData5.getBatsu_number());
+							System.out.println("sankaku：" + resultData5.getSankaku_number());
+							System.out.println("date：" + resultData5.getDate());
+							System.out.println();
+						}
+
+						// selectのテスト
+						System.out.println("---------- select_lastdata6のテスト ----------");
+
+						List<admin_lastdata> resultList6 = dao.select_lastdata6(new admin_lastdata(0,0,0,null));
+
+						for (admin_lastdata resultData6 : resultList6) {
+							System.out.println("maru：" + resultData6.getMaru_number());
+							System.out.println("batsu：" + resultData6.getBatsu_number());
+							System.out.println("sankaku：" + resultData6.getSankaku_number());
+							System.out.println("date：" + resultData6.getDate());
+							System.out.println();
+						}
 
 	}
 }

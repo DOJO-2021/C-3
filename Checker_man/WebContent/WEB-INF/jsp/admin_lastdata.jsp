@@ -25,12 +25,15 @@
 <div class="result-table">
 
 	<!-- ここにresultListをグルグル表示させる -->
-	<c:forEach var="e" items="${resultList}">
+	<!--
+	<c:forEach var="e" items="${resultList4}">
 	</c:forEach>
+	 -->
 
 
-
-	<table class="table-test" border="1" style="border-collapse: collapse">
+	<!-- 4月の表 -->
+	<table class="table-test4" border="1" style="border-collapse: collapse">
+	<tr><td>4月</td></tr>
 		<tr bgcolor="#B0D6DA">
 			<td></td>
 			<th>〇</th>
@@ -39,7 +42,51 @@
 		</tr>
 
 		<!-- 日付と結果だけ繰り返しの処理 -->
-		<c:forEach var="e" items="${resultList}">
+		<c:forEach var="e" items="${resultList4}">
+		<tr>
+			<th bgcolor="#B0D6DA">${e.date_dis}</th>
+			<td bgcolor="#ECECEC">${e.maru_number}</td>
+			<td bgcolor="ECECEC">${e.sankaku_number}</td>
+			<td bgcolor="ECECEC">${e.batsu_number}</td>
+		</tr>
+		</c:forEach>
+	</table>
+
+	<!-- 5月の表 -->
+	<table class="table-test5" border="1" style="border-collapse: collapse">
+	<tr><td>5月</td></tr>
+		<tr bgcolor="#B0D6DA">
+			<td></td>
+			<th>〇</th>
+			<th>△</th>
+			<th>×</th>
+		</tr>
+
+		<!-- 日付と結果だけ繰り返しの処理 -->
+		<c:forEach var="e" items="${resultList5}">
+		<tr>
+			<th bgcolor="#B0D6DA">${e.date_dis}</th>
+			<td bgcolor="#ECECEC">${e.maru_number}</td>
+			<td bgcolor="ECECEC">${e.sankaku_number}</td>
+			<td bgcolor="ECECEC">${e.batsu_number}</td>
+		</tr>
+		</c:forEach>
+	</table>
+
+
+	<!-- 6月の表 -->
+
+	<table class="table-test6" border="1" style="border-collapse: collapse">
+		<tr><td>6月</td></tr>
+		<tr bgcolor="#B0D6DA">
+			<td></td>
+			<th>〇</th>
+			<th>△</th>
+			<th>×</th>
+		</tr>
+
+		<!-- 日付と結果だけ繰り返しの処理 -->
+		<c:forEach var="e" items="${resultList6}">
 		<tr>
 			<th bgcolor="#B0D6DA">${e.date_dis}</th>
 			<td bgcolor="#ECECEC">${e.maru_number}</td>
