@@ -42,21 +42,15 @@ h2 {
 }
 
 .result {
-	border-collapse: separete;
-	border-spacing: 15px 0px; /* テーブル内の枠線なし */
-	margin-left: auto; /* 中央寄せ*/
-	margin-right: auto; /* 中央寄せ*/
 	display: flex; /* 表２つを横並び */
 }
 
 .result2 {
 	margin-left: auto; /* 中央寄せ*/
-	margin-right: auto;
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
 	margin-right: 0px;
 }
 .result3 {
-	margin-left: auto; /* 中央寄せ*/
 	margin-right: auto;
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
 	margin-left: 0px;
@@ -65,13 +59,11 @@ h2 {
 .question_table {
 	border : 2px solid #B0D6DA;
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
-	width: 300px;
 }
 
 .answer_table {
 	border : 2px solid #B0D6DA;
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
-	width: 50px;
 }
 
 /* コメント */
@@ -99,7 +91,7 @@ textarea {
 /* 書き込みボタン */
 .button {
 	display: inline-block;
-	border-radius: 10%; /* 角丸       */
+	border-radius: 30%; /* 角丸       */
 	font-size: 12pt; /* 文字サイズ */
 	text-align: center; /* 文字位置   */
 	cursor: pointer; /* カーソル   */
@@ -160,6 +152,7 @@ textarea {
 /* トップページに戻るボタン */
 .toppage {
 	text-align: center;
+	padding-top: 1em;
 }
 /* トップページに戻るボタン(装飾) */
 .btn {

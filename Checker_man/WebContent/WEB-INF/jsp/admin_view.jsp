@@ -47,7 +47,7 @@
 				<div class="result2">
 					<c:forEach var="e" items="${questionList}">
 						<form method="POST" action="/Checker_man/User_ResultServlet">
-							<table class="question-table">
+							<table class="question_table">
 								<tr>
 									<td><input type="text" size = 50 readonly name="QUESTION" value="${e.question}"></td>
 								</tr>
@@ -85,7 +85,7 @@
 					<textarea rows="10" cols="100" name="admin_message">${resultList.admin_comment}</textarea>
 					<div class="botton">
 						<div class="regist">
-							<input type="submit" name="regist" value="コメント登録"><br>
+							<input type="submit" name="regist" class = "button" value="コメント登録"><br>
 						</div>
 					</div>
 				</form>
