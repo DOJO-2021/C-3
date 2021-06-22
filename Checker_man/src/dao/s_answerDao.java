@@ -107,7 +107,6 @@ public class s_answerDao {
 			pStmt.setInt(2, answer.getAnswer());
 			pStmt.setInt(3, answer.getUser_id().getuser_id());
 			//answer.getUser_id() →　LoginUser
-			//
 			if (answer.getDate() != null) {
 				pStmt.setString(4, answer.getDate());
 			} else {

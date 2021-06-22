@@ -72,6 +72,7 @@ public class User_SindanServlet extends HttpServlet {
 		// 日時情報を指定フォーマットの文字列で取得
 		String java8Disp = nowDateTime.format(java8Format);
 
+		// 値を取得できているかの確認
 		System.out.println("answer1;" + answer1);
 		System.out.println("user_id;" + user);
 		System.out.println("今日の日付;" + java8Disp);
