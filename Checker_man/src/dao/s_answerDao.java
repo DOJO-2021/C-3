@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.LoginUser;
 import model.s_answer;
-import model.s_answerdata;
 
 public class s_answerDao {
 
@@ -40,7 +40,7 @@ public class s_answerDao {
 			} else {
 				pStmt.setString(2, "%");
 			}
-			if (param.getUser_id() != 0) {
+			if (param.getUser_id().getuser_id() != 0) {
 				pStmt.setString(3, "%" + param.getUser_id() + "%");
 			} else {
 				pStmt.setString(3, "%");
@@ -59,7 +59,7 @@ public class s_answerDao {
 				s_answer answer = new s_answer(
 						rs.getInt("question_id"),
 						rs.getInt("answer"),
-						rs.getInt("user_id"),
+						new LoginUser(rs.getInt("user_id")),
 						rs.getString("date"));
 				answerList.add(answer);
 			}
@@ -98,15 +98,16 @@ public class s_answerDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into s_answer values (?, ?, null, ?)";
+			String sql = "insert into s_answer values (?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//SQL文を完成させる
 
 			pStmt.setInt(1, answer.getQuestion_id());
 			pStmt.setInt(2, answer.getAnswer());
-			pStmt.setInt(3, answer.getUser_id());
-
+			pStmt.setInt(3, answer.getUser_id().getuser_id());
+			//answer.getUser_id() →　LoginUser
+			//
 			if (answer.getDate() != null) {
 				pStmt.setString(4, answer.getDate());
 			} else {
@@ -135,145 +136,4 @@ public class s_answerDao {
 		// 結果を返す
 		return result;
 	}
-
-	//引数paramで検索項目を指定し、検索結果のリストを返す
-			public List<s_answer> select_answer(s_answer param) {
-				Connection conn = null;
-				List<s_answer> answerList = new ArrayList<s_answer>();
-
-				try {
-					// JDBCドライバを読み込む
-					Class.forName("org.h2.Driver");
-
-					// データベースに接続する
-					conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
-
-					// SQL文を準備する
-					String sql = "select * from s_answer WHERE user_id like ? and date = CURDATE()";
-					PreparedStatement pStmt = conn.prepareStatement(sql);
-
-					// SQL文を完成させる
-					if (param.getUser_id() != 0) {
-						pStmt.setInt(1, param.getUser_id());
-					}
-					else {
-						pStmt.setInt(1, 0);
-					}
-
-					// SQL文を実行し、結果表を取得する
-					ResultSet rs = pStmt.executeQuery();
-
-					// 結果表をコレクションにコピーする
-					while (rs.next()) {
-						s_answer answer = new s_answer(
-								rs.getInt("question_id"),
-								rs.getInt("answer"),
-								rs.getInt("user_id"),
-								rs.getString("date"));
-						answerList.add(answer);
-					}
-				} catch (SQLException e) {
-					e.printStackTrace();
-					answerList = null;
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-					answerList = null;
-				} finally {
-					// データベースを切断
-					if (conn != null) {
-						try {
-							conn.close();
-						} catch (SQLException e) {
-							e.printStackTrace();
-							answerList = null;
-						}
-					}
-				}
-
-				// 結果を返す
-				return answerList;
-			}
-
-
-		// 管理者トップページの現在の受講者健康状態で使うデータベース処理
-		public s_answerdata select_answerdata(s_answerdata param) {
-
-			Connection conn = null;
-			s_answerdata result = null;
-
-			try {
-				// JDBCドライバを読み込む
-				Class.forName("org.h2.Driver");
-
-				// データベースに接続する
-				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
-
-		//○の人数表示
-				// SQL文を準備する
-				String sql = "select (select sum(answer) from s_answer WHERE  user_id = ? and date = CURDATE()) as sum "
-						+ ",(select count(*) from s_answer WHERE  user_id = ? and answer = '5' and date = CURDATE()) as countfive "
-						+ ",(select count(*) from s_answer WHERE  user_id = ? and answer = '4' and date = CURDATE()) as countfour "
-						+ "from s_answer group by CURDATE()";
-
-				PreparedStatement pStmt = conn.prepareStatement(sql);
-
-				// SQL文を完成させる
-				if (param.getUser_id() != 0) {
-					pStmt.setInt(1, param.getUser_id());
-				}
-				else {
-					pStmt.setInt(1, 0);
-				}
-
-				if (param.getUser_id() != 0) {
-					pStmt.setInt(2, param.getUser_id());
-				}
-				else {
-					pStmt.setInt(2, 0);
-				}
-
-				if (param.getUser_id() != 0) {
-					pStmt.setInt(3, param.getUser_id());
-				}
-				else {
-					pStmt.setInt(3, 0);
-				}
-
-				// SQL文を実行し、結果表を取得する
-				ResultSet rs = pStmt.executeQuery();
-
-				// 結果表をコレクションにコピーする
-				rs.next();
-				result = new s_answerdata ();
-				result.setSum(rs.getInt("sum"));
-				result.setCountfive(rs.getInt("countfive"));
-				result.setCountfour(rs.getInt("countfour"));
-
-			}
-
-			catch (SQLException e) {
-				e.printStackTrace();
-				result = null;
-			}
-			catch (ClassNotFoundException e) {
-				e.printStackTrace();
-				result = null;
-			}
-
-			finally {
-				// データベースを切断
-				if (conn != null) {
-					try {
-						conn.close();
-					}
-					catch (SQLException e) {
-						e.printStackTrace();
-						result = null;
-					}
-				}
-			}
-			// 結果を返す
-			return result;
-		}
-
 }
