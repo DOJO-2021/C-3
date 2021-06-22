@@ -20,7 +20,7 @@
 
  <!-- ヘッダ -->
  <header class="header">
- <jsp:include page="/WEB-INF/jsp/header.jsp"/>
+ <jsp:include page="/WEB-INF/jsp/admin_header.jsp"/>
  </header>
 
  <!-- メイン -->
