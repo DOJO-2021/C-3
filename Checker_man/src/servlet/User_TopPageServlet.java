@@ -29,6 +29,16 @@ public class User_TopPageServlet extends HttpServlet {
 			return;
 		}
 
+		//表示する月の情報　先月(5月)、今月(6月),,,,
+		request.getAttribute("date");
+
+		request.getAttribute("date");
+
+
+
+		//上をもとに絞り込む日付情報を,,,
+
+
 		// カレンダーの検索処理を行う
 		LoginUser user_id = (LoginUser) session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
@@ -37,6 +47,15 @@ public class User_TopPageServlet extends HttpServlet {
 
 		// カレンダーの処理をリクエストスコープに格納する
 		request.setAttribute("calenderlist", calenderlist);
+
+
+		//月の差分を view_monthlist に格納する　今月なら「1」、先月なら「0」、来月なら「2」
+		List <user_toppage> view_monthlist = calenderDao.select_calender(new user_toppage());
+
+		request.setAttribute("view_monthlist", view_monthlist);
+
+
+
 
 		// ユーザートップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");

@@ -4,8 +4,10 @@ import java.io.Serializable;
 public class user_toppage implements Serializable {
 
 	private String icon;   //アイコン
+	private String date;   //日付
 	private String date1;  //検索時の、日付範囲開始日
 	private String date2;	//検索時の、日付範囲修了日
+
 
 	private int user_id; //ユーザーID
 

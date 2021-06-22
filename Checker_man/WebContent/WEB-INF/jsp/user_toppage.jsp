@@ -108,10 +108,9 @@
         //年と月を取得
         //                     2021 + "-" +  "0" +  (             5  + 1) →06       + "-"
         //                                   "0" +  (             9  + 1) →010
-           var thisMonthStr = year + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-";
+           var thisMonthStr = year + "-" + ("0" + (today.getMonth() + ${view_monthlist})).slice(-2) + "-";
 
-        //   var lastMonthStr = yeat + "-" + ("0" + (today.getMonth() )).slice(-2) + "-";
-        //   var nextMonthStr = year + "-" + ("0" + (today.getMonth() + 3)).slice(-2) + "-";
+
 
             $('.date-head').html(year + "-" + month);
             var last = new Date(today.getFullYear(), today.getMonth() + 3, 0);
