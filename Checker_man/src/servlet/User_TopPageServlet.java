@@ -37,7 +37,9 @@ public class User_TopPageServlet extends HttpServlet {
 		request.getAttribute("date");
 		//現在の月からの差分　今月が「1」、先月が「0」
 		int diffCount = 1;
-		System.out.print(request.getParameter("diffCount"));
+		if(request.getParameter("diffCount") != null) {
+			diffCount = Integer.parseInt(request.getParameter("diffCount"));
+		}
 
 
 		//日付の文字列を作成　2021-06-01と2021-06-31 2021/06/01 2021/6/1

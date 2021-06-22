@@ -39,9 +39,7 @@
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<div class = "maru">
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.maru_id}">${e.maru_list}</a></p>
-					</div>
+					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.maru_id}" class = "maru">${e.maru_list}</a></p>
 					</c:forEach>
 
 			  		</span>
@@ -60,7 +58,6 @@
 
 					</span>
 				</div></td>
-
 			</tr>
 
 			<tr>
@@ -70,7 +67,7 @@
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.batsu_id}">${e.batsu_list}</a></p>
+					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.batsu_id}">${e.batsu_list} </a></p>
 					</c:forEach>
 
 					</span>
