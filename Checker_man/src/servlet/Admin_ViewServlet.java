@@ -16,7 +16,6 @@ import dao.User_loginDao;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
-import dao.s_resultDaoho;
 import model.User_login;
 import model.s_answer;
 import model.s_question;
@@ -59,7 +58,7 @@ public class Admin_ViewServlet extends HttpServlet {
 		//検索処理を行う（回答）
 		s_answerDao aDao = new s_answerDao();
 		List<s_answer> answerList = null;
-		answerList = aDao.select_answer(new s_answer(0, 0, user_id, ""));
+		answerList = aDao.select(new s_answer(0, 0, user_id, ""));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("answerList", answerList);
@@ -100,7 +99,7 @@ public class Admin_ViewServlet extends HttpServlet {
 		int user_id = Integer.parseInt(request.getParameter("user_id"));
 
 		// 登録処理を行う
-		s_resultDaoho rDao = new s_resultDaoho();
+		s_resultDao rDao = new s_resultDao();
 		rDao.update_admincomment(new s_result(0, null, null, null, admin_comment, user_id));
 
 		// 結果ページにフォワードする
