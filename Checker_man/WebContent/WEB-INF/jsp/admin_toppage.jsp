@@ -93,10 +93,11 @@
 				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}件
 			  		<span class="sample4" id="idsample4">
 
-					<c:forEach var="e" items="${iconList}">
+
+					<c:forEach var="e" items="${iconList}" varStatus="status" >
 					<c:if test="${!empty e.comment_list}">
-					<p>${e.comment_list}</p>
-					<p>${e.comment_id}</p>
+
+					<p><a href="/Checker_man/Admin_TopPageServlet?user_id=${e.comment_id}">${e.comment_list}</a></p>
 					</c:if>
 					</c:forEach>
 
