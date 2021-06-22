@@ -384,6 +384,7 @@ public class s_resultDaoHoshi {
 						String sql8 = "select u.user_name,u.user_id from  s_result as s inner join user_login as u on s.user_id = u.user_id where user_comment <> '' and date = CURDATE() order by u.user_id";
 						PreparedStatement pStmt8 = conn.prepareStatement(sql8);
 						ResultSet rs8 = pStmt8.executeQuery();
+
 						while (rs8.next()) {
 							admin_toppagelist resultData = new admin_toppagelist();
 							resultData.setComment_list(rs8.getString("user_login.user_name"));

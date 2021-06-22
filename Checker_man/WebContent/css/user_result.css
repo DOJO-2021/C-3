@@ -30,7 +30,7 @@ h2 {
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
 	margin-left: auto; /* 中央寄せ*/
 	margin-right: auto; /* 中央寄せ*/
-	/* 表２つを横並びにしたい */
+	display: flex; /* 表２つを横並び */
 }
 
 
@@ -41,12 +41,29 @@ h2 {
 
 /* 診断結果一覧表 */
 .user_result2 {
-	border : 2px solid #B0D6DA;
 	margin-left: auto; /* 中央寄せ*/
 	margin-right: auto;
 	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	margin-right: 0px;
+}
+.user_result3 {
+	margin-left: auto; /* 中央寄せ*/
+	margin-right: auto;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	margin-left: 0px;
 }
 
+.question_table {
+	border : 2px solid #B0D6DA;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	width: 300px;
+}
+
+.answer_table {
+	border : 2px solid #B0D6DA;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	width: 50px;
+}
 
 /* コメント欄 */
 .message {
@@ -110,5 +127,3 @@ input[type="submit"]{
 	text-decoration: none;
 	background-color: #B0D6DA;
 }
-
-
