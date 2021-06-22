@@ -112,6 +112,7 @@ public class User_loginDao {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				User_login sign = new User_login(
+				rs.getInt("user_id"),
 				rs.getString("user_name"),
 				rs.getString("user_pw")
 				);

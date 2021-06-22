@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.User_loginDao;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
 import model.Result;
+import model.User_login;
 import model.s_answer;
 import model.s_question;
 import model.s_result;
@@ -65,11 +67,12 @@ public class Admin_ViewServlet extends HttpServlet {
 		//検索処理を行う（アイコン、受講者コメント、管理者コメント）
 		s_resultDao rDao = new s_resultDao();
 		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", user_id));
-		//User_login result = rDao.select_username(new User_login(user_id, "", "" ));
+		User_loginDao rDao2 = new User_loginDao();
+		User_login result = rDao2.select_username(new User_login(user_id, "", "" ));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList", resultList);
-		//request.setAttribute("result", result);
+		request.setAttribute("result", result);
 
 		// 閲覧ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_view.jsp");
