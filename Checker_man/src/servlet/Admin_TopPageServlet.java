@@ -36,7 +36,7 @@ public class Admin_TopPageServlet extends HttpServlet {
 		// アイコンの数の検索処理を行う
 		s_resultDaoHoshi iconDao = new s_resultDaoHoshi();
 		admin_toppage iconNumber = iconDao.select_toppage_number(new admin_toppage(0, 0, 0, 0 ));
-		List<admin_toppagelist> iconList = iconDao.select_toppagelist(new admin_toppagelist(null,null,null,null, null, null, null, null));
+		List<admin_toppagelist> iconList = iconDao.select_toppagelist(new admin_toppagelist(null,null,null,null, 0, 0, 0, 0));
 
 		// リクエストスコープに格納する
 		request.setAttribute("iconNumber", iconNumber);
