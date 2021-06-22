@@ -98,7 +98,7 @@
 					<c:if test="${!empty e.comment_list}">
 
 					<p><a href="/Checker_man/Admin_TopPageServlet?user_id=${e.comment_id}">${e.comment_list}</a></p>
-
+asd
 					</c:if>
 					</c:forEach>
 
