@@ -37,18 +37,17 @@ public class Admin_LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		//int user_id = Integer.parseInt(request.getParameter("USER_ID"));
 
-		String admin_name = request.getParameter("ID"); //jspのidを指定する
+		String admin_name = request.getParameter("ID"); //jspのnameを指定する
 		String admin_pw = request.getParameter("PW");
 
 		// ログイン処理を行う
 		Admin_loginDao adDao = new Admin_loginDao();
-		if (adDao.isLoginOK(admin_name, admin_pw)) {	// ログイン成功
 
-			// セッションスコープにIDを格納する
+		if (adDao.isLoginOK(admin_name,admin_pw)) {	// ログイン成功
+
+//			// セッションスコープにIDを格納する
 			Admin_login resultid = adDao.select_session(admin_name, admin_pw); //ユーザーIDをselectするためのDaoメソッド
-
 
 			HttpSession session = request.getSession();
 			session.setAttribute("admin_id", new LoginAdmin(resultid.getAdmin_id()));
@@ -56,6 +55,7 @@ public class Admin_LoginServlet extends HttpServlet {
 			// メニューサーブレットにリダイレクトする
 			response.sendRedirect("/Checker_man/Admin_TopPageServlet");
 		}
+
 		else {									// ログイン失敗
 			// リクエストスコープに、タイトル、メッセージ、戻り先を格納する
 			request.setAttribute("result",
