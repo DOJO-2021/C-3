@@ -15,7 +15,9 @@ import javax.servlet.http.HttpSession;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
+import dao.s_resultDaoHoshi;
 import model.Result;
+import model.User_login;
 import model.s_answer;
 import model.s_question;
 import model.s_result;
@@ -67,13 +69,17 @@ public class Admin_ViewServlet extends HttpServlet {
 
 
 		//検索処理を行う（アイコン、受講者コメント、管理者コメント）
-//		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
+		int user_id =  Integer.parseInt(request.getParameter("user_id"));
 
 		s_resultDao rDao = new s_resultDao();
-		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", 1));
+		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", user_id));
+
+		s_resultDaoHoshi rDao2 = new s_resultDaoHoshi();
+		User_login result = rDao2.select_username(new User_login(user_id, "", "" ));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList", resultList);
+		request.setAttribute("result", result);
 
 		// 閲覧ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_view.jsp");
