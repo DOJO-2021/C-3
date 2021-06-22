@@ -40,7 +40,8 @@
 	</form>
 	<!--  <th class = "th-month"> -->2021年6月
 	<form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
-    	<input type="submit" id="next-month" name="diffCount" value="2">
+    	<input type="submit" id="next-month" name="diffCount" value="翌月">
+    	<input type="hidden" name="diffCount" value="2">
 	</form>
    </div>
   </div>
