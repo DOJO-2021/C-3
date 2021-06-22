@@ -2,17 +2,17 @@
 
 
 /* 表を回り込み */
-.table4 {
+.table-test4 {
 	float:left;
 	margin-right:100px;
 }
 
-.table5 {
+.table-test5 {
 	float:left;
 	margin-right:100px;
 }
 
-.table6 {
+.table-test6 {
 	float:left;
 
 }
@@ -28,5 +28,6 @@
     margin:0 auto;
 }
 
-
-
+.result-table p {
+	font-size: 40px;
+}

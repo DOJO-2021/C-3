@@ -35,12 +35,30 @@ public class Admin_LastDataServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 
-		// 検索処理を行う(一つの表)
+		// 検索処理を行う(4月の表)
 		a_lastdataDao aDao = new a_lastdataDao();
-		List<admin_lastdata> resultList = aDao.select_lastdata(new admin_lastdata(0,0,0,null));
+		List<admin_lastdata> resultList4 = aDao.select_lastdata4(new admin_lastdata(0,0,0,null));
 
 		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("resultList",resultList );
+		request.setAttribute("resultList4",resultList4 );
+
+
+
+		// 検索処理を行う(5月の表)（仮）
+		a_lastdataDao aDao5 = new a_lastdataDao();
+		List<admin_lastdata> resultList5 = aDao5.select_lastdata5(new admin_lastdata(0,0,0,null));
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("resultList5",resultList5 );
+
+
+
+		// 検索処理を行う(6月の表)（仮）
+		a_lastdataDao aDao6 = new a_lastdataDao();
+		List<admin_lastdata> resultList6 = aDao6.select_lastdata6(new admin_lastdata(0,0,0,null));
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("resultList6",resultList6 );
 
 
 
