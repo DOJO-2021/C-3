@@ -106,11 +106,11 @@ public class User_ResultServlet extends HttpServlet {
 		s_resultDao rDao = new s_resultDao();
 		if (rDao.insert1(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
 			request.setAttribute("result",
-			new Result("登録成功！", "レコードを登録しました。", "/Checker_man/User_ResultServlet"));
+			new Result("登録成功！", "レコードを登録しました。", "/simpleBC/User_ResultServlet"));
 		}
 		else {												// 登録失敗
 			request.setAttribute("result",
-			new Result("登録失敗！", "レコードを登録できませんでした。", "/Checker_man/User_ResultServlet"));
+			new Result("登録失敗！", "レコードを登録できませんでした。", "/simpleBC/User_ResultServlet"));
 		}
 
 

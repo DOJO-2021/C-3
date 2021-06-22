@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.User_login;
 import model.admin_toppage;
 import model.admin_toppagelist;
 
@@ -384,6 +385,7 @@ public class s_resultDaoHoshi {
 						String sql8 = "select u.user_name,u.user_id from  s_result as s inner join user_login as u on s.user_id = u.user_id where user_comment <> '' and date = CURDATE() order by u.user_id";
 						PreparedStatement pStmt8 = conn.prepareStatement(sql8);
 						ResultSet rs8 = pStmt8.executeQuery();
+
 						while (rs8.next()) {
 							admin_toppagelist resultData = new admin_toppagelist();
 							resultData.setComment_list(rs8.getString("user_login.user_name"));
@@ -416,6 +418,67 @@ public class s_resultDaoHoshi {
 					}
 					// 結果を返す
 					return resultList;
+				}
+
+				// ユーザー名を表示させるための処理
+				public User_login select_username(User_login param) {
+
+					Connection conn = null;
+					User_login result = null;
+
+					try {
+						// JDBCドライバを読み込む
+						Class.forName("org.h2.Driver");
+
+						// データベースに接続する
+						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
+
+				//○の人数表示
+						// SQL文を準備する
+						String sql1 = "select user_name from user_login where user_id=?";
+
+						PreparedStatement pStmt1 = conn.prepareStatement(sql1);
+
+						// SQL文を完成させる
+						if (param.getUser_id() != 0) {
+							pStmt1.setInt(1, param.getUser_id());
+						}
+						else {
+							pStmt1.setInt(1, 0);
+						}
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs1 = pStmt1.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						rs1.next();
+						result = new User_login();
+						result.setUser_id(rs1.getInt("user_name"));
+					}
+
+					catch (SQLException e) {
+						e.printStackTrace();
+						result = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						result = null;
+					}
+
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								result = null;
+							}
+						}
+					}
+					// 結果を返す
+					return result;
 				}
 
 				// 管理者の過去のデータの表で使うデータベース処理

@@ -8,8 +8,8 @@ public class User_login implements Serializable {
 
 
 	//引数のあるコンストラクタ
-	public User_login(String user_name,String user_pw) {
-
+	public User_login(int user_id, String user_name,String user_pw) {
+		this.user_id = user_id;
 		this.user_name = user_name;
 		this.user_pw = user_pw;
 	}
