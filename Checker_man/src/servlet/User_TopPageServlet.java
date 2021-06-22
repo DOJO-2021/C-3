@@ -1,6 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -29,14 +32,43 @@ public class User_TopPageServlet extends HttpServlet {
 			return;
 		}
 
+
+		//表示する月の情報　先月(5月)、今月(6月),,,,
+		request.getAttribute("date");
+		//現在の月からの差分　今月が「1」、先月が「0」
+		int diffCount = 1;
+		System.out.print(request.getParameter("diffCount"));
+
+
+		//日付の文字列を作成　2021-06-01と2021-06-31 2021/06/01 2021/6/1
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(new Date());
+		cal.add(Calendar.MONTH, diffCount - 1);
+
+		//日付をどの形で表記するのか指定
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+		String firstDate = sdf.format(getFirstDate(cal.getTime()));
+		String lastData = "";
+
+
+
+
 		// カレンダーの検索処理を行う
 		LoginUser user_id = (LoginUser) session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao calenderDao = new s_resultDao();
-		List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("","date.getDate1()", "date.getDate2()", user_id.getuser_id()));
+		List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("",firstDate, lastData, user_id.getuser_id()));
+
 
 		// カレンダーの処理をリクエストスコープに格納する
 		request.setAttribute("calenderlist", calenderlist);
+		request.setAttribute("view_monthlist", diffCount);
+
+
+
+
+
 
 		// ユーザートップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
@@ -53,6 +85,42 @@ public class User_TopPageServlet extends HttpServlet {
 			return;
 		}
 
+	}
+
+	// 月初日を返す
+	public static Date getFirstDate(Date date) {
+
+		if (date==null) return null;
+
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		int first = calendar.getActualMinimum(Calendar.DATE);
+		calendar.set(Calendar.DATE, first);
+
+		calendar.set(Calendar.HOUR_OF_DAY, 00);
+		calendar.set(Calendar.MINUTE, 00);
+		calendar.set(Calendar.SECOND, 00);
+		calendar.set(Calendar.MILLISECOND, 000);
+
+		return calendar.getTime();
+	}
+
+	// 月末日を返す
+	public static Date getLastDate(Date date) {
+
+		if (date==null) return null;
+
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		int last = calendar.getActualMaximum(Calendar.DATE);
+		calendar.set(Calendar.DATE, last);
+
+		calendar.set(Calendar.HOUR_OF_DAY, 23);
+		calendar.set(Calendar.MINUTE, 59);
+		calendar.set(Calendar.SECOND, 59);
+		calendar.set(Calendar.MILLISECOND, 999);
+
+		return calendar.getTime();
 	}
 
 }

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.LoginUser;
 import model.s_answer;
 
 public class s_answerDao {
@@ -39,7 +40,7 @@ public class s_answerDao {
 			} else {
 				pStmt.setString(2, "%");
 			}
-			if (param.getUser_id() != 0) {
+			if (param.getUser_id().getuser_id() != 0) {
 				pStmt.setString(3, "%" + param.getUser_id() + "%");
 			} else {
 				pStmt.setString(3, "%");
@@ -58,7 +59,7 @@ public class s_answerDao {
 				s_answer answer = new s_answer(
 						rs.getInt("question_id"),
 						rs.getInt("answer"),
-						rs.getInt("user_id"),
+						new LoginUser(rs.getInt("user_id")),
 						rs.getString("date"));
 				answerList.add(answer);
 			}
@@ -97,15 +98,15 @@ public class s_answerDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into s_answer values (?, ?, null, ?)";
+			String sql = "insert into s_answer values (?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			//SQL文を完成させる
 
 			pStmt.setInt(1, answer.getQuestion_id());
 			pStmt.setInt(2, answer.getAnswer());
-			pStmt.setInt(3, answer.getUser_id());
-
+			pStmt.setInt(3, answer.getUser_id().getuser_id());
+			//answer.getUser_id() →　LoginUser
 			if (answer.getDate() != null) {
 				pStmt.setString(4, answer.getDate());
 			} else {

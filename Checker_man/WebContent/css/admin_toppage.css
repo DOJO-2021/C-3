@@ -102,3 +102,20 @@ border: 2px solid #5d5d5d;
   50%{ color : black; background:rgba(255, 127, 127, 0.25) }
    0%{ color : white; background:white   }
 }
+
+.maru {
+	overflow: scroll;
+}
+
+.sankaku-number p{
+	overflow: scroll;
+
+}
+
+.batu-number p {
+	overflow: scroll;
+}
+
+.comment-number p {
+	overflow: scroll;
+}

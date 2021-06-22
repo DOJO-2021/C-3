@@ -15,7 +15,9 @@
 
 <header>
 <!-- 共通のヘッダー -->
-<jsp:include page="/WEB-INF/jsp/header.jsp"/>
+		<h1 class="keyvisual">
+			<img src="/Checker_man/images/header.png">
+		</h1>
 </header>
 
 <div class ="main">

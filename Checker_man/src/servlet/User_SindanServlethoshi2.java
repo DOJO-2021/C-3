@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.a_lastdataDao;
-import dao.s_answerDaohoshi;
+import dao.s_answerDao;
 import dao.s_resultDao;
 import model.s_answerdata;
 import model.s_result;
@@ -51,7 +51,7 @@ public class User_SindanServlethoshi2 extends HttpServlet {
 		// ユーザーの回答(1～5)の検索処理を行う
 		//LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
-	s_answerDaohoshi answerdataDao = new s_answerDaohoshi();
+	s_answerDao answerdataDao = new s_answerDao();
 	s_answerdata resultData = answerdataDao.select_answerdata(new s_answerdata(0, 0, 0,1));
 
 	//回答から、アイコンを判断する処理

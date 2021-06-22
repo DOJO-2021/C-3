@@ -3,6 +3,10 @@
 html {
 	font-family: sans-serif;
 }
+
+html* {
+	box-sizing: border-box;
+}
 /* 閲覧ページ */
 .box1 {
 	padding: 0.5em 1em;
@@ -12,77 +16,68 @@ html {
 	border: dashed 5px #ffa500; /*点線*/
 	text-align: center;
 }
-/* 診断結果書 */
+
+/* 名前の欄 */
 h2 {
+	width: 300px;
+	margin: 2em 0;
+	text-align: center;
+	background: #f5f5f5;
+	border-top: solid 5px #B0D6DA;
+	box-shadow: 0.3px 5px #B0D6DA;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* 名前文字 */
+.name {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* 診断結果書き */
+h3 {
 	border-bottom: dotted 2px #F0B43E;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-/* 名前の欄 */
-pre {
-	width: 300px;
-	text-align: center;
-	background: #f5f5f5;
-	border-top: solid 5px #B0D6DA;
-	box-shadow: 0.3px 5px #B0D6DA;
-}
-/* 名前文字 */
-.name {
-	margin-right: auto;
-	margin-left: auto;
-	font-size: 20px;
-}
-
-/* 質問内容書 */
-/* .qa {
-	 margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: 500px;
-} */
-.question {
-	border-collapse: separete;
-	border-spacing: 15px 0px; /* テーブル内の枠線なし */
-	border: 3px solid #f39a58; /* 枠線 */
-	margin-left: auto; /* 中央寄せ*/
-	margin-right: auto; /* 中央寄せ*/
-}
-
-.question th {
-	text-align: left; /* 左寄せ*/
-	padding: 1em 2em;
-	font-size: 14px;
-}
-/* 質問テーブル全体 */
 .result {
-	text-align: center;
-	margin-left: 0;
-	margin-right: 0;
-	padding: 1em 2em;
+	display: flex; /* 表２つを横並び */
 }
 
-/* 受講者コメント */
-.u_comment p {
+.result2 {
+	margin-left: auto; /* 中央寄せ*/
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	margin-right: 0px;
+}
+
+.result3 {
+	margin-right: auto;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	margin-left: 0px;
+}
+
+.question_table {
+	border: 2px solid #B0D6DA;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+}
+
+.answer_table {
+	border: 2px solid #B0D6DA;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+}
+
+/* コメント */
+.comment p {
 	text-align: center;
 	font-size: 18px;
 	text-decoration: underline; /* 下線を引く */
 	text-decoration-color: #F0B43E; /* 下線の色 */
 }
 
-.u_comment {
-	text-align: center;
-}
-
-/* 管理者コメント */
-.a_comment p {
-	text-align: center;
-	font-size: 18px;
-	text-decoration: underline; /* 下線を引く */
-	text-decoration-color: #F0B43E;
-} /* 下線のS色 */
-.a_comment {
+.comment {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -99,15 +94,15 @@ textarea {
 /* 書き込みボタン */
 .button {
 	display: inline-block;
-	border-radius: 10%; /* 角丸       */
-	font-size: 12pt; /* 文字サイズ */
-	text-align: center; /* 文字位置   */
-	cursor: pointer; /* カーソル   */
-	padding: 12px 12px; /* 余白       */
-	background: rgba(255, 166, 77, 0.81); /* 背景色     */
-	color: #000000; /* 文字色     */
-	line-height: 1em; /* 1行の高さ  */
-	opacity: 0.9; /* 透明度     */
+	border-radius: 30%; /* 角丸 */
+	font-size: 8pt; /* 文字サイズ */
+	text-align: center; /* 文字位置 */
+	cursor: pointer; /* カーソル */
+	padding: 10px 10px; /* 余白 */
+	background: rgba(255, 166, 77, 0.81); /* 背景色 */
+	color: #ffffff; /* 文字色 */
+	line-height: 1em; /* 1行の高さ */
+	opacity: 0.9; /* 透明度 */
 	transition: .3s; /* なめらか変化 */
 	box-shadow: 6px 6px 3px #666666; /* 影の設定 */
 	margin-bottom: 10px;
@@ -160,6 +155,7 @@ textarea {
 /* トップページに戻るボタン */
 .toppage {
 	text-align: center;
+	padding-top: 1em;
 }
 /* トップページに戻るボタン(装飾) */
 .btn {

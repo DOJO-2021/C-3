@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@
 
  <!-- ヘッダ -->
  <header class="header">
- <jsp:include page="/WEB-INF/jsp/header.jsp"/>
+ <jsp:include page="/WEB-INF/jsp/admin_header.jsp"/>
  </header>
 
  <!-- メイン -->
@@ -36,12 +37,12 @@
 				<td><div class="maru-number" onclick="show('1')">${iconNumber.maru_number}人
 			  		<span class="sample1" id="idsample1">
 
-					<c:forEach var="e" items="${iconList}">
-					<c:if test="${!empty e.maru_list}">
-					<p>${e.maru_list}</p>
-					</c:if>
+					<!--  吹き出しの中身 -->
+					<c:forEach var="e" items="${iconList}" varStatus="status" >
+					<div class = "maru">
+					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.maru_id}">${e.maru_list}</a></p>
+					</div>
 					</c:forEach>
-
 
 			  		</span>
 				</div></td>
@@ -52,10 +53,9 @@
 				<td><div class="sankaku-number" onclick="show('2')">${iconNumber.sankaku_number}人
 					<span class="sample2" id="idsample2">
 
-					<c:forEach var="e" items="${iconList}">
-					<c:if test="${!empty e.sankaku_list}">
-					<p>${e.sankaku_list}</p>
-					</c:if>
+					<!--  吹き出しの中身 -->
+					<c:forEach var="e" items="${iconList}" varStatus="status" >
+					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.sankaku_id}">${e.sankaku_list}</a></p>
 					</c:forEach>
 
 					</span>
@@ -68,10 +68,9 @@
 				<td><div class="batu-number" onclick="show('3')">${iconNumber.batsu_number}人
 					<span class="sample3" id="idsample3">
 
-					<c:forEach var="e" items="${iconList}">
-					<c:if test="${!empty e.batsu_list}">
-					<p>${e.batsu_list}</p>
-					</c:if>
+					<!--  吹き出しの中身 -->
+					<c:forEach var="e" items="${iconList}" varStatus="status" >
+					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.batsu_id}">${e.batsu_list}</a></p>
 					</c:forEach>
 
 					</span>
@@ -93,15 +92,10 @@
 				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}件
 			  		<span class="sample4" id="idsample4">
 
-
+					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<c:if test="${!empty e.comment_list}">
-
-					<p><a href="/Checker_man/Admin_TopPageServlet?user_id=${e.comment_id}">${e.comment_list}</a></p>
-					</c:if>
+					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.comment_id}">${e.comment_list}</a></p>
 					</c:forEach>
-
-
 
 			  		</span>
 
