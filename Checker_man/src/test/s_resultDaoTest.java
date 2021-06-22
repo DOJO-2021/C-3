@@ -1,10 +1,7 @@
 package test;
 
 
-import java.util.List;
-
 import dao.s_resultDao;
-import model.user_toppage;
 
 public class s_resultDaoTest {
 
@@ -87,15 +84,15 @@ public class s_resultDaoTest {
 //
 //
 //		// select_calenderのテスト
-		System.out.println("---------- select_calenderのテスト ----------");
-		List<user_toppage> resultList4 = dao.select_calender(new user_toppage("", "2021-04-01","2021-04-31",1));
-
-		for (user_toppage resultData1 : resultList4) {
-			System.out.println("icon：" + resultData1.getIcon());
-			System.out.println("date：" + resultData1.getDate1());
-			System.out.println("user_id：" + resultData1.getUser_id());
-			System.out.println();
-		}
+//		System.out.println("---------- select_calenderのテスト ----------");
+//		List<user_toppage> resultList4 = dao.select_calender(new user_toppage("", "2021-04-01","2021-04-31",1));
+//
+//		for (user_toppage resultData1 : resultList4) {
+//			System.out.println("icon：" + resultData1.getIcon());
+//			System.out.println("date：" + resultData1.getDate1());
+//			System.out.println("user_id：" + resultData1.getUser_id());
+//			System.out.println();
+//		}
 
 
 
@@ -130,7 +127,12 @@ public class s_resultDaoTest {
 //			System.out.println("登録失敗！");
 //		}
 
+		//コメントの更新テスト
+//		s_resultDaoho rDao = new s_resultDaoho();
+//		if(rDao.update_admincomment(new s_result(0, null, null, null, "テスト", 1))){
+//			System.out.println("更新完了");
+//		}
+
 
 	}
-
 }

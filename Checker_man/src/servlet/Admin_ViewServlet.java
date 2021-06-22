@@ -16,7 +16,7 @@ import dao.User_loginDao;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
-import model.Result;
+import dao.s_resultDaoho;
 import model.User_login;
 import model.s_answer;
 import model.s_question;
@@ -35,10 +35,10 @@ public class Admin_ViewServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("admin_id") == null) {
-			response.sendRedirect("/Checker_man/User_LoginServlet");
-			return;
-		}
+//		if (session.getAttribute("admin_id") == null) {
+//			response.sendRedirect("/Checker_man/Admin_LoginServlet");
+//			return;
+//		}
 
 		//URL（Admin_ViewServlet?user_id = ○）から、○の数値を取得
 		int user_id =  Integer.parseInt(request.getParameter("user_id"));
@@ -88,33 +88,23 @@ public class Admin_ViewServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/Checker_man/Admin_LoginServlet");
-			return;
-		}
+//		if (session.getAttribute("admin_id") == null) {
+//			response.sendRedirect("/Checker_man/Admin_LoginServlet");
+//			return;
+//		}
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		int result_id = Integer.parseInt(request.getParameter("RESULT_ID"));
-		String date = request.getParameter("DATE");
-		String icon = request.getParameter("ICON");
-		String user_comment = request.getParameter("USER_COMMENT");
-		String admin_comment = request.getParameter("ADMIN_COMMENT");
+
+		String admin_comment = request.getParameter("admin_message");
+		int user_id = Integer.parseInt(request.getParameter("user_id"));
 
 		// 登録処理を行う
-		s_resultDao rDao = new s_resultDao();
-		if (rDao.insert1(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "レコードを登録しました。", "/Checker_man/Admin_ViewServlet"));
-		}
-		else {												// 登録失敗
-			request.setAttribute("result",
-			new Result("登録失敗！", "レコードを登録できませんでした。", "/Checker_man/Admin_ViewSetrvlet"));
-		}
-
+		s_resultDaoho rDao = new s_resultDaoho();
+		rDao.update_admincomment(new s_result(0, null, null, null, admin_comment, user_id));
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/admin_view.jsp");
-		dispatcher.forward(request, response);
+
+		response.sendRedirect("/Checker_man/Admin_ViewServlet?user_id="+ user_id);
 	}
 }

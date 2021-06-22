@@ -14,7 +14,7 @@ public class s_answerDaoTest {
 		// select()のテスト
 		//user_idに1を含んだデータを検索する
 		System.out.println("---------- select()のテスト ----------");
-		List<s_answer> answerList = dao.select(new s_answer(0, 0, null, ""));
+		List<s_answer> answerList = dao.select(new s_answer(0, 0, 0, ""));
 		for (s_answer answer : answerList) {
 			System.out.println("question_id：" + answer.getQuestion_id());
 			System.out.println("answer：" + answer.getAnswer());
@@ -25,7 +25,7 @@ public class s_answerDaoTest {
 
 		//insert()のテスト
 		System.out.println("---------- insert()のテスト ----------");
-		s_answer insRec = new s_answer(1, 4, null, "2021-06-11");
+		s_answer insRec = new s_answer(1, 4, 0, "2021-06-11");
 		if (dao.insert(insRec)) {
 			System.out.println("登録成功！");
 			List<s_answer> answerList1 = dao.select(insRec);
