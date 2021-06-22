@@ -3,7 +3,9 @@
 .main p {
 	border : dotted 3px #F0B43E;
 }
-
+.keyvisual {
+	text-align: center; /* 中央寄せ */
+}
 /* 受講者ログインを右上に */
 .link3 {
 	display: inline-block;
