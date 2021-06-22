@@ -67,14 +67,15 @@ public class User_SindanServlet extends HttpServlet {
 
 		// 現在日時情報で初期化されたインスタンスの取得
 		LocalDateTime nowDateTime = LocalDateTime.now();
-		DateTimeFormatter java8Format = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		DateTimeFormatter java8Format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 		// 日時情報を指定フォーマットの文字列で取得
 		String java8Disp = nowDateTime.format(java8Format);
 
+		// 値を取得できているかの確認
 		System.out.println("answer1;" + answer1);
 		System.out.println("user_id;" + user);
-		System.out.println(java8Disp);
+		System.out.println("今日の日付;" + java8Disp);
 
 		// 診断結果の登録処理を行う
 		s_answerDao bDao = new s_answerDao();
