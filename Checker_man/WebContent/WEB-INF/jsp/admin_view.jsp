@@ -47,10 +47,9 @@
 				<div class="result2">
 					<c:forEach var="e" items="${questionList}">
 						<form method="POST" action="/Checker_man/User_ResultServlet">
-							<table class="user_result2">
+							<table class="question-table">
 								<tr>
-									<td><input type="text" readonly name="QUESTION"
-										value="${e.question}"></td>
+									<td><input type="text" size = 50 readonly name="QUESTION" value="${e.question}"></td>
 								</tr>
 							</table>
 						</form>
@@ -61,10 +60,9 @@
 				<div class="result3">
 					<c:forEach var="e" items="${answerList}">
 						<form method="POST" action="/Checker_man/User_ResultServlet">
-							<table class="user_result2">
+							<table class="answer_table">
 								<tr>
-									<td><input type="text" readonly name="ANSWER"
-										value="${e.answer}"></td>
+									<td><input type="text" size = 10 readonly name="ANSWER" value="${e.answer}"></td>
 								</tr>
 							</table>
 						</form>
