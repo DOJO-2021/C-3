@@ -1,8 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -66,20 +64,20 @@ public class User_SindanServlet extends HttpServlet {
 		LoginUser user = (LoginUser) session.getAttribute("user_id");
 
 		// 現在日時情報で初期化されたインスタンスの取得
-		LocalDateTime nowDateTime = LocalDateTime.now();
-		DateTimeFormatter java8Format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		// LocalDateTime nowDateTime = LocalDateTime.now();
+		// DateTimeFormatter java8Format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 		// 日時情報を指定フォーマットの文字列で取得
-		String java8Disp = nowDateTime.format(java8Format);
+		// String java8Disp = nowDateTime.format(java8Format);
 
 		// 値を取得できているかの確認
 		System.out.println("answer1;" + answer1);
 		System.out.println("user_id;" + user);
-		System.out.println("今日の日付;" + java8Disp);
+		//		System.out.println("今日の日付;" + java8Disp);
 
 		// 診断結果の登録処理を行う
 		s_answerDao bDao = new s_answerDao();
-		if (bDao.insert(new s_answer(1, answer1, user, java8Disp))) { // 登録成功
+		if (bDao.insert(new s_answer(1, answer1, user.getuser_id(), null))) { // 登録成功
 			request.setAttribute("result",
 					new Result("登録成功", "レコードを登録しました。", "/Checker_man/User_ResultServlet"));
 		} else { // 登録失敗
