@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import dao.s_answerDao;
 import model.LoginUser;
-import model.Result;
 import model.s_answer;
 
 @WebServlet("/User_SindanServlet")
@@ -63,6 +62,20 @@ public class User_SindanServlet extends HttpServlet {
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		int answer1 = Integer.parseInt(request.getParameter("answer1"));
+		int answer2 = Integer.parseInt(request.getParameter("answer2"));
+		int answer3 = Integer.parseInt(request.getParameter("answer3"));
+		int answer4 = Integer.parseInt(request.getParameter("answer4"));
+		int answer5 = Integer.parseInt(request.getParameter("answer5"));
+		int answer6 = Integer.parseInt(request.getParameter("answer6"));
+		int answer7 = Integer.parseInt(request.getParameter("answer7"));
+		int answer8 = Integer.parseInt(request.getParameter("answer8"));
+		int answer9 = Integer.parseInt(request.getParameter("answer9"));
+		int answer10 = Integer.parseInt(request.getParameter("answer10"));
+		int answer11 = Integer.parseInt(request.getParameter("answer11"));
+		int answer12 = Integer.parseInt(request.getParameter("answer12"));
+		int answer13 = Integer.parseInt(request.getParameter("answer13"));
+		int answer14 = Integer.parseInt(request.getParameter("answer14"));
+		int answer15 = Integer.parseInt(request.getParameter("answer15"));
 		LoginUser user = (LoginUser) session.getAttribute("user_id");
 
 		// 現在日時情報で初期化されたインスタンスの取得
@@ -80,13 +93,21 @@ public class User_SindanServlet extends HttpServlet {
 
 		// 診断結果の登録処理を行う
 		s_answerDao bDao = new s_answerDao();
-		if (bDao.insert(new s_answer(1, answer1, 1, java8Disp))) { // 登録成功
-			request.setAttribute("result",
-					new Result("登録成功", "レコードを登録しました。", "/Checker_man/User_ResultServlet"));
-		} else { // 登録失敗
-			request.setAttribute("result",
-					new Result("登録失敗", "レコードを登録できませんでした。", "/Checker_man/User_SindanServlet"));
-		}
+		bDao.insert(new s_answer(1, answer1, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(2, answer2, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(3, answer3, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(4, answer4, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(5, answer5, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(6, answer6, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(7, answer7, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(8, answer8, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(9, answer9, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(10, answer10, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(11, answer11, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(12, answer12, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(13, answer13, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(14, answer14, user.getuser_id(), java8Disp));
+		bDao.insert(new s_answer(15, answer15, user.getuser_id(), java8Disp));
 
 		// 診断結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
