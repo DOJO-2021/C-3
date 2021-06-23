@@ -512,7 +512,7 @@ public class s_resultDao {
 
 					// SQL文を準備する
 					String sql = "select icon, user_comment, admin_comment "
-							+ "from s_result WHERE date = CURDATE() AND user_id LIKE ? "
+							+ "from s_result WHERE date = CURDATE() AND user_id = ? "
 							+ " ORDER BY result_id ASC , date ASC ";
 
 					PreparedStatement pStmt = conn.prepareStatement(sql);
