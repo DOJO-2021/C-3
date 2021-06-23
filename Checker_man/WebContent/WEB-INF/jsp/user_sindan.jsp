@@ -24,6 +24,8 @@
 
 			<p>質問項目に合わせてチェックを入れてください</p>
 
+ <form action="#" method="post">
+
 			<!-- ここから診断テーブル -->
 			<table style="background-color: #f5f5f5;">
 				<tr bgcolor="#B0D6DA">
@@ -37,7 +39,7 @@
 				<tr>
 
 					<td>問1 よく眠れなかった</td>
-					<form action="#" method="post">
+
 						<td><input type="radio" name="answer1" value="1"></td>
 						<td><input type="radio" name="answer1" value="2"></td>
 						<td><input type="radio" name="answer1" value="3" checked>
@@ -210,7 +212,9 @@
 					<input type="submit" name="regist" value="診断結果へ"><br>
 				</div>
 			</div>
+
 			</form>
+
 			<!-- 診断エリアここまで -->
 		</div>
 
