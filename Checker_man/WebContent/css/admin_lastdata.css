@@ -1,33 +1,81 @@
 @charset "UTF-8";
 
+/* 全てのページに適用 */
+html {
+	font-family: sans-serif;
+}
 
-/* 表を回り込み */
+html* {
+	box-sizing: border-box;
+}
+
+/* 「今までの受講者の健康状態」 */
+h1 {
+	text-align: center;
+}
+
+p {
+	border-bottom: dotted 3px #F0B43E; /* 下線 */
+}
+
+/* 4月5月6月の表 */
+
+.result-table {
+	display: flex;
+
+}
+
+.lastdata_table {
+	margin-left: auto; /* 中央寄せ */
+	margin-right: auto; /* 中央寄せ */
+}
+
 .table-test4 {
+/*
 	float:left;
-	margin-right:100px;
+*/
+	margin-right:0;
 }
 
 .table-test5 {
+/*
 	float:left;
-	margin-right:100px;
+*/
+	margin-right:0;
 }
 
 .table-test6 {
 	float:left;
-
 }
 
+.table-test4 th, .table-test4 td {
+	text-align: center;
+	font-size: 20px;
+}
+.table-test5 th, .table-test5 td {
+	text-align: center;
+	font-size: 20px;
+}
+.table-test6 th, .table-test6 td {
+	text-align: center;
+	font-size: 20px;
+}
+
+
 /* 回り込みの解除 */
+/*
 .clear {
 	clear:both;
 }
+*/
 
 /* 表の配置 */
+/*
 .result-table {
 	width:800px;
     margin:0 auto;
 }
+*/
 
-.result-table p {
-	font-size: 40px;
-}
+
+
