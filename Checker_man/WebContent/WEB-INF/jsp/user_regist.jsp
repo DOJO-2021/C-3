@@ -24,14 +24,12 @@
 				<form method="POST" action="/Checker_man/User_RegistServlet">
 					<div class="regist-form">
 						ユーザーID<input type="text" name="NAME" placeholder="ユーザーID入力"><br>
-						パスワード<input type="password" id="password" name="PW"
-							placeholder="パスワード入力"><br> パスワード確認<input
-							type="password" id="password2" name="CH-PW"
-							placeholder="再度パスワード入力">
+						パスワード<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
+						パスワード確認<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
 					</div>
-					<input type="checkbox" id="password-check">パスワードを表示する <input
-						type="submit" name="REGIST" value="登録"> <a
-						href="User_LoginServlet">戻る</a>
+					<input type="checkbox" id="password-check">パスワードを表示する
+					<input type="submit" name="REGIST" value="登録" onclick="return confirm('登録しますか？')">
+						 <a href="User_LoginServlet">戻る</a>
 				</form>
 
 			</div>
@@ -57,17 +55,17 @@
 			}
 		}, false);
 
-		document.getElementById('form').onsubmit = function(event) {
-			const name = document.getElementById('form').NAME.value;
-			console.log(document.getElementById('form'));
-			// const pwd =
-			if (name === "") {
-				event.preventDefault();
-				window.alert('ユーザーIDを入力してください');
-				document.getElementById('error_message').textContent = 'ユーザーIDを入力してください';
-			}
+		'use strict';
+		function submitbtn() {
+		    // 「OK」ボタン押下時
+		    if (confirm('登録しますか？')) {
+		        alert('OK');
+		    }
+		    // 「キャンセル」ボタン押下時
+		    else {
+		         alert('キャンセル');
+		    }
 		}
-
 	</script>
 </body>
 </html>
