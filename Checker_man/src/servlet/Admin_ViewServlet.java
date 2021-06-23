@@ -63,7 +63,7 @@ public class Admin_ViewServlet extends HttpServlet {
 		//検索処理を行う（回答）
 		s_answerDao aDao = new s_answerDao();
 		List<s_answer> answerList = null;
-		answerList = aDao.select(new s_answer(0, 0, user_id, ""));
+		answerList = aDao.select(new s_answer(0, 0, user_id, null));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("answerList", answerList);
