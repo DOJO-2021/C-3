@@ -40,7 +40,7 @@
 				 	</form>
 				</c:forEach>
 			</div>
-あ
+
 
 			<div class = user_result3>
 				<c:forEach var="e" items="${answerList}" >
