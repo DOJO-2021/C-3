@@ -90,7 +90,7 @@ public class User_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from user_login WHERE user_id LIKE ? AND user_name LIKE ? and user_pw like ?";
+			String sql = "select * from user_login WHERE user_id = ? AND user_name = ? and user_pw = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (param.getUser_name() != "") {
