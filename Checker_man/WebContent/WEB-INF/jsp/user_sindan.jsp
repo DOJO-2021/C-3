@@ -37,7 +37,6 @@
 					<td>当てはまる</td>
 				</tr>
 
-
 				<tr>
 					<td>問1 よく眠れなかった</td>
 						<td><input type="radio" name="answer1" value="1"></td>
