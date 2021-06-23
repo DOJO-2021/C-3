@@ -48,9 +48,9 @@
 		pwdCheck.addEventListener('change', function() {
 			if (pwdCheck.checked) {
 				pwd.setAttribute('type', 'text');
+				pwd2.setAttribute('type', 'text');
 			} else {
 				pwd.setAttribute('type', 'password');
-			} else {
 				pwd2.setAttribute('type', 'password');
 			}
 		}, false);
