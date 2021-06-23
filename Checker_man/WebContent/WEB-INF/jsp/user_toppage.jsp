@@ -71,11 +71,12 @@
         </div>
 
         <!-- アイコンの注釈文 -->
-        <div class="comments">
-        	 <img src="/Checker_man/images/maru.png/images/maru.png"><p>は健康</p>
-        	 <img src="/Checker_man/images/sankaku.png"><p>は</p>
-        	 <img src="/Checker_man/images/batsu.png"><p>は</p>
-        </div>
+        	 <img src="/Checker_man/images/maru.png" width="2%" height="2%" align="left" ><p>は健康</p>
+        	 <img src="/Checker_man/images/sankaku.png" width="2%" height="2%" align="left"><p>は</p>
+        	 <img src="/Checker_man/images/batsu.png" width="2%" height="2%" align="left"><p>は</p>
+
+
+
 
        <!-- 診断ボタン、診断結果ボタン」のhtml -->
 		<div class="user_toppage_button">
@@ -92,16 +93,17 @@
  <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
  </footer>
 
- </div>
-
+<!-- テスト
 <p>テスト（削除しても良い）</p>
 <c:forEach var="e" items="${calenderlist}">
 <div class="icon">
+${e.date}
 <img src="${e.icon_path}" >
 </div>
 <p>${e.date }</p>
 <input type="text" value="${e.icon}" readonly>
 </c:forEach>
+-->
 
 <!-- カレンダーのjavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

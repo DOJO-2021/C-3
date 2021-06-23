@@ -450,6 +450,7 @@ public class s_resultDao {
 					rs.getString("icon"),
 					rs.getString("date"),
 					rs.getString("date"),
+					rs.getString("date"),
 					rs.getInt("user_id")
 					);
 

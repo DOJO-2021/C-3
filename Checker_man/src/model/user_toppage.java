@@ -12,9 +12,10 @@ public class user_toppage implements Serializable {
 	private int user_id; //ユーザーID
 
 	//引数があるコントラスタ
-	public user_toppage(String icon, String date1,String date2, int user_id) {
+	public user_toppage(String icon,String date,String date1,String date2, int user_id) {
 		super();
 		this.icon = icon;
+		this.date = date;
 		this.date1 = date1;
 		this.date2 = date2;
 		this.user_id = user_id;
@@ -27,6 +28,7 @@ public class user_toppage implements Serializable {
 		this.date1 = null;
 		this.date2 = null;
 		this.user_id = 0;
+		this.date = null;
 	}
 
 	//ゲッターセッターのプログラム
@@ -56,7 +58,7 @@ public class user_toppage implements Serializable {
 		return date1;
 	}
 
-	public void setDate(String date1) {
+	public void setDate1(String date1) {
 		this.date1 = date1;
 	}
 
@@ -75,6 +77,16 @@ public class user_toppage implements Serializable {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
+
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
 
 }
 

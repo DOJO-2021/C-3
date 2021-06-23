@@ -51,7 +51,7 @@ public class User_TopPageServlet extends HttpServlet {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		String firstDate = sdf.format(getFirstDate(cal.getTime()));
-		String lastDate = "";
+		String lastDate = sdf.format(getLastDate(cal.getTime()));
 
 
 
@@ -60,7 +60,7 @@ public class User_TopPageServlet extends HttpServlet {
 		LoginUser user_id = (LoginUser) session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao calenderDao = new s_resultDao();
-		List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("",firstDate,lastDate , user_id.getuser_id()));
+		List<user_toppage> calenderlist = calenderDao.select_calender(new user_toppage("","",firstDate,lastDate , user_id.getuser_id()));
 
 
 		// カレンダーの処理をリクエストスコープに格納する

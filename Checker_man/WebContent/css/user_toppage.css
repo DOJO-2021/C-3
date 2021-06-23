@@ -54,10 +54,13 @@ input#next-month {
 	width: 70px;
 }
 
-/* 注釈のCSS */
-img.comments {
-	
+/* 注釈のCSS
+.comments {
+	width:50%;
+	height:50%;
 }
+*/
+
 
 /* 「診断ボタン、診断結果ボタン」のcss*/
 .user_toppage_button {
