@@ -28,82 +28,79 @@
  <div class ="main">
 
 
-<!-- カレンダーのエリア -->
- <div class="calendar-border">
+	<!-- カレンダーのエリア -->
+	 <div class="calendar-border">
 
-          <!-- カレンダーの上にある「前月、現在の月、翌月」のhtml -->
-  <div class="calender-menu">
-	  <table class="calender-menu-table">
-	  	<tr>
-	  		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
-				<input type="submit" id="previous-month" value="前月">
-				<input type="hidden" name="diffCount" value="0">
-				</form>
-	  		</td>
-	 		<th class = "th-month">2021年6月
-	 		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
-		    	<input type="submit" id="next-month" name="diffCount" value="翌月">
-		    	<input type="hidden" name="diffCount" value="2">
-				</form>
-			</td>
-		</tr>
-   	</table>
-  </div>
+	          <!-- カレンダーの上にある「前月、現在の月、翌月」のhtml -->
+	  <div class="calender-menu">
+		  <table class="calender-menu-table">
+		  	<tr>
+		  		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
+					<input type="submit" id="previous-month" value="前月">
+					<input type="hidden" name="diffCount" value="0">
+					</form>
+		  		</td>
+		 		<th class = "th-month"><!-- 月のタイトル ${title_month }　-->
+		 		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
+			    	<input type="submit" id="next-month" name="diffCount" value="翌月">
+			    	<input type="hidden" name="diffCount" value="2">
+					</form>
+				</td>
+			</tr>
+	   	</table>
+	  </div>
 
-       <!-- カレンダーの表のhtml -->
-   <h1></h1>
-        <div class="date-head"></div>
-        <table class="table table-border table-hover table-sm">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        </div>
+	       <!-- カレンダーの表のhtml -->
+	   <h1></h1>
+	        <div class="date-head"></div>
+	        <table id="calender" class="table table-border table-hover table-sm">
+	            <thead class="thead-dark">
+	                <tr>
+	                    <th>Sun</th>
+	                    <th>Mon</th>
+	                    <th>Tue</th>
+	                    <th>Wed</th>
+	                    <th>Thu</th>
+	                    <th>Fri</th>
+	                    <th>Sat</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	            </tbody>
+	        </table>
+	       </div>
 
-        <!-- アイコンの注釈文 -->
-        	 <img src="/Checker_man/images/maru.png" width="2%" height="2%" align="left" ><p>は健康</p>
-        	 <img src="/Checker_man/images/sankaku.png" width="2%" height="2%" align="left"><p>は</p>
-        	 <img src="/Checker_man/images/batsu.png" width="2%" height="2%" align="left"><p>は</p>
-
-
-
-
-       <!-- 診断ボタン、診断結果ボタン」のhtml -->
-		<div class="user_toppage_button">
-			<form action="/Checker_man/User_SindanServlet" method="get">
-				<input type="submit" id="user_shindan" name="user_shindan" value="診断" ></form>
-			<form action="/Checker_man/User_ResultServlet"  method="get">
-			 <input type="submit" id="user_result" name="user_result" value="診断結果"> </form>
-		</div>
-		<div class="clear"></div>
+	        <!-- アイコンの注釈文 -->
+	        	<div class="comments">
+		        	 <img src="/Checker_man/images/maru.png" width="2%" height="2%" align="left" ><p>は健康</p>
+		        	 <img src="/Checker_man/images/sankaku.png" width="2%" height="2%" align="left"><p>は</p>
+		        	 <img src="/Checker_man/images/batsu.png" width="2%" height="2%" align="left"><p>は</p>
+				</div>
 
 
+
+	       <!-- 診断ボタン、診断結果ボタン」のhtml -->
+			<div class="user_toppage_button">
+				<table class="button-table">
+					<tr>
+						<td><form action="/Checker_man/User_SindanServlet" method="get">
+						<input type="submit" id="user_shindan" name="user_shindan" value="診断" ></form></td>
+
+						<td><form action="/Checker_man/User_ResultServlet"  method="get">
+						 <input type="submit" id="user_result" name="user_result" value="診断結果"> </form></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="clear"></div>
+
+</div>
  <!-- フッター -->
  <footer class="footer">
  <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
  </footer>
 
-<!-- テスト
-<p>テスト（削除しても良い）</p>
-<c:forEach var="e" items="${calenderlist}">
-<div class="icon">
-${e.date}
-<img src="${e.icon_path}" >
-</div>
-<p>${e.date }</p>
-<input type="text" value="${e.icon}" readonly>
-</c:forEach>
--->
+
 
 <!-- カレンダーのjavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -156,7 +153,7 @@ ${e.date}
                 }
 
 
-                $('table').find('tbody').find('tr').last().find('td').eq(week).html(i + "<br />" + iconLink);
+                $('#calender').find('tbody').find('tr').last().find('td').eq(week).html(i + "<br />" + iconLink);
             }
         </script>
 </body>

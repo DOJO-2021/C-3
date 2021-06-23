@@ -67,6 +67,10 @@ public class User_TopPageServlet extends HttpServlet {
 		request.setAttribute("calenderlist", calenderlist);
 		request.setAttribute("view_monthlist", diffCount);
 
+		//月のタイトルを格納
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+
+		request.setAttribute("title_month", diffCount);
 
 
 

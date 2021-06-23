@@ -105,7 +105,9 @@
 
          <!--  「過去のデータボタン」のhtml -->
 <div class="admin_toppage_button">
+<form action="/Checker_man/Admin_LastDataServlet" method="get">
  <input type="submit" id="admin_lastdata" name="admin_lastdata" value="過去のデータ">
+ </form>
 </div>
 
  </main>
