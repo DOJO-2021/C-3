@@ -82,7 +82,7 @@
 				<p>管理者コメント</p>
 				<form method="POST" action="/Checker_man/Admin_ViewServlet">
 					<textarea rows="10" cols="100" name="admin_message">${resultList.admin_comment}</textarea>
-					<input type="hidden" name="user_id" value="${resultList.user_id}">
+					<input type="hidden" name="user_id" value="${result.user_id}">
 					<div class="botton">
 						<div class="regist">
 							<input type="submit" name="regist" class = "button" value="コメント登録"><br>

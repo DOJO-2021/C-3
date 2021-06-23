@@ -90,7 +90,7 @@ public class User_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from user_login WHERE user_id LIKE ? AND user_name LIKE ? and user_pw like ?";
+			String sql = "select * from user_login WHERE user_id = ? AND user_name = ? and user_pw = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (param.getUser_name() != "") {
@@ -216,7 +216,7 @@ public class User_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql1 = "select user_name from user_login where user_id=?";
+			String sql1 = "select user_name,user_id from user_login where user_id=?";
 
 			PreparedStatement pStmt1 = conn.prepareStatement(sql1);
 
@@ -235,6 +235,7 @@ public class User_loginDao {
 			rs1.next();
 			result = new User_login();
 			result.setUser_name(rs1.getString("user_name"));
+			result.setUser_id(rs1.getInt("user_id"));
 		}
 
 		catch (SQLException e) {
