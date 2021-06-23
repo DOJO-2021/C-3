@@ -39,6 +39,11 @@ public class Admin_ViewServlet extends HttpServlet {
 			return;
 		}
 
+		if (request.getParameter("user_id") == null) {
+			response.sendRedirect("/Checker_man/Admin_TopPageServlet");
+			return;
+		}
+
 		//URL（Admin_ViewServlet?user_id = ○）から、○の数値を取得
 		int user_id =  Integer.parseInt(request.getParameter("user_id"));
 
