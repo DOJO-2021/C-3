@@ -77,8 +77,6 @@
         	 <img src="/Checker_man/images/batsu.png"><p>は</p>
         </div>
 
-
-
        <!-- 診断ボタン、診断結果ボタン」のhtml -->
 		<div class="user_toppage_button">
 			<form action="/Checker_man/User_SindanServlet" method="get">
