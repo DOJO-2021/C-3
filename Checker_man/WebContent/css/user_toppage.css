@@ -11,9 +11,9 @@ html* {
 
 /* user_toppage.jsp */
 
-.main p {
+/*.main p {
 	border : dotted 3px #B0D6DA;
-}
+}*/
 
 /*カレンダーエリア全体 */
 .calendar-border {
@@ -54,20 +54,29 @@ input#next-month {
 	width: 70px;
 }
 
-/* 注釈のCSS
 .comments {
-	width:50%;
-	height:50%;
-}
-*/
-
-
-/* 「診断ボタン、診断結果ボタン」のcss*/
-.user_toppage_button {
-	margin:50px;
-	text-align: center;
+	padding-left: 100px;
+	padding-bottom:100px;
+	padding-top:50px;
+	line-height:10px;
 
 }
+
+
+ 「診断ボタン、診断結果ボタン」のcss
+.button-table  {
+	margin-left: auto;
+    margin-right: auto;
+
+ }
+
+
+ .button-table td {
+	padding-left:50px;
+	padding-right:50px;
+}
+
+
 .clear {
 	clear:both;
 }
@@ -78,6 +87,7 @@ input#user_result {
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
 	margin-right:30px;
+	display: flex;
 }
 
 
@@ -85,14 +95,12 @@ input#user_shindan {
 	font-size:30px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
+	display: flex;
 
 }
 
-/* アイコン画像の大きさのcss*/
-.icon img {
-	width: 30px;
-	height: 30px;
-}
+
+
 
 /*
 ##D7EEFF 水色
