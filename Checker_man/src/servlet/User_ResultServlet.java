@@ -101,8 +101,7 @@ public class User_ResultServlet extends HttpServlet {
 		s_resultDao rDao = new s_resultDao();
 		rDao.update_usercomment(new s_result(0, null, null, user_comment,null, user_id));
 
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
-		dispatcher.forward(request, response);
+		// 診断結果ページにフォワードする
+		response.sendRedirect("/Checker_man/User_ResultServlet");
 	}
 }
