@@ -81,7 +81,7 @@ public class Admin_loginDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from admin_login WHERE admin_id LIKE ? AND admin_name LIKE ? and admin_pw like ?";
+			String sql = "select * from admin_login WHERE admin_id = ? AND admin_name = ? and admin_pw = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (param.getAdmin_name() != "") {
