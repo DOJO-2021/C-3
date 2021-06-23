@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.User_loginDao;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
 import model.LoginUser;
+import model.User_login;
 import model.s_answer;
 import model.s_question;
 import model.s_result;
@@ -68,15 +70,16 @@ public class User_ResultServlet extends HttpServlet {
 
 		s_resultDao rDao = new s_resultDao();
 		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", user_id.getuser_id()));
+		User_loginDao rDao2 = new User_loginDao();
+		User_login result = rDao2.select_username(new User_login(user_id.getuser_id(), "", "" ));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList", resultList);
+		request.setAttribute("result", result);
 
 		// 診断結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
 		dispatcher.forward(request, response);
-
-
 	}
 
 
@@ -86,7 +89,7 @@ public class User_ResultServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		if (session.getAttribute("user_id") == null) {
 			response.sendRedirect("/Checker_man/User_LoginServlet");
 			return;
 		}
