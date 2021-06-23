@@ -115,6 +115,7 @@ public class User_SindanServlet extends HttpServlet {
 		bDao.insert(new s_answer(15, answer15, user.getuser_id(), java8Disp));
 
 
+
 	s_answerDao answerdataDao = new s_answerDao();
 	s_answerdata resultData = answerdataDao.select_answerdata(new s_answerdata(0, 0, 0,user.getuser_id()));
 
