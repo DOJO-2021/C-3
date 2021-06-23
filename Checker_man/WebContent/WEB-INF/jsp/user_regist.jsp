@@ -34,6 +34,7 @@
 				</form>
 			</div>
 		</div>
+		<nav id ="error_message"></nav>
 
 		<!-- 共通のフッター -->
 		<footer>
@@ -54,6 +55,17 @@
 				pwd2.setAttribute('type', 'password');
 			}
 		}, false);
+
+		document.getElementById('form').onsubmit = function(event) {
+			const name = document.getElementById('form').NAME.value;
+			console.log(document.getElementById('form'));
+			// const pwd =
+			if (name === "") {
+				event.preventDefault();
+				window.alert('ユーザーIDを入力してください');
+				document.getElementById('error_message').textContent = 'ユーザーIDを入力してください';
+			}
+		}
 	</script>
 </body>
 </html>
