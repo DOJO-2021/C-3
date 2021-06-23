@@ -25,11 +25,10 @@
 				<form method="POST" action="/Checker_man/User_RegistServlet">
 					<div class="regist-form">
 						ユーザーID<input type="text" name="NAME" placeholder="ユーザーID入力"><br>
-						パスワード<input type="password" name="PW" placeholder="パスワード入力"><br>
-						パスワード確認<input type="password" name="CH-PW" placeholder="再度パスワード入力">
+						パスワード<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
+						パスワード確認<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
 					</div>
-					<input type="checkbox" id="password-check">
-					パスワードを表示する
+					<input type="checkbox" id="password-check">パスワードを表示する
 					<input type="submit" name="REGIST" value="登録">
 					<a href="User_LoginServlet">戻る</a>
 				</form>
@@ -44,12 +43,15 @@
 
 	<script>
 		const pwd = document.getElementById('password');
+		const pwd2 = document.getElementById('password2');
 		const pwdCheck = document.getElementById('password-check');
 		pwdCheck.addEventListener('change', function() {
 			if (pwdCheck.checked) {
 				pwd.setAttribute('type', 'text');
 			} else {
 				pwd.setAttribute('type', 'password');
+			} else {
+				pwd2.setAttribute('type', 'password');
 			}
 		}, false);
 	</script>
