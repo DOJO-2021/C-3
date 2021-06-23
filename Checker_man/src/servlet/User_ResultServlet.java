@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
+import model.LoginUser;
 import model.s_answer;
 import model.s_question;
 import model.s_result;
@@ -32,7 +33,7 @@ public class User_ResultServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("result_id") == null) {
+		if (session.getAttribute("user_id") == null) {
 			response.sendRedirect("/Checker_man/User_LoginServlet");
 			return;
 		}
@@ -54,11 +55,11 @@ public class User_ResultServlet extends HttpServlet {
 
 
 		//検索処理を行う（回答）
-//		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
+		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_answerDao aDao = new s_answerDao();
 		List<s_answer> answerList = null;
-		answerList = aDao.select(new s_answer(0, 0, 1, ""));
+		answerList = aDao.select(new s_answer(0, 0, user_id.getuser_id(), ""));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("answerList", answerList);
@@ -69,7 +70,7 @@ public class User_ResultServlet extends HttpServlet {
 //		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao rDao = new s_resultDao();
-		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", 1));
+		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", user_id.getuser_id()));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList", resultList);

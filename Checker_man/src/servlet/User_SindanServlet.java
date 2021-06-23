@@ -62,25 +62,26 @@ public class User_SindanServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
+		LoginUser user = (LoginUser) session.getAttribute("user_id");
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-//		int answer1 = Integer.parseInt(request.getParameter("answer1"));
-//		int answer2 = Integer.parseInt(request.getParameter("answer2"));
-//		int answer3 = Integer.parseInt(request.getParameter("answer3"));
-//		int answer4 = Integer.parseInt(request.getParameter("answer4"));
-//		int answer5 = Integer.parseInt(request.getParameter("answer5"));
-//		int answer6 = Integer.parseInt(request.getParameter("answer6"));
-//		int answer7 = Integer.parseInt(request.getParameter("answer7"));
-//		int answer8 = Integer.parseInt(request.getParameter("answer8"));
-//		int answer9 = Integer.parseInt(request.getParameter("answer9"));
-//		int answer10 = Integer.parseInt(request.getParameter("answer10"));
-//		int answer11 = Integer.parseInt(request.getParameter("answer11"));
-//		int answer12 = Integer.parseInt(request.getParameter("answer12"));
-//		int answer13 = Integer.parseInt(request.getParameter("answer13"));
-//		int answer14 = Integer.parseInt(request.getParameter("answer14"));
-//		int answer15 = Integer.parseInt(request.getParameter("answer15"));
-		LoginUser user = (LoginUser) session.getAttribute("user_id");
+		int answer1 = Integer.parseInt(request.getParameter("answer1"));
+		int answer2 = Integer.parseInt(request.getParameter("answer2"));
+		int answer3 = Integer.parseInt(request.getParameter("answer3"));
+		int answer4 = Integer.parseInt(request.getParameter("answer4"));
+		int answer5 = Integer.parseInt(request.getParameter("answer5"));
+		int answer6 = Integer.parseInt(request.getParameter("answer6"));
+		int answer7 = Integer.parseInt(request.getParameter("answer7"));
+		int answer8 = Integer.parseInt(request.getParameter("answer8"));
+		int answer9 = Integer.parseInt(request.getParameter("answer9"));
+		int answer10 = Integer.parseInt(request.getParameter("answer10"));
+		int answer11 = Integer.parseInt(request.getParameter("answer11"));
+		int answer12 = Integer.parseInt(request.getParameter("answer12"));
+		int answer13 = Integer.parseInt(request.getParameter("answer13"));
+		int answer14 = Integer.parseInt(request.getParameter("answer14"));
+		int answer15 = Integer.parseInt(request.getParameter("answer15"));
+
 
 		// 現在日時情報で初期化されたインスタンスの取得
 		LocalDateTime nowDateTime = LocalDateTime.now();
@@ -112,6 +113,7 @@ public class User_SindanServlet extends HttpServlet {
 		bDao.insert(new s_answer(13, answer13, user.getuser_id(), java8Disp));
 		bDao.insert(new s_answer(14, answer14, user.getuser_id(), java8Disp));
 		bDao.insert(new s_answer(15, answer15, user.getuser_id(), java8Disp));
+
 
 	s_answerDao answerdataDao = new s_answerDao();
 	s_answerdata resultData = answerdataDao.select_answerdata(new s_answerdata(0, 0, 0,user.getuser_id()));
