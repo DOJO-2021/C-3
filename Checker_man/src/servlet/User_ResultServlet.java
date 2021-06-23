@@ -12,10 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.User_loginDao;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
-import model.Result;
+import model.LoginUser;
+import model.User_login;
 import model.s_answer;
 import model.s_question;
 import model.s_result;
@@ -32,12 +34,11 @@ public class User_ResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-//		HttpSession session = request.getSession();
-//		if (session.getAttribute("result_id") == null) {
-//			response.sendRedirect("/Checker_man/User_LoginServlet");
-//			return;
-//		}
-
+		HttpSession session = request.getSession();
+		if (session.getAttribute("user_id") == null) {
+			response.sendRedirect("/Checker_man/User_LoginServlet");
+			return;
+		}
 
 		//検索処理を行う（質問内容）
 		s_questionDao qDao = new s_questionDao();
@@ -52,14 +53,12 @@ public class User_ResultServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("questionList", questionList);
 
-
-
 		//検索処理を行う（回答）
-//		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
+		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_answerDao aDao = new s_answerDao();
 		List<s_answer> answerList = null;
-		answerList = aDao.select(new s_answer(0, 0, 1, ""));
+		answerList = aDao.select(new s_answer(0, 0, user_id.getuser_id(), ""));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("answerList", answerList);
@@ -70,16 +69,17 @@ public class User_ResultServlet extends HttpServlet {
 //		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao rDao = new s_resultDao();
-		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", 1));
+		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", user_id.getuser_id()));
+		User_loginDao rDao2 = new User_loginDao();
+		User_login result = rDao2.select_username(new User_login(user_id.getuser_id(), "", "" ));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("resultList", resultList);
+		request.setAttribute("result", result);
 
 		// 診断結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
 		dispatcher.forward(request, response);
-
-
 	}
 
 
@@ -89,33 +89,22 @@ public class User_ResultServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		if (session.getAttribute("user_id") == null) {
 			response.sendRedirect("/Checker_man/User_LoginServlet");
 			return;
 		}
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		int result_id = Integer.parseInt(request.getParameter("RESULT_ID"));
-		String date = request.getParameter("DATE");
-		String icon = request.getParameter("ICON");
-		String user_comment = request.getParameter("USER_COMMENT");
-		String admin_comment = request.getParameter("ADMIN_COMMENT");
 
-		// 登録処理を行う
+		String user_comment = request.getParameter("user_message");
+		int user_id = Integer.parseInt(request.getParameter("user_id"));
+
+		// ユーザーのコメント更新処理を行う
 		s_resultDao rDao = new s_resultDao();
-		if (rDao.insert1(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "レコードを登録しました。", "/simpleBC/User_ResultServlet"));
-		}
-		else {												// 登録失敗
-			request.setAttribute("result",
-			new Result("登録失敗！", "レコードを登録できませんでした。", "/simpleBC/User_ResultServlet"));
-		}
+		rDao.update_usercomment(new s_result(0, null, null, user_comment,null, user_id));
 
-
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
-		dispatcher.forward(request, response);
+		// 診断結果ページにフォワードする
+		response.sendRedirect("/Checker_man/User_ResultServlet");
 	}
 }

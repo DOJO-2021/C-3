@@ -18,7 +18,7 @@
 <body>
 
 <div class="wrapper">
-
+</div>
  <!-- ヘッダ -->
  <header class="header">
  <jsp:include page="/WEB-INF/jsp/header.jsp"/>
@@ -26,24 +26,28 @@
 
  <!-- メイン -->
  <div class ="main">
- <p></p>
+
 
 <!-- カレンダーのエリア -->
  <div class="calendar-border">
 
           <!-- カレンダーの上にある「前月、現在の月、翌月」のhtml -->
   <div class="calender-menu">
-  <!-- <div class="calender-menu-table">  -->
-  	<form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
-		<input type="submit" id="previous-month" value="前月">
-		<input type="hidden" name="diffCount" value="0">
-	</form>
-	<!--  <th class = "th-month"> -->2021年6月
-	<form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
-    	<input type="submit" id="next-month" name="diffCount" value="翌月">
-    	<input type="hidden" name="diffCount" value="2">
-	</form>
-   </div>
+	  <table class="calender-menu-table">
+	  	<tr>
+	  		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
+				<input type="submit" id="previous-month" value="前月">
+				<input type="hidden" name="diffCount" value="0">
+				</form>
+	  		</td>
+	 		<th class = "th-month">2021年6月
+	 		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
+		    	<input type="submit" id="next-month" name="diffCount" value="翌月">
+		    	<input type="hidden" name="diffCount" value="2">
+				</form>
+			</td>
+		</tr>
+   	</table>
   </div>
 
        <!-- カレンダーの表のhtml -->
@@ -66,14 +70,22 @@
         </table>
         </div>
 
+        <!-- アイコンの注釈文 -->
+        	 <img src="/Checker_man/images/maru.png" width="2%" height="2%" align="left" ><p>は健康</p>
+        	 <img src="/Checker_man/images/sankaku.png" width="2%" height="2%" align="left"><p>は</p>
+        	 <img src="/Checker_man/images/batsu.png" width="2%" height="2%" align="left"><p>は</p>
+
+
+
+
        <!-- 診断ボタン、診断結果ボタン」のhtml -->
-<div class="user_toppage_button">
-	<form action="/Checker_man/User_SindanServlet" method="post">
-		<input type="submit" id="user_shindan" name="user_shindan" value="診断" ></form>
-	<form action="/Checker_man/User_ResultServlet"  method="post">
-	 <input type="submit" id="user_result" name="user_result" value="診断結果"> </form>
-</div>
-<div class="clear"></div>
+		<div class="user_toppage_button">
+			<form action="/Checker_man/User_SindanServlet" method="get">
+				<input type="submit" id="user_shindan" name="user_shindan" value="診断" ></form>
+			<form action="/Checker_man/User_ResultServlet"  method="get">
+			 <input type="submit" id="user_result" name="user_result" value="診断結果"> </form>
+		</div>
+		<div class="clear"></div>
 
 
  <!-- フッター -->
@@ -81,7 +93,17 @@
  <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
  </footer>
 
-<!-- </div>  -->
+<!-- テスト
+<p>テスト（削除しても良い）</p>
+<c:forEach var="e" items="${calenderlist}">
+<div class="icon">
+${e.date}
+<img src="${e.icon_path}" >
+</div>
+<p>${e.date }</p>
+<input type="text" value="${e.icon}" readonly>
+</c:forEach>
+-->
 
 <!-- カレンダーのjavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

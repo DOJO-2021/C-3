@@ -94,16 +94,16 @@ public class User_loginDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (param.getUser_name() != "") {
-				pStmt.setString(1, "%" + param.getUser_name() + "%");
+				pStmt.setString(1, param.getUser_name());
 			}
 			else {
-				pStmt.setString(1, "%");
+				pStmt.setString(1, null);
 			}
 			if (param.getUser_pw() != "") {
-				pStmt.setString(2, "%" + param.getUser_pw() + "%");
+				pStmt.setString(2, param.getUser_pw());
 			}
 			else {
-				pStmt.setString(2, "%");
+				pStmt.setString(2, null);
 			}
 
 			// SQL文を実行し、結果表を取得する
@@ -166,13 +166,13 @@ public class User_loginDao {
 				pStmt.setString(1, sign.getUser_name());
 			}
 			else {
-				pStmt.setString(1, "null");
+				pStmt.setString(1, null);
 			}
 			if (sign.getUser_pw() != null) {
 				pStmt.setString(2, sign.getUser_pw());
 			}
 			else {
-				pStmt.setString(2, "null");
+				pStmt.setString(2, null);
 			}
 
 			// SQL文を実行する

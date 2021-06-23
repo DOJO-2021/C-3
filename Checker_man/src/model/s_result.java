@@ -60,11 +60,11 @@ public class s_result implements Serializable {
 	//setIcon_path()ではなく、getIcon_path()
 	public String getIcon_path() {
 		if(this.icon.equals("maru")) {
-			return "健康です";
+			return "健康的な生活を送れています。このまま継続してください。";
 		}else if(this.icon.equals("sankaku")) {
-			return "普通です";
+			return "あまり健康とは言えません。規則正しい生活を送るよう心掛けましょう。";
 		}else {
-			return "不健康です";
+			return "健康的とは言えません。生活習慣を見直しましょう。";
 		}
 	}
 

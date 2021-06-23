@@ -24,6 +24,8 @@
 
 			<p>質問項目に合わせてチェックを入れてください</p>
 
+			<form action="/Checker_man/User_SindanServlet" method="post">
+
 			<!-- ここから診断テーブル -->
 			<table style="background-color: #f5f5f5;">
 				<tr bgcolor="#B0D6DA">
@@ -34,10 +36,9 @@
 					<td>やや当てはまる</td>
 					<td>当てはまる</td>
 				</tr>
-				<tr>
 
+				<tr>
 					<td>問1 よく眠れなかった</td>
-					<form action="#" method="post">
 						<td><input type="radio" name="answer1" value="1"></td>
 						<td><input type="radio" name="answer1" value="2"></td>
 						<td><input type="radio" name="answer1" value="3" checked>
@@ -48,7 +49,6 @@
 
 				<tr>
 					<td>問2 食欲があまりない</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer2" value="1"></td>
 					<td><input type="radio" name="answer2" value="2"></td>
 					<td><input type="radio" name="answer2" value="3" checked>
@@ -59,7 +59,6 @@
 
 				<tr>
 					<td>問3 よく眠れなかった</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer3" value="1"></td>
 					<td><input type="radio" name="answer3" value="2"></td>
 					<td><input type="radio" name="answer3" value="3" checked>
@@ -70,7 +69,6 @@
 
 				<tr>
 					<td>問4 食欲があまりない</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer4" value="1"></td>
 					<td><input type="radio" name="answer4" value="2"></td>
 					<td><input type="radio" name="answer4" value="3" checked>
@@ -79,8 +77,8 @@
 					<td><input type="radio" name="answer4" value="5"></td>
 				</tr>
 
+				<tr>
 				<td>問5 よく眠れなかった</td>
-				<action ="#" method="post">
 				<td><input type="radio" name="answer5" value="1"></td>
 				<td><input type="radio" name="answer5" value="2"></td>
 				<td><input type="radio" name="answer5" value="3" checked>
@@ -91,7 +89,6 @@
 
 				<tr>
 					<td>問6 食欲があまりない</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer6" value="1"></td>
 					<td><input type="radio" name="answer6" value="2"></td>
 					<td><input type="radio" name="answer6" value="3" checked>
@@ -102,7 +99,6 @@
 
 				<tr>
 					<td>問7 よく眠れなかった</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer7" value="1"></td>
 					<td><input type="radio" name="answer7" value="2"></td>
 					<td><input type="radio" name="answer7" value="3" checked>
@@ -113,7 +109,6 @@
 
 				<tr>
 					<td>問8 食欲があまりない</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer8" value="1"></td>
 					<td><input type="radio" name="answer8" value="2"></td>
 					<td><input type="radio" name="answer8" value="3" checked>
@@ -124,7 +119,6 @@
 
 				<tr>
 					<td>問9 よく眠れなかった</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer9" value="1"></td>
 					<td><input type="radio" name="answer9" value="2"></td>
 					<td><input type="radio" name="answer9" value="3" checked>
@@ -135,7 +129,6 @@
 
 				<tr>
 					<td>問10 食欲があまりない</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer10" value="1"></td>
 					<td><input type="radio" name="answer10" value="2"></td>
 					<td><input type="radio" name="answer10" value="3" checked>
@@ -146,7 +139,6 @@
 
 				<tr>
 					<td>問11 よく眠れなかった</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer11" value="1"></td>
 					<td><input type="radio" name="answer11" value="2"></td>
 					<td><input type="radio" name="answer11" value="3" checked>
@@ -157,7 +149,6 @@
 
 				<tr>
 					<td>問12 食欲があまりない</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer12" value="1"></td>
 					<td><input type="radio" name="answer12" value="2"></td>
 					<td><input type="radio" name="answer12" value="3" checked>
@@ -167,8 +158,8 @@
 				</tr>
 
 
+				<tr>
 				<td>問13 よく眠れなかった</td>
-				<action ="#" method="post">
 				<td><input type="radio" name="answer13" value="1"></td>
 				<td><input type="radio" name="answer13" value="2"></td>
 				<td><input type="radio" name="answer13" value="3" checked>
@@ -179,7 +170,6 @@
 
 				<tr>
 					<td>問14 食欲があまりない</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer14" value="1"></td>
 					<td><input type="radio" name="answer14" value="2"></td>
 					<td><input type="radio" name="answer14" value="3" checked>
@@ -190,7 +180,6 @@
 
 				<tr>
 					<td>問15 よく眠れなかった</td>
-					<action ="#" method="post">
 					<td><input type="radio" name="answer15" value="1"></td>
 					<td><input type="radio" name="answer15" value="2"></td>
 					<td><input type="radio" name="answer15" value="3" checked>
@@ -204,13 +193,14 @@
 			<br>
 
 			<!-- 診断結果へのリンク -->
-			<method="POST">
 			<div class="botton">
 				<div class="result">
 					<input type="submit" name="regist" value="診断結果へ"><br>
 				</div>
 			</div>
+
 			</form>
+
 			<!-- 診断エリアここまで -->
 		</div>
 
