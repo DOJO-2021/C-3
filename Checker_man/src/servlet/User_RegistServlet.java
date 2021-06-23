@@ -19,7 +19,6 @@ import model.User_login;
 @WebServlet("/User_RegistServlet")
 public class User_RegistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final int PW = 0;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
