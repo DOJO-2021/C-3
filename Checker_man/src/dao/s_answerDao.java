@@ -31,19 +31,19 @@ public class s_answerDao {
 
 			// SQL文を完成させる
 			if (param.getQuestion_id() != 0) {
-				pStmt.setString(1, "%" + param.getQuestion_id() + "%");
+				pStmt.setInt(1, param.getQuestion_id());
 			} else {
-				pStmt.setString(1, "%");
+				pStmt.setInt(1, 0);
 			}
 			if (param.getAnswer() != 0) {
-				pStmt.setString(2, "%" + param.getAnswer() + "%");
+				pStmt.setInt(2,  param.getAnswer());
 			} else {
-				pStmt.setString(2, "%");
+				pStmt.setInt(2, 0);
 			}
 			if (param.getUser_id() != 0) {
-				pStmt.setString(3, "%" + param.getUser_id() + "%");
+				pStmt.setInt(3, param.getUser_id());
 			} else {
-				pStmt.setString(3, "%");
+				pStmt.setInt(3, 0);
 			}
 
 			// SQL文を実行し、結果表を取得する
@@ -105,7 +105,7 @@ public class s_answerDao {
 			if (answer.getDate() != null) {
 				pStmt.setString(4, answer.getDate());
 			} else {
-				pStmt.setString(4, "null");
+				pStmt.setString(4, null);
 			}
 
 			// SQL文を実行する

@@ -581,10 +581,10 @@ public class s_resultDao {
 
 					// SQL文を完成させる
 					if (param.getUser_id() != 0) {
-						pStmt.setString(1, "%" + param.getUser_id() + "%");
+						pStmt.setInt(1,  param.getUser_id() );
 					}
 					else {
-						pStmt.setString(1, "%");
+						pStmt.setInt(1, 0);
 					}
 //					if (param.getUser_comment() != "") {
 //						pStmt.setString(2, "%" + param.getUser_comment() + "%");

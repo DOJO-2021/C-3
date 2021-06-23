@@ -38,8 +38,6 @@ public class User_ResultServlet extends HttpServlet {
 			return;
 		}
 
-
-
 		//検索処理を行う（質問内容）
 		s_questionDao qDao = new s_questionDao();
 		List<s_question> questionList = null;

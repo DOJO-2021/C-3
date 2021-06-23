@@ -85,16 +85,16 @@ public class Admin_loginDao {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			if (param.getAdmin_name() != "") {
-				pStmt.setString(1, "%" + param.getAdmin_name() + "%");
+				pStmt.setString(1,  param.getAdmin_name() );
 			}
 			else {
-				pStmt.setString(1, "%");
+				pStmt.setString(1, null);
 			}
 			if (param.getAdmin_pw() != "") {
-				pStmt.setString(2, "%" + param.getAdmin_pw() + "%");
+				pStmt.setString(2,  param.getAdmin_pw());
 			}
 			else {
-				pStmt.setString(2, "%");
+				pStmt.setString(2, null);
 			}
 
 			// SQL文を実行し、結果表を取得する
