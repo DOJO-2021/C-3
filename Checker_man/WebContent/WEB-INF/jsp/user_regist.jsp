@@ -7,6 +7,21 @@
 <title>チェッカマン</title>
 <link rel="stylesheet" href="/Checker_man/css/user_regist.css">
 <link rel="stylesheet" href="/Checker_man/css/user.css">
+<script>
+
+'use strict';
+	function submitbtn() {
+    // 「OK」ボタン押下時
+    if (window.confirm('登録しますか？')) {
+    	window.alert('登録完了しました。');
+        return true;
+    }
+    // 「キャンセル」ボタン押下時
+    else {
+    	window.alert('キャンセル');
+         return false;
+    }
+	}</script>
 </head>
 <body>
 
@@ -21,7 +36,7 @@
 			<p></p>
 			<div class="regist-area">
 				<h1>新規登録</h1>
-				<form method="POST" action="/Checker_man/User_RegistServlet">
+				<form method="POST" action="/Checker_man/User_RegistServlet" onSubmit="return check()">
 					<div class="regist-form">
 						ユーザーID<input type="text" name="NAME" placeholder="ユーザーID入力"><br>
 						パスワード<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
@@ -54,20 +69,6 @@
 				pwd2.setAttribute('type', 'password');
 			}
 		}, false);
-
-
-		'use strict';
-			function submitbtn() {
-		    // 「OK」ボタン押下時
-		    if (confirm('登録しますか？')) {
-		        alert('OK');
-		    }
-		    // 「キャンセル」ボタン押下時
-		    else {
-		         alert('キャンセル');
-		    }
-			}
-
 
 		   /* function check() {
 		        	if (!(pwd === pwd2))) {
