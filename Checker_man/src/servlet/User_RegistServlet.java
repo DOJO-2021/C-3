@@ -49,7 +49,7 @@ public class User_RegistServlet extends HttpServlet {
 
 		//ユーザーIDが空の場合、エラーを表示して同じ画面を表示する
 		if (name == "") {
-			System.out.println("ユーザーIDが入力されていません");
+		System.out.println("ユーザーIDが入力されていません");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
 			dispatcher.forward(request, response);
 			return;

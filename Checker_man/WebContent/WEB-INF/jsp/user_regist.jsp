@@ -17,7 +17,6 @@
 				<img src="/Checker_man/images/header.png">
 			</h1>
 		</header>
-		<nav id="error_message"></nav>
 		<div class="main">
 			<p></p>
 			<div class="regist-area">
@@ -42,6 +41,7 @@
 		<footer>
 			<jsp:include page="/WEB-INF/jsp/footer.jsp" />
 		</footer>
+
 	</div>
 	<script>
 		const pwd = document.getElementById('password');
@@ -57,7 +57,7 @@
 			}
 		}, false);
 
-		document.getElementById('form').onsubmit = function(event) {
+
 			const name = document.getElementById('form').NAME.value;
 			console.log(document.getElementById('form'));
 			// const pwd =
@@ -67,6 +67,7 @@
 				document.getElementById('error_message').textContent = 'ユーザーIDを入力してください';
 			}
 		}
+
 	</script>
 </body>
 </html>
