@@ -40,7 +40,7 @@
 					<input type="hidden" name="diffCount" value="0">
 					</form>
 		  		</td>
-		 		<th class = "th-month"><!-- 月のタイトル ${title_month }　-->
+		 		<th class = "th-month">${title_month }
 		 		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
 			    	<input type="submit" id="next-month" name="diffCount" value="翌月">
 			    	<input type="hidden" name="diffCount" value="2">
