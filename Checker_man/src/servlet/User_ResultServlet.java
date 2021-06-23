@@ -31,11 +31,11 @@ public class User_ResultServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-//		HttpSession session = request.getSession();
-//		if (session.getAttribute("result_id") == null) {
-//			response.sendRedirect("/Checker_man/User_LoginServlet");
-//			return;
-//		}
+		HttpSession session = request.getSession();
+		if (session.getAttribute("result_id") == null) {
+			response.sendRedirect("/Checker_man/User_LoginServlet");
+			return;
+		}
 
 
 		//検索処理を行う（質問内容）
