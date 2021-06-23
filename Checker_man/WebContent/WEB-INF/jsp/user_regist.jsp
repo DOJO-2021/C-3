@@ -28,7 +28,7 @@
 						パスワード確認<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
 					</div>
 					<input type="checkbox" id="password-check">パスワードを表示する
-					<input type="submit" name="REGIST" value="登録" onclick="return confirm('登録しますか？')">
+					<input type="submit" name="REGIST" value="登録" onclick="submitbtn()">
 						 <a href="User_LoginServlet">戻る</a>
 				</form>
 
@@ -55,8 +55,9 @@
 			}
 		}, false);
 
+
 		'use strict';
-		function submitbtn() {
+			function submitbtn() {
 		    // 「OK」ボタン押下時
 		    if (confirm('登録しますか？')) {
 		        alert('OK');
@@ -65,7 +66,16 @@
 		    else {
 		         alert('キャンセル');
 		    }
-		}
+			}
+
+
+		   /* function check() {
+		        	if (!(pwd === pwd2))) {
+		    			windows.alert("パスワードが一致していません");
+		                     return false;
+		        	}
+		    } */
+
 	</script>
 </body>
 </html>
