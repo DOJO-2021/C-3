@@ -132,7 +132,7 @@
 					$("td#batsu:contains('1')").css("color", "red")
 
 			}
-
+a
 
 
 //		$("td#batsu")[0].innerText
