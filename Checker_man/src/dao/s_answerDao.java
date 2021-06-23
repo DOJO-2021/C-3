@@ -26,7 +26,7 @@ public class s_answerDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from s_answer WHERE question_id LIKE ? AND answer LIKE ? and user_id like ? and date like ? ";
+			String sql = "select * from s_answer WHERE question_id = ? AND answer = ? and user_id = ? and date = CURDATE() ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -44,11 +44,6 @@ public class s_answerDao {
 				pStmt.setString(3, "%" + param.getUser_id() + "%");
 			} else {
 				pStmt.setString(3, "%");
-			}
-			if (param.getDate() != "") {
-				pStmt.setString(4, "%" + param.getDate() + "%");
-			} else {
-				pStmt.setString(4, "%");
 			}
 
 			// SQL文を実行し、結果表を取得する
