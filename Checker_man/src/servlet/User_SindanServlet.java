@@ -123,7 +123,7 @@ public class User_SindanServlet extends HttpServlet {
 	String icon =null;
 
 	//☓のパターン
-	if(resultData.getSum() >= 60  ||  resultData.getCountfive() <= 6  ||  resultData.getCountfour() <= 9) {
+	if(resultData.getSum() >= 60  ||  resultData.getCountfive() >= 6  ||  resultData.getCountfour() >= 9) {
 	icon = "batsu";
 	}
 
