@@ -12,9 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.a_lastdataDao;
 import dao.s_answerDao;
+import dao.s_resultDao;
 import model.LoginUser;
 import model.s_answer;
+import model.s_answerdata;
+import model.s_result;
 
 @WebServlet("/User_SindanServlet")
 public class User_SindanServlet extends HttpServlet {
@@ -24,11 +28,11 @@ public class User_SindanServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		//		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		//		HttpSession session = request.getSession();
-		//		if (session.getAttribute("user_id") == null) {
-		//			response.sendRedirect("/Checker_man/User_SindanServlet");
-		//			return;
-		//		}
+				HttpSession session = request.getSession();
+//				if (session.getAttribute("user_id") == null) {
+//					response.sendRedirect("/Checker_man/User_LoginServlet");
+//					return;
+//				}
 		//
 		//		// リクエストパラメータを取得する
 		//		request.setCharacterEncoding("UTF-8");
@@ -87,9 +91,9 @@ public class User_SindanServlet extends HttpServlet {
 
 		// 値を取得できているかの確認
 		// question_id
-		System.out.println("answer1;" + answer1);
-		System.out.println("user_id;" + user);
-		System.out.println("今日の日付;" + java8Disp); // user.getuser_id()
+//		System.out.println("answer1;" + answer1);
+//		System.out.println("user_id;" + user);
+//		System.out.println("今日の日付;" + java8Disp); // user.getuser_id()
 
 		// 診断結果の登録処理を行う
 		s_answerDao bDao = new s_answerDao();
@@ -108,6 +112,36 @@ public class User_SindanServlet extends HttpServlet {
 		bDao.insert(new s_answer(13, answer13, user.getuser_id(), java8Disp));
 		bDao.insert(new s_answer(14, answer14, user.getuser_id(), java8Disp));
 		bDao.insert(new s_answer(15, answer15, user.getuser_id(), java8Disp));
+
+	s_answerDao answerdataDao = new s_answerDao();
+	s_answerdata resultData = answerdataDao.select_answerdata(new s_answerdata(0, 0, 0,user.getuser_id()));
+
+	//回答から、アイコンを判断する処理
+	String icon =null;
+
+	//☓のパターン
+	if(resultData.getSum() >= 60  ||  resultData.getCountfive() <= 6  ||  resultData.getCountfour() <= 9) {
+	icon = "batsu";
+	}
+
+	//○のパターン
+	else if(resultData.getSum() <= 40) {
+		icon = "maru";
+	}
+
+	//△のパターン
+	else {
+		icon = "sankaku";
+	}
+
+	//データをまとめて、診断結果のデータベースにインサートする処理
+	s_resultDao resultDao = new s_resultDao();
+	s_result insRec = new s_result(0, null, icon, "", "", user.getuser_id());
+	resultDao.insert(insRec);
+
+	//データをまとめて、過去のデータのデータベースにインサートする処理
+	a_lastdataDao lastdataDao = new a_lastdataDao();
+	lastdataDao.insert_lastdata(insRec);
 
 
 		// 診断結果ページにフォワードする
