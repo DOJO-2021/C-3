@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.User_loginDao;
-import model.Result;
 import model.User_login;
 
 /**
@@ -84,14 +83,16 @@ public class User_RegistServlet extends HttpServlet {
 		User_loginDao lDao = new User_loginDao();
 		if (lDao.insert(new User_login(0,name, pw))) { // 登録成功
 
-			request.setAttribute("result", new Result());
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_toppage.jsp");
-			dispatcher.forward(request, response);
-			System.out.println("登録が完了しました。");
-		}   // 登録失敗
-//		else {		request.setAttribute("result",new Result());
-//					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
-//					dispatcher.forward(request, response);
-//			  }
+		response.sendRedirect("/Checker_man/User_LoginServlet");
+		//System.out.println("登録が完了しました。");
+		}
+
+		// 登録失敗
+		else {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+		dispatcher.forward(request, response);
+		}
+
+
 		   }
 	  }
