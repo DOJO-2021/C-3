@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 import dao.s_answerDao;
 import dao.s_questionDao;
 import dao.s_resultDao;
-import model.Result;
 import model.s_answer;
 import model.s_question;
 import model.s_result;
@@ -96,23 +95,13 @@ public class User_ResultServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		int result_id = Integer.parseInt(request.getParameter("RESULT_ID"));
-		String date = request.getParameter("DATE");
-		String icon = request.getParameter("ICON");
-		String user_comment = request.getParameter("USER_COMMENT");
-		String admin_comment = request.getParameter("ADMIN_COMMENT");
 
-		// 登録処理を行う
+		String user_comment = request.getParameter("user_message");
+		int user_id = Integer.parseInt(request.getParameter("user_id"));
+
+		// ユーザーのコメント更新処理を行う
 		s_resultDao rDao = new s_resultDao();
-		if (rDao.insert1(new s_result(result_id, user_comment, admin_comment, admin_comment, admin_comment, result_id))) {	// 登録成功
-			request.setAttribute("result",
-			new Result("登録成功！", "レコードを登録しました。", "/simpleBC/User_ResultServlet"));
-		}
-		else {												// 登録失敗
-			request.setAttribute("result",
-			new Result("登録失敗！", "レコードを登録できませんでした。", "/simpleBC/User_ResultServlet"));
-		}
-
+		rDao.update_usercomment(new s_result(0, null, null, user_comment,null, user_id));
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");

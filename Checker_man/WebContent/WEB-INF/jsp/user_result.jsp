@@ -60,6 +60,7 @@
 
 			 <form method="POST" action="/Checker_man/User_ResultServlet">
 				<textarea rows="10" cols="100" name="user_message">${resultList.user_comment}</textarea>
+				<input type="hidden" name="user_id" value="${result.user_id}">
 				<div class = "botton">
 					<div class = "regist">
 						<input type="submit" name="regist" value="コメント登録"><br>
