@@ -32,16 +32,19 @@ h1 {
 
 /* テーブルの見出しを調整 */
 td {
-	padding-right: 30px;
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
 	text-align: center;
 	border: 1px solid #bec2c7;
 }
 /* テーブルに罫線 */
 
 /* 診断フォーム */
-form {
+/* form {
 	padding: 10px 10px;
-}
+} */
 
 /* ラジオボタンの設定 */
 
