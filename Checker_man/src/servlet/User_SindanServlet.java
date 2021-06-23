@@ -109,6 +109,7 @@ public class User_SindanServlet extends HttpServlet {
 		bDao.insert(new s_answer(14, answer14, user.getuser_id(), java8Disp));
 		bDao.insert(new s_answer(15, answer15, user.getuser_id(), java8Disp));
 
+
 		// 診断結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
 		dispatcher.forward(request, response);
