@@ -29,10 +29,10 @@ public class User_SindanServlet extends HttpServlet {
 
 		//		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
-//				if (session.getAttribute("user_id") == null) {
-//					response.sendRedirect("/Checker_man/User_LoginServlet");
-//					return;
-//				}
+				if (session.getAttribute("user_id") == null) {
+					response.sendRedirect("/Checker_man/User_LoginServlet");
+					return;
+				}
 		//
 		//		// リクエストパラメータを取得する
 		//		request.setCharacterEncoding("UTF-8");
@@ -145,7 +145,6 @@ public class User_SindanServlet extends HttpServlet {
 
 
 		// 診断結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_result.jsp");
-		dispatcher.forward(request, response);
+	response.sendRedirect("/Checker_man/User_ResultServlet");
 	}
 }
