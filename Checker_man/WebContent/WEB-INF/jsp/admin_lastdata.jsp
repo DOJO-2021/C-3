@@ -124,7 +124,7 @@
 		//$("td#batsu")[0].innerText
 //		$("td.batsu")
 //			for (var i =0; i< 91; i++){
-
+//
 //				$("td.batsu:contains('5')").css("color", "red")
 //				$("td.batsu:contains('6')").css("color", "red")
 //				$("td.batsu:contains('7')").css("color", "red")
