@@ -57,7 +57,7 @@
 			}
 		}, false);
 
-
+		document.getElementById('form').onsubmit = function(event) {
 			const name = document.getElementById('form').NAME.value;
 			console.log(document.getElementById('form'));
 			// const pwd =
