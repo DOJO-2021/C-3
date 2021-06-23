@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/Checker_man/css/user.css">
 <script>
 
-'use strict';
+/*'use strict';
 	function submitbtn() {
     // 「OK」ボタン押下時
     if (window.confirm('登録しますか？')) {
@@ -21,7 +21,8 @@
     	window.alert('キャンセル');
          return false;
     }
-	}</script>
+	}*/
+	</script>
 </head>
 <body>
 
@@ -48,6 +49,13 @@
 				</form>
 
 			</div>
+					<!-- エラーメッセージ -->
+			<div class="errormsg">
+				<p>
+					<c:out value="${result.message}" />
+				</p>
+			</div>
+
 		</div>
 
 		<!-- 共通のフッター -->
