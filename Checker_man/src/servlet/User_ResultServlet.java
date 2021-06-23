@@ -39,6 +39,7 @@ public class User_ResultServlet extends HttpServlet {
 		}
 
 
+
 		//検索処理を行う（質問内容）
 		s_questionDao qDao = new s_questionDao();
 		List<s_question> questionList = null;
@@ -51,8 +52,6 @@ public class User_ResultServlet extends HttpServlet {
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("questionList", questionList);
-
-
 
 		//検索処理を行う（回答）
 		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
