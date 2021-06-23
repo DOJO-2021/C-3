@@ -19,7 +19,7 @@ import model.admin_lastdata;
 /**
  * Servlet implementation class Admin_LastData
  */
-@WebServlet("/Admin_LastData")
+@WebServlet("/Admin_LastDataServlet")
 public class Admin_LastDataServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
