@@ -18,10 +18,12 @@ html* {
 /*カレンダーエリア全体 */
 .calendar-border {
 	border-top: 20px;
-	margin:0 30px;
-	background: #dcdcdc;
+	margin:0 200px;
 }
 
+.table tbody tr{
+	height: 100px;
+}
 
 /* カレンダーの上にある「前月、現在の月、翌月」のcss*/
 .calender-menu-table{
@@ -55,6 +57,7 @@ input#next-month {
 	border: solid 2px #F0B43E; /*周りの線の色*/
 	width: 70px;
 }
+
 
 .comments {
 	padding-left: 100px;
