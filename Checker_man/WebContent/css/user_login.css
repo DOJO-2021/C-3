@@ -32,7 +32,9 @@
 /* ログインエリアを中央に配置 */
 .ulogin-area {
 	width:300px;
-    margin:100px auto;
+    margin:0 auto;
+    margin-top: 50px;
+    margin-bottom: 10em;
 	padding:20px;
 	border:solid 4px rgb(176,214,218);
 }
@@ -41,9 +43,14 @@
 	padding-bottom:20px;
 }
 
+.ulogin-subarea{
+	margin-top:30px;
+	margin-left:20px;
+}
+
 .login-bottan {
+	margin-top:30px;
 	margin-left:190px;
-	margin-bottom:50px;
 }
 
 .link2 {
