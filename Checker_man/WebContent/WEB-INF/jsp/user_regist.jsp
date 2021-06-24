@@ -44,10 +44,10 @@
 
 					<div class="regist-form">
 						<div class ="userid">
-						ユーザー名　<input type="text" id="name" name="NAME" placeholder="ユーザー名入力"><br>
+						ユーザー名　　　<input type="text" id="name" name="NAME" placeholder="ユーザー名入力"><br>
 						</div>
 						<div class = "pw">
-						パスワード　<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
+						パスワード　　　<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
 						</div>
 						<div class = "chpw">
 						パスワード確認　<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
