@@ -72,12 +72,14 @@
 
 	        <!-- アイコンの注釈文 -->
 	        	<div class="comments">
-	        	<!-- <table class ="commentstable">-->
-		        	 <img src="/Checker_man/images/maru.png" width="2%" height="0.1%" align="left" ><p>は健康</p>
-		        	 <img src="/Checker_man/images/sankaku.png" width="2%" height="0.1%" align="left"><p>は注意</p>
-		        	 <img src="/Checker_man/images/batsu.png" width="2%" height="01%" align="left"><p>は不健康</p>
-		        	 <!--</tr>
-		        	 </table>-->
+	        	<div class="icon">
+	        	<table><tr>
+		        	 <td><img src="/Checker_man/images/maru.png" align="left" ></td><td><p>は健康</p></td>
+		        	 <td><img src="/Checker_man/images/sankaku.png" align="left"></td><td><p>は注意</p></td>
+		        	 <td><img src="/Checker_man/images/batsu.png" align="left"></td><td><p>は不健康</p></td>
+		        	 </tr>
+		        	 </table>
+		        	 </div>
 				</div>
 
 

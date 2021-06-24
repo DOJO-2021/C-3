@@ -18,22 +18,22 @@ html* {
 /*カレンダーエリア全体 */
 .calendar-border {
 	border-top: 20px;
-	margin:0 200px;
+	margin: 0 200px;
 }
 
-.table tbody tr{
+.table tbody tr {
 	height: 100px;
 }
 
 /* カレンダーの上にある「前月、現在の月、翌月」のcss*/
-.calender-menu-table{
+.calender-menu-table {
 	margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
 }
 
-.calender-menu-table th{
-	padding-left:50px;
-	padding-right:50px;
+.calender-menu-table th {
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 .th-month {
@@ -43,7 +43,7 @@ html* {
 /* カレンダーの上にある「前月ボタン」のcss*/
 input#previous-month {
 	font-size: 20px;
-	padding:10px;
+	padding: 10px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
 	width: 70px;
@@ -52,65 +52,57 @@ input#previous-month {
 /* カレンダーの上にある「翌月ボタン」のcss*/
 input#next-month {
 	font-size: 20px;
-	padding:10px;
+	padding: 10px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
 	width: 70px;
 }
 
-
 .comments {
 	padding-left: 100px;
-	padding-bottom:100px;
-	padding-top:50px;
-	line-height:10px;
-}
-.commentstable td {
-	width:1000px;
+	padding-bottom: 100px;
+	padding-top: 50px;
+	line-height: 10px;
 }
 
-.comments p {
+.icon img {
+	width: 30px;
+	height: 30px;
+}
+
+table p {
 	font-size: 120%;
 }
 
+/*「診断ボタン、診断結果ボタン」のcss */
 
- /*「診断ボタン、診断結果ボタン」のcss */
-.button-table  {
+.button-table {
 	margin: auto;
-    padding: auto;
- }
-
-
- .button-table td {
-	padding-left:50px;
-	padding-right:50px;
+	padding: auto;
 }
 
+.button-table td {
+	padding:5px;
+}
 
 .clear {
-	clear:both;
+	clear: both;
 }
-
 
 input#user_result {
-	font-size:30px;
+	font-size: 30px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
-	margin-right:30px;
+	margin-right: 30px;
 	display: flex;
 }
-
 
 input#user_shindan {
-	font-size:30px;
+	font-size: 30px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
 	display: flex;
-
 }
-
-
-
 
 /*
 ##D7EEFF 水色
