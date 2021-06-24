@@ -37,13 +37,13 @@
 		  	<tr>
 		  		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
 					<input type="submit" id="previous-month" value="前月">
-					<input type="hidden" name="diffCount" value="0">
+					<input type="hidden" name="diffCount" value="${p_month }">
 					</form>
 		  		</td>
 		 		<th class = "th-month">${title_month }
 		 		<td><form action="/Checker_man/User_TopPageServlet?diffCount=0" method="GET">
-			    	<input type="submit" id="next-month" name="diffCount" value="翌月">
-			    	<input type="hidden" name="diffCount" value="2">
+			    	<input type="submit" id="next-month"  value="翌月">
+			    	<input type="hidden" name="diffCount" value="${n_month }">
 					</form>
 				</td>
 			</tr>
@@ -93,8 +93,8 @@
 			</div>
 
 			<div class="clear"></div>
+	</div>
 
-</div>
  <!-- フッター -->
  <footer class="footer">
  <jsp:include page="/WEB-INF/jsp/footer.jsp"/>

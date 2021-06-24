@@ -81,6 +81,13 @@ public class User_TopPageServlet extends HttpServlet {
 
 
 
+		//先月・来月ボタンを格納
+		int p_month = diffCount -1;
+		int n_month = diffCount +1;
+		request.setAttribute("p_month", p_month);
+		request.setAttribute("n_month", n_month);
+
+
 
 
 		// ユーザートップページにフォワードする
