@@ -18,10 +18,12 @@ html* {
 /*カレンダーエリア全体 */
 .calendar-border {
 	border-top: 20px;
-	margin:0 30px;
-	background: #dcdcdc;
+	margin:0 200px;
 }
 
+.table tbody tr{
+	height: 100px;
+}
 
 /* カレンダーの上にある「前月、現在の月、翌月」のcss*/
 .calender-menu-table{
@@ -56,16 +58,20 @@ input#next-month {
 	width: 70px;
 }
 
+
 .comments {
 	padding-left: 100px;
 	padding-bottom:100px;
 	padding-top:50px;
 	line-height:10px;
+}
 
+p {
+	font-size: 120%;
 }
 
 
- 「診断ボタン、診断結果ボタン」のcss
+ /*「診断ボタン、診断結果ボタン」のcss */
 .button-table  {
 	margin-left: auto;
     margin-right: auto;
