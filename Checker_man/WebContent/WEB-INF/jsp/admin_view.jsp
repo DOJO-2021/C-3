@@ -27,7 +27,7 @@
 			<jsp:include page="/WEB-INF/jsp/admin_header.jsp" />
 		</header>
 
-		<div class="box1">閲覧ページ</div>
+		<div class="box1">管理者ページ</div>
 		<main>
 		<p></p>
 			<!-- 個人名表示 -->
@@ -41,6 +41,10 @@
 				<h3>${resultList.icon_path}</h3>
 			</form>
 
+			<div class = "answer_notes">
+				<p>1=当てはまらない　2=やや当てはまらない　 3=どちらともいえない　 4=やや当てはまる　 5=当てはまる </p>
+			</div>
+
 
 			<!-- 質問内容 -->
 			<div class="result">
@@ -49,7 +53,7 @@
 						<form method="POST" action="/Checker_man/User_ResultServlet">
 							<table class="question_table">
 								<tr>
-									<td><input type="text" size = 50 readonly name="QUESTION" value="${e.question}"></td>
+									<td>${e.question}</td>
 								</tr>
 							</table>
 						</form>
@@ -62,7 +66,7 @@
 						<form method="POST" action="/Checker_man/User_ResultServlet">
 							<table class="answer_table">
 								<tr>
-									<td><input type="text" size = 10 readonly name="ANSWER" value="${e.answer}"></td>
+									<td>${e.answer}</td>
 								</tr>
 							</table>
 						</form>
@@ -74,7 +78,7 @@
 			<div class="comment">
 				<p>受講者コメント</p>
 				<form method="POST" action="/Checker_man/User_ResultServlet">
-					<textarea rows="10" cols="100" readonly name="user_message">${resultList.user_comment}</textarea>
+					<textarea class = "user_message" rows="10" cols="100" readonly name="user_message">${resultList.user_comment}</textarea>
 				</form>
 			</div>
 
@@ -82,7 +86,7 @@
 			<div class="comment">
 				<p>管理者コメント</p>
 				<form method="POST" action="/Checker_man/Admin_ViewServlet">
-					<textarea rows="10" cols="100" name="admin_message">${resultList.admin_comment}</textarea>
+					<textarea class = "admin_message" rows="10" cols="100" name="admin_message">${resultList.admin_comment}</textarea>
 					<input type="hidden" name="user_id" value="${result.user_id}">
 					<div class="botton">
 						<div class="regist">

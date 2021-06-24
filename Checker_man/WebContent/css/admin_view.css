@@ -7,7 +7,7 @@ html {
 html* {
 	box-sizing: border-box;
 }
-/* 閲覧ページ */
+/* 管理者ページ */
 .box1 {
 	padding: 0.5em 1em;
 	margin: 2em 0;
@@ -43,6 +43,12 @@ h3 {
 	margin-right: auto;
 }
 
+/* 回答番号の意味*/
+.answer_notes {
+	text-align: center;
+	font-size: 15px;
+}
+
 .result {
 	display: flex; /* 表２つを横並び */
 }
@@ -72,7 +78,7 @@ h3 {
 /* コメント */
 .comment p {
 	text-align: center;
-	font-size: 18px;
+	font-size: 20px;;
 	text-decoration: underline; /* 下線を引く */
 	text-decoration-color: #F0B43E; /* 下線の色 */
 }
@@ -91,11 +97,31 @@ textarea {
 	font-size: 20px;
 }
 
+.question_table {
+	border : 2px solid #F0B43E;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	width: 600px;
+}
+
+.question_table td {
+	font-size : 20px;
+}
+
+.answer_table {
+	border : 2px solid #F0B43E;
+	border-spacing: 15px 0px; /* テーブル内の枠線なし */
+	width: 50px;
+}
+
+.answer_table td {
+	font-size : 20px;
+}
+
 /* 書き込みボタン */
 .button {
 	display: inline-block;
 	border-radius: 30%; /* 角丸 */
-	font-size: 8pt; /* 文字サイズ */
+	font-size: 20pt; /* 文字サイズ */
 	text-align: center; /* 文字位置 */
 	cursor: pointer; /* カーソル */
 	padding: 10px 10px; /* 余白 */
@@ -170,6 +196,7 @@ textarea {
 	box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), 0 2px 2px
 		rgba(0, 0, 0, 0.19);
 	font-weight: bold;
+	font-size: 20px;
 }
 
 /* トップページに戻るボタン(装飾)動き */
