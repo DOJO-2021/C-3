@@ -34,7 +34,7 @@
 					<form method="POST" action="/Checker_man/User_ResultServlet">
 					<table class = "question_table">
 						<tr>
-							<td><input type="text" size = 50 name="QUESTION" value="${e.question}"></td>
+							<td><input type="text" size = 50 readonly name="QUESTION" value="${e.question}"></td>
 						</tr>
 					</table>
 				 	</form>
@@ -47,7 +47,7 @@
 					<form method="POST" action="/Checker_man/User_ResultServlet">
 					<table class = "answer_table">
 					 	<tr>
-							<td><input type="text" size = 10 name="ANSWER" value="${e.answer}"></td>
+							<td><input type="text" size = 10 readonly name="ANSWER" value="${e.answer}"></td>
 					 	</tr>
 					 </table>
 				 	</form>
