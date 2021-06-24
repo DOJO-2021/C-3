@@ -21,7 +21,6 @@ h1 {
 /* 診断エリアを中央に配置 */
 .shindan-area {
 	margin: 0 auto;
-	width: 1000px;
 }
 
 /* テーブルの設定 */
@@ -33,7 +32,7 @@ h1 {
 
 /* テーブルの見出しを調整 */
 td {
-	height: 10px;
+	font-size: 130%;
 	text-align: center;
 	border: 1px solid #bec2c7;
 }
