@@ -64,11 +64,14 @@ input#next-month {
 	padding-bottom:100px;
 	padding-top:50px;
 	line-height:10px;
+}
 
+p {
+	font-size: 120%;
 }
 
 
- 「診断ボタン、診断結果ボタン」のcss
+ /*「診断ボタン、診断結果ボタン」のcss */
 .button-table  {
 	margin-left: auto;
     margin-right: auto;
