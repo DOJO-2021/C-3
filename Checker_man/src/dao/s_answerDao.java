@@ -202,5 +202,57 @@ public class s_answerDao {
 			return result;
 		}
 
+		// 引数answerで指定されたレコードを登録し、成功したらtrueを返す
+		public boolean select_answer(s_answer param) {
+			Connection conn = null; //デフォルトで「回答がありません」→回答があったらtrueに書き変わる
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
+
+				// SQL文を準備する
+				String sql = "SELECT count(*) from s_answer WHERE user_id=? and date = CURDATE()";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を完成させる
+				if (param.getUser_id() != 0) {
+					pStmt.setInt(1, param.getUser_id());
+				} else {
+					pStmt.setInt(1, 0);
+				}
+
+				ResultSet rs = pStmt.executeQuery();
+				rs.next();
+				int num = rs.getInt("count(*)");
+
+				// SQL文を実行する
+				if (num == 0) {
+					result = true;
+				}
+
+			}
+
+			catch (SQLException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+
+			// 結果を返す
+			return result;
+		}
 
 }
