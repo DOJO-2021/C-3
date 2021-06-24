@@ -35,19 +35,22 @@
 		</header>
 		<div class="main">
 			<p></p>
+
+
 			<form method="POST" action="/Checker_man/User_RegistServlet" onSubmit="return check()">
 			<div class="regist-area">
 				<h1>新規登録</h1>
 
+
 					<div class="regist-form">
 						<div class ="userid">
-						ユーザーID<input type="text" id="name" name="NAME" placeholder="ユーザーID入力"><br>
+						ユーザー名　<input type="text" id="name" name="NAME" placeholder="ユーザー名入力"><br>
 						</div>
 						<div class = "pw">
-						パスワード<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
+						パスワード　<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
 						</div>
 						<div class = "chpw">
-						パスワード確認<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
+						パスワード確認　<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
 						</div>
 					</div>
 					<input type="checkbox" id="password-check">パスワードを表示する<br>
@@ -59,6 +62,8 @@
 			<div class ="backmenu">
 			<a href="User_LoginServlet">戻る</a>
 			</div>
+
+			<p></p>
 		</div>
 
 		<!-- 共通のフッター -->
