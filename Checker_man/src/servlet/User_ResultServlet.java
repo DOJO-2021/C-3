@@ -40,6 +40,15 @@ public class User_ResultServlet extends HttpServlet {
 			return;
 		}
 
+		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
+		s_answerDao aDao = new s_answerDao();
+
+		//もしも、今日回答していなかったら、トップページに移動する
+		if (aDao.select_answer(new s_answer(0, 0, user_id.getuser_id(), ""))) {
+			response.sendRedirect("/Checker_man/User_TopPageServlet");
+			return;
+		}
+
 		//検索処理を行う（質問内容）
 		s_questionDao qDao = new s_questionDao();
 		List<s_question> questionList = null;
@@ -54,9 +63,6 @@ public class User_ResultServlet extends HttpServlet {
 		request.setAttribute("questionList", questionList);
 
 		//検索処理を行う（回答）
-		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
-
-		s_answerDao aDao = new s_answerDao();
 		List<s_answer> answerList = null;
 		answerList = aDao.select(new s_answer(0, 0, user_id.getuser_id(), ""));
 
