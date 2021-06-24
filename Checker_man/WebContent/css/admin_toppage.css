@@ -12,20 +12,19 @@
 
 /* 受講者の健康診断のcss　*/
 .healthcheck{
-	width:15em;
+	width:14em;
 	font-size:25px;
 	margin:90px;
-	margin-left:4em;
-
+	margin-left:6em;
 padding:20px;
 border: 2px solid #5d5d5d;
 }
 
 /* お知らせのcss　*/
 .notice{
-	width:15em;
+	width:14em;
 font-size:25px;
-margin-left:4em;
+margin-left:6em;
 padding:20px;
 border: 2px solid #5d5d5d;
 }
@@ -55,9 +54,9 @@ border: 2px solid #5d5d5d;
   padding: 2px;                         /* テキストの前後の余白 */
   background-color:#ffffff;             /* 背景色（透明度） */
 border: 2px solid #5d5d5d;
-  width:400px;
+  width:14em;
   height:200px;                         /* 吹き出し全体の幅 */
-  margin-left:250px;                       /* 表示位置 */
+  margin-left:270px;                       /* 表示位置 */
                  /* 表示位置 */
   font-size: 80%;                       /* 文字サイズ */
   animation: sample2Anime  0.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
