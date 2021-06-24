@@ -73,8 +73,8 @@
 	        <!-- アイコンの注釈文 -->
 	        	<div class="comments">
 		        	 <img src="/Checker_man/images/maru.png" width="2%" height="2%" align="left" ><p>は健康</p>
-		        	 <img src="/Checker_man/images/sankaku.png" width="2%" height="2%" align="left"><p>は</p>
-		        	 <img src="/Checker_man/images/batsu.png" width="2%" height="2%" align="left"><p>は</p>
+		        	 <img src="/Checker_man/images/sankaku.png" width="2%" height="2%" align="left"><p>は普通</p>
+		        	 <img src="/Checker_man/images/batsu.png" width="2%" height="2%" align="left"><p>は不健康</p>
 				</div>
 
 
