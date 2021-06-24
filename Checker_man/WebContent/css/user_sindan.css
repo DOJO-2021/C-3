@@ -33,15 +33,10 @@ h1 {
 
 /* テーブルの見出しを調整 */
 td {
-	padding-top: 1px;
-	padding-right: 1px;
-	padding-bottom: 1px;
-	padding-left: 1px;
+	height: 10px;
 	text-align: center;
 	border: 1px solid #bec2c7;
 }
-
-/* テーブルに罫線 */
 
 /* ラジオボタンの設定 */
 

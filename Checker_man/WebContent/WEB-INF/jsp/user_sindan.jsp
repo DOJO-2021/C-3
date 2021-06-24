@@ -58,7 +58,7 @@
 					</tr>
 
 					<tr>
-						<td>問3 不安に感じることがある</td>
+						<td>問3 不安に感じる</td>
 						<td><input type="radio" name="answer3" value="1"></td>
 						<td><input type="radio" name="answer3" value="2"></td>
 						<td><input type="radio" name="answer3" value="3" checked>
@@ -78,7 +78,7 @@
 					</tr>
 
 					<tr>
-						<td>問5 周囲とのコミュニケーションが取れていないと感じる</td>
+						<td>問5 周囲とのコミュニケーションが取れていない</td>
 						<td><input type="radio" name="answer5" value="1"></td>
 						<td><input type="radio" name="answer5" value="2"></td>
 						<td><input type="radio" name="answer5" value="3" checked>
@@ -108,7 +108,7 @@
 					</tr>
 
 					<tr>
-						<td>問8 イライラをすることが増えたと感じる</td>
+						<td>問8 イライラをすることが増えた</td>
 						<td><input type="radio" name="answer8" value="1"></td>
 						<td><input type="radio" name="answer8" value="2"></td>
 						<td><input type="radio" name="answer8" value="3" checked>
@@ -118,7 +118,7 @@
 					</tr>
 
 					<tr>
-						<td>問9 リラックス、息抜きなどが取れていない</td>
+						<td>問9 息抜きなどが取れていない</td>
 						<td><input type="radio" name="answer9" value="1"></td>
 						<td><input type="radio" name="answer9" value="2"></td>
 						<td><input type="radio" name="answer9" value="3" checked>
