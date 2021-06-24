@@ -26,11 +26,11 @@ public class Admin_LastDataServlet extends HttpServlet {
 	//doGet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-//		HttpSession session = request.getSession();
-//		if (session.getAttribute("id") == null) {
-//			response.sendRedirect("/Checker_man/Admin_LoginServlet");
-//			return;
-//		}
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/Checker_man/Admin_LoginServlet");
+			return;
+		}
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
