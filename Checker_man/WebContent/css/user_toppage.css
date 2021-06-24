@@ -17,7 +17,9 @@ html* {
 
 /*カレンダーエリア全体 */
 .calendar-border {
-	margin:0 100px;
+	border-top: 20px;
+	margin:0 30px;
+	background: #dcdcdc;
 }
 
 
