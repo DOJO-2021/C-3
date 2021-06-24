@@ -65,16 +65,18 @@ input#next-month {
 	padding-top:50px;
 	line-height:10px;
 }
+.commentstable td {
+	width:1000px;
+}
 
-p {
+.comments p {
 	font-size: 120%;
 }
 
 
  /*「診断ボタン、診断結果ボタン」のcss */
 .button-table  {
-	margin-left: auto;
-    margin-right: auto;
+	margin: auto;
     padding: auto;
  }
 
