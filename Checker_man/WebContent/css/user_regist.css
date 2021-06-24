@@ -1,24 +1,67 @@
 @charset "UTF-8";
+
 .keyvisual {
 	text-align: center; /* 中央寄せ */
 }
+
 .main p {
-	border : dotted 3px #B0D6DA;
+	border: dotted 3px #B0D6DA;
 }
 
 .regist-area {
-	width:300px;
-    margin:140px auto;
-	padding:20px;
-	border:solid 4px rgb(176,214,218);
+	width: 300px;
+	margin: 140px auto;
+	padding: 20px;
+	border: solid 4px rgb(176, 214, 218);
 }
 
-.regist-form {
-	padding-bottom:20px;
+/*.regist-form {
+	text-align: right;
+}
+*/
+.userid {
+	padding-bottom: 20px;
+	/*text-align: right;*/
+}
+
+.pw {
+	padding-bottom: 20px;
+	/*text-align: right;*/
+}
+
+.chpw {
+	padding-bottom: 20px;
+/*	text-align: right; */
+}
+
+#password-check {
+	text-align: center;
 }
 
 .regist-bottan {
-	margin-left:260px;
-	margin-bottom:50px;
+	margin-left: 260px;
+	margin-bottom: 50px;
 }
 
+.regist {
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	background: #668ad8; /*ボタン色*/
+	color: #FFF;
+	border-bottom: solid 4px #627295;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.regist:active {
+	/*ボタンを押したとき*/
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px); /*下に動く*/
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); /*影を小さく*/
+	border-bottom: none;
+}
+
+.backmenu {
+	text-align: center;
+}

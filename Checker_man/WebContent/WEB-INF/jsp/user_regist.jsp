@@ -39,23 +39,24 @@
 				<h1>新規登録</h1>
 				<form method="POST" action="/Checker_man/User_RegistServlet" onSubmit="return check()">
 					<div class="regist-form">
-						ユーザーID<input type="text" name="NAME" placeholder="ユーザーID入力"><br>
+						<div class ="userid">
+						ユーザーID<input type="text" id="name" name="NAME" placeholder="ユーザーID入力"><br>
+						</div>
+						<div class = "pw">
 						パスワード<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
+						</div>
+						<div class = "chpw">
 						パスワード確認<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
+						</div>
 					</div>
-					<input type="checkbox" id="password-check">パスワードを表示する
-					<input type="submit" name="REGIST" value="登録" onclick="submitbtn()">
-						 <a href="User_LoginServlet">戻る</a>
+					<input type="checkbox" id="password-check">パスワードを表示する<br>
 				</form>
-
 			</div>
-					<!-- エラーメッセージ -->
-			<div class="errormsg">
-				<p>
-					<c:out value="${result.message}" />
-				</p>
-			</div>
+			<input type="submit" name="REGIST" value="登録" class ="regist"onclick="submitbtn()">
 
+			<div class ="backmenu">
+			<a href="User_LoginServlet">戻る</a>
+			</div>
 		</div>
 
 		<!-- 共通のフッター -->
