@@ -10,7 +10,7 @@
 <title>チェッカマン</title>
 </head>
 <body>
-	<div class="wrapper"></div>
+	<div class="wrapper">
 
 
 	<!-- 管理者ページ共通のヘッダー -->
@@ -114,6 +114,8 @@
 <footer>
  <jsp:include page="/WEB-INF/jsp/footer.jsp" />
  </footer>
+
+ </div>
 
 <script type="text/javascript"
 		src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

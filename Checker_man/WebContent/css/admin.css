@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
-.wrapper{
-
+.wrapper {
+	margin: 0 auto 0 auto;
+	max-width: 1200px;
+	position: relative;
+	padding-bottom: 5px;
+	box-sizing: border-box;
 }

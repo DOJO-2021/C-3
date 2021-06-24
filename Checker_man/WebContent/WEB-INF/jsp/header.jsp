@@ -11,9 +11,9 @@
 	<div class="wrapper">
 
 		<!-- ロゴ -->
-		<h1 class="keyvisual">
+		<p class="keyvisual">
 			<img src="/Checker_man/images/header.png">
-		</h1>
+		</p>
 
 		<!-- トップページへのリンク -->
 		<div class="header">

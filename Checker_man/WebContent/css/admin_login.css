@@ -34,7 +34,9 @@
 /* ログインエリアを中央に配置 */
 .alogin-area {
 	width:300px;
-    margin:100px auto;
+    margin:0 auto;
+    margin-top: 50px;
+    margin-bottom: 10em;
 	padding:20px;
 	border:solid 4px rgb(240,180,62);
 }
@@ -44,8 +46,14 @@
 }
 
 .alogin-bottan {
+	margin-top:30px;
 	margin-left:190px;
-	margin-bottom:50px;
+	margin-bottom:20px;
+}
+
+.alogin-subarea{
+	margin-top:30px;
+	margin-left:20px;
 }
 
 .regist-table {

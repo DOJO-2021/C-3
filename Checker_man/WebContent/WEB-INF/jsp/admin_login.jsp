@@ -28,17 +28,24 @@
 		<div class="alogin-area">
 		<h1>管理者ログイン</h1>
 		<form method="POST" action="/Checker_man/Admin_LoginServlet">
+
+		<div class="alogin-subarea">
+
 			<div class="alogin-form">
-					ユーザーID<input type="text" name="ID"  placeholder="ユーザーID"><br>
+					ユーザー名　<input type="text" name="ID"  placeholder="ユーザー名"><br>
 			</div>
 			<div class="alogin-form">
-				パスワード<input type="password" id="password" name="PW" placeholder="パスワード"><br>
+				パスワード　<input type="password" id="password" name="PW" placeholder="パスワード"><br>
 			</div>
+
 			<input type="checkbox" id="password-check">
 			パスワードを表示する
 			<input type ="submit" name="LOGIN" value="ログイン" class="alogin-bottan" >
+
+			</div>
 		</form>
 	</div>
+
 	<!-- エラーメッセージ -->
 	<div class = "errormsg">
 		<p><c:out value="${result.message}" /></p>	</div>
