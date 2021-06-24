@@ -4,41 +4,43 @@
 	text-align: center; /* 中央寄せ */
 }
 
+.wrapper{
+	text-align: center;
+}
+
 .main p {
 	border: dotted 3px #B0D6DA;
 }
 
 .regist-area {
 	width: 300px;
-	margin: 140px auto;
-	padding: 20px;
+	margin-bottom: 10px;
+	margin: auto;
+	padding : 20px;
 	border: solid 4px rgb(176, 214, 218);
+	padding: 20px;
 }
 
-/*.regist-form {
-	text-align: right;
-}
-*/
 .userid {
 	padding-bottom: 20px;
-	/*text-align: right;*/
+	text-align: right;
 }
 
 .pw {
 	padding-bottom: 20px;
-	/*text-align: right;*/
+	text-align: right;
 }
 
 .chpw {
 	padding-bottom: 20px;
-/*	text-align: right; */
+	text-align: right;
 }
 
 #password-check {
 	text-align: center;
 }
 
-.regist-bottan {
+.regist-bottun {
 	margin-left: 260px;
 	margin-bottom: 50px;
 }
@@ -47,11 +49,11 @@
 	display: inline-block;
 	padding: 0.5em 1em;
 	text-decoration: none;
-	background: #668ad8; /*ボタン色*/
-	color: #FFF;
+	background: rgb(176, 214, 218); /*ボタン色*/
 	border-bottom: solid 4px #627295;
 	border-radius: 3px;
-	text-align: center;
+	width: 100px;
+	margin: 50px auto;
 }
 
 .regist:active {

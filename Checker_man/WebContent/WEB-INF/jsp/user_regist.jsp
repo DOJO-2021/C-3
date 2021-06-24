@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>チェッカマン</title>
+<title>新規登録</title>
 <link rel="stylesheet" href="/Checker_man/css/user_regist.css">
 <link rel="stylesheet" href="/Checker_man/css/user.css">
 <script>
 
-/*'use strict';
+'use strict';
 	function submitbtn() {
     // 「OK」ボタン押下時
     if (window.confirm('登録しますか？')) {
@@ -21,7 +21,7 @@
     	window.alert('キャンセル');
          return false;
     }
-	}*/
+	}
 	</script>
 </head>
 <body>
@@ -35,9 +35,10 @@
 		</header>
 		<div class="main">
 			<p></p>
+			<form method="POST" action="/Checker_man/User_RegistServlet" onSubmit="return check()">
 			<div class="regist-area">
 				<h1>新規登録</h1>
-				<form method="POST" action="/Checker_man/User_RegistServlet" onSubmit="return check()">
+
 					<div class="regist-form">
 						<div class ="userid">
 						ユーザーID<input type="text" id="name" name="NAME" placeholder="ユーザーID入力"><br>
@@ -50,9 +51,10 @@
 						</div>
 					</div>
 					<input type="checkbox" id="password-check">パスワードを表示する<br>
-				</form>
+
 			</div>
-			<input type="submit" name="REGIST" value="登録" class ="regist"onclick="submitbtn()">
+			<input type="submit" name="REGIST" value="登録" class = "regist" onclick="submitbtn()">
+			</form>
 
 			<div class ="backmenu">
 			<a href="User_LoginServlet">戻る</a>
@@ -79,12 +81,12 @@
 			}
 		}, false);
 
-		   /* function check() {
+		    /*function check() {
 		        	if (!(pwd === pwd2))) {
 		    			windows.alert("パスワードが一致していません");
 		                     return false;
 		        	}
-		    } */
+		    }*/
 
 	</script>
 </body>
