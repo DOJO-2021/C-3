@@ -9,19 +9,7 @@
 <link rel="stylesheet" href="/Checker_man/css/user.css">
 <script>
 
-'use strict';
-	function submitbtn() {
-    // 「OK」ボタン押下時
-    if (window.confirm('登録しますか？')) {
-    	window.alert('登録完了しました。');
-        return true;
-    }
-    // 「キャンセル」ボタン押下時
-    else {
-    	window.alert('キャンセル');
-         return false;
-    }
-	}
+
 	</script>
 </head>
 <body>
@@ -38,29 +26,30 @@
 
 
 			<form method="POST" action="/Checker_man/User_RegistServlet" onSubmit="return check()">
-			<div class="regist-area">
-				<h1>新規登録</h1>
+				<div class="regist-area">
+					<h1>新規登録</h1>
 
 
 					<div class="regist-form">
-						<div class ="userid">
-						ユーザー名　　　<input type="text" id="name" name="NAME" placeholder="ユーザー名入力"><br>
+						<div class="userid">
+							ユーザー名 <input type="text" id="name" name="NAME" placeholder="ユーザー名入力"><br>
 						</div>
-						<div class = "pw">
-						パスワード　　　<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
+						<div class="pw">
+							パスワード <input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
 						</div>
-						<div class = "chpw">
-						パスワード確認　<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
+						<div class="chpw">
+							パスワード確認 <input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
 						</div>
 					</div>
 					<input type="checkbox" id="password-check">パスワードを表示する<br>
 
-			</div>
-			<input type="submit" name="REGIST" value="登録" class = "regist" onclick="submitbtn()">
+				</div>
+				<input type="submit" name="REGIST" value="登録" class="regist">
+				<!-- onclick="submitbtn()"-->
 			</form>
 
-			<div class ="backmenu">
-			<a href="User_LoginServlet">戻る</a>
+			<div class="backmenu">
+				<a href="User_LoginServlet">戻る</a>
 			</div>
 
 			<p></p>
@@ -86,12 +75,30 @@
 			}
 		}, false);
 
-		    /*function check() {
-		        	if (!(pwd === pwd2))) {
-		    			windows.alert("パスワードが一致していません");
-		                     return false;
-		        	}
-		    }*/
+
+		function check() {
+			// ①ユーザーIDとパスワード１，パスワード２が入力されていること
+			const name = document.getElementById('name');
+			if (name.value == "" || pwd.value == "" || pwd2.value == "") {
+				window.alert('ユーザー名とパスワード，パスワード確認を入力してください');
+				return false;
+			}
+
+			// ②パスワード1とパスワード2が一致している場合はtrue、していない場合はfalseを返す
+			if (pwd.value !== pwd2.value) {
+				window.alert("パスワードが一致していません");
+				return false;
+			}
+			// ③登録するかしないかの確認、はいを押した場合にtrueを返し、いいえの場合はfalseを押す
+				    // 「OK」ボタン押下時
+			if (window.confirm('登録しますか？')) {
+				return true;
+			}
+			// 「キャンセル」ボタン押下時
+			else {
+				return false;
+			}
+		}
 
 	</script>
 </body>
