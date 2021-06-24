@@ -64,3 +64,6 @@ from s_answer group by CURDATE()
 
 ユーザー名を探す
 select user_name from user_login where user_id=1;
+
+データがあるかの確認
+SELECT count(*) from s_answer WHERE user_id=1 and date = CURDATE()

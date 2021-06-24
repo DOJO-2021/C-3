@@ -33,25 +33,15 @@ public class User_SindanServlet extends HttpServlet {
 					response.sendRedirect("/Checker_man/User_LoginServlet");
 					return;
 				}
-		//
-		//		// リクエストパラメータを取得する
-		//		request.setCharacterEncoding("UTF-8");
-		//		String question_id = request.getParameter("QUESTION_ID");
-		//		String question = request.getParameter("QUESTION");
-		//
-		//		// 診断項目の処理を行う
-		//		s_questionDao bDao = new s_questionDao();
-		//		try {
-		//			if (bDao.select(new s_question(0, question)) != null) { // 登録成功
-		//				request.setAttribute("result",
-		//						new Result("登録成功", "レコードを登録しました。", "/Checker_man/User_ResultServlet"));
-		//			} else { // 登録失敗
-		//				request.setAttribute("result",
-		//						new Result("登録失敗", "レコードを登録できませんでした。", "/Checker_man/User_SindanServlet"));
-		//			}
-		//		} catch (SQLException e) {
-		//			e.printStackTrace();
-		//		}
+
+				LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
+				s_answerDao aDao = new s_answerDao();
+
+				//もしも、今日回答してたら、トップページに移動する
+				if (!aDao.select_answer(new s_answer(0, 0, user_id.getuser_id(), ""))) {
+					response.sendRedirect("/Checker_man/User_TopPageServlet");
+					return;
+				}
 
 		// 診断ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_sindan.jsp");

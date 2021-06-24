@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>チェッカマン</title>
+<title>新規登録</title>
 <link rel="stylesheet" href="/Checker_man/css/user_regist.css">
 <link rel="stylesheet" href="/Checker_man/css/user.css">
 <script>
 
-/*'use strict';
+'use strict';
 	function submitbtn() {
     // 「OK」ボタン押下時
     if (window.confirm('登録しますか？')) {
@@ -21,7 +21,7 @@
     	window.alert('キャンセル');
          return false;
     }
-	}*/
+	}
 	</script>
 </head>
 <body>
@@ -35,27 +35,30 @@
 		</header>
 		<div class="main">
 			<p></p>
+			<form method="POST" action="/Checker_man/User_RegistServlet" onSubmit="return check()">
 			<div class="regist-area">
 				<h1>新規登録</h1>
-				<form method="POST" action="/Checker_man/User_RegistServlet" onSubmit="return check()">
+
 					<div class="regist-form">
-						ユーザーID<input type="text" name="NAME" placeholder="ユーザーID入力"><br>
+						<div class ="userid">
+						ユーザーID<input type="text" id="name" name="NAME" placeholder="ユーザーID入力"><br>
+						</div>
+						<div class = "pw">
 						パスワード<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
+						</div>
+						<div class = "chpw">
 						パスワード確認<input type="password" id="password2" name="CH-PW" placeholder="再度パスワード入力">
+						</div>
 					</div>
-					<input type="checkbox" id="password-check">パスワードを表示する
-					<input type="submit" name="REGIST" value="登録" onclick="submitbtn()">
-						 <a href="User_LoginServlet">戻る</a>
-				</form>
+					<input type="checkbox" id="password-check">パスワードを表示する<br>
 
 			</div>
-					<!-- エラーメッセージ -->
-			<div class="errormsg">
-				<p>
-					<c:out value="${result.message}" />
-				</p>
-			</div>
+			<input type="submit" name="REGIST" value="登録" class = "regist" onclick="submitbtn()">
+			</form>
 
+			<div class ="backmenu">
+			<a href="User_LoginServlet">戻る</a>
+			</div>
 		</div>
 
 		<!-- 共通のフッター -->
@@ -78,12 +81,12 @@
 			}
 		}, false);
 
-		   /* function check() {
+		    /*function check() {
 		        	if (!(pwd === pwd2))) {
 		    			windows.alert("パスワードが一致していません");
 		                     return false;
 		        	}
-		    } */
+		    }*/
 
 	</script>
 </body>
