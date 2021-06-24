@@ -17,10 +17,10 @@
 
 		<!-- トップページへのリンク -->
 		<div class="header">
-			<a href="/Checker_man/Admin_TopPageServlet" class="btn">トップページ</a>
+			<a href="/Checker_man/Admin_TopPageServlet" class="a_btn">トップページ</a>
 
 			<!-- ログアウトのリンク -->
-			<a href="/Checker_man/LogoutServlet" class="btn">ログアウト</a>
+			<a href="/Checker_man/LogoutServlet" class="a_btn">ログアウト</a>
 		</div>
 
 	</div>
