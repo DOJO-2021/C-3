@@ -8,11 +8,15 @@
 }
 /* 受講者ログインを右上に */
 .link3 {
+	border:solid 1px #585858;
 	display: inline-block;
 	border-radius : 5%;          /* 角丸       */
 	font-size     : 18pt;        /* 文字サイズ */
 	text-align    : center;
-	background-color:rgb(176,214,218);;
+	background-color:rgb(176,214,218);
+	opacity: 0.9; /* 透明度 */
+	transition: .3s; /* なめらか変化 */
+	box-shadow: 6px 6px 3px #666666; /* 影の設定 */
 	/*
 	padding:10px;
 	*/
@@ -25,11 +29,14 @@
 	width: 200px;
 }
 
+.link3:hover {
+	box-shadow: none; /* カーソル時の影消去 */
+	opacity: 1; /* カーソル時透明度 */
+}
+
 .link3-button {
 	text-align: right;
 }
-
-
 
 /* ログインエリアを中央に配置 */
 .alogin-area {

@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 
 <!-- タイトル -->
-<title>管理者閲覧ページ</title>
+<title>チェッカマン</title>
 
 <!-- CSSのURL -->
 <link rel="stylesheet" href="/Checker_man/css/admin_view.css">

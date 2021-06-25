@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>新規登録</title>
+<title>チェッカマン</title>
 <link rel="stylesheet" href="/Checker_man/css/user_regist.css">
 <link rel="stylesheet" href="/Checker_man/css/user.css">
 <script>
