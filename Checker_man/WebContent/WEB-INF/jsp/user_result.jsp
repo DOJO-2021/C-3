@@ -81,7 +81,8 @@
 			</form>
 		</div>
 
-
+<!-- 画面上部に戻るボタン -->
+			<button id="topScroll" class="topScroll"></button>
 
 		<div class = "return">
 			<a href="/Checker_man/User_TopPageServlet">トップへ戻る</a>
@@ -97,5 +98,16 @@
 
 
 	</div>
+
+	<script>
+	const topScrollBtn = document.querySelector('#topScroll');
+	topScrollBtn.addEventListener('click', () => {
+	  window.scrollTo({
+	    top: 0,
+	    behavior: "smooth"
+	  });
+	});
+	</script>
+
 </body>
 </html>
