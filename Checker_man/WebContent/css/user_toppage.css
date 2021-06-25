@@ -88,6 +88,15 @@ table p {
 }
 
 input#user_result {
+
+	cursor: pointer; /* カーソル */
+	padding: 10px 10px; /* 余白 */
+	background: rgba(255, 166, 77, 0.81); /* 背景色 */
+	line-height: 1em; /* 1行の高さ */
+	opacity: 0.9; /* 透明度 */
+	transition: .3s; /* なめらか変化 */
+	box-shadow: 6px 6px 3px #666666; /* 影の設定 */
+
 	font-size: 30px;
 	background-color: #B0D6DA;
 	border: solid 2px #F0B43E; /*周りの線の色*/
