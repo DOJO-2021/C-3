@@ -138,13 +138,13 @@
                 var week = new Date(last_year, last_month, i).getDay();
                 if (!week || i == 1) {
                     $('table').find('tbody').append('<tr>'+
+                                                        '<td></td>' +   //色変える
                                                         '<td></td>' +
                                                         '<td></td>' +
                                                         '<td></td>' +
                                                         '<td></td>' +
                                                         '<td></td>' +
-                                                        '<td></td>' +
-                                                        '<td></td>' +
+                                                        '<td></td>' + //色変える
                                                     '</tr>');
                 }
 
