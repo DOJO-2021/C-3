@@ -85,7 +85,7 @@
 
 お知らせ<br>
 
-<table class="table1">
+<table>
 			<tr>
 				<th>コメントが</th>
 				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}</div>件
