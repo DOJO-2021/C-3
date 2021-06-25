@@ -56,13 +56,13 @@
 	        <table id="calender" class="table table-border table-hover table-sm">
 	            <thead class="thead-dark">
 	                <tr>
-	                    <th>Sun</th>
-	                    <th>Mon</th>
-	                    <th>Tue</th>
-	                    <th>Wed</th>
-	                    <th>Thu</th>
-	                    <th>Fri</th>
-	                    <th>Sat</th>
+	                    <th style="background-color:#ff0000; border-color:#ffffff;">Sun</th>
+	                    <th style="border-color:#ffffff;">Mon</th>
+	                    <th style="border-color:#ffffff;">Tue</th>
+	                    <th style="border-color:#ffffff;">Wed</th>
+	                    <th style="border-color:#ffffff;">Thu</th>
+	                    <th style="border-color:#ffffff;">Fri</th>
+	                    <th style="background-color:#0000ff; border-color:#ffffff;">Sat</th>
 	                </tr>
 	            </thead>
 	            <tbody>
