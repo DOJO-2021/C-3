@@ -103,7 +103,7 @@
 
 			<!-- トップページに戻るボタン -->
 			<div class="toppage">
-				<a href="/Checker_man/Admin_TopPageServlet" class="btn">トップページに戻る</a>
+				<a href="/Checker_man/Admin_TopPageServlet" class="admin_btn">トップページに戻る</a>
 			</div>
 
 		</main>
