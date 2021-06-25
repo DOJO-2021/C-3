@@ -1,0 +1,338 @@
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-02','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-03','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-04','sankaku','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-05','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-06','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-07','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-08','batsu','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-09','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-10','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-11','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-12','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-13','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-14','batsu','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-15','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-16','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-17','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-18','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-19','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-20','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-21','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-22','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-23','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-24','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-25','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-26','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-27','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-28','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-29','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-04-30','batsu','受講者コメント','管理者コメント',1);
+--診断結果が表示される(5月）
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-01','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-02','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-03','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-04','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-05','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-06','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-07','sankaku','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-08','batsu','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-09','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-10','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-11','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-12','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-13','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-14','batsu','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-15','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-16','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-17','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-18','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-19','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-20','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-21','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-22','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-23','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-24','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-25','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-26','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-27','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-28','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-29','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-30','batsu','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-05-31','batsu','受講者コメント','管理者コメント',1);
+--診断結果が表示される(6月）
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-01','batsu','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-02','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-03','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-04','sankaku','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-05','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-06','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-07','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-08','batsu','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-09','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-10','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-11','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-12','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-13','sankaku','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-14','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-15','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-16','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-17','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-18','maru','受講者コメント','管理者コメント',1);
+/* insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-19','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-20','maru','受講者コメント','管理者コメント',1); */
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values
+(null, '2021-06-21','maru','受講者コメント','管理者コメント',1); 
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-22','maru','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-23','sankaku','受講者コメント','管理者コメント',1);
+insert into s_result 
+(result_id, date,icon,user_comment,admin_comment,user_id) 
+values 
+(null, '2021-06-24','maru','受講者コメント','管理者コメント',1);
