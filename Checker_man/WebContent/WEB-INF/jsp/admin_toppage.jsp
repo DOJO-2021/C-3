@@ -36,7 +36,7 @@
 		<table>
 			<tr>
 				<th><img src="/Checker_man/images/maru.png">の人：</th>
-				<td><div class="maru-number" onclick="show('1')">${iconNumber.maru_number}人
+				<td><div class="maru-number" onclick="show('1')"><div id="number">${iconNumber.maru_number}</div>人
 			  		<span class="sample1" id="idsample1">
 
 					<!--  吹き出しの中身 -->
@@ -45,12 +45,12 @@
 					</c:forEach>
 
 			  		</span>
-				</div></td>
+				</div>
 			</tr>
 
 			<tr>
 				<th><img src="/Checker_man/images/sankaku.png">の人：</th>
-				<td><div class="sankaku-number" onclick="show('2')">${iconNumber.sankaku_number}人
+				<td><div class="sankaku-number" onclick="show('2')"><div id="number">${iconNumber.sankaku_number}</div>人
 					<span class="sample2" id="idsample2">
 
 					<!--  吹き出しの中身 -->
@@ -64,7 +64,7 @@
 
 			<tr>
 				<th><img src="/Checker_man/images/batsu.png">の人:</th>
-				<td><div class="batu-number" onclick="show('3')">${iconNumber.batsu_number}人
+				<td><div class="batu-number" onclick="show('3')"><div id="number">${iconNumber.batsu_number}</div>人
 					<span class="sample3" id="idsample3">
 
 					<!--  吹き出しの中身 -->
@@ -85,10 +85,10 @@
 
 お知らせ<br>
 
-<table>
+<table class="table1">
 			<tr>
 				<th>コメントが</th>
-				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}件
+				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}</div>件
 			  		<span class="sample4" id="idsample4">
 
 					<!--  吹き出しの中身 -->
@@ -98,7 +98,7 @@
 
 			  		</span>
 
-				</div>
+
 				</td>
 			</tr>
 </table>

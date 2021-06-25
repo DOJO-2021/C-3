@@ -10,6 +10,16 @@
 	border : dotted 3px #fd9535;
 }
 
+.table_td{
+
+ width:100px;
+}
+
+#number{
+	color:blue;
+	text-decoration: underline;
+}
+
 /* 受講者の健康診断のcss　*/
 .healthcheck{
 	width:14em;
