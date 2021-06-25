@@ -28,8 +28,9 @@
 		</header>
 
 		<div class="box1">管理者ページ</div>
+
 		<main>
-		<p></p>
+
 			<!-- 個人名表示 -->
 
 		<h2>
@@ -102,7 +103,7 @@
 
 			<!-- トップページに戻るボタン -->
 			<div class="toppage">
-				<a href="/Checker_man/Admin_TopPageServlet" class="btn">トップページに戻る</a>
+				<a href="/Checker_man/Admin_TopPageServlet" class="admin_btn">トップページに戻る</a>
 			</div>
 
 		</main>

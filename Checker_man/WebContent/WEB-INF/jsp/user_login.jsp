@@ -17,7 +17,7 @@
 		<header>
 			<!-- 共通のヘッダーは「ログアウト」や「トップページに戻る」が入っているのでロゴのみを挿入 -->
 			<h1 class="keyvisual">
-				<img src="/Checker_man/images/header.png">
+				<a href="/Checker_man/User_LoginServlet"><img src="/Checker_man/images/header.png"></a>
 			</h1>
 		</header>
 
@@ -33,7 +33,7 @@
 				<form method="POST" action="/Checker_man/User_LoginServlet">
 
 					<div class="ulogin-form">
-						ユーザー名　<input type="text" name="ID" placeholder="ユーザー名"><br>
+						ユーザーID　<input type="text" name="ID" placeholder="ユーザーID"><br>
 					</div>
 
 					<div class="ulogin-form">

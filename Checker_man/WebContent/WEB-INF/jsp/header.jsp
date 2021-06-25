@@ -12,7 +12,7 @@
 
 		<!-- ロゴ -->
 		<p class="keyvisual">
-			<img src="/Checker_man/images/header.png">
+		<a href="/Checker_man/User_TopPageServlet"><img src="/Checker_man/images/header.png"></a>
 		</p>
 
 		<!-- トップページへのリンク -->
