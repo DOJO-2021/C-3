@@ -141,7 +141,7 @@ input[type="submit"]{
 /* 画面上部に移動するボタン */
 .topScroll {
 	/* buttonタグのリセットCSS */
-	border: none;
+
 	cursor: pointer;
 	outline: none;
 	padding: 0;
@@ -154,7 +154,8 @@ input[type="submit"]{
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	background-color: #115582;
+	background-color: #B0D6DA;
+	border: solid 2px #B0D6DA; /*周りの線の色*/
 	display: flex;
 	align-items: center;
 	justify-content: center;
