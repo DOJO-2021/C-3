@@ -91,12 +91,8 @@
 			}
 			// ③登録するかしないかの確認、はいを押した場合にtrueを返し、いいえの場合はfalseを押す
 				    // 「OK」ボタン押下時
-			if (window.confirm('登録しますか？')) {
+			if (window.alert('ページが変わったら、登録成功。\nページが変わらなかったら、登録失敗。')) {
 				return true;
-			}
-			// 「キャンセル」ボタン押下時
-			else {
-				return false;
 			}
 		}
 
