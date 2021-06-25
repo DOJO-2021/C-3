@@ -32,7 +32,7 @@
 
 					<div class="regist-form">
 						<div class="userid">
-							ユーザー名　　　<input type="text" id="name" name="NAME" placeholder="ユーザー名入力"><br>
+							ユーザーID　　　<input type="text" id="name" name="NAME" placeholder="ユーザーID入力"><br>
 						</div>
 						<div class="pw">
 							パスワード　　　<input type="password" id="password" name="PW" placeholder="パスワード入力"><br>
