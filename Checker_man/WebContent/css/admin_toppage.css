@@ -43,6 +43,11 @@ border: 2px solid #5d5d5d;
   position: relative;                  /* 指定した分だけ相対的に移動 */
   cursor   : pointer;                  /* カーソルをポインターで表示 */
 }
+
+a {
+    text-decoration:none;
+}
+
 .sample1,.sample2,.sample3,.sample4 {
   display: none;                        /* 要素を非表示 */
 }
