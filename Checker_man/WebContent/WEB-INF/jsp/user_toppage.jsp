@@ -91,7 +91,7 @@
 						<td><form action="/Checker_man/User_SindanServlet" method="get">
 						<input type="submit" id="user_shindan" name="user_shindan" value="診断" ></form></td>
 
-						<td>　　　　　　　　　　　　　　　　　　　　　　　</td>
+						<td>　　　　　　　　　　　　　</td>
 
 						<td><form action="/Checker_man/User_ResultServlet"  method="get">
 						 <input type="submit" id="user_result" name="user_result" value="診断結果"> </form></td>
