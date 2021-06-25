@@ -6,8 +6,8 @@
 	height: 30px;
 }
 
-.main p {
-	border : dotted 3px #fd9535;
+p {
+	border : dotted 3px #F0B43E;
 }
 
 .table_td{
@@ -16,8 +16,7 @@
 }
 
 #number{
-	color:blue;
-	text-decoration: underline;
+
 }
 
 /* 受講者の健康診断のcss　*/
@@ -50,6 +49,8 @@ border: 2px solid #5d5d5d;
 }
 
 .maru-number,.sankaku-number,.batu-number, .comment-number{
+	color:blue;
+	text-decoration: underline;
   position: relative;                  /* 指定した分だけ相対的に移動 */
   cursor   : pointer;                  /* カーソルをポインターで表示 */
 }

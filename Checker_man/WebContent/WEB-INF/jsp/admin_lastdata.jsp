@@ -108,6 +108,8 @@
 
 <div class="clear"></div>
 
+<p></p>
+
 </main>
 
 <!-- 共通のフッター -->

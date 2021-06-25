@@ -36,12 +36,12 @@
 		<table>
 			<tr>
 				<th><img src="/Checker_man/images/maru.png">の人：</th>
-				<td><div class="maru-number" onclick="show('1')"><div id="number">${iconNumber.maru_number}</div>人
+				<td><div class="maru-number" onclick="show('1')">${iconNumber.maru_number}人
 			  		<span class="sample1" id="idsample1">
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.maru_id}" class = "maru">${e.maru_list}</a></p>
+					<a href="/Checker_man/Admin_ViewServlet?user_id=${e.maru_id}" class = "maru">${e.maru_list}</a>
 					</c:forEach>
 
 			  		</span>
@@ -50,12 +50,12 @@
 
 			<tr>
 				<th><img src="/Checker_man/images/sankaku.png">の人：</th>
-				<td><div class="sankaku-number" onclick="show('2')"><div id="number">${iconNumber.sankaku_number}</div>人
+				<td><div class="sankaku-number" onclick="show('2')">${iconNumber.sankaku_number}人
 					<span class="sample2" id="idsample2">
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.sankaku_id}">${e.sankaku_list}</a></p>
+					<a href="/Checker_man/Admin_ViewServlet?user_id=${e.sankaku_id}">${e.sankaku_list}</a>
 					</c:forEach>
 
 					</span>
@@ -64,12 +64,12 @@
 
 			<tr>
 				<th><img src="/Checker_man/images/batsu.png">の人:</th>
-				<td><div class="batu-number" onclick="show('3')"><div id="number">${iconNumber.batsu_number}</div>人
+				<td><div class="batu-number" onclick="show('3')">${iconNumber.batsu_number}人
 					<span class="sample3" id="idsample3">
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.batsu_id}">${e.batsu_list} </a></p>
+					<a href="/Checker_man/Admin_ViewServlet?user_id=${e.batsu_id}">${e.batsu_list} </a>
 					</c:forEach>
 
 					</span>
@@ -88,18 +88,18 @@
 <table>
 			<tr>
 				<th>コメントが</th>
-				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}</div>件
+				<td><div class="comment-number" onclick="show('4')">${iconNumber.comment_number}件
 			  		<span class="sample4" id="idsample4">
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.comment_id}">${e.comment_list}</a></p>
+					<a href="/Checker_man/Admin_ViewServlet?user_id=${e.comment_id}">${e.comment_list}</a>
 					</c:forEach>
 
 			  		</span>
 
 
-				</td>
+				</div></td>
 			</tr>
 </table>
 </div>
@@ -111,6 +111,8 @@
  <input type="submit" id="admin_lastdata" name="admin_lastdata" value="過去のデータ">
  </form>
 </div>
+
+ <p></p>
 
  </main>
 
