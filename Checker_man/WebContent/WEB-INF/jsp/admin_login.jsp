@@ -32,7 +32,7 @@
 		<div class="alogin-subarea">
 
 			<div class="alogin-form">
-					ユーザー名　<input type="text" name="ID"  placeholder="ユーザー名"><br>
+					ユーザーID　<input type="text" name="ID"  placeholder="ユーザーID"><br>
 			</div>
 			<div class="alogin-form">
 				パスワード　<input type="password" id="password" name="PW" placeholder="パスワード"><br>

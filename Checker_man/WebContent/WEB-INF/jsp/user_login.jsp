@@ -33,7 +33,7 @@
 				<form method="POST" action="/Checker_man/User_LoginServlet">
 
 					<div class="ulogin-form">
-						ユーザー名　<input type="text" name="ID" placeholder="ユーザー名"><br>
+						ユーザーID　<input type="text" name="ID" placeholder="ユーザーID"><br>
 					</div>
 
 					<div class="ulogin-form">
