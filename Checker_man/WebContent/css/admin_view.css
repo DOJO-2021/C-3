@@ -120,24 +120,19 @@ textarea {
 
 /* 書き込みボタン */
 .button {
-	display: inline-block;
-	border-radius: 30%; /* 角丸 */
-	font-size: 20pt; /* 文字サイズ */
-	text-align: center; /* 文字位置 */
-	cursor: pointer; /* カーソル */
-	padding: 10px 10px; /* 余白 */
-	background: rgba(255, 166, 77, 0.81); /* 背景色 */
-	color: #ffffff; /* 文字色 */
-	line-height: 1em; /* 1行の高さ */
-	opacity: 0.9; /* 透明度 */
-	transition: .3s; /* なめらか変化 */
-	box-shadow: 6px 6px 3px #666666; /* 影の設定 */
-	margin-bottom: 10px;
-}
-
-.button:hover {
-	box-shadow: none; /* カーソル時の影消去 */
-	opacity: 1; /* カーソル時透明度 */
+	margin: 0 8px;
+		position: relative;
+		display: inline-block;
+		padding: 0 0.25em;
+		text-decoration: none; /* 下線なし */
+		color: #ffffff; /* 文字色 */
+		background: rgba(255, 166, 77, 0.81); /* 背景色 */
+		border-radius: 8px; /*角の丸み*/
+		box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+		font-weight: bold;
+		border: solid 2px rgba(255, 166, 77, 0.81); /*周りの線の色*/
+		font-size : 20px;
+		cursor: pointer; /* カーソル */
 }
 
 /* 画面上部に移動するボタン */
