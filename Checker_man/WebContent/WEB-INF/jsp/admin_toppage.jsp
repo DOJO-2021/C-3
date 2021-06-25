@@ -28,7 +28,7 @@
 
          <!--  「受講者の健康診断」のhtml -->
 <div class="healthcheck">
-現在の受講者健康状態<br>
+本日の受講者の健康状態<br>
 
 	<div class="icon">
 		<table>
