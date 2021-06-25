@@ -11,11 +11,17 @@ h1 {
 	margin-top: 20px;
 	margin-right: 0px;
 	margin-bottom: 20px;
-	margin-left: 0px;
+	margin-left: 50px;
 	padding-top: 5px;
 	padding-right: 5px;
 	padding-bottom: 5px;
 	padding-left: 5px;
+}
+
+/* 質問事項の余白 */
+p {
+	margin-left: 50px;
+	font-size: 130%;
 }
 
 /* 診断エリアを中央に配置 */
@@ -30,6 +36,11 @@ h1 {
 	margin: auto;
 }
 
+/* テーブルの余白 */
+table {
+	margin: auto;
+}
+
 /* テーブルの見出しを調整 */
 td {
 	font-size: 130%;
@@ -38,6 +49,10 @@ td {
 }
 
 /* ラジオボタンの設定 */
+input[type=radio] {
+	width: 30px;
+	height: 30px;
+}
 
 /* ボタンの設定 */
 .botton {
