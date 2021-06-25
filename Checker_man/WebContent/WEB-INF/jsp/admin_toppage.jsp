@@ -26,8 +26,6 @@
  <!-- メイン -->
  <main>
 
- <p></p>
-
          <!--  「受講者の健康診断」のhtml -->
 <div class="healthcheck">
 現在の受講者健康状態<br>
@@ -41,11 +39,11 @@
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.maru_id}" class = "maru">${e.maru_list}</a></p>
+					<a href="/Checker_man/Admin_ViewServlet?user_id=${e.maru_id}" class = "maru">${e.maru_list}</a>
 					</c:forEach>
 
 			  		</span>
-				</div></td>
+				</div>
 			</tr>
 
 			<tr>
@@ -55,7 +53,7 @@
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.sankaku_id}">${e.sankaku_list}</a></p>
+					<a href="/Checker_man/Admin_ViewServlet?user_id=${e.sankaku_id}">${e.sankaku_list}</a>
 					</c:forEach>
 
 					</span>
@@ -69,7 +67,7 @@
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.batsu_id}">${e.batsu_list} </a></p>
+					<a href="/Checker_man/Admin_ViewServlet?user_id=${e.batsu_id}">${e.batsu_list} </a>
 					</c:forEach>
 
 					</span>
@@ -93,13 +91,13 @@
 
 					<!--  吹き出しの中身 -->
 					<c:forEach var="e" items="${iconList}" varStatus="status" >
-					<p><a href="/Checker_man/Admin_ViewServlet?user_id=${e.comment_id}">${e.comment_list}</a></p>
+					<a href="/Checker_man/Admin_ViewServlet?user_id=${e.comment_id}">${e.comment_list}</a>
 					</c:forEach>
 
 			  		</span>
 
-				</div>
-				</td>
+
+				</div></td>
 			</tr>
 </table>
 </div>
@@ -111,6 +109,7 @@
  <input type="submit" id="admin_lastdata" name="admin_lastdata" value="過去のデータ">
  </form>
 </div>
+
 
  </main>
 

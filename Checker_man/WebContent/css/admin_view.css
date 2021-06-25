@@ -91,8 +91,9 @@ h3 {
 
 /* テキストエリア */
 textarea {
-	width: 50em;
-	height: 10em; /*  */
+	resize: none;
+	width: 32em;
+	height:5em;
 	background: #ffffff; /* 背景色 */
 	font-size: 20px;
 }
@@ -184,7 +185,7 @@ textarea {
 	padding-top: 1em;
 }
 /* トップページに戻るボタン(装飾) */
-.btn {
+.admin_btn {
 	position: relative;
 	display: inline-block;
 	padding: 0.25em 0.5em;
@@ -200,7 +201,7 @@ textarea {
 }
 
 /* トップページに戻るボタン(装飾)動き */
-.btn:active {
+.admin_btn:active {
 	border-bottom: solid 2px #fd9535;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }

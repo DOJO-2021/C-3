@@ -105,11 +105,11 @@ h2 {
 	font-size : 20px;
 }
 
-.user_message {
-	font-size: 20px;
-}
-
-.admin_message {
+textarea {
+	resize: none;
+	width: 32em;
+	height:5em;
+	background: #ffffff; /* 背景色 */
 	font-size: 20px;
 }
 
