@@ -24,6 +24,11 @@ p {
 	font-size: 130%;
 }
 
+/* 質問項目左詰め */
+.koumoku {
+	text-align: left;
+}
+
 /* 診断エリアを中央に配置 */
 .shindan-area {
 	margin: 0 auto;
