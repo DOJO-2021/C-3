@@ -79,6 +79,13 @@ public class User_RegistServlet extends HttpServlet {
 			return;
 		}
 
+		User_loginDao lDao2 = new User_loginDao();
+		if (lDao2.isLoginOK(name, pw)){
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/user_regist.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
+
 		//登録する
 		User_loginDao lDao = new User_loginDao();
 		if (lDao.insert(new User_login(0,name, pw))) { // 登録成功
