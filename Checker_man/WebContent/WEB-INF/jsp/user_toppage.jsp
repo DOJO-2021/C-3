@@ -86,6 +86,8 @@
 
 	       <!-- 診断ボタン、診断結果ボタン」のhtml -->
 			<div class="user_toppage_button">
+				<!-- 診断の注意書き -->
+				<p>※診断は1日1回のみです。</p>
 				<table class="button-table">
 					<tr>
 						<td><form action="/Checker_man/User_SindanServlet" method="get">
@@ -100,6 +102,8 @@
 			</div>
 
 			<div class="clear"></div>
+
+
 	</div>
 
  <!-- フッター -->
