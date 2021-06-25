@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>診断結果ページ</title>
+<title>チェッカマン</title>
 <link rel="stylesheet" href="/Checker_man/css/user_result.css">
 <link rel="stylesheet" href="/Checker_man/css/user.css">
 </head>
