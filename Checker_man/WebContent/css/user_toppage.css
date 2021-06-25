@@ -129,6 +129,15 @@ input#user_shindan:hover {
 	opacity: 1; /* カーソル時透明度 */
 }
 
+/* 診断の注意書き */
+.user_toppage_button p {
+	font-size: 20px;
+	padding-left: 100px;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	line-height: 10px;
+}
+
 /*
 ##D7EEFF 水色
 #FFE4C4 オレンジ
