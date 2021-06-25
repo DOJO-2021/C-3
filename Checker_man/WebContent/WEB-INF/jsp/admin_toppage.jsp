@@ -26,8 +26,6 @@
  <!-- メイン -->
  <main>
 
- <p></p>
-
          <!--  「受講者の健康診断」のhtml -->
 <div class="healthcheck">
 現在の受講者健康状態<br>
@@ -112,7 +110,6 @@
  </form>
 </div>
 
- <p></p>
 
  </main>
 

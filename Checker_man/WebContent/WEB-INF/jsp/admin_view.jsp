@@ -28,8 +28,9 @@
 		</header>
 
 		<div class="box1">管理者ページ</div>
+
 		<main>
-		<p></p>
+
 			<!-- 個人名表示 -->
 
 		<h2>
