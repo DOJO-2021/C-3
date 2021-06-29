@@ -45,7 +45,7 @@ border: 2px solid #5d5d5d;
 	color:blue;
 	text-decoration: underline;
   position: relative;                  /* 指定した分だけ相対的に移動 */
-  cursor   : pointer;                  /* カーソルをポインターで表示 */
+  cursor: pointer;                  /* カーソルをポインターで表示 */
 }
 
 a {
@@ -62,11 +62,11 @@ a {
   position: absolute;                   /* 親要素を基準 */
   padding: 2px;                         /* テキストの前後の余白 */
   background-color:#ffffff;             /* 背景色（透明度） */
-border: 2px solid #5d5d5d;
+  border: 2px solid #5d5d5d;
   width:8em;
   height:200px;                         /* 吹き出し全体の幅 */
   margin-left:270px;                       /* 表示位置 */
-                 /* 表示位置 */
+  text-align: left;
   font-size: 80%;                       /* 文字サイズ */
   animation: sample2Anime  0.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
@@ -76,11 +76,11 @@ border: 2px solid #5d5d5d;
   position: absolute;                   /* 親要素を基準 */
   padding: 2px;                         /* テキストの前後の余白 */
   background-color:#ffffff;             /* 背景色（透明度） */
-border: 2px solid #5d5d5d;
+  border: 2px solid #5d5d5d;
   width:8em;
   height:200px;                         /* 吹き出し全体の幅 */
-  margin-left:250px;                       /* 表示位置 */
-                 /* 表示位置 */
+  margin-left:250px; 					/* 表示位置 */
+  text-align: left;
   font-size: 90%;                       /* 文字サイズ */
   animation: sample2Anime  0.7s cubic-bezier(0.33, 1, 0.68, 1) 1 forwards;
 }
