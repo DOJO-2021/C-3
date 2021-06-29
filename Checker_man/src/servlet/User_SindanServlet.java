@@ -137,6 +137,6 @@ public class User_SindanServlet extends HttpServlet {
 	lastdataDao.insert_lastdata(insRec);
 
 		// 診断結果ページにフォワードする
-	response.sendRedirect("/Checker_man/User_ResultServlet");
+	response.sendRedirect("/Checker_man/User_ResultServlet?date="+java8Disp);
 	}
 }

@@ -353,7 +353,7 @@ public class s_resultDao {
 						conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 						// SQL文を準備する
-						String sql = "update s_result set user_comment= ? where user_id =? and date = CURDATE()";
+						String sql = "update s_result set user_comment= ? where user_id =? and date = ?";
 						PreparedStatement pStmt = conn.prepareStatement(sql);
 
 						// SQL文を完成させる
@@ -369,6 +369,13 @@ public class s_resultDao {
 						}
 						else {
 							pStmt.setInt(2, 0);
+						}
+
+						if (param.getDate() != null) {
+							pStmt.setString(3, param.getDate());
+						}
+						else {
+							pStmt.setString(3, null);
 						}
 
 						// SQL文を実行する

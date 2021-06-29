@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -62,7 +64,20 @@ public class User_ResultServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("questionList", questionList);
 
+
+		// 現在日時情報で初期化されたインスタンスの取得
+		LocalDateTime nowDateTime = LocalDateTime.now();
+		DateTimeFormatter java8Format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+		// 日時情報を指定フォーマットの文字列で取得
+		String java8Disp = nowDateTime.format(java8Format);
+
+
 		String date =  request.getParameter("date");
+
+		if(date == null) {
+			date = java8Disp;
+		}
 
 		//検索処理を行う（回答）
 		List<s_answer> answerList = null;
@@ -108,11 +123,18 @@ public class User_ResultServlet extends HttpServlet {
 		String user_comment = request.getParameter("user_message");
 		int user_id = Integer.parseInt(request.getParameter("user_id"));
 
+		// 現在日時情報で初期化されたインスタンスの取得
+				LocalDateTime nowDateTime = LocalDateTime.now();
+				DateTimeFormatter java8Format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+				// 日時情報を指定フォーマットの文字列で取得
+				String java8Disp = nowDateTime.format(java8Format);
+
 		// ユーザーのコメント更新処理を行う
 		s_resultDao rDao = new s_resultDao();
-		rDao.update_usercomment(new s_result(0, null, null, user_comment,null, user_id));
+		rDao.update_usercomment(new s_result(0, java8Disp, null, user_comment,null, user_id));
 
 		// 診断結果ページにフォワードする
-		response.sendRedirect("/Checker_man/User_ResultServlet");
+		response.sendRedirect("/Checker_man/User_ResultServlet?date="+java8Disp);
 	}
 }

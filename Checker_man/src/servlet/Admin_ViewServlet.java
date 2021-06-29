@@ -2,6 +2,8 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -47,6 +49,13 @@ public class Admin_ViewServlet extends HttpServlet {
 		//URL（Admin_ViewServlet?user_id = ○）から、○の数値を取得
 		int user_id =  Integer.parseInt(request.getParameter("user_id"));
 
+		// 現在日時情報で初期化されたインスタンスの取得
+				LocalDateTime nowDateTime = LocalDateTime.now();
+				DateTimeFormatter java8Format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+				// 日時情報を指定フォーマットの文字列で取得
+				String date = nowDateTime.format(java8Format);
+
 		//検索処理を行う（質問内容）
 		s_questionDao qDao = new s_questionDao();
 		List<s_question> questionList = null;
@@ -63,14 +72,14 @@ public class Admin_ViewServlet extends HttpServlet {
 		//検索処理を行う（回答）
 		s_answerDao aDao = new s_answerDao();
 		List<s_answer> answerList = null;
-		answerList = aDao.select(new s_answer(0, 0, user_id, null));
+		answerList = aDao.select(new s_answer(0, 0, user_id, date));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("answerList", answerList);
 
 		//検索処理を行う（アイコン、受講者コメント、管理者コメント）
 		s_resultDao rDao = new s_resultDao();
-		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", user_id));
+		s_result resultList = rDao.select1(new s_result(0, date, "", "", "", user_id));
 		User_loginDao rDao2 = new User_loginDao();
 		User_login result = rDao2.select_username(new User_login(user_id, "", "" ));
 
