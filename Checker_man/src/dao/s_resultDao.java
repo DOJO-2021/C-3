@@ -575,24 +575,26 @@ public class s_resultDao {
 
 					// SQL文を準備する
 					String sql = "select icon, user_comment, admin_comment "
-							+ "from s_result WHERE date = CURDATE() AND user_id = ? "
+							+ "from s_result WHERE date = ?  AND user_id = ? "
 							+ " ORDER BY result_id ASC , date ASC ";
 
 					PreparedStatement pStmt = conn.prepareStatement(sql);
 
 					// SQL文を完成させる
-					if (param.getUser_id() != 0) {
-						pStmt.setInt(1,  param.getUser_id() );
+					if (param.getDate() != "") {
+						pStmt.setString(1,  param.getDate() );
 					}
 					else {
-						pStmt.setInt(1, 0);
+						pStmt.setString(1, "");
 					}
-//					if (param.getUser_comment() != "") {
-//						pStmt.setString(2, "%" + param.getUser_comment() + "%");
-//					}
-//					else {
-//						pStmt.setString(2, "%");
-//					}
+
+					if (param.getUser_id() != 0) {
+						pStmt.setInt(2,  param.getUser_id() );
+					}
+					else {
+						pStmt.setInt(2, 0);
+					}
+
 //					if (param.getAdmin_comment() != "") {
 //						pStmt.setString(3, "%" + param.getAdmin_comment() + "%");
 //					}

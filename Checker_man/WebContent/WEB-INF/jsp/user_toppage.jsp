@@ -1,36 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <meta charset="UTF-8">
 <title>チェッカマン</title>
 <link rel="stylesheet" href="/Checker_man/css/user_toppage.css">
 <link rel="stylesheet" href="/Checker_man/css/user.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 </head>
-
 <body>
-
 <div class="wrapper">
 </div>
  <!-- ヘッダ -->
  <header class="header">
  <jsp:include page="/WEB-INF/jsp/header.jsp"/>
  </header>
-
  <!-- メイン -->
  <div class ="main">
-
-
 	<!-- カレンダーのエリア -->
 	 <div class="calendar-border">
-
 	          <!-- カレンダーの上にある「前月、現在の月、翌月」のhtml -->
 	  <div class="calender-menu">
 		  <table class="calender-menu-table">
@@ -49,7 +39,6 @@
 			</tr>
 	   	</table>
 	  </div>
-
 	       <!-- カレンダーの表のhtml -->
 	   <h1></h1>
 	        <div class="date-head"></div>
@@ -69,7 +58,6 @@
 	            </tbody>
 	        </table>
 	       </div>
-
 	        <!-- アイコンの注釈文 -->
 	        	<div class="comments">
 	        		<div class="icon">
@@ -82,9 +70,6 @@
 			        	 </table>
 		        	 </div>
 				</div>
-
-
-
 	       <!-- 診断ボタン、診断結果ボタン」のhtml -->
 			<div class="user_toppage_button">
 				<!-- 診断の注意書き -->
@@ -93,27 +78,18 @@
 					<tr>
 						<td><form action="/Checker_man/User_SindanServlet" method="get">
 						<input type="submit" id="user_shindan" name="user_shindan" value="診断" ></form></td>
-
 						<td>　　　　　　　　　　　　　</td>
-
 						<td><form action="/Checker_man/User_ResultServlet"  method="get">
 						 <input type="submit" id="user_result" name="user_result" value="診断結果"> </form></td>
 					</tr>
 				</table>
 			</div>
-
 			<div class="clear"></div>
-
-
 	</div>
-
  <!-- フッター -->
  <footer class="footer">
  <jsp:include page="/WEB-INF/jsp/footer.jsp"/>
  </footer>
-
-
-
 <!-- カレンダーのjavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script>
@@ -123,19 +99,14 @@
             //iconDatesという変数に、日付とアイコンへのパスをセット
             iconDatas.set('${e.date}','${e.icon_path}');
             </c:forEach>
-
             var today = new Date();
             var year  = today.getFullYear();
             var month = today.getMonth()+${view_monthlist} ;
-
         //追加
         //年と月を取得
         //                     2021 + "-" +  "0" +  (             5  + 1) →06       + "-"
         //                                   "0" +  (             9  + 1) →010
            var thisMonthStr = year + "-" + ("0" + (today.getMonth() + ${view_monthlist})).slice(-2) + "-";
-
-
-
             $('.date-head').html(year + "-" + month);
             var last = new Date(today.getFullYear(), today.getMonth() + ${view_monthlist}, 0);
             var last_year  = last.getFullYear();
@@ -145,28 +116,25 @@
                 var week = new Date(last_year, last_month, i).getDay();
                 if (!week || i == 1) {
                     $('table').find('tbody').append('<tr>'+
-                                                        '<td></td>' +   //色変える
                                                         '<td></td>' +
                                                         '<td></td>' +
                                                         '<td></td>' +
                                                         '<td></td>' +
                                                         '<td></td>' +
-                                                        '<td></td>' + //色変える
+                                                        '<td></td>' +
+                                                        '<td></td>' +
                                                     '</tr>');
                 }
-
            //追加 iconLinkを定義
                 var iconLink = "";
-
            		//日付を取得
            		//                  2021-06-     01～31
                 if(iconDatas.has( thisMonthStr + ("0" + i).slice(-2) )){
-	                iconLink = "<img src="+iconDatas.get(thisMonthStr + ("0" + i).slice(-2))+" width=\"36px\">";
+	                iconLink = "<a href= \"/Checker_man/User_ResultServlet?date=" + (thisMonthStr + ("0" + i).slice(-2)) + "\"><img src="+iconDatas.get(thisMonthStr + ("0" + i).slice(-2))+" width=\"36px\"></a>";
                 }
-
-
                 $('#calender').find('tbody').find('tr').last().find('td').eq(week).html(i + "<br />" + iconLink);
             }
         </script>
 </body>
 </html>
+

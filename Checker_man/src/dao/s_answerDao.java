@@ -26,7 +26,7 @@ public class s_answerDao {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/C-3/database", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from s_answer WHERE user_id = ? and date = CURDATE()";
+			String sql = "select * from s_answer WHERE user_id = ? and date = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -34,6 +34,13 @@ public class s_answerDao {
 				pStmt.setInt(1, param.getUser_id());
 			} else {
 				pStmt.setInt(1, 0);
+			}
+
+			if (param.getDate() != "") {
+				pStmt.setString(2,  param.getDate() );
+			}
+			else {
+				pStmt.setString(2, "");
 			}
 
 			// SQL文を実行し、結果表を取得する

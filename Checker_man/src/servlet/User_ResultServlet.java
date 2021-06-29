@@ -62,9 +62,11 @@ public class User_ResultServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("questionList", questionList);
 
+		String date =  request.getParameter("date");
+
 		//検索処理を行う（回答）
 		List<s_answer> answerList = null;
-		answerList = aDao.select(new s_answer(0, 0, user_id.getuser_id(), ""));
+		answerList = aDao.select(new s_answer(0, 0, user_id.getuser_id(), date));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("answerList", answerList);
@@ -75,7 +77,7 @@ public class User_ResultServlet extends HttpServlet {
 //		LoginUser user_id = (LoginUser)session.getAttribute("user_id"); //セッションスコープからデータを入手、JavaBeansと連携させる必要がある
 
 		s_resultDao rDao = new s_resultDao();
-		s_result resultList = rDao.select1(new s_result(0, "", "", "", "", user_id.getuser_id()));
+		s_result resultList = rDao.select1(new s_result(0, date, "", "", "", user_id.getuser_id()));
 		User_loginDao rDao2 = new User_loginDao();
 		User_login result = rDao2.select_username(new User_login(user_id.getuser_id(), "", "" ));
 
